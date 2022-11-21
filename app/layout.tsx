@@ -1,3 +1,5 @@
+import Head from './head';
+
 export default function RootLayout({
   children,
 }: {
@@ -5,6 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
+      <Head />
       <body>{children}</body>
     </html>
   );

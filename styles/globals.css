@@ -4,6 +4,7 @@
 
 html,
 body {
+  background-color: #18181b;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -17,4 +18,27 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.input-wrapper {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  pointer-events: none;
+}
+
+input {
+  min-width: 20vw;
+  color: rgb(229 229 229);
+}
+input::placeholder {
+  color: rgba(229 229 229);
+  opacity: 0.5;
+}
+
+.form-wrapper {
+  max-width: max-content;
 }
