@@ -1,5 +1,4 @@
 'use client'
-
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
 
@@ -10,7 +9,7 @@ type Inputs = {
   password: string
 }
 
-export default function BaseForm() {
+export default function BaseForm({ isRegister }: { isRegister: boolean }) {
   const {
     register,
     handleSubmit,
@@ -19,8 +18,8 @@ export default function BaseForm() {
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
 
   return (
-    <div className='flex items-center flex-col  text-neutral-200'>
-      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col' autoComplete='off'>
+    <div className='flex items-center flex-col w-full lg:w-auto text-neutral-200'>
+      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-full lg:w-auto' autoComplete='off'>
         <div className='form-group flex flex-col gap-y-1 mb-4'>
           <label className='text-md' htmlFor='uname'>
             Email
@@ -30,10 +29,10 @@ export default function BaseForm() {
             <input
               className={`pr-4 pl-11 py-3 rounded-lg border-2 ${
                 errors.email ? 'border-red-400' : 'border-neutral-600'
-              }  bg-neutral-700 text-neutral-200`}
+              }  bg-neutral-700 text-neutral-200 w-full lg:w-auto max-w-none`}
               type='email'
               id='uname'
-              placeholder='Enter your Email'
+              placeholder='Enter your email'
               {...register('email', {
                 required: true,
                 pattern: /[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}/,
@@ -56,7 +55,7 @@ export default function BaseForm() {
             <input
               className={`pr-4 pl-11 py-3 rounded-lg border-2 bg-neutral-700 ${
                 errors.password ? 'border-red-400' : 'border-neutral-600'
-              } `}
+              } w-full lg:w-auto max-w-none `}
               type='password'
               id='pwd'
               placeholder='Enter your password'
@@ -77,7 +76,7 @@ export default function BaseForm() {
           className='bg-neutral-200 px-4 py-4 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold'
           type='submit'
           value='submit'>
-          Login
+          {isRegister ? 'Sign Up' : 'Login'}
         </button>
       </form>
     </div>

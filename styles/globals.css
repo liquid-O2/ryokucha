@@ -7,8 +7,8 @@ body {
   background-color: #18181b;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
 }
 
 a {
@@ -31,6 +31,7 @@ a {
 }
 
 input {
+  max-width: 50vw;
   min-width: 20vw;
   color: rgb(229 229 229);
 }
@@ -40,5 +41,17 @@ input::placeholder {
 }
 
 .form-wrapper {
-  max-width: max-content;
+  min-width: min-content;
+}
+
+/* .container {
+  max-width: 1440px;
+} */
+
+.max-w-8xl {
+  max-width: 1556px;
+}
+.register {
+  width: 25%;
+  min-width: 245px;
 }
