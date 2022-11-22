@@ -1,7 +1,9 @@
 'use client'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
-
+import { formProps } from './Login/loginForm'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 //
 
 type Inputs = {
@@ -9,13 +11,30 @@ type Inputs = {
   password: string
 }
 
-export default function BaseForm({ isRegister }: { isRegister: boolean }) {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<Inputs>()
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+type Errors = { email: boolean; password: boolean }
+
+export default function BaseForm({ isRegister, changeForm, registeredUsers, setRegisteredUsers }: formProps) {
+  const [errors, setErrors] = useState<Errors>({ email: false, password: false })
+  const [isLoggedIn, setIsLoggedIn] = useState({ loggedIn: false })
+  useEffect(() => {
+    const loggedIn = JSON.stringify(isLoggedIn)
+    localStorage.setItem('loggedIn', loggedIn)
+  }, [isLoggedIn])
+  const router = useRouter()
+  const { register, handleSubmit } = useForm<Inputs>()
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    isRegister
+      ? setRegisteredUsers((prevState) => [...prevState, { email: data.email, password: data.password }])
+      : setErrors({ email: true, password: true })
+    registeredUsers.map(({ email, password }) => {
+      if (data.password === password && data.email === email) {
+        router.push('/')
+        setIsLoggedIn({ loggedIn: true })
+        setErrors({ email: false, password: false })
+      }
+    })
+  }
 
   return (
     <div className='flex items-center flex-col w-full lg:w-auto text-neutral-200'>

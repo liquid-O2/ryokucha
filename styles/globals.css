@@ -44,14 +44,13 @@ input::placeholder {
   min-width: min-content;
 }
 
-/* .container {
-  max-width: 1440px;
-} */
-
 .max-w-8xl {
   max-width: 1556px;
 }
 .register {
   width: 25%;
   min-width: 245px;
+}
+.logout {
+  min-width: 20rem;
 }
