@@ -22,7 +22,7 @@ const NeueMontreal = localfont({
 })
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={NeueMontreal.variable}>
+    <html lang={'en'} className={NeueMontreal.variable}>
       <Head />
       <body>{children}</body>
     </html>
