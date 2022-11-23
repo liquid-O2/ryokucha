@@ -26,7 +26,10 @@ export default function App() {
 
   useEffect(() => {
     const localState = localStorage.getItem('loggedIn')
-    if (!localState) return
+    if (!localState) {
+      router.push('/login')
+      return
+    }
     const { loggedIn } = JSON.parse(localState)
     if (loggedIn) {
       setIsLoggedIn(true)
