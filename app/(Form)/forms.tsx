@@ -22,9 +22,15 @@ export default function Forms() {
     const storedUsers = localStorage.getItem('storedUsers')
     if (storedUsers) {
       const storedRegisteredUsers = JSON.parse(storedUsers)
-      if (storedRegisteredUsers === registeredUsers) return
-      setRegisteredUsers((registeredUsers) => {
-        return [...registeredUsers, ...storedRegisteredUsers]
+      storedRegisteredUsers.map(({ email, password }: RegisteredUsers) => {
+        registeredUsers.map((registeredUsers) => {
+          if (registeredUsers.email === email && registeredUsers.password === password) return
+          else {
+            setRegisteredUsers(() => {
+              return [...storedRegisteredUsers]
+            })
+          }
+        })
       })
     }
   }, [])

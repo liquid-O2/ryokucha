@@ -11,27 +11,31 @@ type Inputs = {
   password: string
 }
 
-type Errors = { email: boolean; password: boolean }
+type ValidationErrors = { email: boolean; password: boolean }
 
 export default function BaseForm({ isRegister, changeForm, registeredUsers, setRegisteredUsers }: formProps) {
-  const [errors, setErrors] = useState<Errors>({ email: false, password: false })
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({ email: false, password: false })
   const [isLoggedIn, setIsLoggedIn] = useState({ loggedIn: false })
   useEffect(() => {
     const loggedIn = JSON.stringify(isLoggedIn)
     localStorage.setItem('loggedIn', loggedIn)
   }, [isLoggedIn])
   const router = useRouter()
-  const { register, handleSubmit } = useForm<Inputs>()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     isRegister
       ? setRegisteredUsers((prevState) => [...prevState, { email: data.email, password: data.password }])
-      : setErrors({ email: true, password: true })
+      : setValidationErrors({ email: true, password: true })
     registeredUsers.map(({ email, password }) => {
       if (data.password === password && data.email === email) {
         router.push('/')
         setIsLoggedIn({ loggedIn: true })
-        setErrors({ email: false, password: false })
+        setValidationErrors({ email: false, password: false })
       }
     })
   }
@@ -47,7 +51,7 @@ export default function BaseForm({ isRegister, changeForm, registeredUsers, setR
           <div className='input-wrapper'>
             <input
               className={`pr-4 pl-11 py-3 rounded-lg border-2 ${
-                errors.email ? 'border-red-400' : 'border-neutral-600'
+                validationErrors.email ? 'border-red-400' : 'border-neutral-600'
               }  bg-neutral-700 text-neutral-200 w-full lg:w-auto max-w-none`}
               type='email'
               id='uname'
@@ -59,10 +63,12 @@ export default function BaseForm({ isRegister, changeForm, registeredUsers, setR
             />
 
             <div className='icon '>
-              <Icon.Mail size={20} className={errors.email ? 'stroke-red-400' : 'stroke-neutral-100'} />
+              <Icon.Mail size={20} className={validationErrors.email ? 'stroke-red-400' : 'stroke-neutral-100'} />
             </div>
           </div>
-          {errors.email && <p className='text-red-400 text-sm'>Incorrect email</p>}
+          {(validationErrors.email || errors.email) && (
+            <p className='text-red-400 text-sm'>{isRegister ? 'Invalid email format' : 'Incorrect email'}</p>
+          )}
         </div>
 
         <div className='form-group flex flex-col gap-y-1 mb-7'>
@@ -73,7 +79,7 @@ export default function BaseForm({ isRegister, changeForm, registeredUsers, setR
           <div className='input-wrapper'>
             <input
               className={`pr-4 pl-11 py-3 rounded-lg border-2 bg-neutral-700 ${
-                errors.password ? 'border-red-400' : 'border-neutral-600'
+                validationErrors.password ? 'border-red-400' : 'border-neutral-600'
               } w-full lg:w-auto max-w-none `}
               type='password'
               id='pwd'
@@ -85,10 +91,14 @@ export default function BaseForm({ isRegister, changeForm, registeredUsers, setR
             />
 
             <div className='icon '>
-              <Icon.Lock size={20} className={errors.password ? 'stroke-red-400' : 'stroke-neutral-100'} />
+              <Icon.Lock size={20} className={validationErrors.password ? 'stroke-red-400' : 'stroke-neutral-100'} />
             </div>
           </div>
-          {errors.password && <p className='text-red-400 text-sm'>Incorrect password</p>}
+          {(validationErrors.password || errors.password) && (
+            <p className='text-red-400 text-sm'>
+              {isRegister ? 'Password must be more than 8 characters' : 'Incorrect password'}
+            </p>
+          )}
         </div>
 
         <button

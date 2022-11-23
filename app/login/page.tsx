@@ -14,7 +14,6 @@ export default function Login() {
             <Forms />
           </div>
           <div className='SplashImage hidden lg:block m-6 flex-1 relative'>
-            <div className='helper-text'></div>
             <Image
               className='rounded-2xl w-full h-full object-cover shadow-xl'
               src={fringe}
