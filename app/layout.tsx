@@ -1,6 +1,6 @@
 import Head from './head'
 import localfont from '@next/font/local'
-export const NeueMontreal = localfont({
+const NeueMontreal = localfont({
   src: [
     {
       path: '/fonts/NeueMontreal-Bold.ttf',
