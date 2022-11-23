@@ -1,15 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import BaseForm from '../BaseForm/baseForm'
-import { Dispatch, SetStateAction } from 'react'
-import { RegisteredUsers } from '../forms'
+import { formProps } from '../forms'
 import Star from '../star'
-
-export type formProps = {
-  isRegister: boolean
-  setIsRegister: Dispatch<SetStateAction<boolean>>
-  registeredUsers: RegisteredUsers[]
-  setRegisteredUsers: Dispatch<SetStateAction<RegisteredUsers[]>>
-}
 
 export default function SignInForm({ isRegister, setIsRegister, registeredUsers, setRegisteredUsers }: formProps) {
   return (

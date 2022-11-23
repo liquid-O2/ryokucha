@@ -2,7 +2,7 @@
 //
 
 import BaseForm from '../BaseForm/baseForm'
-import { formProps } from '../SignIn/signInForm'
+import { formProps } from '../forms'
 import Star from '../star'
 
 //

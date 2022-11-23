@@ -3,10 +3,18 @@
 import SignUpForm from './SignUp/signUpForm'
 import SignInForm from './SignIn/signInForm'
 import { useState, useEffect } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
 export type RegisteredUsers = {
   email: string
   password: string
+}
+
+export type formProps = {
+  isRegister: boolean
+  setIsRegister: Dispatch<SetStateAction<boolean>>
+  registeredUsers: RegisteredUsers[]
+  setRegisteredUsers: Dispatch<SetStateAction<RegisteredUsers[]>>
 }
 
 export default function Forms() {
@@ -34,6 +42,7 @@ export default function Forms() {
         })
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   //
