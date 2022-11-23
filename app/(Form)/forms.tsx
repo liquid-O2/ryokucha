@@ -1,5 +1,5 @@
 'use client'
-// @ts-ignore
+
 import SignUpForm from './SignUp/signUpForm'
 import SignInForm from './SignIn/signInForm'
 import { useState, useEffect } from 'react'
