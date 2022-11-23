@@ -11,7 +11,7 @@ export type formProps = {
   setRegisteredUsers: Dispatch<SetStateAction<RegisteredUsers[]>>
 }
 
-export default function LoginForm({ isRegister, setIsRegister, registeredUsers, setRegisteredUsers }: formProps) {
+export default function SignInForm({ isRegister, setIsRegister, registeredUsers, setRegisteredUsers }: formProps) {
   return (
     <div className='form-wrapper flex flex-col justify-center items-start w-3/4 lg:w-auto'>
       <Star />

@@ -1,7 +1,7 @@
 'use client'
 
 import SignUpForm from './SignUp/signUpForm'
-import LoginForm from './SignIn/signInForm'
+import SignInForm from './SignIn/signInForm'
 import { useState, useEffect } from 'react'
 
 export type RegisteredUsers = {
@@ -55,7 +55,7 @@ export default function Forms() {
           setRegisteredUsers={setRegisteredUsers}
         />
       ) : (
-        <LoginForm
+        <SignInForm
           setIsRegister={setIsRegister}
           isRegister={isRegister}
           registeredUsers={registeredUsers}
