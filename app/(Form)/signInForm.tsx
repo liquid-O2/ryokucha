@@ -19,7 +19,7 @@ export default function SignInForm({ isRegister, setIsRegister, registeredUsers,
         <button
           className='bg-transparent px-4 py-4 text-lg rounded-lg text-neutral-200 border-solid border-2 border-neutral-500 font-bold w-full'
           onClick={() => setIsRegister(true)}>
-          Register Now
+          Register now
         </button>
       </div>
     </div>
