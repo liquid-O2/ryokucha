@@ -1,7 +1,7 @@
 'use client'
 // @ts-ignore
-import SignUpForm from './SignUp/signUpForm'
-import SignInForm from './SignIn/signInForm'
+import SignUpForm from './signUpForm'
+import SignInForm from './signInForm'
 import { useState, useEffect } from 'react'
 import { Dispatch, SetStateAction } from 'react'
 

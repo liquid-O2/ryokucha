@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 //
 
-import BaseForm from '../BaseForm/baseForm'
-import { formProps } from '../forms'
-import Star from '../star'
+import BaseForm from './baseForm'
+import { formProps } from './forms'
+import Star from './star'
 
 //
 
