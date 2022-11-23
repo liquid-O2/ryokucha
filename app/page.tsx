@@ -4,8 +4,12 @@ import { useEffect, useState } from 'react'
 import '../styles/globals.css'
 
 export default function App() {
+  //
+
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
+
+  //
 
   const handleSignOut = () => {
     const localState = localStorage.getItem('loggedIn')
@@ -17,6 +21,8 @@ export default function App() {
       router.push('/login')
     }
   }
+
+  //
 
   useEffect(() => {
     const localState = localStorage.getItem('loggedIn')
@@ -30,6 +36,9 @@ export default function App() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  //
+
   return (
     <>
       {isLoggedIn && (

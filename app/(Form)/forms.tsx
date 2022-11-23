@@ -1,7 +1,7 @@
 'use client'
 
-import SignUpForm from './SignUp/signupForm'
-import LoginForm from './Login/loginForm'
+import SignUpForm from './SignUp/signUpForm'
+import LoginForm from './SignIn/signInForm'
 import { useState, useEffect } from 'react'
 
 export type RegisteredUsers = {
@@ -10,13 +10,14 @@ export type RegisteredUsers = {
 }
 
 export default function Forms() {
+  //
   const [isRegister, setIsRegister] = useState<boolean>(false)
+
   const [registeredUsers, setRegisteredUsers] = useState<RegisteredUsers[]>([
     { email: 'admin@root.com', password: 'admin123' },
   ])
-  const changeForm = (): void => {
-    setIsRegister((prevState) => !prevState)
-  }
+
+  //
 
   useEffect(() => {
     const storedUsers = localStorage.getItem('storedUsers')
@@ -35,23 +36,27 @@ export default function Forms() {
     }
   }, [])
 
+  //
+
   useEffect(() => {
     const storedUsers = JSON.stringify(registeredUsers)
     if (storedUsers) localStorage.setItem('storedUsers', storedUsers)
   }, [registeredUsers])
 
+  //
+
   return (
     <>
       {isRegister ? (
         <SignUpForm
-          changeForm={changeForm}
+          setIsRegister={setIsRegister}
           isRegister={isRegister}
           registeredUsers={registeredUsers}
           setRegisteredUsers={setRegisteredUsers}
         />
       ) : (
         <LoginForm
-          changeForm={changeForm}
+          setIsRegister={setIsRegister}
           isRegister={isRegister}
           registeredUsers={registeredUsers}
           setRegisteredUsers={setRegisteredUsers}
