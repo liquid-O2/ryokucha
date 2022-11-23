@@ -18,8 +18,8 @@ export type formProps = {
 
 export default function Forms() {
   //
-  const [isRegister, setIsRegister] = useState<boolean>(false)
 
+  const [isRegister, setIsRegister] = useState<boolean>(false)
   const [registeredUsers, setRegisteredUsers] = useState<RegisteredUsers[]>([
     { email: 'admin@root.com', password: 'admin123' },
   ])

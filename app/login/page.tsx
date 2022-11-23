@@ -1,5 +1,5 @@
 import '/styles/globals.css'
-import fringe from '/public/fringe.png'
+import abstract from '/public/abstract.png'
 import Image from 'next/image'
 import Forms from '../(Form)/forms'
 
@@ -13,13 +13,13 @@ export default function Login() {
           <div className='Form flex flex-col px-8 md:px-16 justify-center items-center w-full md:w-auto flex-1'>
             <Forms />
           </div>
-          <div className='SplashImage hidden lg:block m-6 flex-1 relative'>
+          <div className='SplashImage hidden lg:block  flex-1 relative'>
             <Image
-              className='rounded-2xl w-full h-full object-cover shadow-xl'
-              src={fringe}
-              alt='black and white picture of multiple large and narrow windows'
+              className=' w-full h-full object-cover '
+              src={abstract}
+              alt='black and white picture of abstract shapes'
               fill={false}
-              quality={75}
+              quality={100}
               priority
             />
           </div>

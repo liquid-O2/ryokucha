@@ -65,7 +65,7 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
 
             <input
               className={`pr-4 pl-11 py-3 rounded-lg border-2 ${
-                validationErrors.email ? 'border-red-400' : 'border-neutral-600'
+                validationErrors.email || errors.email ? 'border-red-400' : 'border-neutral-600'
               }  bg-neutral-700 text-neutral-200 w-full lg:w-auto max-w-none`}
               type='email'
               id='uname'
@@ -77,7 +77,10 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
             />
 
             <div className='icon '>
-              <Icon.Mail size={20} className={validationErrors.email ? 'stroke-red-400' : 'stroke-neutral-100'} />
+              <Icon.Mail
+                size={20}
+                className={validationErrors.email || errors.email ? 'stroke-red-400' : 'stroke-neutral-100'}
+              />
             </div>
             {/*  */}
           </div>
@@ -100,9 +103,10 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
 
           <div className='input-wrapper'>
             {/*  */}
+
             <input
               className={`pr-4 pl-11 py-3 rounded-lg border-2 bg-neutral-700 ${
-                validationErrors.password ? 'border-red-400' : 'border-neutral-600'
+                validationErrors.password || errors.password ? 'border-red-400' : 'border-neutral-600'
               } w-full lg:w-auto max-w-none `}
               type='password'
               id='pwd'
@@ -116,7 +120,10 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
             {/*  */}
 
             <div className='icon '>
-              <Icon.Lock size={20} className={validationErrors.password ? 'stroke-red-400' : 'stroke-neutral-100'} />
+              <Icon.Lock
+                size={20}
+                className={validationErrors.password || errors.password ? 'stroke-red-400' : 'stroke-neutral-100'}
+              />
             </div>
 
             {/*  */}
