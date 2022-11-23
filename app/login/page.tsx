@@ -13,9 +13,9 @@ export default function Login() {
           <div className='Form flex flex-col px-8 md:px-16 justify-center items-center w-full md:w-auto flex-1'>
             <Forms />
           </div>
-          <div className='SplashImage hidden lg:block  flex-1 relative'>
+          <div className='SplashImage hidden lg:block flex-1 relative'>
             <Image
-              className=' w-full h-full object-cover '
+              className='w-full h-full object-cover'
               src={abstract}
               alt='black and white picture of abstract shapes'
               fill={false}
