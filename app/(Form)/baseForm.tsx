@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
 import { formProps } from './forms'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 //
 
 type Inputs = {
@@ -19,8 +19,8 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
   //
 
   const router = useRouter()
-  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({ email: false, password: false }) // this will be set true if the inputed user isn't registered
-  const [isLoggedIn, setIsLoggedIn] = useState({ loggedIn: false })
+  const [validationErrors, setValidationErrors] = React.useState<ValidationErrors>({ email: false, password: false }) // this will be set true if the inputed user isn't registered
+  const [isLoggedIn, setIsLoggedIn] = React.useState({ loggedIn: false })
   const {
     register,
     handleSubmit,
@@ -43,6 +43,7 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
       : setValidationErrors({ email: true, password: true })
     registeredUsers.map(({ email, password }) => {
       if (data.password === password && data.email === email) {
+        console.log('i have been called')
         router.push('/')
         setIsLoggedIn({ loggedIn: true })
         setValidationErrors({ email: false, password: false })

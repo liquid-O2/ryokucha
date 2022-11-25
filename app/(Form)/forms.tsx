@@ -1,8 +1,7 @@
 'use client'
 import SignUpForm from './signUpForm'
 import SignInForm from './signInForm'
-import { useState, useEffect } from 'react'
-import { Dispatch, SetStateAction } from 'react'
+import React, { useEffect, Dispatch, SetStateAction } from 'react'
 
 export type RegisteredUsers = {
   email: string
@@ -11,7 +10,7 @@ export type RegisteredUsers = {
 
 export type formProps = {
   isRegister: boolean
-  setIsRegister: Dispatch<SetStateAction<boolean>> | any
+  setIsRegister: Dispatch<SetStateAction<boolean>>
   registeredUsers: RegisteredUsers[]
   setRegisteredUsers: Dispatch<SetStateAction<RegisteredUsers[]>>
 }
@@ -19,8 +18,8 @@ export type formProps = {
 export default function Forms() {
   //
 
-  const [isRegister, setIsRegister] = useState<boolean>(false)
-  const [registeredUsers, setRegisteredUsers] = useState<RegisteredUsers[]>([
+  const [isRegister, setIsRegister] = React.useState<boolean>(false)
+  const [registeredUsers, setRegisteredUsers] = React.useState<RegisteredUsers[]>([
     { email: 'admin@root.com', password: 'admin123' },
   ])
 
