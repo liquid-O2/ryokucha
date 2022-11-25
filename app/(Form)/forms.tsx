@@ -11,7 +11,7 @@ export type RegisteredUsers = {
 
 export type formProps = {
   isRegister: boolean
-  setIsRegister: Dispatch<SetStateAction<boolean>>
+  setIsRegister: Dispatch<SetStateAction<boolean>> | any
   registeredUsers: RegisteredUsers[]
   setRegisteredUsers: Dispatch<SetStateAction<RegisteredUsers[]>>
 }

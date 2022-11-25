@@ -19,7 +19,7 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
   //
 
   const router = useRouter()
-  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({ email: false, password: false })
+  const [validationErrors, setValidationErrors] = useState<ValidationErrors>({ email: false, password: false }) // this will be set true if the inputed user isn't registered
   const [isLoggedIn, setIsLoggedIn] = useState({ loggedIn: false })
   const {
     register,
