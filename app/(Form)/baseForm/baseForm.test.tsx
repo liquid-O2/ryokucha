@@ -2,7 +2,7 @@ import '@jest/globals'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import BaseForm from '../baseForm'
+import BaseForm from './baseForm'
 
 const mockSetIsRegister = jest.fn()
 const mockSetRegisteredUsers = jest.fn()

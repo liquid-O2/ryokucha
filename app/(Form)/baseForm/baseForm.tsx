@@ -1,7 +1,7 @@
 'use client'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
-import { formProps } from './forms'
+import { formProps } from '../forms'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 //

@@ -1,6 +1,6 @@
 'use client'
-import SignUpForm from './signUpForm'
-import SignInForm from './signInForm'
+import SignUpForm from './signUp/signUpForm'
+import SignInForm from './signIn/signInForm'
 import React, { useEffect, Dispatch, SetStateAction } from 'react'
 
 export type RegisteredUsers = {

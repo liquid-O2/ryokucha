@@ -3,29 +3,28 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import SignInForm from '../signInForm'
+import SignUpForm from './signUpForm'
 
 const mockSetRegisteredUsers = jest.fn()
-const mockSetIsRegister = jest.fn()
 
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
 }))
 
-describe('Sign In Form', () => {
-  test('Check if the register now button works as it should', async () => {
+describe('Sign Up Form', () => {
+  test('Check if the Login now button works as it should', async () => {
     const user = userEvent.setup()
-
+    const mockSetIsRegister = jest.fn()
     render(
-      <SignInForm
-        isRegister={false}
+      <SignUpForm
+        isRegister={true}
         setIsRegister={mockSetIsRegister}
         registeredUsers={[]}
         setRegisteredUsers={mockSetRegisteredUsers()}
       />
     )
-    const btnRegister = screen.getByText('Register now')
-    await user.click(btnRegister)
+    const btnLogin = screen.getByText('Login now')
+    await user.click(btnLogin)
     await expect(mockSetIsRegister).toHaveBeenCalled()
   })
 })
