@@ -13,7 +13,7 @@ export default function SignInForm({ isRegister, setIsRegister, registeredUsers,
         className='fill-neutral-200 mb-5'>
         <path d='M16 0C16 0 16 10.5 18.8284 13.1716C21.6569 15.8431 32 16 32 16C32 16 21.6569 15.6569 18.8284 18.8284C16 22 16 32 16 32C16 32 16 21.5 13.1716 18.8284C10.3431 16.1569 0 16 0 16C0 16 10.3431 16.3431 13.1716 13.1716C16 10 16 0 16 0Z' />
       </svg>
-      <p className='text-4xl font-medium mb-8 text-neutral-200 '> Sign In </p>
+      <p className='text-4xl font-medium mb-8 text-neutral-200 '> {isRegister ? 'Sign Up' : ' Sign In'} </p>
       <BaseForm
         isRegister={isRegister}
         setIsRegister={setIsRegister}
@@ -24,8 +24,8 @@ export default function SignInForm({ isRegister, setIsRegister, registeredUsers,
         <p className='text-neutral-200 mb-3'>Don't have an account yet?</p>
         <button
           className='bg-transparent px-4 py-4 text-lg rounded-lg text-neutral-200 border-solid border-2 border-neutral-500 font-bold w-full'
-          onClick={() => setIsRegister(true)}>
-          Register now
+          onClick={() => setIsRegister(isRegister ? false : true)}>
+          {isRegister ? 'Register Now' : ' Sign In'}
         </button>
       </div>
     </div>

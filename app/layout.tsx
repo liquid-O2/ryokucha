@@ -1,19 +1,20 @@
 import Head from './head'
 import localfont from '@next/font/local'
+
 const NeueMontreal = localfont({
   src: [
     {
-      path: '/fonts/NeueMontreal-Bold.ttf',
+      path: '../fonts/NeueMontreal-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '/fonts/NeueMontreal-Light.ttf',
+      path: '../fonts/NeueMontreal-Light.ttf',
       weight: '100',
       style: 'normal',
     },
     {
-      path: '/fonts/NeueMontreal-Regular.ttf',
+      path: '../fonts/NeueMontreal-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
