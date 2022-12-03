@@ -1,30 +1,27 @@
 'use client'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, SubmitHandler, UseFormSetError } from 'react-hook-form'
 import * as Icon from 'react-feather'
 import { formProps } from '../forms'
 import { useRouter } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Input from '../input'
 import { auth } from '../../../firebase/config'
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
+import handleErrors from '../../../firebase/errorHandler'
 
 //
 
-type Inputs = {
+export type Inputs = {
   email: string
   password: string
 }
 
-type ValidationErrors = { email: boolean; password: boolean }
-
 //
 
-export default function BaseForm({ isRegister, setIsRegister, registeredUsers, setRegisteredUsers }: formProps) {
+export default function BaseForm({ isRegister, setIsRegister }: formProps) {
   //
 
   const router = useRouter()
-
-  const [isLoggedIn, setIsLoggedIn] = React.useState({ loggedIn: false })
   const {
     register,
     handleSubmit,
@@ -32,30 +29,29 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
     setError,
   } = useForm<Inputs>({ criteriaMode: 'all' })
 
-  //
-
-  useEffect(() => {
-    const loggedIn = JSON.stringify(isLoggedIn)
-    localStorage.setItem('loggedIn', loggedIn)
-  }, [isLoggedIn])
-
   // Firebase Custom functions
-  const signIn = async (email: any, password: any, setError: any) => {
+
+  const signIn = async (email: string, password: string, setError: UseFormSetError<Inputs>) => {
     await signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then(() => {
         router.push('/')
-        console.log('signedIn')
       })
       .catch((error) => {
-        setError('password', { type: 'custom', message: `${error.message}` })
+        handleErrors(error.message, setError)
       })
   }
 
-  const signUp = async (email: any, password: any, setError: any) => {
-    await createUserWithEmailAndPassword(auth, email, password).catch((error) => {
-      return setError('password', { type: 'custom', message: `${error.message}` })
-    })
+  const signUp = async (email: string, password: string, setError: UseFormSetError<Inputs>) => {
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        setIsRegister(false)
+        router.push('/')
+      })
+      .catch((error) => {
+        handleErrors(error.message, setError)
+      })
   }
+
   //
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -94,7 +90,7 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
 
           {/*  */}
 
-          {errors.email && <p className='text-red-400 text-sm'>{errors.email && `${errors.email?.message}`}</p>}
+          {errors.email && <p className='text-red-400 text-sm'>{`${errors.email?.message}`}</p>}
 
           {/*  */}
         </div>
@@ -132,9 +128,7 @@ export default function BaseForm({ isRegister, setIsRegister, registeredUsers, s
 
           {/*  */}
 
-          {errors.password && (
-            <p className='text-red-400 text-sm'>{errors.password && `${errors.password?.message}`}</p>
-          )}
+          {errors.password && <p className='text-red-400 text-sm'>{`${errors.password?.message}`}</p>}
 
           {/*  */}
         </div>

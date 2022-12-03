@@ -1,7 +1,10 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { auth } from '../firebase/config'
+import { useChangeStateIfAuthChanges, useRedirectIfNotLoggedIn } from '../components/hooks/authHooks'
 import '../styles/globals.css'
+import { signOut } from 'firebase/auth'
 
 export default function App() {
   //
@@ -12,39 +15,19 @@ export default function App() {
   //
 
   const handleSignOut = () => {
-    const localState = localStorage.getItem('loggedIn')
-    if (!localState) return
-    const { loggedIn } = JSON.parse(localState)
-    if (loggedIn) {
-      setIsLoggedIn(false)
-      localStorage.setItem('loggedIn', JSON.stringify(isLoggedIn))
-      router.push('/login')
-    }
+    signOut(auth)
+    router.push('/login')
   }
 
   //
-
-  useEffect(() => {
-    const localState = localStorage.getItem('loggedIn')
-    if (!localState) {
-      router.push('/login')
-      return
-    }
-    const { loggedIn } = JSON.parse(localState)
-    if (loggedIn) {
-      setIsLoggedIn(true)
-      return
-    } else {
-      router.push('/login')
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  useChangeStateIfAuthChanges(setIsLoggedIn)
+  useRedirectIfNotLoggedIn('/login')
 
   //
 
   return (
     <>
-      {isLoggedIn && (
+      {isLoggedIn ? (
         <div className='wrapper flex flex-col justify-center items-center h-screen w-screen text-neutral-200 '>
           <h1 className='font-sans text-4xl font-bold'>Welcome Home</h1>
           <button
@@ -53,6 +36,8 @@ export default function App() {
             Log Out
           </button>
         </div>
+      ) : (
+        <p>Loading....</p>
       )}
     </>
   )

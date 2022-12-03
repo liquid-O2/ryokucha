@@ -1,0 +1,17 @@
+[debug] [2022-12-03T12:59:38.956Z] ----------------------------------------------------------------------
+[debug] [2022-12-03T12:59:38.958Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\thisi\Documents\Projects\literate-giggle\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-12-03T12:59:38.959Z] CLI Version:   11.16.1
+[debug] [2022-12-03T12:59:38.959Z] Platform:      win32
+[debug] [2022-12-03T12:59:38.959Z] Node Version:  v16.13.0
+[debug] [2022-12-03T12:59:38.971Z] Time:          Sat Dec 03 2022 18:29:38 GMT+0530 (India Standard Time)
+[debug] [2022-12-03T12:59:38.972Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-03T12:59:38.976Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-12-03T12:59:39.106Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] Failed to authenticate, have you run firebase login?
+[warn] !  emulators: You are not currently authenticated so some features may not work correctly. Please run firebase login to authenticate the CLI. 
+[info] i  emulators: Starting emulators: auth {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth"}}
+[debug] [2022-12-03T12:59:39.216Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-03T12:59:39.216Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-03T12:59:39.217Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2022-12-03T12:59:39.221Z] [hub] writing locator at C:\Users\thisi\AppData\Local\Temp\hub-complexapp-5d19d.json
