@@ -2,15 +2,13 @@ import { Dispatch, SetStateAction } from 'react'
 import TodoForm from './todoForm'
 import * as Icon from 'react-feather'
 
-const UpdateModal = ({
-  id,
-  title,
-  setIsModalVisible,
-}: {
+type UpdateModalProps = {
   id: string
   title: string
   setIsModalVisible: Dispatch<SetStateAction<boolean>>
-}) => {
+}
+
+const UpdateModal = ({ id, title, setIsModalVisible }: UpdateModalProps) => {
   return (
     <>
       <div className='modalWrapper absolute flex justify-center items-center h-screen w-screen top-0 left-0 z-40 bg-black bg-opacity-70'>

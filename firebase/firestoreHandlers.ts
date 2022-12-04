@@ -1,5 +1,4 @@
 import { deleteDoc, doc, collection, updateDoc, addDoc } from 'firebase/firestore'
-import { UseFormResetField } from 'react-hook-form'
 import { inputTodo } from '../components/Todos/todoForm'
 import { db } from './config'
 
@@ -9,8 +8,8 @@ export const handleDelete = async (id: string) => {
   deleteDoc(doc(todoCollectionRef, `${id}`))
 }
 
-export const updateTodo = async (id: string, newTitle: string) => {
-  updateDoc(doc(todoCollectionRef, `${id}`), { title: newTitle })
+export const updateTodo = async (id: string, key: string, value: string | boolean) => {
+  updateDoc(doc(todoCollectionRef, `${id}`), { [key]: value })
 }
 
 export const addTodo = async (data: inputTodo) => {

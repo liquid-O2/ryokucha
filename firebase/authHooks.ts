@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from 'firebase/auth'
-import { auth } from '../../firebase/config'
+import { auth } from './config'
 import { useRouter } from 'next/navigation'
 import { Dispatch, SetStateAction } from 'react'
 

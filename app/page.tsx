@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { auth } from '../firebase/config'
-import { useChangeStateIfAuthChanges, useRedirectIfNotLoggedIn } from '../components/hooks/authHooks'
+import { useChangeStateIfAuthChanges, useRedirectIfNotLoggedIn } from '../firebase/authHooks'
 import '../styles/globals.css'
 import { signOut } from 'firebase/auth'
 import Link from 'next/link'

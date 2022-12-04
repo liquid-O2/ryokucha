@@ -23,8 +23,9 @@ const TodoForm = ({ update, id, formTitle, setIsModalVisible }: todoProps) => {
     formState: { errors },
     resetField,
   } = useForm<inputTodo>({ criteriaMode: 'all' })
+
   const onSubmit: SubmitHandler<inputTodo> = (data) => {
-    update ? (updateTodo(id, data.title), setIsModalVisible!(false)) : addTodo(data), resetField('title')
+    update ? (updateTodo(id, 'title', data.title), setIsModalVisible!(false)) : addTodo(data), resetField('title')
   }
 
   return (

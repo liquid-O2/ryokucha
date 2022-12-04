@@ -1,6 +1,6 @@
 import { collection, getDocs } from 'firebase/firestore'
 import TodoForm from '../../components/Todos/todoForm'
-import DisplayTodos from '../../components/Todos/Todos'
+import DisplayTodos from '../../components/Todos/displayTodos'
 import { db } from '../../firebase/config'
 import '../../styles/globals.css'
 
