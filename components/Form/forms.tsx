@@ -3,11 +3,6 @@ import React, { Dispatch, SetStateAction } from 'react'
 import BaseForm from './baseForm/baseForm'
 import Star from './Star'
 
-export type RegisteredUsers = {
-  email: string
-  password: string
-}
-
 export type formProps = {
   isRegister: boolean
   setIsRegister: Dispatch<SetStateAction<boolean>>

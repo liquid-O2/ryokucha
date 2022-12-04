@@ -27,6 +27,7 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
     handleSubmit,
     formState: { errors },
     setError,
+    resetField,
   } = useForm<Inputs>({ criteriaMode: 'all' })
 
   // Firebase Custom functions
@@ -35,6 +36,8 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
     await signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         router.push('/')
+        resetField('email')
+        resetField('password')
       })
       .catch((error) => {
         handleErrors(error.message, setError)
@@ -46,6 +49,8 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
       .then(() => {
         setIsRegister(false)
         router.push('/')
+        resetField('email')
+        resetField('password')
       })
       .catch((error) => {
         handleErrors(error.message, setError)
@@ -82,7 +87,7 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
               }}
             />
 
-            <div className='icon '>
+            <div className='icon'>
               <Icon.Mail size={20} className={errors.email ? 'stroke-red-400' : 'stroke-neutral-100'} />
             </div>
             {/*  */}
@@ -136,7 +141,7 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
         {/*  */}
 
         <button
-          className='bg-neutral-200 px-4 py-4 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold hover:bg-neutral-300'
+          className='bg-neutral-200 p-4 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold hover:bg-neutral-300'
           type='submit'
           value='submit'>
           {isRegister ? 'Sign Up' : 'Login'}

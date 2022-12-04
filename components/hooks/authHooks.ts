@@ -12,7 +12,7 @@ export const useRedirectIfNotLoggedIn = (href: string) => {
   })
 }
 
-export const useChangeStateIfAuthChanges = (setState: Dispatch<SetStateAction<any>>) => {
+export const useChangeStateIfAuthChanges = (setState: Dispatch<SetStateAction<boolean>>) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setState(true)

@@ -30,10 +30,11 @@ a {
   pointer-events: none;
 }
 
-input {
+.input {
   max-width: 50vw;
   min-width: 20vw;
   color: rgb(229 229 229);
+  height: 3.5rem;
 }
 input::placeholder {
   color: rgba(229 229 229);
@@ -56,4 +57,30 @@ input::placeholder {
 }
 input:invalid {
   border-color: rgb(248 113 113);
+}
+
+todoInfo > input {
+  width: 20px;
+  height: 20px;
+}
+
+input[type='checkbox' i] {
+  background-color: rgb(38 38 38);
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  appearance: inherit;
+}
+
+input[type='checkbox' i]:checked {
+  background-color: #fff;
+}
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.todoInfo input[type='checkbox' i]:checked ~ .checkbox:after {
+  display: block;
 }
