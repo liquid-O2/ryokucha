@@ -75,3 +75,59 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2022-12-04T09:44:32.435Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
 [debug] [2022-12-04T09:44:32.435Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
 [info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T16:05:03.671Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T16:05:03.671Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if true  //request.auth != null\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T16:05:03.695Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T16:05:03.695Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:22:05.671Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:22:05.672Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token != null\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:22:05.744Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:22:05.744Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:22:25.064Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:22:25.064Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token.admin\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:22:25.080Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:22:25.080Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:24:22.116Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:24:22.116Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:24:22.126Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:24:22.126Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:25:02.364Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:25:02.364Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:25:02.378Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:25:02.379Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:25:16.391Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:25:16.391Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token.admin\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:25:16.402Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:25:16.402Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:30:27.412Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:30:27.412Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow write:  if request.auth !== null\n      allow read: if true\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:30:27.442Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:30:27.443Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"issues":[{"sourcePosition":{"fileName":"security.rules","line":5,"column":39,"currentOffset":153,"endOffset":153},"description":"Unexpected '='.","severity":"ERROR"}]}
+[warn] !  firestore.rules:5:39 - ERROR Unexpected '='. 
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:32:02.424Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:32:02.424Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow write:  if request.auth != null\n      allow read: if true\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:32:02.439Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:32:02.439Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2022-12-04T18:32:28.017Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
+[debug] [2022-12-04T18:32:28.017Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow write:  if true\n      allow read: if true\n    }\n  }\n}\n"}]}}
+[debug] [2022-12-04T18:32:28.037Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
+[debug] [2022-12-04T18:32:28.037Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
+[info] +  firestore: Rules updated. 
+[debug] [2022-12-04T18:56:37.814Z] Received signal SIGHUP 1

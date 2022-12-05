@@ -19,9 +19,11 @@ const DisplayTodos = ({ todosArray }: { todosArray: Todos[] }) => {
     setModalDetails({ id, title, update: true })
     setIsModalVisible(true)
   }
+
   const handleCheck = (id: string, checked: boolean) => {
     updateTodo(id, 'done', checked)
   }
+
   return (
     <>
       {isModalVisible && (

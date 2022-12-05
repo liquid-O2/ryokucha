@@ -3,13 +3,14 @@ import { useState } from 'react'
 import { auth } from '../firebase/config'
 import { useChangeStateIfAuthChanges, useRedirectIfNotLoggedIn } from '../firebase/authHooks'
 import '../styles/globals.css'
-import { signOut } from 'firebase/auth'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function App() {
   //
-
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
+  const router = useRouter()
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true)
 
   //
 
@@ -18,9 +19,15 @@ export default function App() {
   }
 
   //
+  if (!isLoggedIn) router.push('/login')
 
-  useChangeStateIfAuthChanges(setIsLoggedIn)
-  useRedirectIfNotLoggedIn('/login')
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  })
 
   //
 
@@ -37,7 +44,7 @@ export default function App() {
             </Link>
             <button
               className='bg-neutral-200 px-4 py-4 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold logout mt-6 hover:bg-neutral-300'
-              onClick={() => handleSignOut()}>
+              onClick={handleSignOut}>
               Log Out
             </button>
           </>
