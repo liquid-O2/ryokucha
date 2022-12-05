@@ -142,8 +142,7 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
 
         <button
           className='bg-neutral-200 p-4 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold hover:bg-neutral-300'
-          type='submit'
-          value='submit'>
+          type='submit'>
           {isRegister ? 'Sign Up' : 'Login'}
         </button>
 

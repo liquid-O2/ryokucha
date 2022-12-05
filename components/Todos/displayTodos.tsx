@@ -4,6 +4,7 @@ import * as Icon from 'react-feather'
 import { handleDelete, updateTodo } from '../../firebase/firestoreHandlers'
 import { useState } from 'react'
 import UpdateModal from './updateModal'
+import { useRouter } from 'next/navigation'
 
 type modalProps = {
   id: string
@@ -14,6 +15,7 @@ type modalProps = {
 const DisplayTodos = ({ todosArray }: { todosArray: Todos[] }) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [modalDetails, setModalDetails] = useState<modalProps>()
+  const router = useRouter()
 
   const openUpdateModal = (id: string, title: string) => {
     setModalDetails({ id, title, update: true })
@@ -51,7 +53,9 @@ const DisplayTodos = ({ todosArray }: { todosArray: Todos[] }) => {
           </div>
 
           <div className='actions'>
-            <button className='delete p-2 bg-neutral-800 rounded-lg mr-2' onClick={() => handleDelete(todo.id)}>
+            <button
+              className='delete p-2 bg-neutral-800 rounded-lg mr-2'
+              onClick={() => (handleDelete(todo.id), router.refresh())}>
               <Icon.Trash size={20} />
             </button>
             <button

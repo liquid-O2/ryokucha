@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
 import { addTodo, updateTodo } from '../../firebase/firestoreHandlers'
 import { Dispatch, SetStateAction } from 'react'
+import { useRouter } from 'next/navigation'
 
 export type inputTodo = {
   title: string
@@ -24,8 +25,11 @@ const TodoForm = ({ update, id, formTitle, setIsModalVisible }: todoProps) => {
     resetField,
   } = useForm<inputTodo>({ criteriaMode: 'all' })
 
+  const router = useRouter()
+
   const onSubmit: SubmitHandler<inputTodo> = (data) => {
-    update ? (updateTodo(id, 'title', data.title), setIsModalVisible!(false)) : addTodo(data), resetField('title')
+    update ? (updateTodo(id, 'title', data.title), setIsModalVisible!(false)) : addTodo(data),
+      (resetField('title'), router.refresh())
   }
 
   return (

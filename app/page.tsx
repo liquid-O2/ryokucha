@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { auth } from '../firebase/config'
 import { useChangeStateIfAuthChanges, useRedirectIfNotLoggedIn } from '../firebase/authHooks'
 import '../styles/globals.css'
@@ -19,7 +19,9 @@ export default function App() {
   }
 
   //
-  if (!isLoggedIn) router.push('/login')
+  useLayoutEffect(() => {
+    if (!isLoggedIn) router.push('/login')
+  }, [router, isLoggedIn])
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
