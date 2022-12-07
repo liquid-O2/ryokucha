@@ -41,10 +41,10 @@ const TodoForm = ({ update, id, formTitle, setIsModalVisible }: todoProps) => {
               type='text'
               placeholder='Enter your todo'
               defaultValue={update ? `${formTitle}` : ''}
-              className={errors.title ? 'border-red-400' : 'border-neutral-600'}
+              className={`h-[3.5rem] ${errors.title ? 'border-red-400' : 'border-neutral-600'}`}
               customAttr={{ ...register('title', { required: 'You must enter a todo item' }) }}
             />
-            <div className='icon'>
+            <div className='icon pen'>
               <Icon.PenTool size={20} className={errors.title ? 'stroke-red-400' : 'stroke-neutral-100'} />
             </div>
             {errors.title && <p className='text-red-400 text-sm mt-1'>{`${errors.title?.message}`}</p>}

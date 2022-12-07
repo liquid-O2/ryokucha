@@ -76,7 +76,7 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
           <div className='input-wrapper'>
             {/* */}
             <Input
-              className={errors.email ? 'border-red-400' : 'border-neutral-600'}
+              className={`input ${errors.email ? 'border-red-400' : 'border-neutral-600'}`}
               type='email'
               placeholder='Enter your email'
               customAttr={{
@@ -111,7 +111,7 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
             {/* */}
 
             <Input
-              className={errors.password ? 'border-red-400' : 'border-neutral-600'}
+              className={`input ${errors.password ? 'border-red-400' : 'border-neutral-600'}`}
               type='password'
               placeholder='Enter your password'
               customAttr={{
