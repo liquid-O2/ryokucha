@@ -11,7 +11,7 @@ export type inputTodo = {
 }
 
 type todoProps = {
-  id: string
+  id?: string
   update: boolean
   formTitle?: string
   setIsModalVisible?: Dispatch<SetStateAction<boolean>>
@@ -28,14 +28,14 @@ const TodoForm = ({ update, id, formTitle, setIsModalVisible }: todoProps) => {
   const router = useRouter()
 
   const onSubmit: SubmitHandler<inputTodo> = (data) => {
-    update ? (updateTodo(id, 'title', data.title), setIsModalVisible!(false)) : addTodo(data),
+    update ? (updateTodo(id!, 'title', data.title), setIsModalVisible!(false)) : addTodo(data),
       (resetField('title'), router.refresh())
   }
 
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-wrap'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col md:flex-row flex-wrap gap-3'>
           <div className='input-wrapper text-left'>
             <Input
               type='text'
@@ -52,7 +52,7 @@ const TodoForm = ({ update, id, formTitle, setIsModalVisible }: todoProps) => {
 
           <button
             type='submit'
-            className='bg-neutral-200 py-2 px-4 ml-3 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold hover:bg-neutral-300 h-[56px]'>
+            className='bg-neutral-200 w-full md:w-auto py-2 px-4 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold hover:bg-neutral-300 h-[56px]'>
             {update ? 'Update Todo' : 'Add Todo'}
           </button>
         </form>

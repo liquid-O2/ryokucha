@@ -1,10 +1,12 @@
 'use client'
-import { Todos } from '../../app/todos/page'
+
+import { useFetchTodos } from '../../firebase/firestoreHandlers'
 import * as Icon from 'react-feather'
 import { handleDelete, updateTodo } from '../../firebase/firestoreHandlers'
 import { useState } from 'react'
 import UpdateModal from './updateModal'
 import { useRouter } from 'next/navigation'
+import { Todos } from '../../app/todos/page'
 
 type modalProps = {
   id: string
@@ -12,10 +14,13 @@ type modalProps = {
   update: boolean
 }
 
-const DisplayTodos = ({ todosArray }: { todosArray: Todos[] }) => {
+const DisplayTodos = () => {
+  const [todosArray, setTodosArray] = useState<Todos[]>([{ id: '0', title: '' }])
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [modalDetails, setModalDetails] = useState<modalProps>()
   const router = useRouter()
+
+  useFetchTodos(setTodosArray, todosArray)
 
   const openUpdateModal = (id: string, title: string) => {
     setModalDetails({ id, title, update: true })
@@ -31,7 +36,7 @@ const DisplayTodos = ({ todosArray }: { todosArray: Todos[] }) => {
       {isModalVisible && (
         <UpdateModal id={modalDetails!.id} title={modalDetails!.title} setIsModalVisible={setIsModalVisible} />
       )}
-      {todosArray.map((todo) => (
+      {todosArray!.map((todo) => (
         <div
           key={todo.id}
           className={`flex w-full p-4 rounded-lg mt-7 border border-neutral-400 bg-neutral-900 items-center ${

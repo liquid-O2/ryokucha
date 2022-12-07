@@ -30,7 +30,7 @@ a {
   pointer-events: none;
 }
 
-.input {
+input {
   max-width: 50vw;
   min-width: 20vw;
   color: rgb(229 229 229);

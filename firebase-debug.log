@@ -1,37 +1,38 @@
-[debug] [2022-12-04T08:54:21.033Z] ----------------------------------------------------------------------
-[debug] [2022-12-04T08:54:21.035Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\thisi\Documents\Projects\literate-giggle\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
-[debug] [2022-12-04T08:54:21.036Z] CLI Version:   11.16.1
-[debug] [2022-12-04T08:54:21.036Z] Platform:      win32
-[debug] [2022-12-04T08:54:21.036Z] Node Version:  v18.12.1
-[debug] [2022-12-04T08:54:21.040Z] Time:          Sun Dec 04 2022 14:24:21 GMT+0530 (India Standard Time)
-[debug] [2022-12-04T08:54:21.041Z] ----------------------------------------------------------------------
+[debug] [2022-12-07T11:25:42.117Z] ----------------------------------------------------------------------
+[debug] [2022-12-07T11:25:42.119Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\thisi\Documents\Projects\literate-giggle\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2022-12-07T11:25:42.119Z] CLI Version:   11.16.1
+[debug] [2022-12-07T11:25:42.119Z] Platform:      win32
+[debug] [2022-12-07T11:25:42.119Z] Node Version:  v18.12.1
+[debug] [2022-12-07T11:25:42.120Z] Time:          Wed Dec 07 2022 16:55:42 GMT+0530 (India Standard Time)
+[debug] [2022-12-07T11:25:42.120Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2022-12-04T08:54:21.166Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-12-04T08:54:21.167Z] > authorizing via signed-in user (this.is.arunava.b@gmail.com)
-[debug] [2022-12-04T08:54:21.405Z] java version "19.0.1" 2022-10-18
+[debug] [2022-12-07T11:25:42.231Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-07T11:25:42.231Z] > authorizing via signed-in user (this.is.arunava.b@gmail.com)
+[debug] [2022-12-07T11:25:42.334Z] java version "19.0.1" 2022-10-18
 Java(TM) SE Runtime Environment (build 19.0.1+10-21)
-Java HotSpot(TM) 64-Bit Server VM (build 19.0.1+10-21, mixed mode, sharing)
 
-[debug] [2022-12-04T08:54:21.430Z] Parsed Java major version: 19
+[debug] [2022-12-07T11:25:42.335Z] Java HotSpot(TM) 64-Bit Server VM (build 19.0.1+10-21, mixed mode, sharing)
+
+[debug] [2022-12-07T11:25:42.360Z] Parsed Java major version: 19
 [info] i  emulators: Starting emulators: auth, firestore {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore"}}
-[debug] [2022-12-04T08:54:21.442Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-04T08:54:21.442Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-04T08:54:21.442Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-04T08:54:21.442Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-04T08:54:21.442Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}]},"metadata":{"message":"assigned listening specs for emulators"}}
-[debug] [2022-12-04T08:54:21.454Z] [hub] writing locator at C:\Users\thisi\AppData\Local\Temp\hub-complexapp-5d19d.json
-[debug] [2022-12-04T08:54:21.501Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2022-12-04T08:54:21.501Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
-[debug] [2022-12-04T08:54:21.501Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\thisi\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.15.1.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","complexapp-5d19d","--rules","C:\\Users\\thisi\\Documents\\Projects\\literate-giggle\\firestore.rules","--single_project_mode",true],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\thisi\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.15.1.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"complexapp-5d19d\",\"--rules\",\"C:\\\\Users\\\\thisi\\\\Documents\\\\Projects\\\\literate-giggle\\\\firestore.rules\",\"--single_project_mode\",true],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[debug] [2022-12-07T11:25:42.372Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-07T11:25:42.372Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-07T11:25:42.372Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-07T11:25:42.372Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-07T11:25:42.372Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2022-12-07T11:25:42.381Z] [hub] writing locator at C:\Users\thisi\AppData\Local\Temp\hub-complexapp-5d19d.json
+[debug] [2022-12-07T11:25:42.394Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-12-07T11:25:42.394Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2022-12-07T11:25:42.394Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\thisi\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.15.1.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","complexapp-5d19d","--rules","C:\\Users\\thisi\\Documents\\Projects\\literate-giggle\\firestore.rules","--single_project_mode",true],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\thisi\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.15.1.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"complexapp-5d19d\",\"--rules\",\"C:\\\\Users\\\\thisi\\\\Documents\\\\Projects\\\\literate-giggle\\\\firestore.rules\",\"--single_project_mode\",true],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
 [info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
 [info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
-[debug] [2022-12-04T08:54:30.050Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2022-12-04T08:54:30.051Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
-[debug] [2022-12-04T08:54:30.051Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\thisi\\.cache\\firebase\\emulators\\ui-v1.11.1\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\thisi\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.1\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[debug] [2022-12-07T11:25:50.749Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-12-07T11:25:50.750Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-12-07T11:25:50.750Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\thisi\\.cache\\firebase\\emulators\\ui-v1.11.1\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\thisi\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.1\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
 [info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
-[debug] [2022-12-04T08:54:30.176Z] Web / API server started at 127.0.0.1:4000
+[debug] [2022-12-07T11:25:50.875Z] Web / API server started at 127.0.0.1:4000
  {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
-[debug] [2022-12-04T08:54:30.176Z] Web / API server started at ::1:4000
+[debug] [2022-12-07T11:25:50.876Z] Web / API server started at ::1:4000
  {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
 [info] 
 ┌─────────────────────────────────────────────────────────────┐
@@ -51,142 +52,3 @@ Java HotSpot(TM) 64-Bit Server VM (build 19.0.1+10-21, mixed mode, sharing)
 
 Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
  
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T08:55:14.893Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T08:55:14.893Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"// Allow read/write access on all documents to any user signed in to the application\nrules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if true\n    }\n  }\n}\n\n// request.auth != null;"}]}}
-[debug] [2022-12-04T08:55:15.352Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T08:55:15.352Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T09:29:14.866Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T09:29:14.867Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"// Allow read/write access on all documents to any user signed in to the application\nrules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth != null\n    }\n  }\n}\n\n// request.auth != null;"}]}}
-[debug] [2022-12-04T09:29:14.929Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T09:29:14.930Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T09:29:26.914Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T09:29:26.915Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth != null\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T09:29:26.932Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T09:29:26.932Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T09:44:32.423Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T09:44:32.423Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if true  //request.auth != null\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T09:44:32.435Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T09:44:32.435Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T16:05:03.671Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T16:05:03.671Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if true  //request.auth != null\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T16:05:03.695Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T16:05:03.695Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:22:05.671Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:22:05.672Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token != null\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:22:05.744Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:22:05.744Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:22:25.064Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:22:25.064Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token.admin\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:22:25.080Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:22:25.080Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:24:22.116Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:24:22.116Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:24:22.126Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:24:22.126Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:25:02.364Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:25:02.364Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:25:02.378Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:25:02.379Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:25:16.391Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:25:16.391Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write:  if request.auth.token.admin\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:25:16.402Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:25:16.402Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:30:27.412Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:30:27.412Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow write:  if request.auth !== null\n      allow read: if true\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:30:27.442Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:30:27.443Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"issues":[{"sourcePosition":{"fileName":"security.rules","line":5,"column":39,"currentOffset":153,"endOffset":153},"description":"Unexpected '='.","severity":"ERROR"}]}
-[warn] !  firestore.rules:5:39 - ERROR Unexpected '='. 
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:32:02.424Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:32:02.424Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow write:  if request.auth != null\n      allow read: if true\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:32:02.439Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:32:02.439Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[info] i  firestore: Change detected, updating rules... 
-[debug] [2022-12-04T18:32:28.017Z] >>> [apiv2][query] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules [none]
-[debug] [2022-12-04T18:32:28.017Z] >>> [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2'\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow write:  if true\n      allow read: if true\n    }\n  }\n}\n"}]}}
-[debug] [2022-12-04T18:32:28.037Z] <<< [apiv2][status] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules 200
-[debug] [2022-12-04T18:32:28.037Z] <<< [apiv2][body] PUT http://127.0.0.1:8080/emulator/v1/projects/complexapp-5d19d:securityRules {}
-[info] +  firestore: Rules updated. 
-[debug] [2022-12-04T18:56:37.814Z] Received signal SIGHUP 1
-[debug] [2022-12-05T18:57:19.034Z] ----------------------------------------------------------------------
-[debug] [2022-12-05T18:57:19.035Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\thisi\Documents\Projects\literate-giggle\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
-[debug] [2022-12-05T18:57:19.036Z] CLI Version:   11.16.1
-[debug] [2022-12-05T18:57:19.036Z] Platform:      win32
-[debug] [2022-12-05T18:57:19.036Z] Node Version:  v18.12.1
-[debug] [2022-12-05T18:57:19.037Z] Time:          Tue Dec 06 2022 00:27:19 GMT+0530 (India Standard Time)
-[debug] [2022-12-05T18:57:19.037Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2022-12-05T18:57:19.041Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
-[debug] [2022-12-05T18:57:19.166Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2022-12-05T18:57:19.166Z] > authorizing via signed-in user (this.is.arunava.b@gmail.com)
-[debug] [2022-12-05T18:57:19.361Z] java version "19.0.1" 2022-10-18
-Java(TM) SE Runtime Environment (build 19.0.1+10-21)
-
-[debug] [2022-12-05T18:57:19.362Z] Java HotSpot(TM) 64-Bit Server VM (build 19.0.1+10-21, mixed mode, sharing)
-
-[debug] [2022-12-05T18:57:19.383Z] Parsed Java major version: 19
-[info] i  emulators: Starting emulators: auth, firestore {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore"}}
-[debug] [2022-12-05T18:57:19.395Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-05T18:57:19.395Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-05T18:57:19.395Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-05T18:57:19.395Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
-[debug] [2022-12-05T18:57:19.395Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}]},"metadata":{"message":"assigned listening specs for emulators"}}
-[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project complexapp-5d19d. This may result in unexpected behavior. 
-[debug] [2022-12-05T18:57:19.406Z] [hub] writing locator at C:\Users\thisi\AppData\Local\Temp\hub-complexapp-5d19d.json
-[debug] [2022-12-05T18:57:19.433Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2022-12-05T18:57:19.433Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
-[debug] [2022-12-05T18:57:19.434Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\thisi\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.15.1.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","complexapp-5d19d","--rules","C:\\Users\\thisi\\Documents\\Projects\\literate-giggle\\firestore.rules","--single_project_mode",true],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\thisi\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.15.1.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"complexapp-5d19d\",\"--rules\",\"C:\\\\Users\\\\thisi\\\\Documents\\\\Projects\\\\literate-giggle\\\\firestore.rules\",\"--single_project_mode\",true],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
-[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
-[debug] [2022-12-05T18:57:19.822Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2022-12-05T18:57:19.823Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
-[info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
-[debug] [2022-12-05T18:57:28.720Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
-[debug] [2022-12-05T18:57:28.720Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
-[debug] [2022-12-05T18:57:28.720Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\thisi\\.cache\\firebase\\emulators\\ui-v1.11.1\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\thisi\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.1\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
-[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
-[debug] [2022-12-05T18:57:28.845Z] Web / API server started at 127.0.0.1:4000
- {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
-[debug] [2022-12-05T18:57:28.846Z] Web / API server started at ::1:4000
- {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
-[info] 
-┌─────────────────────────────────────────────────────────────┐
-│ ✔  All emulators ready! It is now safe to connect your app. │
-│ i  View Emulator UI at http://127.0.0.1:4000/               │
-└─────────────────────────────────────────────────────────────┘
-
-┌────────────────┬────────────────┬─────────────────────────────────┐
-│ Emulator       │ Host:Port      │ View in Emulator UI             │
-├────────────────┼────────────────┼─────────────────────────────────┤
-│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
-├────────────────┼────────────────┼─────────────────────────────────┤
-│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
-└────────────────┴────────────────┴─────────────────────────────────┘
-  Emulator Hub running at 127.0.0.1:4400
-  Other reserved ports: 4500, 9150
-
-Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
- 
-[debug] [2022-12-05T19:14:07.489Z] Received signal SIGHUP 1
