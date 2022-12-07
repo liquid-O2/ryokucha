@@ -1,13 +1,11 @@
 'use client'
-import { useForm, SubmitHandler, UseFormSetError } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
 import { formProps } from '../forms'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import Input from '../input'
-import { auth } from '../../../firebase/config'
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
-import handleErrors from '../../../firebase/errorHandler'
+import { signIn, signUp } from '../../../firebase/authHandlers'
 
 //
 
@@ -19,9 +17,8 @@ export type Inputs = {
 //
 
 export default function BaseForm({ isRegister, setIsRegister }: formProps) {
-  //
-
   const router = useRouter()
+
   const {
     register,
     handleSubmit,
@@ -30,37 +27,12 @@ export default function BaseForm({ isRegister, setIsRegister }: formProps) {
     resetField,
   } = useForm<Inputs>({ criteriaMode: 'all' })
 
-  // Firebase Custom functions
-
-  const signIn = async (email: string, password: string, setError: UseFormSetError<Inputs>) => {
-    await signInWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        router.push('/')
-        resetField('email')
-        resetField('password')
-      })
-      .catch((error) => {
-        handleErrors(error.message, setError)
-      })
-  }
-
-  const signUp = async (email: string, password: string, setError: UseFormSetError<Inputs>) => {
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        setIsRegister(false)
-        router.push('/')
-        resetField('email')
-        resetField('password')
-      })
-      .catch((error) => {
-        handleErrors(error.message, setError)
-      })
-  }
-
   //
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    isRegister ? signUp(data.email, data.password, setError) : signIn(data.email, data.password, setError)
+    isRegister
+      ? signUp(data.email, data.password, setError, router, resetField, setIsRegister)
+      : signIn(data.email, data.password, setError, router, resetField)
   }
 
   //
