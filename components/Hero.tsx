@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import teaFieldDark from '/public/teaFieldDark.jpg'
-
+import Container from './Container'
 const Hero = () => {
   return (
     <>
-      <div className='max-w-[1920px] m-auto px-6 md:px-12 w-full  '>
+      <Container>
         <div className='hero-text flex flex-col justify-center items-center leading-tight'>
           <p className='font-serif text-4xl mt-[9rem]'>緑茶</p>
           <p className='font-serif text-6xl mt-3'>Ryokucha</p>
@@ -13,7 +13,7 @@ const Hero = () => {
             <br /> Taste the extraordinary flavour of pure, organic green <br />
             {`tea from Japan's finest tea growers.`}
           </h1>
-          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-3xl mt-8 bg-green-800'>
+          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-3xl  mt-10 bg-green-800'>
             BROWSE OUR TEAS
           </button>
         </div>
@@ -22,7 +22,7 @@ const Hero = () => {
             <Image src={teaFieldDark} alt={'A tea field'} className='object-cover h-[80vh]  w-full rounded-[2rem]' />
           </figure>
         </div>
-      </div>
+      </Container>
     </>
   )
 }

@@ -34,10 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={'en'} className={`${Eiko.variable} ${Mori.variable}`}>
       <Head />
-
       <body className='bg-background'>
         <Header />
-        <main className='mt-[5rem]'>{children}</main>
+        <main className='pt-[5rem]'>{children}</main>
       </body>
     </html>
   )
