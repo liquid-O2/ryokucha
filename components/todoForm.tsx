@@ -1,8 +1,8 @@
 'use client'
-import Input from '../Form/input'
+import Input from './input'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
-import { addTodo, updateTodo } from '../../firebase/firestoreHandlers'
+import { addTodo, updateTodo } from '../firebase/firestoreHandlers'
 import { Dispatch, SetStateAction } from 'react'
 import { useRouter } from 'next/navigation'
 
