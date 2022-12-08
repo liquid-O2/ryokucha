@@ -4,7 +4,7 @@ import teaFieldDark from '/public/teaFieldDark.jpg'
 const Hero = () => {
   return (
     <>
-      <div className='max-w-[1920px] m-auto px-12 w-full  '>
+      <div className='max-w-[1920px] m-auto px-6 md:px-12 w-full  '>
         <div className='hero-text flex flex-col justify-center items-center leading-tight'>
           <p className='font-serif text-4xl mt-[9rem]'>緑茶</p>
           <p className='font-serif text-6xl mt-3'>Ryokucha</p>
