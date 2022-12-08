@@ -1,5 +1,5 @@
 import { deleteDoc, doc, collection, updateDoc, addDoc, getDocs } from 'firebase/firestore'
-import { inputTodo } from '../components/Todos/todoForm'
+import { inputTodo } from '../components/todoForm'
 import { db } from './config'
 import { Todos } from '../app/todos/page'
 import { Dispatch, SetStateAction, useEffect } from 'react'
