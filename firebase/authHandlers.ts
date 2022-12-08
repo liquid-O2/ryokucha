@@ -3,7 +3,7 @@ import { auth } from './config'
 import { Dispatch, SetStateAction } from 'react'
 import handleErrors from './errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
-import { Inputs } from '../components/Form/baseForm/baseForm'
+import { Inputs } from '../components/authForm'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 
 export const changeStateIfAuthChanges = (setState: Dispatch<SetStateAction<boolean>>) => {

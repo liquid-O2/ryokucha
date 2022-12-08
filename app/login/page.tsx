@@ -1,7 +1,7 @@
 import '/styles/globals.css'
 import abstract from '/public/abstract.png'
 import Image from 'next/image'
-import Forms from '../../components/Form/forms'
+import Forms from '../../components/displayForm'
 
 //
 

@@ -1,5 +1,5 @@
 import { UseFormSetError } from 'react-hook-form'
-import { Inputs } from '../components/Form/baseForm/baseForm'
+import { Inputs } from '../components/authForm'
 
 const handleErrors = (message: string, setError: UseFormSetError<Inputs>) => {
   if (message.includes('user-not-found')) {

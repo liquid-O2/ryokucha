@@ -4,7 +4,6 @@
 
 html,
 body {
-  background-color: #171717;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
@@ -14,6 +13,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+@layer base {
+  body {
+    @apply text-green-900;
+  }
 }
 
 * {
@@ -87,4 +92,8 @@ input[type='checkbox' i]:checked {
 
 .todoInfo input[type='checkbox' i]:checked ~ .checkbox:after {
   display: block;
+}
+
+.header {
+  backdrop-filter: blur(8px);
 }

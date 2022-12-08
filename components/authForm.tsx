@@ -1,11 +1,10 @@
 'use client'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
-import { formProps } from '../forms'
 import { useRouter } from 'next/navigation'
-import React from 'react'
-import Input from '../input'
-import { signIn, signUp } from '../../../firebase/authHandlers'
+import React, { Dispatch, SetStateAction } from 'react'
+import Input from './input'
+import { signIn, signUp } from '../firebase/authHandlers'
 
 //
 
@@ -14,9 +13,14 @@ export type Inputs = {
   password: string
 }
 
+export type formProps = {
+  isRegister: boolean
+  setIsRegister: Dispatch<SetStateAction<boolean>>
+}
+
 //
 
-export default function BaseForm({ isRegister, setIsRegister }: formProps) {
+export default function AuthForm({ isRegister, setIsRegister }: formProps) {
   const router = useRouter()
 
   const {

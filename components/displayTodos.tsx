@@ -1,12 +1,12 @@
 'use client'
 
-import { useFetchTodos } from '../../firebase/firestoreHandlers'
+import { useFetchTodos } from '../firebase/firestoreHandlers'
 import * as Icon from 'react-feather'
-import { handleDelete, updateTodo } from '../../firebase/firestoreHandlers'
+import { handleDelete, updateTodo } from '../firebase/firestoreHandlers'
 import { useState } from 'react'
 import UpdateModal from './updateModal'
 import { useRouter } from 'next/navigation'
-import { Todos } from '../../app/todos/page'
+import { Todos } from '../app/todos/page'
 
 type modalProps = {
   id: string

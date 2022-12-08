@@ -1,5 +1,5 @@
 import TodoForm from '../../components/Todos/todoForm'
-import DisplayTodos from '../../components/Todos/displayTodos'
+import DisplayTodos from '../../components/displayTodos'
 import '../../styles/globals.css'
 
 export type Todos = {

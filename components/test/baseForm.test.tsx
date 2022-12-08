@@ -2,7 +2,7 @@ import '@jest/globals'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import BaseForm from './baseForm'
+import AuthForm from '../authForm'
 
 const mockSetIsRegister = jest.fn()
 const mockSetRegisteredUsers = jest.fn()
@@ -14,7 +14,7 @@ jest.mock('next/navigation', () => ({
 describe('Sign In Process', () => {
   const user = userEvent.setup()
   test('Check if errors get displayed if an user enters the wrong login information', async () => {
-    render(<BaseForm isRegister={false} setIsRegister={mockSetIsRegister} />)
+    render(<AuthForm isRegister={false} setIsRegister={mockSetIsRegister} />)
     const emailField = screen.getByPlaceholderText('Enter your email')
     const passField = screen.getByPlaceholderText('Enter your password')
     const submitBtn = screen.getByText('Login')
@@ -31,7 +31,7 @@ describe('Sign In Process', () => {
   })
 
   test('Check if the login method works as it should and display no errors when correct information has been entered', async () => {
-    render(<BaseForm isRegister={false} setIsRegister={mockSetIsRegister} />)
+    render(<AuthForm isRegister={false} setIsRegister={mockSetIsRegister} />)
     const emailField = screen.getByPlaceholderText('Enter your email')
     const passField = screen.getByPlaceholderText('Enter your password')
     const submitBtn = screen.getByText('Login')
@@ -51,7 +51,7 @@ describe('Sign In Process', () => {
 describe('Sign Up Process', () => {
   const user = userEvent.setup()
   test('Check if errors get displayed if an user enters a password less than 8 characters', async () => {
-    render(<BaseForm isRegister={true} setIsRegister={mockSetIsRegister} />)
+    render(<AuthForm isRegister={true} setIsRegister={mockSetIsRegister} />)
     const emailField = screen.getByPlaceholderText('Enter your email')
     const passField = screen.getByPlaceholderText('Enter your password')
     const submitBtn = screen.getByText('Sign Up')
@@ -66,7 +66,7 @@ describe('Sign Up Process', () => {
   })
 
   test('Check if errors get displayed if an user enters an invalid email format', async () => {
-    render(<BaseForm isRegister={true} setIsRegister={mockSetIsRegister} />)
+    render(<AuthForm isRegister={true} setIsRegister={mockSetIsRegister} />)
     const emailField = screen.getByPlaceholderText('Enter your email')
     const passField = screen.getByPlaceholderText('Enter your password')
     const submitBtn = screen.getByText('Sign Up')
@@ -81,7 +81,7 @@ describe('Sign Up Process', () => {
   })
 
   test('Check if the sign up button works as it is expected to', async () => {
-    render(<BaseForm isRegister={true} setIsRegister={mockSetIsRegister} />)
+    render(<AuthForm isRegister={true} setIsRegister={mockSetIsRegister} />)
     const emailField = screen.getByPlaceholderText('Enter your email')
     const passField = screen.getByPlaceholderText('Enter your password')
     const submitBtn = screen.getByText('Sign Up')

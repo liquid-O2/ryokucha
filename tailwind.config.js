@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-NeueMontreal)'],
+        sans: ['var(--font-Mori)'],
+        serif: ['var(--font-Eiko)'],
+      },
+      colors: {
+        background: '#F6FFFA',
       },
     },
   },

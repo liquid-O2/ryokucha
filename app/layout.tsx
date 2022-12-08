@@ -1,32 +1,44 @@
 import Head from './head'
 import localfont from '@next/font/local'
+import Header from '../components/Header'
+import '../styles/globals.css'
 
-const NeueMontreal = localfont({
+const Eiko = localfont({
   src: [
     {
-      path: '../fonts/NeueMontreal-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/NeueMontreal-Light.ttf',
-      weight: '100',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/NeueMontreal-Regular.ttf',
-      weight: '400',
+      path: '../fonts/PPEiko-Medium.woff',
+      weight: '600',
       style: 'normal',
     },
   ],
-  variable: '--font-NeueMontreal',
+  variable: '--font-Eiko',
+})
+
+const Mori = localfont({
+  src: [
+    {
+      path: '../fonts/PPMori-Regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/PPMori-SemiBold.woff',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-Mori',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={'en'} className={NeueMontreal.variable}>
+    <html lang={'en'} className={`${Eiko.variable} ${Mori.variable}`}>
       <Head />
-      <body>{children}</body>
+
+      <body className='bg-background'>
+        <Header />
+        <main className='mt-[5rem]'>{children}</main>
+      </body>
     </html>
   )
 }
