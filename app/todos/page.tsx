@@ -1,4 +1,4 @@
-import TodoForm from '../../components/Todos/todoForm'
+import TodoForm from '../../components/todoForm'
 import DisplayTodos from '../../components/displayTodos'
 import '../../styles/globals.css'
 
