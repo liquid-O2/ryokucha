@@ -42,17 +42,15 @@ export default function AuthForm({ isRegister, setIsRegister }: formProps) {
   //
 
   return (
-    <div className='flex items-center flex-col w-full lg:w-auto text-neutral-200'>
+    <div className='flex items-center flex-col w-full lg:w-auto text-green-900'>
       <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-full lg:w-auto' autoComplete='off'>
         <div className='form-group flex flex-col gap-y-1 mb-4'>
           <label className='text-md' htmlFor='uname'>
             Email
           </label>
-
           <div className='input-wrapper'>
-            {/* */}
             <Input
-              className={`input ${errors.email ? 'border-red-400' : 'border-neutral-600'}`}
+              className={`input w-full ${errors.email ? 'border-red-600' : 'border-green-800 border-opacity-60'}`}
               type='email'
               placeholder='Enter your email'
               customAttr={{
@@ -62,32 +60,19 @@ export default function AuthForm({ isRegister, setIsRegister }: formProps) {
                 }),
               }}
             />
-
             <div className='icon'>
-              <Icon.Mail size={20} className={errors.email ? 'stroke-red-400' : 'stroke-neutral-100'} />
+              <Icon.Mail size={20} className={errors.email ? 'stroke-red-600' : 'stroke-green-900'} />
             </div>
-            {/*  */}
           </div>
-
-          {/*  */}
-
-          {errors.email && <p className='text-red-400 text-sm'>{`${errors.email?.message}`}</p>}
-
-          {/*  */}
+          {errors.email && <p className='text-red-600 text-sm'>{`${errors.email?.message}`}</p>}
         </div>
-
         <div className='form-group flex flex-col gap-y-1 mb-7'>
-          {/*  */}
-
           <label className='text-md' htmlFor='pwd'>
             Password
           </label>
-
           <div className='input-wrapper'>
-            {/* */}
-
             <Input
-              className={`input ${errors.password ? 'border-red-400' : 'border-neutral-600'}`}
+              className={`input ${errors.password ? 'border-red-600' : 'border-green-800 border-opacity-60'}`}
               type='password'
               placeholder='Enter your password'
               customAttr={{
@@ -97,32 +82,17 @@ export default function AuthForm({ isRegister, setIsRegister }: formProps) {
                 }),
               }}
             />
-
-            {/*  */}
-
             <div className='icon '>
-              <Icon.Lock size={20} className={errors.password ? 'stroke-red-400' : 'stroke-neutral-100'} />
+              <Icon.Lock size={20} className={errors.password ? 'stroke-red-600' : 'stroke-green-900'} />
             </div>
-
-            {/*  */}
           </div>
-
-          {/*  */}
-
-          {errors.password && <p className='text-red-400 text-sm'>{`${errors.password?.message}`}</p>}
-
-          {/*  */}
+          {errors.password && <p className='text-red-600 text-sm'>{`${errors.password?.message}`}</p>}
         </div>
-
-        {/*  */}
-
         <button
-          className='bg-neutral-200 p-4 text-lg rounded-lg text-neutral-900 shadow-lg shadow-neutral-200/20 font-bold hover:bg-neutral-300'
+          className='bg-green-800 p-4 text-lg rounded-lg text-green-50 shadow-lg shadow-green-800/20 font-bold hover:bg-green-700'
           type='submit'>
           {isRegister ? 'Sign Up' : 'Login'}
         </button>
-
-        {/*  */}
       </form>
     </div>
   )

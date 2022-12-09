@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import teaFieldDark from '/public/teaFieldDark.jpg'
-import Container from './Container'
+import Container from './container'
 const Hero = () => {
   return (
     <>
@@ -13,13 +13,18 @@ const Hero = () => {
             <br /> Taste the extraordinary flavour of pure, organic green <br />
             {`tea from Japan's finest tea growers.`}
           </h1>
-          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-3xl  mt-10 bg-green-800'>
+          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-full  mt-10 bg-green-800 shadow-lg shadow-green-800/30 hover:bg-green-700'>
             BROWSE OUR TEAS
           </button>
         </div>
         <div className='hero-image w-full  mt-14  mb-24 '>
           <figure className=''>
-            <Image src={teaFieldDark} alt={'A tea field'} className='object-cover h-[80vh]  w-full rounded-[2rem]' />
+            <Image
+              src={teaFieldDark}
+              alt={'A tea field'}
+              className='object-cover h-[80vh]  w-full rounded-[2rem]'
+              priority
+            />
           </figure>
         </div>
       </Container>

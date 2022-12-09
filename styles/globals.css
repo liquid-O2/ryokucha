@@ -27,11 +27,13 @@ a {
 
 .input-wrapper {
   position: relative;
+  display: flex;
 }
+
 .icon {
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: 1.15rem;
   pointer-events: none;
 }
 
@@ -40,14 +42,14 @@ a {
 }
 
 .input {
-  max-width: 50vw;
+  max-width: 80vw;
   min-width: 20vw;
-  color: rgb(229 229 229);
+  color: rgb(20 83 45);
   height: 3.5rem;
 }
 input::placeholder {
-  color: rgba(229 229 229);
-  opacity: 0.5;
+  color: rgba(20 83 45);
+  opacity: 0.7;
 }
 
 .form-wrapper {
@@ -63,9 +65,6 @@ input::placeholder {
 }
 .logout {
   min-width: 20rem;
-}
-input:invalid {
-  border-color: rgb(248 113 113);
 }
 
 todoInfo > input {

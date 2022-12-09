@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image'
+import * as Icon from 'react-feather'
 
 type CardProps = { img: StaticImageData; price: string; title: string; attributes: Array<string> }
 
@@ -6,8 +7,11 @@ const Card = ({ img, price, title, attributes }: CardProps) => {
   return (
     <>
       <div className='card max-w-[30rem]'>
-        <figure className='p-14 bg-green-50 w-full rounded-3xl'>
+        <figure className='p-14 bg-green-50 w-full relative rounded-3xl'>
           <Image src={img} alt='loose tea leaf' className='object-cover h-full w-full' />
+          <button className='absolute top-4 right-4'>
+            <Icon.Heart />
+          </button>
         </figure>
         <div className='card-details flex flex-col justify-center items-center mt-4'>
           <p className=' text-2xl font-bold mb-2'>{price}</p>

@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import AuthForm from './authForm'
-import Star from './Star'
 
 export default function DisplayForms() {
   //
@@ -13,15 +12,14 @@ export default function DisplayForms() {
   return (
     <>
       <div className='form-wrapper flex flex-col justify-center items-start w-3/4 lg:w-auto'>
-        <Star className='fill-neutral-200 mb-5' />
-        <p className='text-4xl font-medium mb-8 text-neutral-200 '> {isRegister ? 'Create an account' : ' Sign In'} </p>
+        <p className='text-4xl font-bold mb-8 text-green-900 '> {isRegister ? 'Create an account' : ' Sign In'} </p>
         <AuthForm isRegister={isRegister} setIsRegister={setIsRegister} />
         <div className='flex flex-col items-center justify-center  mt-7 w-full'>
-          <p className='text-neutral-200 mb-3'>
+          <p className='text-green-900 mb-3'>
             {isRegister ? `Already have an account?` : `Don't have an account yet?`}
           </p>
           <button
-            className='bg-transparent px-4 py-4 text-lg rounded-lg text-neutral-200 border-solid border-2 border-neutral-500 font-bold w-full'
+            className='bg-transparent px-4 py-4 text-lg rounded-lg text-green-900 border-solid border-2 border-green-900 border-opacity-50 font-bold w-full'
             onClick={() => setIsRegister(isRegister ? false : true)}>
             {isRegister ? 'Sign In' : ' Register Now'}
           </button>
