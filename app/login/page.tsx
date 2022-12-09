@@ -1,7 +1,7 @@
 import '/styles/globals.css'
 import Login5 from '/public/Login5.jpg'
 import Image from 'next/image'
-import Forms from '../../components/displayForm'
+import DisplayForms from '../../components/displayForm'
 
 //
 
@@ -11,7 +11,7 @@ export default function Login() {
       <div className='container font-sans relative'>
         <div className='flex h-[calc(100vh-4rem)] w-screen'>
           <div className='Form flex flex-col px-8 md:px-16 justify-center items-center w-full md:w-auto flex-1'>
-            <Forms />
+            <DisplayForms />
           </div>
           <div className='SplashImage hidden lg:block flex-1 relative'>
             <Image

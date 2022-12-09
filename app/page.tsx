@@ -1,7 +1,7 @@
-import '../styles/globals.css'
 import Hero from '../components/hero'
-import ScrollingText from '../components/scrollingText'
 import PopularTeas from '../components/popularTeas'
+import ScrollingText from '../components/scrollingText'
+import '../styles/globals.css'
 
 export default function App() {
   return (
