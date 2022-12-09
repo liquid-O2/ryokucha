@@ -1,4 +1,4 @@
-const ScrollingText = () => {
+export const ScrollingText = () => {
   return (
     <>
       <div className='scrolling-div mb-24 w-screen overflow-hidden'>
@@ -7,5 +7,3 @@ const ScrollingText = () => {
     </>
   )
 }
-
-export default ScrollingText

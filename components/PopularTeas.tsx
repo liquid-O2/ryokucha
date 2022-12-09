@@ -1,8 +1,8 @@
-import Container from './container'
+import { Container } from './container'
 import Card from './productCard'
 import Tea1 from '../public/Tea1.png'
 
-const PopularTeas = () => {
+export const PopularTeas = () => {
   return (
     <>
       <div className='popularTeas w-screen'>
@@ -14,5 +14,3 @@ const PopularTeas = () => {
     </>
   )
 }
-
-export default PopularTeas

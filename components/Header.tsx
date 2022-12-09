@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import * as Icon from 'react-feather'
-import Container from './container'
+import { Container } from './container'
 
 const Header = () => {
   return (

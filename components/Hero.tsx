@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import teaFieldDark from '/public/teaFieldDark.jpg'
-import Container from './container'
-const Hero = () => {
+import { Container } from './container'
+export const Hero = () => {
   return (
     <>
       <Container>
@@ -31,5 +31,3 @@ const Hero = () => {
     </>
   )
 }
-
-export default Hero
