@@ -11,13 +11,13 @@ const Header = () => {
             <p className='text-2xl'>緑茶</p>
           </Link>
           <nav className='flex gap-x-4 md:gap-x-6'>
-            <Link href={'/shop'} className='text-lg md:text-xl '>
+            <Link href={'/shop'} className='text-lg  '>
               shop
             </Link>
-            <Link href={'/search'} className='text-lg md:text-xl'>
+            <Link href={'/search'} className='text-lg '>
               search
             </Link>
-            <Link href={'/login'} className='text-lg md:text-xl mr-2'>
+            <Link href={'/login'} className='text-lg  mr-2'>
               login
             </Link>
             <button>
