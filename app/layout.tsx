@@ -1,6 +1,6 @@
 import Head from './head'
 import localfont from '@next/font/local'
-import Header from '../components/Header'
+import Header from '../components/header'
 import '../styles/globals.css'
 
 const Eiko = localfont({
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Head />
       <body className='bg-background'>
         <Header />
-        <main className='pt-[5rem]'>{children}</main>
+        <main className='pt-[4rem]'>{children}</main>
       </body>
     </html>
   )
