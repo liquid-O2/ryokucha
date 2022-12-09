@@ -3,12 +3,12 @@ import { getAuth, connectAuthEmulator } from 'firebase/auth'
 import { connectFirestoreEmulator, getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || 'mock key',
   authDomain: 'complexapp-5d19d.firebaseapp.com',
   projectId: 'complexapp-5d19d',
   storageBucket: 'complexapp-5d19d.appspot.com',
   messagingSenderId: '703550922847',
-  appId: process.env.FIREBASE_APP_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || 'mock id',
 }
 
 const app = initializeApp(firebaseConfig)
