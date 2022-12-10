@@ -18,6 +18,12 @@ export const addTodo = async (data: inputTodo) => {
   addDoc(todoCollectionRef, { title: data.title, done: false })
 }
 
+
+
+
+
+
+
 export const useFetchTodos = (setTodosArray: Dispatch<SetStateAction<Todos[]>>, todosArray: Todos[]) => {
   useEffect(() => {
     const fetchTodos = async () => {
