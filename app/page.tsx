@@ -8,6 +8,7 @@ export default function App() {
     <>
       <Hero />
       <ScrollingText />
+      {/* @ts-ignore */}
       <PopularTeas />
     </>
   )
