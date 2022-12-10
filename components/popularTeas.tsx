@@ -17,14 +17,9 @@ const fetchTeas = async () => {
   const teas = data.docs.map((doc) => ({ ...doc.data(), Id: doc.id }))
   return teas as Teas[]
 }
-
-export const PopularTeas = () => {
-  let teas: any[] = []
-  const setTeas = async () => {
-    fetchTeas().then((fetchedTeas) => {
-      teas = fetchedTeas
-    })
-  }
+// @ts-ignore
+export const PopularTeas = async () => {
+  let teas = await fetchTeas()
   return (
     <>
       <div className='popularTeas w-screen'>
