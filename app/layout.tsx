@@ -2,6 +2,7 @@ import Head from './head'
 import localfont from '@next/font/local'
 import Header from '../components/header'
 import '../styles/globals.css'
+import ContextProviders from '../components/contextProvider'
 
 const Eiko = localfont({
   src: [
@@ -35,8 +36,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang={'en'} className={`${Eiko.variable} ${Mori.variable}`}>
       <Head />
       <body className='bg-background'>
-        <Header />
-        <main className='pt-[4rem]'>{children}</main>
+        <ContextProviders>
+          <Header />
+          <main className='pt-[4rem]'>{children}</main>
+        </ContextProviders>
       </body>
     </html>
   )

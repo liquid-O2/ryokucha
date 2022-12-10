@@ -19,7 +19,7 @@ export default function DisplayForms() {
             {isRegister ? `Already have an account?` : `Don't have an account yet?`}
           </p>
           <button
-            className='bg-transparent px-4 py-4 text-lg rounded-lg text-green-900 border-solid border-2 border-green-900 border-opacity-50 font-bold w-full'
+            className='bg-transparent px-4 py-4 text-lg rounded-2xl text-green-900 border-solid border-2 border-green-900 border-opacity-50 font-bold w-full'
             onClick={() => setIsRegister(isRegister ? false : true)}>
             {isRegister ? 'Sign In' : ' Register Now'}
           </button>

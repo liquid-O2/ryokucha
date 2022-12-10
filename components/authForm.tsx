@@ -1,10 +1,9 @@
 'use client'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as Icon from 'react-feather'
-import { useRouter } from 'next/navigation'
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useContext } from 'react'
 import Input from './input'
-import { signIn, signUp } from '../firebase/authHandlers'
+import { AuthContext } from './contextProvider'
 
 //
 
@@ -21,7 +20,7 @@ export type formProps = {
 //
 
 export default function AuthForm({ isRegister, setIsRegister }: formProps) {
-  const router = useRouter()
+  const { signIn, signUp } = useContext(AuthContext)
 
   const {
     register,
@@ -35,8 +34,8 @@ export default function AuthForm({ isRegister, setIsRegister }: formProps) {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     isRegister
-      ? signUp(data.email, data.password, setError, router, resetField, setIsRegister)
-      : signIn(data.email, data.password, setError, router, resetField)
+      ? signUp(data.email, data.password, setError, resetField, setIsRegister)
+      : signIn(data.email, data.password, setError, resetField)
   }
 
   //
@@ -89,7 +88,7 @@ export default function AuthForm({ isRegister, setIsRegister }: formProps) {
           {errors.password && <p className='text-red-600 text-sm'>{`${errors.password?.message}`}</p>}
         </div>
         <button
-          className='bg-green-800 p-4 text-lg rounded-lg text-green-50 shadow-lg shadow-green-800/20 font-bold hover:bg-green-700'
+          className='bg-green-800 p-4 text-lg rounded-2xl text-green-50 shadow-lg shadow-green-800/20 font-bold hover:bg-green-700'
           type='submit'>
           {isRegister ? 'Sign Up' : 'Login'}
         </button>
