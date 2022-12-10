@@ -18,8 +18,13 @@ const fetchTeas = async () => {
   return teas as Teas[]
 }
 
-export const PopularTeas = async () => {
-  const teas = await fetchTeas()
+export const PopularTeas = () => {
+  let teas: any[] = []
+  const setTeas = async () => {
+    fetchTeas().then((fetchedTeas) => {
+      teas = fetchedTeas
+    })
+  }
   return (
     <>
       <div className='popularTeas w-screen'>
@@ -27,7 +32,14 @@ export const PopularTeas = async () => {
           <p className='text-4xl font-bold pt-8 mb-10 '>Popular Teas</p>
           <div className='flex flex-wrap tea-card-wrapper items-center justify-center lg:justify-start gap-4'>
             {teas.map((teas) => (
-              <Card key={teas.Id} img={teas.Image} price={teas.Price} title={teas.Name} attributes={teas.Attributes} />
+              <Card
+                key={teas.Id}
+                img={teas.Image}
+                price={teas.Price}
+                title={teas.Name}
+                attributes={teas.Attributes}
+                id={teas.Id}
+              />
             ))}
           </div>
         </Container>

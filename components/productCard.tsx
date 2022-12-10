@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import * as Icon from 'react-feather'
 
-type CardProps = { img: string; price: string; title: string; attributes: Array<string> }
+type CardProps = { img: string; price: string; title: string; attributes: Array<string>; id: string }
 
-const Card = ({ img, price, title, attributes }: CardProps) => {
+const Card = ({ img, price, title, attributes, id: string }: CardProps) => {
   return (
     <>
-      <div className='card   md:h-auto    mb-9  '>
+      <div className='card md:h-auto mb-9  '>
         <figure className='p-14 bg-green-50 w-full relative rounded-3xl'>
           <Image src={img} alt='loose tea leaf' width={300} height={308} className='object-cover h-full w-full' />
           <button className='absolute top-4 right-4'>
