@@ -7,7 +7,7 @@ const Card = ({ img, price, title, attributes, id: string }: CardProps) => {
   return (
     <>
       <div className='card md:h-auto mb-9  '>
-        <figure className='p-14 bg-green-50 w-full relative rounded-3xl'>
+        <figure className='p-14 bg-green-50 w-full relative rounded-3xl flex justify-center items-center'>
           <Image src={img} alt='loose tea leaf' width={300} height={308} className='object-cover h-full w-full' />
           <button className='absolute top-4 right-4'>
             <Icon.Heart />

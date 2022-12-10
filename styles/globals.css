@@ -107,14 +107,36 @@ input[type='checkbox' i]:checked {
   }
 }
 
-@media screen and (max-width: 1181px) {
+@media screen and (max-width: 1316px) {
+  .card {
+    max-width: 25%;
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .card {
+    max-width: 33%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .tea-card-wrapper {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 822px) {
   .card {
     max-width: 50%;
   }
 }
 
-@media screen and (max-width: 812px) {
+@media screen and (max-width: 526px) {
   .card {
     max-width: 100%;
+  }
+  .card img {
+    width: 90%;
+    height: 90%;
   }
 }
