@@ -17,7 +17,7 @@ const fetchTeas = async () => {
   const teas = data.docs.map((doc) => ({ ...doc.data(), Id: doc.id }))
   return teas as Teas[]
 }
-// @ts-ignore
+
 export const PopularTeas = async () => {
   let teas = await fetchTeas()
   return (
