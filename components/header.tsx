@@ -32,6 +32,7 @@ const Header = () => {
               </Link>
             )}
             <button>
+              <span className='sr-only'>Cart</span>
               <Icon.ShoppingCart size={20} />
             </button>
           </nav>

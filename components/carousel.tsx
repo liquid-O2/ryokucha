@@ -3,7 +3,7 @@
 import { Container } from './container'
 import { Teas } from './popularTeasCarousel'
 import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
-import Card from './productCardCarousel'
+import Card from './productCard'
 import { useCallback, useMemo, useRef, useState } from 'react'
 
 const Carousel = ({ teas }: { teas: Teas[] }) => {
@@ -19,12 +19,8 @@ const Carousel = ({ teas }: { teas: Teas[] }) => {
     })
   }
 
-  const scrolledToTheEndOfTheCarousel = useMemo(() => {
-    if (!carouselRef) return false
-    return (
-      carouselRef.current?.scrollWidth! - carouselRef.current?.scrollLeft! - carouselRef.current?.clientWidth! === 0
-    )
-  }, [])
+  const scrolledToTheEndOfTheCarousel: boolean =
+    carouselRef.current?.scrollWidth! - carouselRef.current?.scrollLeft! - carouselRef.current?.clientWidth! <= 0
 
   const currentCard = useMemo(() => {
     return Math.floor(carouselPosition / cardWidth)
@@ -43,17 +39,15 @@ const Carousel = ({ teas }: { teas: Teas[] }) => {
       <Container className='rounded-[3rem]'>
         <div className='flex'>
           <p className='text-4xl font-bold pt-8 mb-10 mr-auto items-center justify-center '>Popular Teas</p>
-          <div className='navigate-carousel gap-4 hidden md:flex'>
+          <div className={`navigate-carousel gap-4 hidden md:flex min-[1920px]:hidden`}>
             <button disabled={currentCard === 0} className='disabled:opacity-30' onClick={() => scrollToPreviousCard()}>
               <span className='sr-only'>Previous</span>
               <ArrowLeftCircle size={32} />
             </button>
             <button
-              disabled={scrolledToTheEndOfTheCarousel || currentCard === teas.length - 1}
+              disabled={scrolledToTheEndOfTheCarousel || currentCard == teas.length - 1}
               className='disabled:opacity-30'
-              onClick={() => {
-                scrollToNextCard(), console.log(teas.length)
-              }}>
+              onClick={() => scrollToNextCard()}>
               <span className='sr-only'>Next</span>
               <ArrowRightCircle size={32} />
             </button>
@@ -62,10 +56,8 @@ const Carousel = ({ teas }: { teas: Teas[] }) => {
       </Container>
       <div
         ref={carouselRef}
-        className='carousel md:pr-[360px] flex mb-10 gap-4 overflow-x-auto ml-auto snap-x snap-mandatory'
-        onScroll={(e) => {
-          setCarouselPosition(e.currentTarget.scrollLeft), console.log(currentCard)
-        }}>
+        className='carousel last:pr-[24px] flex mb-10 gap-4 overflow-x-auto ml-auto snap-x snap-mandatory'
+        onScroll={(e) => setCarouselPosition(e.currentTarget.scrollLeft)}>
         {teas.map((teas) => (
           <Card
             key={teas.Id}
@@ -74,6 +66,9 @@ const Carousel = ({ teas }: { teas: Teas[] }) => {
             title={teas.Name}
             attributes={teas.Attributes}
             id={teas.Id}
+            className={
+              'min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0'
+            }
           />
         ))}
       </div>

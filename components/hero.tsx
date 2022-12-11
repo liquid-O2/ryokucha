@@ -13,7 +13,7 @@ export const Hero = () => {
             <br /> Taste the extraordinary flavour of pure, organic green <br />
             {`tea from Japan's finest tea growers.`}
           </h1>
-          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-2xl  mt-10 bg-green-800  shadow-2xl shadow-green-800/30 hover:bg-green-700'>
+          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-2xl transition-colors mt-10 bg-green-800  shadow-2xl shadow-green-800/30 hover:bg-green-700'>
             BROWSE OUR TEAS
           </button>
         </div>
