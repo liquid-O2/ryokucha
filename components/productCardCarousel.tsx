@@ -1,16 +1,16 @@
 import Image from 'next/image'
-import * as Icon from 'react-feather'
+import { Heart } from 'react-feather'
 
 type CardProps = { img: string; price: string; title: string; attributes: Array<string>; id: string }
 
 const Card = ({ img, price, title, attributes, id: string }: CardProps) => {
   return (
     <>
-      <div className=' slide-center shrink-0 relative  first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0'>
-        <figure className='p-14 bg-green-50 w-full relative rounded-3xl flex justify-center items-center'>
-          <Image src={img} alt='loose tea leaf' width={300} height={308} className='object-cover h-full w-full' />
+      <div className=' min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0'>
+        <figure className='p-14 bg-green-50 w-full relative rounded-3xl flex justify-center items-center h-[367px] '>
+          <Image src={img} alt='loose tea leaf' width={248} height={255} className='object-cover h-full w-full' />
           <button className='absolute top-4 right-4'>
-            <Icon.Heart />
+            <Heart />
           </button>
         </figure>
         <div className='card-details flex flex-col justify-center items-center mt-4'>
@@ -30,3 +30,5 @@ const Card = ({ img, price, title, attributes, id: string }: CardProps) => {
 }
 
 export default Card
+
+// first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0
