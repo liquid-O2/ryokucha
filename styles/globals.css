@@ -8,14 +8,20 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
+  overflow-x: hidden;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
+:root {
+  --container-size: 1824px;
+}
 @layer base {
+  :root {
+    --container-size: 1824px;
+  }
   body {
     @apply text-green-900;
   }
@@ -140,3 +146,20 @@ input[type='checkbox' i]:checked {
     height: 90%;
   }
 }
+
+.carousel {
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-center {
+  transform: translateX(calc(max(var(--container-size), 100vw) / 2 - calc(var(--container-size) / 2)));
+}
+
+/* @media screen and (min-width: 1833px) {
+  .slide-center {
+    padding-left: 0;
+  }
+} */
