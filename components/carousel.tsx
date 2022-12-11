@@ -62,7 +62,7 @@ const Carousel = ({ teas }: { teas: Teas[] }) => {
       </Container>
       <div
         ref={carouselRef}
-        className='carousel pr-[360px] flex mb-10 gap-4 overflow-x-auto ml-auto snap-x snap-mandatory'
+        className='carousel md:pr-[360px] flex mb-10 gap-4 overflow-x-auto ml-auto snap-x snap-mandatory'
         onScroll={(e) => {
           setCarouselPosition(e.currentTarget.scrollLeft), console.log(currentCard)
         }}>
