@@ -6,8 +6,7 @@ import handleErrors from '../firebase/errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
 import { Inputs } from './authForm'
 import { useRouter } from 'next/navigation'
-import { stringify } from 'querystring'
-import { doc, setDoc } from 'firebase/firestore'
+import { arrayUnion, doc, getDoc, onSnapshot, setDoc } from 'firebase/firestore'
 
 type AuthContext = {
   signIn: (
@@ -24,7 +23,12 @@ type AuthContext = {
     setIsRegister: Dispatch<SetStateAction<boolean>>
   ) => Promise<void>
   isLoggedIn: boolean
-  userDetails: any
+  userDetails: UserDetails
+}
+
+type UserDetails = {
+  uid: string | null
+  likedTeas: Array<string>
 }
 
 export const AuthContext = React.createContext<AuthContext>(null!)
@@ -33,18 +37,30 @@ const ContextProviders = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [userDetails, setUserDetails] = useState({})
+  const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''] })
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const userRef = doc(db, 'users', `${user.uid}`)
-      setDoc(userRef, { userID: user.uid, likedTeas: [] }, { merge: true })
+      const checkIfExists = async () => {
+        const docs = await getDoc(userRef)
+        if (!docs.exists()) {
+          setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion('') }, { merge: true })
+        }
+      }
+      checkIfExists()
       setIsLoggedIn(true)
-      setUserDetails(user)
-      console.log(user)
+      setUserDetails((prev) => ({ ...prev, uid: user.uid }))
     } else {
       setIsLoggedIn(false)
     }
+  })
+
+  const userRef = doc(db, 'users', `${userDetails.uid}`)
+  onSnapshot(userRef, (data) => {
+    const userInfo = data.data()
+    if (!userInfo) return
+    setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo }))
   })
 
   const signIn = async (

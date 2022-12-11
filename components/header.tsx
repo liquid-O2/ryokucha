@@ -25,7 +25,9 @@ const Header = () => {
               search
             </Link>
             {isLoggedIn ? (
-              <button onClick={() => signOut(auth)}>logout</button>
+              <button onClick={() => signOut(auth)} className='text-lg'>
+                logout
+              </button>
             ) : (
               <Link href={'/login'} className='text-lg  mr-2'>
                 login
