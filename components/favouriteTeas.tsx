@@ -41,7 +41,7 @@ export const FavouriteTeas = () => {
           <div className='flex'>
             <p className='text-4xl font-bold pt-8 mb-10 mr-auto items-center justify-center '>Favourite Teas</p>
           </div>
-          <div className='empty-card w-full h-[300px] text-lg font-bold bg-green-50 flex justify-center items-center'>
+          <div className='empty-card w-full h-[367px] text-center text-lg font-bold bg-green-50 flex justify-center items-center'>
             Add some teas to favourites to see them here
           </div>
         </Container>
