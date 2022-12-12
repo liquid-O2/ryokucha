@@ -58,7 +58,7 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
       </Container>
       <div
         ref={carouselRef}
-        className='carousel last:pr-[24px] flex mb-10 gap-4 overflow-x-auto ml-auto snap-x snap-mandatory'
+        className='carousel last:pr-[24px] flex pb-10 gap-4 overflow-x-auto ml-auto snap-x snap-mandatory'
         onScroll={(e) => setCarouselPosition(e.currentTarget.scrollLeft)}>
         {teas.map((teas) => (
           <Card

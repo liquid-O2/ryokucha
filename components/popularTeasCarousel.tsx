@@ -21,7 +21,7 @@ export const PopularTeas = async () => {
   let teas = await fetchTeas()
   return (
     <>
-      <div className='popularTeas w-screen'>
+      <div className='popularTeas w-screen mb-24'>
         <Carousel teas={teas} />
       </div>
     </>

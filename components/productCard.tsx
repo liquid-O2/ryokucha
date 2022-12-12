@@ -2,7 +2,7 @@
 
 import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import Image from 'next/image'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useMemo, useState } from 'react'
 import { Heart } from 'react-feather'
 import { db } from '../firebase/config'
 import { AuthContext } from './contextProvider'
@@ -37,6 +37,10 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
     })
     setIsLiked(liked)
     if (!isLoggedIn) setIsLiked(false)
+
+    return () => {
+      setIsLiked(false)
+    }
   }, [isLoggedIn, likedTeas, id])
 
   return (
@@ -54,7 +58,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
         <div className='card-details flex flex-col justify-center items-center mt-4'>
           <p className=' text-xl md:text-2xl font-bold mb-2'>{price}</p>
           <p className='text-lg md:text-xl mb-4'>{title}</p>
-          <div className='flex justify-between items-center gap-2'>
+          <div className='flex justify-between items-center gap-2 mb-4'>
             {attributes.map((attr, index) => (
               <p key={index} className='px-4 py-1 max-w-fit rounded-full border border-green-900 '>
                 {attr}
