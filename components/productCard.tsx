@@ -1,6 +1,6 @@
 'use client'
 
-import { arrayRemove, arrayUnion, doc, onSnapshot, updateDoc } from 'firebase/firestore'
+import { arrayRemove, arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import Image from 'next/image'
 import { useContext, useEffect, useState } from 'react'
 import { Heart } from 'react-feather'
@@ -11,34 +11,29 @@ type CardProps = { img: string; price: string; title: string; attributes: Array<
 
 const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   const { userDetails } = useContext(AuthContext)
-  const { uid } = userDetails
+  const { uid, likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
   const userRef = doc(db, 'users', `${uid}`)
-  const toggleUpdateLikedTeas = async () => {
+
+  const toggleUpdateLikedTeas = () => {
+    setIsLiked((prevState) => !prevState)
     if (isLiked) {
-      await updateDoc(userRef, {
+      updateDoc(userRef, {
         likedTeas: arrayRemove(id),
       })
-      setIsLiked((prevState) => !prevState)
-      return
     } else {
-      setIsLiked((prevState) => !prevState)
-      await updateDoc(userRef, {
+      updateDoc(userRef, {
         likedTeas: arrayUnion(id),
       })
     }
   }
 
   useEffect(() => {
-    if (!uid) return
-    onSnapshot(userRef, (data) => {
-      const userInfo = data.data()
-      if (!userInfo) return
-      userInfo.likedTeas.map((teaID: string) => {
-        if (teaID === id) setIsLiked(true)
-      })
+    likedTeas.map((teaID: string) => {
+      if (teaID === id) setIsLiked(true)
+      else setIsLiked(false)
     })
-  })
+  }, [likedTeas, id])
 
   return (
     <>

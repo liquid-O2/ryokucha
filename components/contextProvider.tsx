@@ -47,20 +47,17 @@ const ContextProviders = ({ children }: { children: React.ReactNode }) => {
         if (!docs.exists()) {
           setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion('') }, { merge: true })
         }
+        onSnapshot(userRef, (data) => {
+          const userInfo = data.data()
+          if (!userInfo) return
+          setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid }))
+        })
       }
       checkIfExists()
       setIsLoggedIn(true)
-      setUserDetails((prev) => ({ ...prev, uid: user.uid }))
     } else {
       setIsLoggedIn(false)
     }
-  })
-
-  const userRef = doc(db, 'users', `${userDetails.uid}`)
-  onSnapshot(userRef, (data) => {
-    const userInfo = data.data()
-    if (!userInfo) return
-    setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo }))
   })
 
   const signIn = async (
