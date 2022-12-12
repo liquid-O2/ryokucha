@@ -44,7 +44,10 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
       <div className={className}>
         <figure className='p-14 bg-green-50 w-full relative rounded-3xl flex justify-center items-center min-h-[367px]'>
           <Image src={img} alt='loose tea leaf' width={300} height={308} className='object-cover h-full w-full ' />
-          <button className='absolute top-4 right-4' onClick={() => toggleUpdateLikedTeas()}>
+          <button
+            disabled={!isLoggedIn}
+            className=' disabled:opacity-20 absolute top-4 right-4'
+            onClick={() => toggleUpdateLikedTeas()}>
             <Heart className={isLiked ? 'fill-red-600 stroke-red-600' : ''} />
           </button>
         </figure>
