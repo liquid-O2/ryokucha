@@ -33,7 +33,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
     likedTeas.map((teaID: string) => {
       if (teaID === id) {
         liked = true
-      } else liked = false
+      }
     })
     setIsLiked(liked)
     if (!isLoggedIn) setIsLiked(false)
