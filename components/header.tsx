@@ -9,7 +9,6 @@ import { AuthContext } from './contextProvider'
 
 const Header = () => {
   const { isLoggedIn } = useContext(AuthContext)
-
   return (
     <>
       <header className=' header w-full font-serif leading-none fixed top-0 left-0  bg-background bg-opacity-70 z-50'>
@@ -25,7 +24,11 @@ const Header = () => {
               search
             </Link>
             {isLoggedIn ? (
-              <button onClick={() => signOut(auth)} className='text-lg'>
+              <button
+                onClick={() => {
+                  signOut(auth)
+                }}
+                className='text-lg'>
                 logout
               </button>
             ) : (

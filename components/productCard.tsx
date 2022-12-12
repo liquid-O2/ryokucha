@@ -10,7 +10,7 @@ import { AuthContext } from './contextProvider'
 type CardProps = { img: string; price: string; title: string; attributes: Array<string>; id: string; className: string }
 
 const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
-  const { userDetails } = useContext(AuthContext)
+  const { userDetails, isLoggedIn } = useContext(AuthContext)
   const { uid, likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
   const userRef = doc(db, 'users', `${uid}`)
@@ -29,11 +29,15 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   }
 
   useEffect(() => {
+    let liked = false
     likedTeas.map((teaID: string) => {
-      if (teaID === id) setIsLiked(true)
-      else setIsLiked(false)
+      if (teaID === id) {
+        liked = true
+      } else liked = false
     })
-  }, [likedTeas, id])
+    setIsLiked(liked)
+    if (!isLoggedIn) setIsLiked(false)
+  }, [isLoggedIn, likedTeas, id])
 
   return (
     <>

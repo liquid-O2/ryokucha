@@ -1,3 +1,4 @@
+import { FavouriteTeas } from '../components/favouriteTeas'
 import { Hero } from '../components/hero'
 import { PopularTeas } from '../components/popularTeasCarousel'
 import { ScrollingText } from '../components/scrollingText'
@@ -10,6 +11,8 @@ export default function App() {
       <ScrollingText />
       {/* @ts-ignore */}
       <PopularTeas />
+      {/* @ts-ignore */}
+      <FavouriteTeas />
     </>
   )
 }

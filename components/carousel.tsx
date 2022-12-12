@@ -6,7 +6,7 @@ import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 import Card from './productCard'
 import { useCallback, useMemo, useRef, useState } from 'react'
 
-const Carousel = ({ teas }: { teas: Teas[] }) => {
+const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) => {
   const cardWidth = 360
   const carouselRef = useRef<HTMLDivElement | null>(null)
   const [carouselPosition, setCarouselPosition] = useState<number>(0)
@@ -38,7 +38,9 @@ const Carousel = ({ teas }: { teas: Teas[] }) => {
     <>
       <Container className='rounded-[3rem]'>
         <div className='flex'>
-          <p className='text-4xl font-bold pt-8 mb-10 mr-auto items-center justify-center '>Popular Teas</p>
+          <p className='text-4xl font-bold pt-8 mb-10 mr-auto items-center justify-center '>
+            {favourite ? 'Favourite Teas' : 'Popular Teas'}
+          </p>
           <div className={`navigate-carousel gap-4 hidden md:flex min-[1920px]:hidden`}>
             <button disabled={currentCard === 0} className='disabled:opacity-30' onClick={() => scrollToPreviousCard()}>
               <span className='sr-only'>Previous</span>
