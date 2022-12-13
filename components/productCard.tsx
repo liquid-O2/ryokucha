@@ -46,7 +46,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   return (
     <>
       <div className={className}>
-        <figure className='p-14 bg-green-50 w-full relative rounded-3xl flex justify-center items-center min-h-[367px]'>
+        <figure className='p-14 bg-green-50 relative rounded-3xl flex justify-center items-center min-h-[367px]'>
           <Image
             src={img}
             alt={`${title} loose tea leaf`}
