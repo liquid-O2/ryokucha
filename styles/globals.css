@@ -163,3 +163,9 @@ input[type='checkbox' i]:checked {
     transform: translateX(48px);
   }
 }
+
+.third-section {
+  grid-template:
+    'a a'
+    'b b b';
+}
