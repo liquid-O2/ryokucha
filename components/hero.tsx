@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <>
       <Container>
-        <div className='hero-text flex flex-col justify-center items-center leading-tight'>
+        <div className='hero-text flex flex-col justify-center items-center leading-tight' id='hero'>
           <p className='font-serif text-3xl md:text-4xl mt-[9rem]'>緑茶</p>
           <p className='font-serif font-bold tracking-tighter text-5xl md:text-6xl mt-3'>Ryokucha</p>
           <h1 className='text-lg leading-snug font-sans text-center mt-6 px-2 md:px-0'>

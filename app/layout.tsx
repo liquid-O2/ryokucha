@@ -3,17 +3,7 @@ import localfont from '@next/font/local'
 import Header from '../components/header'
 import '../styles/globals.css'
 import ContextProviders from '../components/contextProvider'
-
-const Eiko = localfont({
-  src: [
-    {
-      path: '../fonts/PPEiko-Medium.woff',
-      weight: '600',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-Eiko',
-})
+import Footer from '../components/footer'
 
 const Mori = localfont({
   src: [
@@ -33,12 +23,13 @@ const Mori = localfont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={'en'} className={`${Eiko.variable} ${Mori.variable}`}>
+    <html lang={'en'} className={Mori.variable}>
       <Head />
       <body className='bg-background font-sans'>
         <ContextProviders>
           <Header />
           <main className='pt-[4rem]'>{children}</main>
+          <Footer />
         </ContextProviders>
       </body>
     </html>
