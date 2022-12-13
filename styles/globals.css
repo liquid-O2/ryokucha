@@ -16,11 +16,11 @@ a {
   text-decoration: none;
 }
 :root {
-  --container-size: 1824px;
+  --container-size: 2400px;
 }
 @layer base {
   :root {
-    --container-size: 1824px;
+    --container-size: 2400px;
   }
   body {
     @apply text-green-900;
@@ -158,8 +158,8 @@ input[type='checkbox' i]:checked {
   transform: translateX(calc(max(var(--container-size), 100vw) / 2 - calc(var(--container-size) / 2)));
 }
 
-/* @media screen and (min-width: 1833px) {
+@media screen and (min-width: 2500px) {
   .slide-center {
-    padding-left: 0;
+    transform: translateX(48px);
   }
-} */
+}

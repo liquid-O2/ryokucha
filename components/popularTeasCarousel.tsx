@@ -1,6 +1,10 @@
 import { collection, getDocs, query, where } from 'firebase/firestore'
+import Link from 'next/link'
+
 import { db } from '../firebase/config'
 import Carousel from './carousel'
+import { Container } from './container'
+import { FavouriteTeas } from './favouriteTeas'
 
 export type Teas = {
   name: string
@@ -22,7 +26,7 @@ export const PopularTeas = async () => {
   let teas = await fetchTeas()
   return (
     <>
-      <div className='popularTeas w-screen mb-24'>
+      <div className='popularTeas w-full'>
         <Carousel teas={teas} />
       </div>
     </>

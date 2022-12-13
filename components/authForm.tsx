@@ -9,8 +9,6 @@ import router from 'next/router'
 import { auth } from '../firebase/config'
 import { useRouter } from 'next/navigation'
 
-//
-
 export type Inputs = {
   email: string
   password: string
@@ -20,8 +18,6 @@ export type formProps = {
   isRegister: boolean
   setIsRegister: Dispatch<SetStateAction<boolean>>
 }
-
-//
 
 export default function AuthForm() {
   const router = useRouter()
@@ -35,15 +31,11 @@ export default function AuthForm() {
     resetField,
   } = useForm<Inputs>({ criteriaMode: 'all' })
 
-  //
-
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     isRegister
       ? signUp(data.email, data.password, setError, resetField, setIsRegister)
       : signIn(data.email, data.password, setError, resetField)
   }
-
-  //
 
   const handleGuestLogin = async () => {
     await signInWithEmailAndPassword(auth, 'guest@guest.com', 'guest1234').then(() => {
@@ -101,7 +93,7 @@ export default function AuthForm() {
             {errors.password && <p className='text-red-600 text-sm'>{`${errors.password?.message}`}</p>}
           </div>
           <button
-            className='bg-green-800 p-4 text-lg rounded-xl transition-colors text-green-50 shadow-lg shadow-green-800/20 font-bold hover:bg-green-700 '
+            className='bg-green-800 p-4 text-lg rounded-full transition-colors text-green-50 shadow-lg shadow-green-800/20 font-bold hover:bg-green-700 '
             type='submit'>
             {isRegister ? 'Sign Up' : 'Login'}
           </button>
@@ -110,12 +102,12 @@ export default function AuthForm() {
       <div className='flex flex-col items-center justify-center  mt-7 w-full'>
         <p className='text-green-900 mb-3'>{isRegister ? `Already have an account?` : `Don't have an account yet?`}</p>
         <button
-          className='bg-transparent px-4 py-4 text-lg rounded-xl text-green-900 border-solid border-2 border-green-900 border-opacity-50 font-bold w-full'
+          className='bg-transparent px-4 py-4 text-lg rounded-full text-green-900 border-solid border-2 border-green-900 border-opacity-50 font-bold w-full'
           onClick={() => setIsRegister(isRegister ? false : true)}>
           {isRegister ? 'Sign In' : ' Register Now'}
         </button>
         <button className='underline  mt-6 mb-4 text-lg' onClick={() => handleGuestLogin()}>
-          Continue as a guest
+          Continue with a guest account
         </button>
       </div>
     </div>

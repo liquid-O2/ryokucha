@@ -11,6 +11,9 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
   const carouselRef = useRef<HTMLDivElement | null>(null)
   const [carouselPosition, setCarouselPosition] = useState<number>(0)
 
+  const scrolledToTheEndOfTheCarousel: boolean =
+    carouselRef.current?.scrollWidth! - carouselRef.current?.scrollLeft! - carouselRef.current?.clientWidth! <= 0
+
   const scrollToCard = (card: HTMLDivElement | null, cardIndex: number) => {
     if (!card) return
     card.scrollTo({
@@ -18,9 +21,6 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
       behavior: 'smooth',
     })
   }
-
-  const scrolledToTheEndOfTheCarousel: boolean =
-    carouselRef.current?.scrollWidth! - carouselRef.current?.scrollLeft! - carouselRef.current?.clientWidth! <= 0
 
   const currentCard = useMemo(() => {
     return Math.floor(carouselPosition / cardWidth)
@@ -35,12 +35,12 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
     console.log(currentCard)
     scrollToCard(carouselRef.current, currentCard - 1)
   }, [currentCard])
-  console.log(carouselPosition)
+
   return (
     <>
-      <Container className='rounded-[3rem]'>
+      <div className=' px-6 md:px-12'>
         <div className='flex'>
-          <p className='text-4xl font-bold pt-8 mb-10 mr-auto items-center justify-center '>
+          <p className='text-4xl font-bold  mb-10 mr-auto items-center justify-center '>
             {favourite ? 'Favourite Teas' : 'Popular Teas'}
           </p>
           <div className={`navigate-carousel gap-4 hidden md:flex `}>
@@ -57,27 +57,32 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
             </button>
           </div>
         </div>
-      </Container>
+      </div>
       <div
         ref={carouselRef}
-        className='carousel last:pr-[24px] flex pb-10 gap-4 overflow-x-auto ml-auto snap-x snap-mandatory'
+        className='carousel  last:pr-[24px] flex pb-10 overflow-y-hidden gap-4 overflow-x-auto  snap-x snap-mandatory'
         onScroll={(e) => setCarouselPosition(e.currentTarget.scrollLeft)}>
-        {teas.map((teas) => (
-          <Card
-            key={teas.id}
-            img={teas.image}
-            price={teas.price}
-            title={teas.name}
-            attributes={teas.attributes}
-            id={teas.id}
-            className={
-              'min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0 last:pr-8'
-            }
-          />
-        ))}
+        {teas.map((teas) => {
+          const { id, image, price, name, attributes } = teas
+          return (
+            <Card
+              key={id}
+              img={image}
+              price={price}
+              title={name}
+              attributes={attributes}
+              id={id}
+              className={
+                'min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 first:min-[2484px]:pl-0  last:pr-10'
+              }
+            />
+          )
+        })}
       </div>
     </>
   )
 }
 
 export default Carousel
+
+//first:pl-6 first:md:pl-12 first:min-[2484px]:pl-0

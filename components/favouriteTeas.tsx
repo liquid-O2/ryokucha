@@ -41,9 +41,9 @@ export const FavouriteTeas = () => {
       <>
         <Container className='rounded-[3rem] mb-24'>
           <div className='flex'>
-            <p className='text-4xl font-bold pt-8 mb-10 mr-auto items-center justify-center '>Favourite Teas</p>
+            <p className='text-4xl font-bold pt-8 mb-10 mr-autoitems-center justify-center '>Favourite Teas</p>
           </div>
-          <div className='empty-card w-full h-[367px] text-center text-lg font-bold bg-green-50 flex justify-center items-center'>
+          <div className='empty-card w-full h-[501px] text-green-1000 text-center rounded-2xl text-lg font-bold bg-green-50 flex justify-center items-center'>
             Add some teas to favourites to see them here
           </div>
         </Container>
@@ -52,7 +52,7 @@ export const FavouriteTeas = () => {
 
   return (
     <>
-      <div className='w-screen mb-24'>
+      <div className=' mb-24'>
         <Carousel teas={favouriteTeas} favourite />
       </div>
     </>

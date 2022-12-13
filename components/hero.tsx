@@ -6,14 +6,15 @@ export const Hero = () => {
     <>
       <Container>
         <div className='hero-text flex flex-col justify-center items-center leading-tight'>
-          <p className='font-serif text-4xl mt-[9rem]'>緑茶</p>
-          <p className='font-serif text-6xl mt-3'>Ryokucha</p>
+          <p className='font-serif font-bold text-4xl mt-[9rem]'>緑茶</p>
+          <p className='font-serif font-bold tracking-tighter text-6xl mt-3'>Ryokucha</p>
           <h1 className='text-lg leading-snug font-sans text-center mt-6'>
             Enjoy the Finest Japanese Green Tea.
-            <br /> Taste the extraordinary flavour of pure, organic green <br />
+            <br className='hidden md:block' /> Taste the extraordinary flavour of pure, organic green{' '}
+            <br className='hidden md:block' />
             {`tea from Japan's finest tea growers.`}
           </h1>
-          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-2xl transition-colors mt-10 bg-green-800  shadow-2xl shadow-green-800/30 hover:bg-green-700'>
+          <button className='py-4 px-16 text-green-50 text-lg font-semibold rounded-full transition-colors mt-10 bg-green-800  shadow-2xl shadow-green-800/30 hover:bg-green-700'>
             BROWSE OUR TEAS
           </button>
         </div>

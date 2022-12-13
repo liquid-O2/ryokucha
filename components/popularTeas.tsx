@@ -6,19 +6,19 @@ import { db } from '../firebase/config'
 import { useState } from 'react'
 
 type Teas = {
-  Name: string
-  Id: string
-  Attributes: Array<string>
-  Image: string
-  Price: string
-  Featured: boolean
+  name: string
+  id: string
+  attributes: Array<string>
+  image: string
+  price: string
+  featured?: boolean
 }
 
 const fetchTeas = async () => {
   const teasReference = collection(db, 'teas')
   const q = query(teasReference, where('capital', '==', true))
   const data = await getDocs(q)
-  const teas = data.docs.map((doc) => ({ ...doc.data(), Id: doc.id }))
+  const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
   return teas as Teas[]
 }
 
@@ -32,15 +32,15 @@ export const PopularTeas = () => {
           <p className='text-4xl font-bold pt-8 mb-10 '>Popular Teas</p>
           <div className='flex flex-wrap tea-card-wrapper items-center justify-center lg:justify-start gap-4'>
             {teas!.map((teas) => {
-              if (teas.Featured === true)
+              if (teas.featured === true)
                 return (
                   <Card
-                    key={teas.Id}
-                    img={teas.Image}
-                    price={teas.Price}
-                    title={teas.Name}
-                    attributes={teas.Attributes}
-                    id={teas.Id}
+                    key={teas.id}
+                    img={teas.image}
+                    price={teas.price}
+                    title={teas.name}
+                    attributes={teas.attributes}
+                    id={teas.id}
                     className={'card md:h-auto mb-9'}
                   />
                 )

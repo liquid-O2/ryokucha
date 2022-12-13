@@ -11,7 +11,7 @@ const Header = () => {
   const { isLoggedIn } = useContext(AuthContext)
   return (
     <>
-      <header className=' header w-full font-serif leading-none fixed top-0 left-0  bg-background bg-opacity-70 z-50'>
+      <header className=' header w-full font-serif font-bold leading-none fixed top-0 left-0  bg-background bg-opacity-70 z-50'>
         <Container className='h-16 flex rounded-3xl items-center  z-[90]'>
           <Link href={'/'} className='mr-auto'>
             <p className='text-2xl'>緑茶</p>

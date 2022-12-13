@@ -24,7 +24,7 @@ const Mori = localfont({
     },
     {
       path: '../fonts/PPMori-SemiBold.woff',
-      weight: '600',
+      weight: '700',
       style: 'normal',
     },
   ],

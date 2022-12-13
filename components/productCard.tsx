@@ -56,8 +56,9 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
           />
           <button
             disabled={!isLoggedIn}
-            className=' disabled:opacity-20 absolute top-4 right-4'
+            className=' disabled:opacity-20 absolute top-4 right-4 text-green-1000'
             onClick={() => toggleUpdateLikedTeas()}>
+            <span className='sr-only'> like button </span>
             <Heart className={isLiked ? 'fill-red-600 stroke-red-600' : ''} />
           </button>
         </figure>
@@ -66,7 +67,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
           <p className='text-lg md:text-xl mb-4'>{title}</p>
           <div className='flex justify-between items-center gap-2 mb-4'>
             {attributes.map((attr, index) => (
-              <p key={index} className='px-4 py-1 max-w-fit rounded-full border border-green-900 '>
+              <p key={index} className='px-4 py-1 max-w-fit rounded-full border border-opacity-30 border-inherit '>
                 {attr}
               </p>
             ))}
