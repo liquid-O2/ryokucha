@@ -1,18 +1,16 @@
 'use client'
 import { collection, documentId, getDocs, query, where } from 'firebase/firestore'
 import { useContext, useEffect, useState } from 'react'
-import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 import { db } from '../firebase/config'
 import Carousel from './carousel'
 import { Container } from './container'
 import { AuthContext } from './contextProvider'
 import { Teas } from './popularTeasCarousel'
-import Card from './productCard'
 
 const fetchTeas = async (id: string) => {
   const q = query(collection(db, 'teas'), where(documentId(), '==', `${id}`))
   const data = await getDocs(q)
-  const teas = data.docs.map((doc) => ({ ...doc.data(), Id: doc.id }))
+  const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
   return teas as Teas[]
 }
 
@@ -30,10 +28,14 @@ export const FavouriteTeas = () => {
         })
       })
     })
-    return setFavouriteTeas([])
+
+    return () => {
+      setFavouriteTeas([])
+    }
   }, [likedTeas])
 
   if (!isLoggedIn) return <></>
+
   if (favouriteTeas.length === 0)
     return (
       <>
@@ -47,6 +49,7 @@ export const FavouriteTeas = () => {
         </Container>
       </>
     )
+
   return (
     <>
       <div className='w-screen mb-24'>

@@ -62,12 +62,12 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
         onScroll={(e) => setCarouselPosition(e.currentTarget.scrollLeft)}>
         {teas.map((teas) => (
           <Card
-            key={teas.Id}
-            img={teas.Image}
-            price={teas.Price}
-            title={teas.Name}
-            attributes={teas.Attributes}
-            id={teas.Id}
+            key={teas.id}
+            img={teas.image}
+            price={teas.price}
+            title={teas.name}
+            attributes={teas.attributes}
+            id={teas.id}
             className={
               'min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0'
             }

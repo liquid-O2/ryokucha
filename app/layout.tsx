@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={'en'} className={`${Eiko.variable} ${Mori.variable}`}>
       <Head />
-      <body className='bg-background'>
+      <body className='bg-background font-sans'>
         <ContextProviders>
           <Header />
           <main className='pt-[4rem]'>{children}</main>
