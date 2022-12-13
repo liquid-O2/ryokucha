@@ -84,5 +84,3 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
 }
 
 export default Carousel
-
-//first:pl-6 first:md:pl-12 first:min-[2484px]:pl-0

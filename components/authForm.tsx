@@ -93,7 +93,7 @@ export default function AuthForm() {
             {errors.password && <p className='text-red-600 text-sm'>{`${errors.password?.message}`}</p>}
           </div>
           <button
-            className='bg-green-800 p-4 text-lg rounded-full transition-colors text-green-50 shadow-lg shadow-green-800/20 font-bold hover:bg-green-700 '
+            className='bg-green-800 p-4 text-lg rounded-full transition-colors text-green-50 shadow-lg shadow-green-800/40 font-bold hover:bg-green-700 '
             type='submit'>
             {isRegister ? 'Sign Up' : 'Login'}
           </button>
