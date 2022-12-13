@@ -16,7 +16,7 @@ const Footer = () => {
           <div className='flex md:flex-col justify-between'>
             <div className='text mb-auto'>
               <p className='text-xl md:text-2xl'>緑茶</p>
-              <p className='font-bold tracking-tighter text-2xl md:text-3xl mt-2 md:mt-3'>Ryokucha</p>
+              <p className='font-bold tracking-tighter text-2xl md:text-3xl mt-1 md:mt-3'>Ryokucha</p>
             </div>
             <button className='flex w-12 justify-center rounded-full items-center p-2 mt-8 shadow-lg shadow-primary/40 bg-primary text-background'>
               <Link href={'#hero'}>
