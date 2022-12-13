@@ -73,7 +73,7 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
               attributes={attributes}
               id={id}
               className={
-                'first:w-[324px] first:[&_figure]:min-w-[300px] min-w-[300px] md:w-auto md:min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 first:min-[2484px]:pl-0  last:pr-10'
+                'first:w-[324px] first:[&_figure]:min-w-[300px]  last:w-[340px] last:[&_figure]:min-w-[300px] min-w-[300px] md:w-auto md:min-w-[360px] h-[501px] last:md:w-[400px] last:[&_figure]:md:min-w-[360px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 first:min-[2484px]:pl-0  last:pr-10'
               }
             />
           )
