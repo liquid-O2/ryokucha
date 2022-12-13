@@ -8,6 +8,7 @@ export type Teas = {
   attributes: Array<string>
   image: string
   price: string
+  featured?: boolean
 }
 
 const fetchTeas = async () => {
