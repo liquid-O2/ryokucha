@@ -8,8 +8,8 @@ module.exports = {
         serif: ['var(--font-Mori)'],
       },
       colors: {
-        background: '#F6FFFA',
-        'green-1000': '#0F3D21',
+        background: '#F4F4EE',
+        primary: '#003D32',
         neon: '#E3FB54',
       },
     },

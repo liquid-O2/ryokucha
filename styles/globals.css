@@ -23,7 +23,7 @@ a {
     --container-size: 2400px;
   }
   body {
-    @apply text-green-900;
+    @apply text-primary;
   }
 }
 

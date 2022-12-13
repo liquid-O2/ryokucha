@@ -1,5 +1,5 @@
 import '/styles/globals.css'
-import Login5 from '/public/Login5.jpg'
+import loginImage from '/public/Login.jpg'
 import Image from 'next/image'
 
 import AuthForm from '../../components/authForm'
@@ -17,7 +17,7 @@ export default function Login() {
           <div className='SplashImage hidden lg:block flex-1 relative'>
             <Image
               className='w-full h-full object-cover'
-              src={Login5}
+              src={loginImage}
               alt='black and white picture of abstract shapes'
               fill={false}
               quality={45}

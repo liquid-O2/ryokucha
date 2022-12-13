@@ -46,7 +46,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   return (
     <>
       <div className={className}>
-        <figure className='p-14 bg-green-50 relative rounded-3xl flex justify-center items-center min-h-[367px]'>
+        <figure className='p-14 bg-background relative rounded-3xl flex justify-center items-center min-h-[367px]'>
           <Image
             src={img}
             alt={`${title} loose tea leaf`}
@@ -56,10 +56,10 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
           />
           <button
             disabled={!isLoggedIn}
-            className=' disabled:opacity-20 absolute top-4 right-4 text-green-1000'
+            className=' disabled:opacity-20 absolute top-4 right-4 text-primary'
             onClick={() => toggleUpdateLikedTeas()}>
             <span className='sr-only'> like button </span>
-            <Heart className={isLiked ? 'fill-red-600 stroke-red-600' : ''} />
+            <Heart className={isLiked ? 'fill-rose-600 stroke-rose-600' : ''} />
           </button>
         </figure>
         <div className='card-details flex flex-col justify-center items-center mt-4'>

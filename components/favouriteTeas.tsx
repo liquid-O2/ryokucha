@@ -43,7 +43,7 @@ export const FavouriteTeas = () => {
           <div className='flex'>
             <p className='text-4xl font-bold pt-8 mb-10 mr-autoitems-center justify-center '>Favourite Teas</p>
           </div>
-          <div className='empty-card w-full h-[501px] text-green-1000 text-center rounded-2xl text-lg font-bold bg-green-50 flex justify-center items-center'>
+          <div className='empty-card w-full h-[501px] text-primary text-center rounded-2xl text-lg font-bold bg-background flex justify-center items-center'>
             Add some teas to favourites to see them here
           </div>
         </Container>

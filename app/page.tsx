@@ -12,12 +12,12 @@ export default function App() {
       <Hero />
       <ScrollingText />
       <Container>
-        <div className='py-16 rounded-3xl md:rounded-[48px] bg-green-1000 text-green-50 mb-24 flex flex-col'>
+        <div className='py-16 rounded-3xl md:rounded-[3rem] bg-primary text-background mb-24 flex flex-col'>
           {/* @ts-ignore */}
           <FavouriteTeas />
           {/* @ts-ignore */}
           <PopularTeas />
-          <button className=' self-center flex justify-center items-center text-center mt-12 px-8 py-4 bg-neon text-green-1000 rounded-full'>
+          <button className=' self-center flex justify-center items-center text-center mt-12 px-8 py-4 bg-neon text-primary rounded-full'>
             <Link href={'/shop'} className=' font-bold text-lg'>
               BROWSE MORE TEAS
             </Link>
