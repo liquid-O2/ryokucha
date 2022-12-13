@@ -73,7 +73,7 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
               attributes={attributes}
               id={id}
               className={
-                'min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 first:min-[2484px]:pl-0  last:pr-10'
+                'w-[300px] md:w-auto md:min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 first:min-[2484px]:pl-0  last:pr-10'
               }
             />
           )
