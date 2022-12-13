@@ -18,7 +18,7 @@ export const Hero = () => {
             BROWSE OUR TEAS
           </button>
         </div>
-        <div className='hero-image w-full  mt-14  mb-32 '>
+        <div className='hero-image w-full  mt-14  mb-24 md:mb-32 '>
           <figure className=''>
             <Image
               src={hero}

@@ -16,7 +16,7 @@ export default function App() {
       <Hero />
       <ScrollingText />
       <Container>
-        <div className='py-16 rounded-3xl md:rounded-[3rem] bg-primary text-background mb-32 flex flex-col'>
+        <div className='py-16 rounded-3xl md:rounded-[3rem] bg-primary text-background mb-24 md:mb-32 flex flex-col'>
           {/* @ts-ignore */}
           <FavouriteTeas />
           {/* @ts-ignore */}
@@ -29,7 +29,7 @@ export default function App() {
         </div>
       </Container>
       <Container>
-        <div className='grid grid-cols-[1] grid-flow-row  min-[880px]:grid-cols-3 third-section gap-y-4  gap-x-6 min-[880px]:gap-y-10 mb-32'>
+        <div className='grid grid-cols-[1] grid-flow-row  min-[880px]:grid-cols-3 third-section gap-y-4  gap-x-6 min-[880px]:gap-y-10 mb-24 md:mb-32'>
           <div className='  flex w-[75%] min-[880px]:w-auto md:items-end'>
             <p className='font-bold text-3xl '>
               The best green tea from the
