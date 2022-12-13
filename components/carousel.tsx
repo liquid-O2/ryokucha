@@ -27,13 +27,15 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
   }, [carouselPosition])
 
   const scrollToNextCard = useCallback(() => {
+    console.log(currentCard)
     scrollToCard(carouselRef.current, currentCard + 1)
   }, [currentCard])
 
   const scrollToPreviousCard = useCallback(() => {
+    console.log(currentCard)
     scrollToCard(carouselRef.current, currentCard - 1)
   }, [currentCard])
-
+  console.log(carouselPosition)
   return (
     <>
       <Container className='rounded-[3rem]'>
@@ -41,7 +43,7 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
           <p className='text-4xl font-bold pt-8 mb-10 mr-auto items-center justify-center '>
             {favourite ? 'Favourite Teas' : 'Popular Teas'}
           </p>
-          <div className={`navigate-carousel gap-4 hidden md:flex min-[1920px]:hidden`}>
+          <div className={`navigate-carousel gap-4 hidden md:flex `}>
             <button disabled={currentCard === 0} className='disabled:opacity-30' onClick={() => scrollToPreviousCard()}>
               <span className='sr-only'>Previous</span>
               <ArrowLeftCircle size={32} />
@@ -69,7 +71,7 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
             attributes={teas.attributes}
             id={teas.id}
             className={
-              'min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0'
+              'min-w-[360px] h-[501px]  slide-center flex-shrink-0 relative first:pl-6 first:md:pl-12 min-[1833px]:first:pl-0 last:pr-8'
             }
           />
         ))}
