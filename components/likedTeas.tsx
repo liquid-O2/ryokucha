@@ -1,19 +1,12 @@
 import { collection, getDocs, limit, query, where } from 'firebase/firestore'
 import { db } from '../firebase/config'
 import Carousel from './carousel'
-
-export type Teas = {
-  Name: string
-  Id: string
-  Attributes: Array<string>
-  Image: string
-  Price: string
-}
+import { Teas } from './popularTeasCarousel'
 
 const fetchTeas = async () => {
   const q = query(collection(db, 'teas'), where('Featured', '==', true), limit(6))
   const data = await getDocs(q)
-  const teas = data.docs.map((doc) => ({ ...doc.data(), Id: doc.id }))
+  const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
   return teas as Teas[]
 }
 
