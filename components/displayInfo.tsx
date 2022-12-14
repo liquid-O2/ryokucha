@@ -20,7 +20,7 @@ const DisplayInfo = () => {
               whileInView={{ opacity: 1, y: '0%' }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
-              className='font-bold text-3xl '>
+              className='font-bold text-3xl leading-tight '>
               The best green tea from the
               <br className='hidden min-[1328px]:block' />
               {` best farmers in Japan`}

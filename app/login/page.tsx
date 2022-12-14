@@ -18,7 +18,7 @@ export default function Login() {
             <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
               className='Form flex flex-col px-8 md:px-16 justify-center items-center w-full md:w-auto flex-1'>
               <AuthForm />
             </m.div>
