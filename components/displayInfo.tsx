@@ -1,9 +1,9 @@
 'use client'
 import { Container } from './container'
 import Image from 'next/image'
-import col1 from '../public/col1.jpg'
-import col2 from '../public/col2.jpg'
-import col3 from '../public/col3.jpg'
+import col1 from '../public/col1.webp'
+import col2 from '../public/col2.webp'
+import col3 from '../public/col3.webp'
 import { useScroll, useTransform, m, domAnimation, LazyMotion } from 'framer-motion'
 const DisplayInfo = () => {
   const { scrollYProgress } = useScroll()

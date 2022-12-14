@@ -1,6 +1,6 @@
 'use client'
 import '/styles/globals.css'
-import loginImage from '/public/Login.jpg'
+import loginImage from '/public/Login.webp'
 import Image from 'next/image'
 
 import AuthForm from '../../components/authForm'

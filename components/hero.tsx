@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import hero from '/public/hero.jpg'
+import hero from '/public/hero-min.webp'
 import { useScroll, useTransform, m, domAnimation, LazyMotion } from 'framer-motion'
 import { Container } from './container'
 export const Hero = () => {
