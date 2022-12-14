@@ -72,7 +72,7 @@ export const Hero = () => {
                     src={hero}
                     alt={'teapot, teacups filled with green tea with some loose green tea leaves around them'}
                     className='object-cover h-[55vh] md:h-[80vh]  w-full rounded-3xl md:rounded-[3rem]'
-                    quality={100}
+                    quality={75}
                     priority
                   />
                 </m.div>
