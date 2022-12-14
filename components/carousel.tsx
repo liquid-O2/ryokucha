@@ -84,6 +84,3 @@ const Carousel = ({ teas, favourite }: { teas: Teas[]; favourite?: boolean }) =>
 }
 
 export default Carousel
-
-//first:max-[766px]:w-[384px] first:max-[2482px]:w-[412px] first:[&_figure]:max-[2482px]:min-w-[360px]
-//first:min-[768px]:w-[384px] first:max-[2482px]:w-[412px] first:[&_figure]:max-[2482px]:min-w-[360px]
