@@ -13,7 +13,7 @@ const DisplayInfo = () => {
       <div className='grid grid-cols-[1] grid-flow-row  min-[880px]:grid-cols-3 third-section gap-y-4  gap-x-6 min-[880px]:gap-y-10 mb-24 md:mb-32'>
         <div className='overflow-hidden  flex w-[75%] min-[880px]:w-auto md:items-end'>
           <motion.p
-            initial={{ opacity: 0, y: '-35%' }}
+            initial={{ opacity: 0, y: '35%' }}
             whileInView={{ opacity: 1, y: '0%' }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
@@ -25,7 +25,7 @@ const DisplayInfo = () => {
         </div>
         <div className='overflow-hidden min-[880px]:col-span-2 flex justify-end items-end'>
           <motion.p
-            initial={{ opacity: 0, y: '-35%' }}
+            initial={{ opacity: 0, y: '35%' }}
             whileInView={{ opacity: 1, y: '0%' }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}

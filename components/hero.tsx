@@ -14,7 +14,7 @@ export const Hero = () => {
           <div className='hero-text flex flex-col justify-center items-center leading-tight' id='hero'>
             <div className='overflow-hidden'>
               <motion.p
-                initial={{ opacity: 0, y: '30%' }}
+                initial={{ opacity: 0, y: '35%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
                 transition={{ duration: 1, delay: 0.0 }}
                 viewport={{ once: true }}
@@ -22,9 +22,9 @@ export const Hero = () => {
                 緑茶
               </motion.p>
             </div>
-            <div className='overflow-hidden pb-2'>
+            <div className='overflow-hidden pb-4'>
               <motion.p
-                initial={{ opacity: 0, y: '30%' }}
+                initial={{ opacity: 0, y: '35%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
                 transition={{ duration: 1, delay: 0.2 }}
                 viewport={{ once: true }}
@@ -32,9 +32,9 @@ export const Hero = () => {
                 Ryokucha
               </motion.p>
             </div>
-            <div className='overflow-hidden'>
+            <div className='overflow-hidden relative mt-[-1rem]'>
               <motion.h1
-                initial={{ opacity: 0, y: '30%' }}
+                initial={{ opacity: 0, y: '35%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
                 transition={{ duration: 1, delay: 0.4 }}
                 viewport={{ once: true }}
@@ -46,7 +46,7 @@ export const Hero = () => {
               </motion.h1>
             </div>
             <motion.button
-              initial={{ opacity: 0, y: '30%' }}
+              initial={{ opacity: 0, y: '35%' }}
               whileInView={{ opacity: 1, y: '0%' }}
               transition={{ duration: 1, delay: 0.6 }}
               viewport={{ once: true }}
