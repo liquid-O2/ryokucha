@@ -17,7 +17,7 @@ export const Hero = () => {
                 <m.p
                   initial={{ opacity: 0, y: '35%' }}
                   whileInView={{ opacity: 1, y: '0%' }}
-                  transition={{ duration: 0.5, delay: 0.0 }}
+                  transition={{ duration: 1, delay: 0.0 }}
                   viewport={{ once: true }}
                   className='font-serif text-3xl md:text-4xl mt-[9rem]'>
                   緑茶
@@ -37,11 +37,11 @@ export const Hero = () => {
                 <m.h1
                   initial={{ opacity: 0, y: '35%' }}
                   whileInView={{ opacity: 1, y: '0%' }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+                  transition={{ duration: 1, delay: 0.4 }}
                   viewport={{ once: true }}
                   className='text-lg leading-snug font-sans text-center mt-6 px-2 md:px-0'>
                   Enjoy the Finest Japanese Green Tea.
-                  <br className='hidden md:block' /> Taste the extraordinary flavour of pure, organic green{' '}
+                  <br className='hidden md:block' /> Taste the extraordinary flavour of pure, organic green
                   <br className='hidden md:block' />
                   {`tea from Japan's finest tea growers.`}
                 </m.h1>
@@ -49,7 +49,7 @@ export const Hero = () => {
               <m.button
                 initial={{ opacity: 0, y: '35%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                transition={{ duration: 1, delay: 0.6 }}
                 viewport={{ once: true }}
                 className='py-4 px-16 text-background text-lg font-semibold rounded-full transition-colors mt-10 bg-primary shadow-2xl shadow-primary/80 hover:bg-primary/90'>
                 BROWSE OUR TEAS
@@ -59,7 +59,7 @@ export const Hero = () => {
               <m.div
                 initial={{ height: '100%' }}
                 whileInView={{ height: '0%' }}
-                transition={{ duration: 0.5, delay: 0.8 }}
+                transition={{ duration: 1, delay: 0.8 }}
                 viewport={{ once: true }}
                 className='absolute top-0 w-full h-full z-20 bg-primary'></m.div>
               <figure className='overflow-hidden '>
