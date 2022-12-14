@@ -1,6 +1,5 @@
 'use client'
 
-import { Container } from './container'
 import { Teas } from './popularTeasCarousel'
 import { ArrowLeftCircle, ArrowRightCircle } from 'react-feather'
 import Card from './productCard'
