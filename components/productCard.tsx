@@ -45,7 +45,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
 
   return (
     <>
-      <div className={className}>
+      <div className={className} id={'card'}>
         <figure className='p-14 bg-background relative rounded-3xl flex justify-center items-center min-h-[367px]'>
           <Image
             src={img}
