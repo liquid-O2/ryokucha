@@ -37,30 +37,30 @@ export default function App() {
               {` best farmers in Japan`}
             </p>
           </div>
-          <div className=' min-[880px]:col-span-2'>
-            <p className=' text-xl char flex justify-end min-[880px]:pl-5 mb-6 min-[880px]:mb-0'>
+          <div className=' min-[880px]:col-span-2 flex justify-end items-end'>
+            <p className=' text-xl char flex justify-end min-[880px]:pl-[10rem]  mb-6 min-[880px]:mb-0'>
               Ryokucha sources the highest quality green teas from Japan and delivers them directly to you.
-              <br className='hidden min-[1454px]:block' /> Our teas are organically farmed and provide a true taste of
+              <br className='hidden min-[1664px]:block' /> Our teas are organically farmed and provide a true taste of
               Japan.
             </p>
           </div>
           <div className=' h-[400px] min-[880px]:h-[500px] '>
             <Image
-              className='w-full h-full object-cover rounded-[3rem]'
+              className='w-full h-full object-cover rounded-3xl md:rounded-[3rem]'
               src={col1}
               alt={'a small teacup with green tea'}
             />
           </div>
           <div className=' h-[400px] min-[880px]:h-[500px] '>
             <Image
-              className='w-full h-full object-cover rounded-[3rem]'
+              className='w-full h-full object-cover rounded-3xl md:rounded-[3rem]'
               src={col2}
               alt={'a small porcelain dish with loose green tea leaves and some small cups with green tea in it'}
             />
           </div>
           <div className=' h-[400px] min-[880px]:h-[500px] '>
             <Image
-              className='w-full h-full object-cover rounded-[3rem]'
+              className='w-full h-full object-cover rounded-3xl md:rounded-[3rem]'
               src={col3}
               alt={'a small dish with some water and some green leaves on top'}
             />
