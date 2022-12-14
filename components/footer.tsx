@@ -20,6 +20,7 @@ const Footer = () => {
             </div>
             <button className='flex w-10 justify-center rounded-full items-center p-2 md:mt-8 shadow-lg shadow-primary/40 bg-primary text-background'>
               <Link href={'#hero'}>
+                <span className='sr-only'>scroll to the top of the page</span>
                 <ChevronUp />
               </Link>
             </button>
