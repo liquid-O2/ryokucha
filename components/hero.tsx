@@ -6,7 +6,7 @@ import { Container } from './container'
 export const Hero = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 0.5], ['0%', '20%'])
-  const loadFeatures = () => import('./framerFeatures.js').then((res) => res.default)
+  const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
 
   return (
     <>
