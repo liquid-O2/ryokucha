@@ -1,3 +1,4 @@
+'use client'
 import '/styles/globals.css'
 import loginImage from '/public/Login.jpg'
 import Image from 'next/image'
