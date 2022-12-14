@@ -7,7 +7,7 @@ import col3 from '../public/col3.webp'
 import { useScroll, useTransform, m, LazyMotion } from 'framer-motion'
 const DisplayInfo = () => {
   const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0.5, 1], ['0%', '10%'])
+  const y = useTransform(scrollYProgress, [0.4, 1], ['0%', '13%'])
   const loadFeatures = () => import('./framerFeatures.js').then((res) => res.default)
   return (
     <LazyMotion features={loadFeatures}>

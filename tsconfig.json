@@ -20,13 +20,7 @@
       }
     ]
   },
-  // "ts-node": {
-  //   "transpileOnly": true,
-  //   "files": true,
-  //   "compilerOptions": {
-  //     "rootDir": "."
-  //   }
-  // },
+
   "include": [
     "next-env.d.ts",
     "**/*.ts",

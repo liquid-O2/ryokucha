@@ -5,8 +5,9 @@ import { useScroll, useTransform, m, LazyMotion } from 'framer-motion'
 import { Container } from './container'
 export const Hero = () => {
   const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 0.5], ['0%', '10%'])
+  const y = useTransform(scrollYProgress, [0, 0.5], ['0%', '20%'])
   const loadFeatures = () => import('./framerFeatures.js').then((res) => res.default)
+
   return (
     <>
       <LazyMotion features={loadFeatures}>
@@ -64,8 +65,8 @@ export const Hero = () => {
                 className='absolute top-0 w-full h-full z-20 bg-primary'></m.div>
               <figure className='overflow-hidden '>
                 <m.div
-                  initial={{ scale: 1.2, y: 0 }}
-                  style={{ scale: 1.2, y: y }}
+                  initial={{ scale: 1.3, y: 0 }}
+                  style={{ scale: 1.3, y: y }}
                   className={'relative w-full h-full overflow-hidden'}>
                   <Image
                     src={hero}
