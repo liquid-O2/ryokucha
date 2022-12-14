@@ -5,7 +5,7 @@ import { useScroll, useTransform, motion } from 'framer-motion'
 import { Container } from './container'
 export const Hero = () => {
   const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 0.5], ['0%', '30%'])
+  const y = useTransform(scrollYProgress, [0, 0.5], ['0%', '10%'])
 
   return (
     <>
@@ -63,13 +63,14 @@ export const Hero = () => {
               className='absolute top-0 w-full h-full z-20 bg-primary'></motion.div>
             <figure className='overflow-hidden '>
               <motion.div
-                initial={{ scale: 1.5, y: 0 }}
-                style={{ scale: 1.5, y: y }}
+                initial={{ scale: 1.2, y: 0 }}
+                style={{ scale: 1.2, y: y }}
                 className={'relative w-full h-full overflow-hidden'}>
                 <Image
                   src={hero}
                   alt={'teapot, teacups filled with green tea with some loose green tea leaves around them'}
                   className='object-cover h-[55vh] md:h-[80vh]  w-full rounded-3xl md:rounded-[3rem]'
+                  quality={10}
                   priority
                 />
               </motion.div>

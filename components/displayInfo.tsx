@@ -7,7 +7,7 @@ import col3 from '../public/col3.jpg'
 import { useScroll, useTransform, motion } from 'framer-motion'
 const DisplayInfo = () => {
   const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0.8, 1], ['0%', '15%'])
+  const y = useTransform(scrollYProgress, [0.5, 1], ['0%', '10%'])
   return (
     <Container>
       <div className='grid grid-cols-[1] grid-flow-row  min-[880px]:grid-cols-3 third-section gap-y-4  gap-x-6 min-[880px]:gap-y-10 mb-24 md:mb-32'>
@@ -43,27 +43,14 @@ const DisplayInfo = () => {
             viewport={{ once: true }}
             className='absolute top-0 w-full h-full z-20 bg-primary'></motion.div>
           <motion.div
-            initial={{ scale: 1.3, y: 0 }}
-            style={{ scale: 1.3, y: y }}
-            className={'relative w-full h-full overflow-hidden '}>
-            <Image className='w-full h-full object-cover ' src={col1} alt={'a small teacup with green tea'} />
-          </motion.div>
-        </div>
-        <div className='relative h-[400px] min-[880px]:h-[500px] overflow-hidden rounded-3xl md:rounded-[3rem]'>
-          <motion.div
-            initial={{ height: '100%' }}
-            whileInView={{ height: '0%' }}
-            transition={{ duration: 1, delay: 0.2 }}
-            viewport={{ once: true }}
-            className='absolute top-0 w-full h-full z-20 bg-primary'></motion.div>
-          <motion.div
-            initial={{ scale: 1.3, y: 0 }}
-            style={{ scale: 1.3, y: y }}
+            initial={{ scale: 1.2, y: 0 }}
+            style={{ scale: 1.2, y: y }}
             className={'relative w-full h-full overflow-hidden '}>
             <Image
               className='w-full h-full object-cover '
-              src={col2}
-              alt={'a small porcelain dish with loose green tea leaves and some small cups with green tea in it'}
+              src={col1}
+              alt={'a small teacup with green tea'}
+              quality={10}
             />
           </motion.div>
         </div>
@@ -75,13 +62,33 @@ const DisplayInfo = () => {
             viewport={{ once: true }}
             className='absolute top-0 w-full h-full z-20 bg-primary'></motion.div>
           <motion.div
-            initial={{ scale: 1.3, y: 0 }}
-            style={{ scale: 1.3, y: y }}
+            initial={{ scale: 1.2, y: 0 }}
+            style={{ scale: 1.2, y: y }}
+            className={'relative w-full h-full overflow-hidden '}>
+            <Image
+              className='w-full h-full object-cover '
+              src={col2}
+              alt={'a small porcelain dish with loose green tea leaves and some small cups with green tea in it'}
+              quality={10}
+            />
+          </motion.div>
+        </div>
+        <div className='relative h-[400px] min-[880px]:h-[500px] overflow-hidden rounded-3xl md:rounded-[3rem]'>
+          <motion.div
+            initial={{ height: '100%' }}
+            whileInView={{ height: '0%' }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: true }}
+            className='absolute top-0 w-full h-full z-20 bg-primary'></motion.div>
+          <motion.div
+            initial={{ scale: 1.2, y: 0 }}
+            style={{ scale: 1.2, y: y }}
             className={'relative w-full h-full overflow-hidden '}>
             <Image
               className='w-full h-full object-cover '
               src={col3}
               alt={'a small dish with some water and some green leaves on top'}
+              quality={10}
             />
           </motion.div>
         </div>

@@ -52,9 +52,11 @@ const Footer = () => {
           <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>careers</p>
         </div>
         <div className='border-t border-primary/10 col-span-2 md:col-span-4 flex justify-between py-4'>
-          <p className='text-primary/60 text-base'>
+          <p className='text-primary/60 text-base transition-all'>
             © Designed & Developed By
-            <span className='hover:underline hover:underline-offset-4 hover:cursor-pointer'> Arunava</span>
+            <span className='hover:underline hover:underline-offset-4 hover:cursor-pointer transition-all'>
+              {` Arunava`}
+            </span>
           </p>
           <p className='text-primary/60'>№</p>
         </div>
