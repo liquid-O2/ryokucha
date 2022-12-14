@@ -4,12 +4,13 @@ import Image from 'next/image'
 import col1 from '../public/col1.webp'
 import col2 from '../public/col2.webp'
 import col3 from '../public/col3.webp'
-import { useScroll, useTransform, m, domAnimation, LazyMotion } from 'framer-motion'
+import { useScroll, useTransform, m, LazyMotion } from 'framer-motion'
 const DisplayInfo = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0.5, 1], ['0%', '10%'])
+  const loadFeatures = () => import('./framerFeatures.js').then((res) => res.default)
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <Container>
         <div className='grid grid-cols-[1] grid-flow-row  min-[880px]:grid-cols-3 third-section gap-y-4  gap-x-6 min-[880px]:gap-y-10 mb-24 md:mb-32'>
           <div className='overflow-hidden  flex w-[75%] min-[880px]:w-auto md:items-end'>

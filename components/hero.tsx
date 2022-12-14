@@ -1,15 +1,15 @@
 'use client'
 import Image from 'next/image'
 import hero from '/public/hero-min.webp'
-import { useScroll, useTransform, m, domAnimation, LazyMotion } from 'framer-motion'
+import { useScroll, useTransform, m, LazyMotion } from 'framer-motion'
 import { Container } from './container'
 export const Hero = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 0.5], ['0%', '10%'])
-
+  const loadFeatures = () => import('./framerFeatures.js').then((res) => res.default)
   return (
     <>
-      <LazyMotion features={domAnimation}>
+      <LazyMotion features={loadFeatures}>
         <Container>
           <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <div className='hero-text flex flex-col justify-center items-center leading-tight' id='hero'>
