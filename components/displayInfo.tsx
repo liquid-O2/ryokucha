@@ -9,6 +9,7 @@ const DisplayInfo = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0.4, 1], ['0%', '10%'])
   const loadFeatures = () => import('./framerFeatures.js').then((res) => res.default)
+  
   return (
     <LazyMotion features={loadFeatures}>
       <Container>
