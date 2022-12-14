@@ -9,7 +9,7 @@ const DisplayInfo = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0.4, 1], ['0%', '10%'])
   const loadFeatures = () => import('./framerFeatures.js').then((res) => res.default)
-  
+
   return (
     <LazyMotion features={loadFeatures}>
       <Container>
@@ -52,6 +52,8 @@ const DisplayInfo = () => {
               <Image
                 className='w-full h-full object-cover '
                 src={col1}
+                width={1000}
+                height={1000}
                 alt={'a small teacup with green tea'}
                 quality={10}
               />
@@ -71,6 +73,8 @@ const DisplayInfo = () => {
               <Image
                 className='w-full h-full object-cover '
                 src={col2}
+                width={1000}
+                height={1000}
                 alt={'a small porcelain dish with loose green tea leaves and some small cups with green tea in it'}
                 quality={10}
               />
@@ -90,6 +94,8 @@ const DisplayInfo = () => {
               <Image
                 className='w-full h-full object-cover '
                 src={col3}
+                width={1000}
+                height={1000}
                 alt={'a small dish with some water and some green leaves on top'}
                 quality={10}
               />
