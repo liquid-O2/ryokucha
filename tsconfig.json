@@ -27,7 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "jest.config.js",
-    "components/framerFeatures.js"
+    "components/framerFeatures.ts"
   ],
   "exclude": ["node_modules"]
 }
