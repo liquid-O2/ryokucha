@@ -70,8 +70,6 @@ export const Hero = () => {
                   className={'relative w-full h-full overflow-hidden'}>
                   <Image
                     src={hero}
-                    width={1000}
-                    height={1000}
                     alt={'teapot, teacups filled with green tea with some loose green tea leaves around them'}
                     className='object-cover h-[55vh] md:h-[80vh]  w-full rounded-3xl md:rounded-[3rem]'
                     quality={100}
