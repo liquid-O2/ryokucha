@@ -32,7 +32,7 @@ const DisplayInfo = () => {
               whileInView={{ opacity: 1, y: '0%' }}
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
-              className=' text-xl char flex justify-end min-[880px]:pl-[10rem]  mb-6 min-[880px]:mb-0'>
+              className='text-lg md:text-xl char flex justify-end min-[880px]:pl-[10rem]  mb-6 min-[880px]:mb-0'>
               Ryokucha sources the highest quality green teas from Japan and delivers them directly to you.
               <br className='hidden min-[1664px]:block' /> Our teas are organically farmed and provide a true taste of
               Japan.
