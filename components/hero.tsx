@@ -17,7 +17,7 @@ export const Hero = () => {
               <m.p
                 initial={{ opacity: 0, y: '35%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
-                transition={{ duration: 1, delay: 0.0 }}
+                transition={{ duration: 0.8, delay: 0.0, ease: 'easeOut' }}
                 viewport={{ once: true }}
                 className='font-serif text-3xl md:text-4xl mt-[9rem]'>
                 緑茶
@@ -27,7 +27,7 @@ export const Hero = () => {
               <m.p
                 initial={{ opacity: 0, y: '35%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
-                transition={{ duration: 1, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
                 viewport={{ once: true }}
                 className='font-serif font-bold tracking-tighter text-5xl md:text-6xl mt-3'>
                 Ryokucha
@@ -37,7 +37,7 @@ export const Hero = () => {
               <m.h1
                 initial={{ opacity: 0, y: '35%' }}
                 whileInView={{ opacity: 1, y: '0%' }}
-                transition={{ duration: 1, delay: 0.4 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
                 viewport={{ once: true }}
                 className='text-lg leading-snug font-sans text-center mt-6 px-2 md:px-0'>
                 Enjoy the Finest Japanese Green Tea.
@@ -49,7 +49,7 @@ export const Hero = () => {
             <m.button
               initial={{ opacity: 0, y: '35%' }}
               whileInView={{ opacity: 1, y: '0%' }}
-              transition={{ duration: 1, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
               viewport={{ once: true }}
               className='py-4 px-16 text-background text-lg font-semibold rounded-full transition-colors mt-10 bg-primary shadow-2xl shadow-primary/80 hover:bg-primary/90'>
               BROWSE OUR TEAS
@@ -59,7 +59,7 @@ export const Hero = () => {
             <m.div
               initial={{ height: '100%' }}
               whileInView={{ height: '0%' }}
-              transition={{ duration: 1, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: 'circOut' }}
               viewport={{ once: true }}
               className='absolute top-0 w-full h-full z-20 bg-primary'></m.div>
             <figure className='overflow-hidden '>

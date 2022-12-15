@@ -18,7 +18,7 @@ const DisplayInfo = () => {
             <m.p
               initial={{ opacity: 0, y: '35%' }}
               whileInView={{ opacity: 1, y: '0%' }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: 0.0 }}
               viewport={{ once: true }}
               className='font-bold text-3xl leading-tight '>
               The best green tea from the
@@ -30,7 +30,7 @@ const DisplayInfo = () => {
             <m.p
               initial={{ opacity: 0, y: '35%' }}
               whileInView={{ opacity: 1, y: '0%' }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
               className=' text-xl char flex justify-end min-[880px]:pl-[10rem]  mb-6 min-[880px]:mb-0'>
               Ryokucha sources the highest quality green teas from Japan and delivers them directly to you.
@@ -42,7 +42,7 @@ const DisplayInfo = () => {
             <m.div
               initial={{ height: '100%' }}
               whileInView={{ height: '0%' }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1, delay: 0.4 }}
               viewport={{ once: true }}
               className='absolute top-0 w-full h-full z-20 bg-primary'></m.div>
             <m.div

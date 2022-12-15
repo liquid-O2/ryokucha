@@ -17,10 +17,10 @@ const Header = () => {
             <p className='text-2xl'>緑茶</p>
           </Link>
           <nav className='flex gap-x-4 md:gap-x-6'>
-            <Link href={'/shop'} className='text-lg  '>
+            <Link href={'/'} className='text-lg  '>
               shop
             </Link>
-            <Link href={'/search'} className='text-lg '>
+            <Link href={'/'} className='text-lg '>
               search
             </Link>
             {isLoggedIn ? (
