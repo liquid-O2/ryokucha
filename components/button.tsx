@@ -1,4 +1,7 @@
 'use client'
+
+// will refactor this component to be able to use it in other places
+
 import Link from 'next/link'
 import { m, LazyMotion } from 'framer-motion'
 const Button = () => {
