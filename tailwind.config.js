@@ -11,6 +11,8 @@ module.exports = {
         background: '#F4F4EE',
         primary: '#003D32',
         neon: '#E3FB54',
+        'primary-dark': '#002921',
+        'neon-dark': '#CBE245',
       },
     },
   },

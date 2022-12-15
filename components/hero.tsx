@@ -7,7 +7,16 @@ export const Hero = () => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 0.5], ['0%', '20%'])
   const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
-
+  const button = {
+    visible: { opacity: 1, y: '0%' },
+    hidden: { opacity: 0, y: '35%' },
+    hover: { opacity: 1 },
+  }
+  const buttonCircle = {
+    visible: { scale: 1 },
+    hover: { y: 0, scale: 99, transition: { duration: 0.4 } },
+    hidden: { y: '-100%', scale: 1 },
+  }
   return (
     <>
       <LazyMotion features={loadFeatures}>
@@ -47,12 +56,17 @@ export const Hero = () => {
               </m.h1>
             </div>
             <m.button
-              initial={{ opacity: 0, y: '35%' }}
-              whileInView={{ opacity: 1, y: '0%' }}
+              variants={button}
+              initial='hidden'
+              whileInView='visible'
+              whileHover='hover'
               transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className='py-4 px-16 text-background text-lg font-semibold rounded-full transition-colors mt-10 bg-primary shadow-2xl shadow-primary/80 hover:bg-primary/90'>
-              BROWSE OUR TEAS
+              className='relative overflow-hidden py-4 px-16 text-background text-lg font-semibold rounded-full transition-colors mt-10 bg-primary shadow-2xl shadow-primary/80 hover:bg-primary/90'>
+              <m.div
+                variants={buttonCircle}
+                className='bg-primary-dark w-2 h-2 absolute top-0 left-[50%] rounded-full z-10'></m.div>
+              <span className='relative z-20'>BROWSE OUR TEAS</span>
             </m.button>
           </div>
           <div className='hero-image w-full relative  mt-14  mb-24 md:mb-32 overflow-hidden rounded-3xl md:rounded-[3rem]'>
