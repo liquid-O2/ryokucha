@@ -3,8 +3,10 @@ import localfont from '@next/font/local'
 import Header from '../components/header'
 import '../styles/globals.css'
 import 'swiper/swiper.min.css'
-import ContextProviders from '../components/contextProvider'
+import ContextProviders, { Teas } from '../components/contextProvider'
 import Footer from '../components/footer'
+import { query, collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase/config'
 
 const Mori = localfont({
   src: [
@@ -22,14 +24,22 @@ const Mori = localfont({
   variable: '--font-Mori',
 })
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+// const fetchTeas = async () => {
+//   const q = query(collection(db, 'teas'))
+//   const data = await getDocs(q)
+//   const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+//   return teas as Teas[]
+// }
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // const teas = await fetchTeas()
   return (
     <html lang={'en'} className={Mori.variable}>
       <Head />
       <body className='bg-background font-sans'>
-        <ContextProviders>
+        <ContextProviders fetchedTeas={[]}>
           <Header />
-          <main className='pt-[4rem]'>{children}</main>
+          <main className=''>{children}</main>
           <Footer />
         </ContextProviders>
       </body>

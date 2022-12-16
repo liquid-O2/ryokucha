@@ -100,7 +100,7 @@ input[type='checkbox' i]:checked {
 }
 
 .header {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
 }
 
 .card {

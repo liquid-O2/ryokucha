@@ -11,8 +11,8 @@ const Footer = () => {
   const { isLoggedIn } = useContext(AuthContext)
   return (
     <Container>
-      <div className=' border-t border-primary/10  grid grid-cols-2 md:grid-cols-4 gap-2 pt-8 '>
-        <div className='  col-span-2 h-full pb-6 md:pb-12'>
+      <section className=' border-t border-primary/10  grid grid-cols-2 md:grid-cols-4 gap-2 pt-8 '>
+        <section className='col-span-2 h-full pb-6 md:pb-12'>
           <div className='flex md:flex-col items-center md:items-start justify-between'>
             <div className='text flex flex-col justify-end '>
               <p className='text-xl md:text-2xl'>緑茶</p>
@@ -25,8 +25,8 @@ const Footer = () => {
               </Link>
             </button>
           </div>
-        </div>
-        <div className='flex flex-col gap-2 text-lg md:text-xl leading-none mb-8 '>
+        </section>
+        <section className='flex flex-col gap-2 text-lg md:text-xl leading-none mb-8 '>
           <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/shop'}>
             shop
           </Link>
@@ -42,8 +42,8 @@ const Footer = () => {
               login
             </Link>
           )}
-        </div>
-        <div className='flex flex-col gap-2 text-lg md:text-xl leading-none'>
+        </section>
+        <section className='flex flex-col gap-2 text-lg md:text-xl leading-none'>
           <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>
             privacy policy
           </p>
@@ -51,8 +51,8 @@ const Footer = () => {
             terms and conditions
           </p>
           <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>careers</p>
-        </div>
-        <div className='border-t border-primary/10 col-span-2 md:col-span-4 flex justify-between py-4'>
+        </section>
+        <section className='border-t border-primary/10 col-span-2 md:col-span-4 flex justify-between py-4'>
           <p className='text-primary/70 text-base transition-all'>
             © Designed & Developed By
             <span className='hover:underline hover:underline-offset-4 hover:cursor-pointer transition-all'>
@@ -60,8 +60,8 @@ const Footer = () => {
             </span>
           </p>
           <p className='text-primary/70'>№</p>
-        </div>
-      </div>
+        </section>
+      </section>
     </Container>
   )
 }

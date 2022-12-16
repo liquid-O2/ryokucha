@@ -1,16 +1,24 @@
 'use client'
 import { useScroll, useTransform, motion } from 'framer-motion'
 
-export const ScrollingText = () => {
+export const ScrollingText = ({
+  text,
+  wrapperClass,
+  textClass,
+}: {
+  text: string
+  wrapperClass?: string
+  textClass?: string
+}) => {
   const { scrollYProgress } = useScroll()
-  const x = useTransform(scrollYProgress, [0, 1], [0, -300])
+  const x = useTransform(scrollYProgress, [0, 0.5], [0, -200])
   return (
     <>
-      <div className='scrolling-div mb-24 md:mb-32 w-screen overflow-hidden'>
+      <aside className={`scrolling-div w-screen overflow-hidden ${wrapperClass}`}>
         <motion.p
           style={{ x }}
-          className=' text-3xl font-serif font-bold tracking-tight overscroll-x-none whitespace-nowrap'>{`Authentic Japanese Green Tea  –  緑茶  –  Rich, umami filled taste  –  緑茶  – Only from the best farms in Japan   – 緑茶  – Authentic Japanese Green Tea  –  緑茶  –  Rich, umami filled taste  –  緑茶  – Only from the best farms in Japan   – 緑茶  –`}</motion.p>
-      </div>
+          className={`text-[10rem] font-serif font-bold tracking-tight overscroll-x-none whitespace-nowrap ${textClass}`}>{`${text}`}</motion.p>
+      </aside>
     </>
   )
 }

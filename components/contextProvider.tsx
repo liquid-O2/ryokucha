@@ -26,6 +26,16 @@ type AuthContext = {
   isLoggedIn: boolean
   userDetails: UserDetails
   router: AppRouterInstance
+  teas: Teas[]
+}
+
+export type Teas = {
+  name: string
+  id: string
+  attributes: Array<string>
+  image: string
+  price: string
+  featured?: boolean
 }
 
 type UserDetails = {
@@ -35,10 +45,11 @@ type UserDetails = {
 
 export const AuthContext = React.createContext<AuthContext>(null!)
 
-const ContextProviders = ({ children }: { children: React.ReactNode }) => {
+const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode; fetchedTeas: Teas[] }) => {
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''] })
+  const teas = fetchedTeas
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -104,6 +115,7 @@ const ContextProviders = ({ children }: { children: React.ReactNode }) => {
     isLoggedIn,
     userDetails,
     router,
+    teas,
   }
 
   return <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>

@@ -1,108 +1,101 @@
-import { collection, getDocs, query, where } from 'firebase/firestore'
-import Link from 'next/link'
-
-import { db } from '../firebase/config'
 import Carousel from './carouselFramer'
-import { Container } from './container'
-import { FavouriteTeas } from './favouriteTeas'
+import Card from './productCardCopy'
 
-export type Teas = {
-  name: string
-  id: string
-  attributes: Array<string>
-  image: string
-  price: string
-  featured?: boolean
-}
-
-// const fetchTeas = async () => {
-//   const q = query(collection(db, 'teas'), where('featured', '==', true))
-//   const data = await getDocs(q)
-//   const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-//   return teas as Teas[]
-// }
-
-export const PopularTeas = async () => {
+export const PopularTeas = () => {
   // let teas = await fetchTeas()
+  const teas = [
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+    {
+      name: 'a',
+      price: '$99',
+      id: 'sfsefsd',
+      attributes: ['smooth', 'sweet'],
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
+    },
+  ]
   return (
     <>
       <div className='popularTeas flex '>
-        <Carousel
-          teas={[
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-            {
-              name: 'a',
-              price: '$99',
-              id: 'sfsefsd',
-              attributes: ['smooth', 'sweet'],
-              image:
-                'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-            },
-          ]}
-        />
+        <Carousel>
+          {teas.map((teas) => {
+            const { id, image, price, name, attributes } = teas
+            return (
+              <Card
+                key={id}
+                img={image}
+                price={price}
+                title={name}
+                attributes={attributes}
+                id={id}
+                className={'w-[300px] min-w-[300px] md:w-[360px] md:min-w-[360px] mr-4'}
+              />
+            )
+          })}
+        </Carousel>
       </div>
     </>
   )

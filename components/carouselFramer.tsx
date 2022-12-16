@@ -1,16 +1,14 @@
 'use client'
 
-import { Teas } from './popularTeasCarousel'
-
-import Card from './productCardCopy'
 import { m, LazyMotion } from 'framer-motion'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
-const Carousel = ({ teas, favourite }: { teas: Teas[] | undefined; favourite?: boolean }) => {
+const Carousel = ({ children }: { children: React.ReactNode }) => {
   const loadFeatures = () => import('./framerFeatures2').then((res) => res.default)
   const [leftConstraint, setLeftConstraint] = useState<number>(0)
-
   const id = 'carousel'
+
+  //hacky state that updates when resized in order to make the component re-render
   const [key, setKey] = useState(0)
 
   const handleLeftConstraint = useCallback(() => {
@@ -21,12 +19,12 @@ const Carousel = ({ teas, favourite }: { teas: Teas[] | undefined; favourite?: b
   }, [id])
 
   useEffect(() => {
-    const el = document.getElementById(id)
-    if (el) setLeftConstraint(el.scrollWidth - el.offsetWidth)
+    handleLeftConstraint()
     const handleResize = () => {
       setKey((prev) => prev + 1)
       handleLeftConstraint()
     }
+
     window.addEventListener('resize', handleResize)
 
     return () => {
@@ -38,20 +36,7 @@ const Carousel = ({ teas, favourite }: { teas: Teas[] | undefined; favourite?: b
     <LazyMotion features={loadFeatures}>
       <m.div id={id} key={key} className='carousel cursor-grab overflow-hidden  ' whileTap={{ cursor: 'grabbing' }}>
         <m.div drag='x' dragConstraints={{ right: 0, left: -leftConstraint }} className='inner-carousel flex '>
-          {teas!.map((teas) => {
-            const { id, image, price, name, attributes } = teas
-            return (
-              <Card
-                key={id}
-                img={image}
-                price={price}
-                title={name}
-                attributes={attributes}
-                id={id}
-                className={'min-w-[300px] md:min-w-[360px]  mr-6 '}
-              />
-            )
-          })}
+          {children}
         </m.div>
       </m.div>
     </LazyMotion>
