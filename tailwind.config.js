@@ -13,6 +13,7 @@ module.exports = {
         neon: '#E3FB54',
         'primary-dark': '#002921',
         'neon-dark': '#CBE245',
+        tertiary: '#E3D9C7',
       },
     },
   },

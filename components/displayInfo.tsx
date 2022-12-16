@@ -63,7 +63,7 @@ const DisplayInfo = () => {
             <m.div
               initial={{ height: '100%' }}
               whileInView={{ height: '0%' }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1, delay: 0.4 }}
               viewport={{ once: true }}
               className='absolute top-0 w-full h-full z-20 bg-primary'></m.div>
             <m.div
@@ -84,7 +84,7 @@ const DisplayInfo = () => {
             <m.div
               initial={{ height: '100%' }}
               whileInView={{ height: '0%' }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1, delay: 0.4 }}
               viewport={{ once: true }}
               className='absolute top-0 w-full h-full z-20 bg-primary'></m.div>
             <m.div

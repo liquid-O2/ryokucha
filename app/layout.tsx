@@ -2,6 +2,7 @@ import Head from './head'
 import localfont from '@next/font/local'
 import Header from '../components/header'
 import '../styles/globals.css'
+import 'swiper/swiper.min.css'
 import ContextProviders from '../components/contextProvider'
 import Footer from '../components/footer'
 

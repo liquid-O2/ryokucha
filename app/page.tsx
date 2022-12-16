@@ -14,13 +14,9 @@ export default function App() {
       <Hero />
       <ScrollingText />
       <Container>
-        <div className='py-16 rounded-3xl md:rounded-[3rem] bg-primary text-background mb-24 md:mb-32 flex flex-col'>
-          {/* @ts-ignore */}
-          <FavouriteTeas />
-          {/* @ts-ignore */}
-          <PopularTeas />
-          <Button />
-        </div>
+        {/* @ts-ignore */}
+        <PopularTeas />
+        <Button />
       </Container>
       <DisplayInfo />
     </>

@@ -22,10 +22,12 @@
     "firebase-tools": "^11.16.1",
     "framer-motion": "^7.10.0",
     "next": "^13.0.4",
+    "nuka-carousel": "^5.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
     "react-hook-form": "^7.39.5",
+    "swiper": "^8.4.5",
     "typescript": "4.9.3"
   },
   "devDependencies": {
