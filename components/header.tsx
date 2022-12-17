@@ -26,9 +26,9 @@ const Header = () => {
         <m.header
           style={{ backgroundColor, color: textColour }}
           className={`header w-full font-serif font-bold bg-background leading-none fixed top-0 left-0  z-50`}>
-          <Container className='h-16 flex rounded-3xl items-center  z-[90]'>
+          <Container className='h-16 flex rounded-3xl justify-center leading-none items-center  z-[90]'>
             <Link href={'/'} className='mr-auto'>
-              <p className='text-3xl'>r.</p>
+              <p className='text-2xl md:text-3xl'>r.</p>
             </Link>
             <nav className='flex gap-x-4 md:gap-x-6'>
               <Link href={'/'} className='text-md md:text-lg'>

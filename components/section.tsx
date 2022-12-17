@@ -4,7 +4,7 @@ const Section = ({ children, full, className }: { children: React.ReactNode; ful
   return (
     <section
       className={`${
-        full ? '' : ' py-24 md:py-32 mb-2 rounded-3xl md:rounded-[3rem]'
+        full ? '' : 'py-24 md:py-32 min-[2000px]:py-36 mb-2 rounded-3xl md:rounded-[3rem]'
       } w-screen ${className} bg-background`}>
       {children}
     </section>

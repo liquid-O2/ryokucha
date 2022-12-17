@@ -5,6 +5,7 @@ import { Container } from '../components/container'
 import { Hero } from '../components/hero copy'
 import Section from '../components/section'
 import col from '../public/COL.png'
+import col2 from '../public/col2.png'
 import '../styles/globals.css'
 import Carousel from '../components/carouselFramer'
 import Featured from './featured'
@@ -29,16 +30,16 @@ export default function App() {
         <Container>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
             <article className='flex justify-center  flex-col'>
-              <h3 className='text-3xl font-bold max-w-[20ch] leading-tight mb-4'>
+              <h3 className='text-3xl min-[2000px]:text-4xl font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
                 Natural superfood, perfect for your body and mind
               </h3>
-              <p className='text-lg max-w-[50ch] pr-6'>
+              <p className='text-lg min-[2000px]:text-xl max-w-[50ch] pr-6'>
                 The remarkable properties and health benefits of Japanese Green teas are the result of unique harvesting,
                 processing and blending techniques of tea leaves perfected over centuries by Japanese tea masters. This
                 gives the unique green tea high content of vitamins, minerals and especially antioxidants, which can have
                 a positive effect on concentration, mood, and metabolism.
               </p>
-              <aside className='flex gap-3 mt-5 flex-wrap'>
+              <aside className='flex min-[2000px]:text-lg gap-3 mt-5 flex-wrap min-[2000px]:mt-8'>
                 <p className='px-3 py-1 rounded-full border border-primary/70'>3-5 hours of energy</p>
                 <p className='px-3 py-1 rounded-full border border-primary/70'>No jitters</p>
                 <p className='px-3 py-1 rounded-full border border-primary/70'>Nutrient-rich</p>
@@ -54,7 +55,35 @@ export default function App() {
           </div>
         </Container>
       </Section>
-
+      <Section>
+        <Container>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
+            <div className='min-h-full row-start-2 md:row-start-1'>
+              <Image
+                src={col2}
+                alt={'a teapot and a teacup filled with green tea'}
+                className='h-full w-full object-cover rounded-3xl md:rounded-[3rem] max-h-[601px]'
+              />
+            </div>
+            <article className='flex justify-center  md:ml-10 flex-col'>
+              <h3 className='text-3xl min-[2000px]:text-4xl font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
+                The best green tea from the best farmers in Japan
+              </h3>
+              <p className='text-lg min-[2000px]:text-xl  min-[2000px]:pr-10 max-w-[50ch] pr-6'>
+                We source our tea directly from Japan. We work with the best farmers to bring you a premium product. We
+                believe in sustainable farming practices, and our tea is grown without pesticides or herbicides. We
+                produce some of the best tea in the world. To ensure the highest quality and taste of our tea, we only
+                work with the best farmers.
+              </p>
+              <aside className='flex min-[2000px]:text-lg gap-3 mt-5 min-[2000px]:mt-8 flex-wrap'>
+                <p className='px-3 py-1 rounded-full border border-primary/70'>Organic</p>
+                <p className='px-3 py-1 rounded-full border border-primary/70'>Locally-sourced</p>
+                <p className='px-3 py-1 rounded-full border border-primary/70'>Premium quality</p>
+              </aside>
+            </article>
+          </div>
+        </Container>
+      </Section>
       <Newsletter />
     </>
   )
