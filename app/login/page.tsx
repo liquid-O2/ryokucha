@@ -3,8 +3,6 @@ import loginImage from '/public/Login.webp'
 import Image from 'next/image'
 import AuthForm from '../../components/authForm'
 
-//
-
 export default function Login() {
   return (
     <>
