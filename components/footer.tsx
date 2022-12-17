@@ -30,10 +30,10 @@ const Footer = () => {
           <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/shop'}>
             shop
           </Link>
-          <button className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (0)`}</button>
+          <button className='min-h-[3rem] w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (0)`}</button>
           {isLoggedIn ? (
             <button
-              className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'
+              className='min-h-[3rem] w-fit hover:opacity-50 transition-opacity duration-200 ease-in'
               onClick={() => signOut(auth)}>
               logout
             </button>
