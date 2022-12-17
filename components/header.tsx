@@ -15,8 +15,8 @@ const Header = () => {
   //framer
 
   const { scrollYProgress } = useScroll()
-  const backgroundColor = useTransform(scrollYProgress, [0, 0.3], ['#F4F4EE00', '#F4F4EE80'])
-  const textColour = useTransform(scrollYProgress, [0, 0.3], ['#F4F4EE', '#002921'])
+  const backgroundColor = useTransform(scrollYProgress, [0, 0.1], ['#F4F4EE00', '#F4F4EE80'])
+  const textColour = useTransform(scrollYProgress, [0, 0.1], ['#F4F4EE', '#002921'])
   const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
   if (pathname === '/')
     return (
