@@ -11,7 +11,7 @@ export const ScrollingText = ({
   textClass?: string
 }) => {
   const { scrollYProgress } = useScroll()
-  const x = useTransform(scrollYProgress, [0, 0.5], [0, -200])
+  const x = useTransform(scrollYProgress, [0, 0.5], [0, -400])
   return (
     <>
       <aside className={`scrolling-div w-screen overflow-hidden ${wrapperClass}`}>
