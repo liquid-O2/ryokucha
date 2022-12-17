@@ -2,7 +2,7 @@
 import { signOut } from 'firebase/auth'
 import { useScroll, useTransform, m, LazyMotion } from 'framer-motion'
 import Link from 'next/link'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useContext } from 'react'
 import * as Icon from 'react-feather'
 import { auth } from '../firebase/config'
@@ -12,12 +12,14 @@ import { GlobalContext } from './contextProvider'
 const Header = () => {
   const { isLoggedIn } = useContext(GlobalContext)
   const pathname = usePathname()
-  //framer
 
+  //framer
   const { scrollYProgress } = useScroll()
   const backgroundColor = useTransform(scrollYProgress, [0, 0.1], ['#F4F4EE00', '#F4F4EE80'])
   const textColour = useTransform(scrollYProgress, [0, 0.1], ['#F4F4EE', '#002921'])
   const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
+
+  //animate on homescreen
   if (pathname === '/')
     return (
       <LazyMotion features={loadFeatures}>
@@ -29,10 +31,10 @@ const Header = () => {
               <p className='text-3xl'>r.</p>
             </Link>
             <nav className='flex gap-x-4 md:gap-x-6'>
-              <Link href={'/'} className='text-lg  '>
+              <Link href={'/'} className='text-md md:text-lg'>
                 shop
               </Link>
-              <Link href={'/'} className='text-lg '>
+              <Link href={'/'} className='text-md md:text-lg'>
                 search
               </Link>
               {isLoggedIn ? (
@@ -44,7 +46,7 @@ const Header = () => {
                   logout
                 </button>
               ) : (
-                <Link href={'/login'} className='text-lg  mr-2'>
+                <Link href={'/login'} className='text-md md:text-lg mr-2'>
                   login
                 </Link>
               )}
@@ -57,6 +59,7 @@ const Header = () => {
         </m.header>
       </LazyMotion>
     )
+  //no animation on other paths
   else
     return (
       <header className={`header w-full font-serif font-bold bg-background/75 leading-none fixed top-0 left-0  z-50`}>
@@ -65,10 +68,10 @@ const Header = () => {
             <p className='text-3xl'>r.</p>
           </Link>
           <nav className='flex gap-x-4 md:gap-x-6'>
-            <Link href={'/'} className='text-lg  '>
+            <Link href={'/'} className='text-md md:text-lg'>
               shop
             </Link>
-            <Link href={'/'} className='text-lg '>
+            <Link href={'/'} className='text-md md:text-lg'>
               search
             </Link>
             {isLoggedIn ? (
@@ -76,11 +79,11 @@ const Header = () => {
                 onClick={() => {
                   signOut(auth)
                 }}
-                className='text-lg'>
+                className='text-md md:text-lg'>
                 logout
               </button>
             ) : (
-              <Link href={'/login'} className='text-lg  mr-2'>
+              <Link href={'/login'} className='text-md md:text-lg mr-2'>
                 login
               </Link>
             )}
