@@ -33,7 +33,7 @@ const fetchSingleTea = cache(async (slug: string) => {
   return tea as Teas
 })
 
-export const IndividualTea = async ({ params }: { params: ParamProps }) => {
+export default async function IndividualTea({ params }: { params: ParamProps }) {
   const { slug } = params
   const { fullImage, name, price, description } = await fetchSingleTea(slug)
   return (
@@ -63,5 +63,3 @@ export const IndividualTea = async ({ params }: { params: ParamProps }) => {
     </Section>
   )
 }
-
-export default IndividualTea
