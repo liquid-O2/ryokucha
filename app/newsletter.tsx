@@ -57,11 +57,14 @@ const Newsletter = () => {
                       id='mce-EMAIL'
                       required
                       placeholder='Enter your email'
-                      className='w-full rounded-full min-h-[56px]'
+                      className='w-full rounded-full min-h-[56px] border-primary/30'
                       customAttr={{ ...register('EMAIL', { required: 'Please enter your email' }) }}
                     />
                     <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
-                      <Mail size={20} className={errors.EMAIL || mailchimpError ? 'stroke-rose-600' : 'stroke-primary'} />
+                      <Mail
+                        size={20}
+                        className={errors.EMAIL || mailchimpError ? 'stroke-rose-600' : 'stroke-primary/80'}
+                      />
                     </div>
                     {errors.EMAIL ||
                       (mailchimpError && (

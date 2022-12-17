@@ -40,7 +40,7 @@ const Button = ({ variant, children, className }: ButtonProps) => {
           className={`${
             variant === 'primary' ? 'bg-primary-dark' : ' bg-neon-dark'
           } w-2 h-2 absolute top-0 left-[50%] rounded-full z-10`}></m.div>
-        <span className='relative z-20 text-base md:text-lg font-bold'>{children}</span>
+        <span className='relative z-20 text-base  font-bold'>{children}</span>
       </m.button>
     </LazyMotion>
   )
