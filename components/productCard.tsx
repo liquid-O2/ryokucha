@@ -11,6 +11,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   const { userDetails, isLoggedIn, updateUser, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
+  router.prefetch(`/shop/${id}`)
 
   const toggleUpdateLiked = () => {
     setIsLiked((prevState) => !prevState)
