@@ -1,9 +1,9 @@
 'use client'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import * as Icon from 'react-feather'
+import { Mail, Lock } from 'react-feather'
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import Input from './input'
-import { AuthContext } from './contextProvider'
+import { GlobalContext } from './contextProvider'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { m, LazyMotion } from 'framer-motion'
 import { auth } from '../firebase/config'
@@ -21,7 +21,7 @@ export type formProps = {
 
 export default function AuthForm() {
   const router = useRouter()
-  const { signIn, signUp } = useContext(AuthContext)
+  const { signIn, signUp } = useContext(GlobalContext)
   const [isRegister, setIsRegister] = React.useState<boolean>(false)
 
   const {
@@ -69,7 +69,9 @@ export default function AuthForm() {
               </label>
               <div className='input-wrapper'>
                 <Input
-                  className={`input w-full ${errors.email ? 'border-rose-600' : 'border-primary border-opacity-60'}`}
+                  className={`input rounded-xl w-full lg:w-auto  ${
+                    errors.email ? 'border-rose-600' : 'border-primary border-opacity-60'
+                  }`}
                   type='email'
                   placeholder='Enter your email'
                   customAttr={{
@@ -79,8 +81,8 @@ export default function AuthForm() {
                     }),
                   }}
                 />
-                <div className='icon'>
-                  <Icon.Mail size={20} className={errors.email ? 'stroke-rose-600' : 'stroke-primary'} />
+                <div className='icon absolute left-[1rem] top-[1.15rem] pointer-events-none'>
+                  <Mail size={20} className={errors.email ? 'stroke-rose-600' : 'stroke-primary'} />
                 </div>
               </div>
               {errors.email && <p className='text-rose-600 text-sm'>{`${errors.email?.message}`}</p>}
@@ -91,7 +93,9 @@ export default function AuthForm() {
               </label>
               <div className='input-wrapper'>
                 <Input
-                  className={`input ${errors.password ? 'border-rose-600' : 'border-primary border-opacity-60'}`}
+                  className={`input rounded-xl w-full lg:w-auto ${
+                    errors.password ? 'border-rose-600' : 'border-primary border-opacity-60'
+                  }`}
                   type='password'
                   placeholder='Enter your password'
                   customAttr={{
@@ -101,8 +105,8 @@ export default function AuthForm() {
                     }),
                   }}
                 />
-                <div className='icon '>
-                  <Icon.Lock size={20} className={errors.password ? 'stroke-rose-600' : 'stroke-primary'} />
+                <div className='icon absolute left-[1rem] top-[1.15rem] pointer-events-none'>
+                  <Lock size={20} className={errors.password ? 'stroke-rose-600' : 'stroke-primary'} />
                 </div>
               </div>
               {errors.password && <p className='text-rose-600 text-sm'>{`${errors.password?.message}`}</p>}

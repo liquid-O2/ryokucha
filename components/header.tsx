@@ -7,10 +7,10 @@ import { useContext } from 'react'
 import * as Icon from 'react-feather'
 import { auth } from '../firebase/config'
 import { Container } from './container'
-import { AuthContext } from './contextProvider'
+import { GlobalContext } from './contextProvider'
 
 const Header = () => {
-  const { isLoggedIn } = useContext(AuthContext)
+  const { isLoggedIn } = useContext(GlobalContext)
   const pathname = usePathname()
   //framer
 

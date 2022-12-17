@@ -3,87 +3,13 @@ import { useContext } from 'react'
 import Button from '../components/button'
 import Carousel from '../components/carouselFramer'
 import { Container } from '../components/container'
-import { AuthContext } from '../components/contextProvider'
+import { GlobalContext } from '../components/contextProvider'
 import Card from '../components/productCardCopy'
 import Section from '../components/section'
 
 const Featured = () => {
-  // const { teas } = useContext(AuthContext)
+  const { teas } = useContext(GlobalContext)
 
-  const teas = [
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-    {
-      name: 'a',
-      price: '$99',
-      id: 'sfsefsd',
-      attributes: ['smooth', 'sweet'],
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/complexapp-5d19d.appspot.com/o/Teas%2FGyokuro%20Cha%20Meijin.png?alt=media&token=ccfd0628-d450-43a4-849b-313f44843e24',
-    },
-  ]
   return (
     <Section>
       <Container>
@@ -105,7 +31,7 @@ const Featured = () => {
               )
             })}
           </Carousel>
-          <Button type='secondary' className='mt-16'>
+          <Button variant='secondary' className='mt-20'>
             BROWSE MORE TEAS
           </Button>
         </div>

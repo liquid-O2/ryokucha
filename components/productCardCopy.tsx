@@ -5,12 +5,12 @@ import Image from 'next/image'
 import { useContext, useEffect, useState } from 'react'
 import { Heart } from 'react-feather'
 import { db } from '../firebase/config'
-import { AuthContext } from './contextProvider'
+import { GlobalContext } from './contextProvider'
 
 type CardProps = { img: string; price: string; title: string; attributes: Array<string>; id: string; className: string }
 
 const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
-  // const { userDetails, isLoggedIn } = useContext(AuthContext)
+  // const { userDetails, isLoggedIn } = useContext(GlobalContext)
   // const { uid, likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
   // const userRef = doc(db, 'users', `${uid}`)

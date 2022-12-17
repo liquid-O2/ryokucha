@@ -8,6 +8,7 @@ import col from '../public/COL.png'
 import '../styles/globals.css'
 import Carousel from '../components/carouselFramer'
 import Featured from './featured'
+import Newsletter from './newsletter'
 
 export default function App() {
   return (
@@ -17,7 +18,9 @@ export default function App() {
         <Container>
           <article className='flex flex-col justify-center items-center px-6 leading-normal'>
             <h2 className='max-w-[73ch] text-xl md:text-2xl text-center'>{`Japanese green teas are a healthy dose of rich flavour, elegant aroma and pure umami. It's delight in every sip. It's that needed energy boost in the morning. It's a refreshing sensation of light rain during a hot summer day. It's unlocked creativity, and hours of laser focus. It's what your mind wants, and your body needs. It's nothing but good vibes, delivered straight to your door.`}</h2>
-            <Button type='secondary'>BROWSE OUR COLLECTION</Button>
+            <Button variant='secondary' className='mt-12'>
+              BROWSE OUR COLLECTION
+            </Button>
           </article>
         </Container>
       </Section>
@@ -51,6 +54,7 @@ export default function App() {
         </Container>
       </Section>
       <Featured />
+      <Newsletter />
     </>
   )
 }

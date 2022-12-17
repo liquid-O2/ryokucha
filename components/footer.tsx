@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { Container } from './container'
 import { ChevronUp } from 'react-feather'
 import { useContext } from 'react'
-import { AuthContext } from './contextProvider'
+import { GlobalContext } from './contextProvider'
 import { signOut } from 'firebase/auth'
 import { auth } from '../firebase/config'
 
 const Footer = () => {
-  const { isLoggedIn } = useContext(AuthContext)
+  const { isLoggedIn } = useContext(GlobalContext)
   return (
     <Container>
       <section className=' border-t border-primary/10  grid grid-cols-2 md:grid-cols-4 gap-2 pt-8 '>
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
         </section>
         <section className='flex flex-col gap-2 text-lg md:text-xl leading-none mb-8 '>
-          <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/shop'}>
+          <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/'}>
             shop
           </Link>
           <button className='min-h-[3rem] w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (0)`}</button>

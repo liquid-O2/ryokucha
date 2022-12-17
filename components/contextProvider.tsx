@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import { arrayUnion, doc, getDoc, onSnapshot, setDoc } from 'firebase/firestore'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 
-type AuthContext = {
+type GlobalContext = {
   signIn: (
     email: string,
     password: string,
@@ -43,7 +43,7 @@ type UserDetails = {
   likedTeas: Array<string>
 }
 
-export const AuthContext = React.createContext<AuthContext>(null!)
+export const GlobalContext = React.createContext<GlobalContext>(null!)
 
 const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode; fetchedTeas: Teas[] }) => {
   const router = useRouter()
@@ -109,7 +109,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
       })
   }
 
-  const authContext = {
+  const globalContext = {
     signIn,
     signUp,
     isLoggedIn,
@@ -118,7 +118,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
     teas,
   }
 
-  return <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>
+  return <GlobalContext.Provider value={globalContext}>{children}</GlobalContext.Provider>
 }
 
 export default ContextProviders

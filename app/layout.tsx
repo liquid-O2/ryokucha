@@ -23,20 +23,21 @@ const Mori = localfont({
   variable: '--font-Mori',
 })
 
-// const fetchTeas = async () => {
-//   const q = query(collection(db, 'teas'))
-//   const data = await getDocs(q)
-//   const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-//   return teas as Teas[]
-// }
+const fetchTeas = async () => {
+  const q = query(collection(db, 'teas'))
+  const data = await getDocs(q)
+  const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+  return teas as Teas[]
+}
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // const teas = await fetchTeas()
+  const teas = await fetchTeas()
+
   return (
     <html lang={'en'} className={Mori.variable}>
       <Head />
       <body className='bg-background font-sans'>
-        <ContextProviders fetchedTeas={[]}>
+        <ContextProviders fetchedTeas={teas}>
           <Header />
           <main className=''>{children}</main>
           <Footer />
