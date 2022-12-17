@@ -31,7 +31,7 @@ const Featured = () => {
               )
             })}
           </Carousel>
-          <Button variant='secondary' className='mt-20 w-[80%] md:w-auto'>
+          <Button variant='secondary' className='mt-12 md:mt-20 w-[80%] md:w-auto'>
             BROWSE MORE TEAS
           </Button>
         </div>

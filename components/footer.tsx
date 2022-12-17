@@ -26,14 +26,14 @@ const Footer = () => {
             </button>
           </div>
         </section>
-        <section className='flex flex-col gap-2 text-lg md:text-xl leading-none mb-8 '>
+        <section className='flex flex-col gap-3 text-lg md:text-xl leading-none mb-12 '>
           <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/'}>
             shop
           </Link>
-          <button className='min-h-[3rem] w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (0)`}</button>
+          <button className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (0)`}</button>
           {isLoggedIn ? (
             <button
-              className='min-h-[3rem] w-fit hover:opacity-50 transition-opacity duration-200 ease-in'
+              className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'
               onClick={() => signOut(auth)}>
               logout
             </button>
@@ -43,7 +43,7 @@ const Footer = () => {
             </Link>
           )}
         </section>
-        <section className='flex flex-col gap-2 text-lg md:text-xl leading-none'>
+        <section className='flex flex-col gap-3 text-lg md:text-xl leading-none'>
           <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>
             privacy policy
           </p>
