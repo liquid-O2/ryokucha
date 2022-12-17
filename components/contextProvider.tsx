@@ -49,6 +49,8 @@ export type Teas = {
   image: string
   price: string
   featured?: boolean
+  fullImage?: string
+  description?: string
 }
 
 type UserDetails = {
