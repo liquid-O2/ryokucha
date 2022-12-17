@@ -26,7 +26,7 @@ const Featured = () => {
                   title={name}
                   attributes={attributes}
                   id={id}
-                  className={'w-[300px] min-w-[300px] md:w-[360px] md:min-w-[360px] mr-4'}
+                  className={'w-[320px] min-w-[320px] md:w-[360px] md:min-w-[360px] mr-4'}
                 />
               )
             })}
