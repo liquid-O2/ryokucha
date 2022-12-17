@@ -1,8 +1,8 @@
 import hero from '/public/HERO.jpg'
-import Section from './section'
-import { ScrollingText } from './scrollingText'
-import ParallaxImage from './parallaxImage'
-import { Container } from './container'
+import Section from '../components/section'
+import { ScrollingText } from '../components/scrollingText'
+import ParallaxImage from '../components/parallaxImage'
+import { Container } from '../components/container'
 
 export const Hero = () => {
   return (

@@ -2,17 +2,14 @@
 import { LazyMotion, m, useScroll, useTransform } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
 
-const ParallaxImage = ({
-  image,
-  alt,
-  className,
-  priority,
-}: {
+type ParallaxImageProps = {
   image: StaticImageData
   alt: string
   className?: string
   priority?: boolean
-}) => {
+}
+
+const ParallaxImage = ({ image, alt, className, priority }: ParallaxImageProps) => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 0.6], ['0%', '15%'])
   const loadFeatures = () => import('./framerFeatures').then((res) => res.default)

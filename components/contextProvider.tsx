@@ -6,8 +6,20 @@ import handleErrors from '../firebase/errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
 import { Inputs } from './authForm'
 import { useRouter } from 'next/navigation'
-import { arrayUnion, doc, getDoc, onSnapshot, setDoc } from 'firebase/firestore'
+import {
+  arrayRemove,
+  arrayUnion,
+  doc,
+  DocumentData,
+  DocumentReference,
+  getDoc,
+  onSnapshot,
+  setDoc,
+  Unsubscribe,
+  updateDoc,
+} from 'firebase/firestore'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
+import { id } from '../jest.config'
 
 type GlobalContext = {
   signIn: (
@@ -27,6 +39,7 @@ type GlobalContext = {
   userDetails: UserDetails
   router: AppRouterInstance
   teas: Teas[]
+  updateUser: (type: 'add' | 'delete', data: string, field: string) => void
 }
 
 export type Teas = {
@@ -49,9 +62,12 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''] })
+
   const teas = fetchedTeas
 
+  // user collection related
   useEffect(() => {
+    let removeSnapshot: Unsubscribe = () => {}
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const userRef = doc(db, 'users', `${user.uid}`)
@@ -61,7 +77,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
             setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion('') }, { merge: true })
           }
         }
-        onSnapshot(userRef, { includeMetadataChanges: true }, (data) => {
+        removeSnapshot = onSnapshot(userRef, { includeMetadataChanges: true }, (data) => {
           const userInfo = data.data()
           setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid }))
         })
@@ -70,9 +86,22 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
       } else {
         setIsLoggedIn(false)
       }
+
+      return () => {
+        removeSnapshot()
+      }
     })
   }, [])
 
+  const userRef = doc(db, 'users', `${userDetails.uid}`)
+  const updateUser = (type: 'add' | 'delete', data: string, field: string) => {
+    if (type === 'add') {
+      return updateDoc(userRef, { [field]: arrayUnion(data) })
+    }
+    return updateDoc(userRef, { [field]: arrayRemove(data) })
+  }
+
+  // firebase auth helpers
   const signIn = async (
     email: string,
     password: string,
@@ -116,6 +145,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
     userDetails,
     router,
     teas,
+    updateUser,
   }
 
   return <GlobalContext.Provider value={globalContext}>{children}</GlobalContext.Provider>

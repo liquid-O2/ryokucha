@@ -4,7 +4,7 @@ import { m, LazyMotion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 
 const Carousel = ({ children }: { children: React.ReactNode }) => {
-  const loadFeatures = () => import('./framerFeatures2').then((res) => res.default)
+  const loadFeatures = () => import('./framerFeaturesMax').then((res) => res.default)
   const [leftConstraint, setLeftConstraint] = useState<number>(0)
   const id = 'carousel'
 

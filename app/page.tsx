@@ -1,13 +1,11 @@
-import Link from 'next/link'
+import '../styles/globals.css'
 import Image from 'next/image'
 import Button from '../components/button'
 import { Container } from '../components/container'
-import { Hero } from '../components/hero copy'
+import { Hero } from './hero'
 import Section from '../components/section'
 import col from '../public/COL.png'
 import col2 from '../public/col2.png'
-import '../styles/globals.css'
-import Carousel from '../components/carouselFramer'
 import Featured from './featured'
 import Newsletter from './newsletter'
 
@@ -30,10 +28,10 @@ export default function App() {
         <Container>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
             <article className='flex justify-center  flex-col'>
-              <h3 className='text-3xl min-[2000px]:text-4xl font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
+              <h3 className='text-3xl min-[2000px]:text-4xl pr-6 md:pr-0 font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
                 Natural superfood, perfect for your body and mind
               </h3>
-              <p className='text-lg min-[2000px]:text-xl max-w-[50ch] pr-6'>
+              <p className='text-lg min-[2000px]:text-xl max-w-[50ch] pr-4'>
                 The remarkable properties and health benefits of Japanese Green teas are the result of unique harvesting,
                 processing and blending techniques of tea leaves perfected over centuries by Japanese tea masters. This
                 gives the unique green tea high content of vitamins, minerals and especially antioxidants, which can have
@@ -69,7 +67,7 @@ export default function App() {
               <h3 className='text-3xl min-[2000px]:text-4xl font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
                 The best green tea from the best farmers in Japan
               </h3>
-              <p className='text-lg min-[2000px]:text-xl  min-[2000px]:pr-10 max-w-[50ch] pr-6'>
+              <p className='text-lg min-[2000px]:text-xl  min-[2000px]:pr-10 max-w-[50ch] pr-4'>
                 We source our tea directly from Japan. We work with the best farmers to bring you a premium product. We
                 believe in sustainable farming practices, and our tea is grown without pesticides or herbicides. We
                 produce some of the best tea in the world. To ensure the highest quality and taste of our tea, we only

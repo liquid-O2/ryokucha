@@ -63,12 +63,12 @@ const Newsletter = () => {
                     <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
                       <Mail
                         size={20}
-                        className={errors.EMAIL || mailchimpError ? 'stroke-rose-600' : 'stroke-primary/80'}
+                        className={errors.EMAIL || mailchimpError ? 'stroke-rose-500' : 'stroke-primary/80'}
                       />
                     </div>
                     {errors.EMAIL ||
                       (mailchimpError && (
-                        <p className='text-rose-600 text-sm mt-2 pl-2 md:pl-0 mb-4 md:mb-0 text-left md:text-center'>
+                        <p className='text-rose-500 text-sm mt-2 pl-2 md:pl-0 mb-4 md:mb-0 text-left md:text-center'>
                           {message}
                         </p>
                       ))}

@@ -44,17 +44,13 @@ export default function AuthForm() {
     })
   }
 
-  // framer motion stuff
+  // framer motion
   const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
-  const button = {
-    visible: { opacity: 1, y: '0%' },
-    hidden: { opacity: 1, y: '0%' },
-    hover: { opacity: 1 },
-  }
+
   const buttonCircle = {
     visible: { scale: 1 },
     hover: { y: 0, scale: 99, transition: { duration: 0.4 } },
-    hidden: { y: '-100%', scale: 1 },
+    hidden: { y: '-150%', scale: 1 },
   }
 
   return (
@@ -70,7 +66,7 @@ export default function AuthForm() {
               <div className='input-wrapper'>
                 <Input
                   className={`input rounded-xl w-full lg:w-auto  ${
-                    errors.email ? 'border-rose-600' : 'border-primary border-opacity-60'
+                    errors.email ? 'border-rose-500' : 'border-primary border-opacity-60'
                   }`}
                   type='email'
                   placeholder='Enter your email'
@@ -82,10 +78,10 @@ export default function AuthForm() {
                   }}
                 />
                 <div className='icon absolute left-[1rem] top-[1.15rem] pointer-events-none'>
-                  <Mail size={20} className={errors.email ? 'stroke-rose-600' : 'stroke-primary'} />
+                  <Mail size={20} className={errors.email ? 'stroke-rose-500' : 'stroke-primary'} />
                 </div>
               </div>
-              {errors.email && <p className='text-rose-600 text-sm'>{`${errors.email?.message}`}</p>}
+              {errors.email && <p className='text-rose-500 text-sm'>{`${errors.email?.message}`}</p>}
             </div>
             <div className='form-group flex flex-col gap-y-1 mb-7'>
               <label className='text-md' htmlFor='pwd'>
@@ -94,7 +90,7 @@ export default function AuthForm() {
               <div className='input-wrapper'>
                 <Input
                   className={`input rounded-xl w-full lg:w-auto ${
-                    errors.password ? 'border-rose-600' : 'border-primary border-opacity-60'
+                    errors.password ? 'border-rose-500' : 'border-primary border-opacity-60'
                   }`}
                   type='password'
                   placeholder='Enter your password'
@@ -106,10 +102,10 @@ export default function AuthForm() {
                   }}
                 />
                 <div className='icon absolute left-[1rem] top-[1.15rem] pointer-events-none'>
-                  <Lock size={20} className={errors.password ? 'stroke-rose-600' : 'stroke-primary'} />
+                  <Lock size={20} className={errors.password ? 'stroke-rose-500' : 'stroke-primary'} />
                 </div>
               </div>
-              {errors.password && <p className='text-rose-600 text-sm'>{`${errors.password?.message}`}</p>}
+              {errors.password && <p className='text-rose-500 text-sm'>{`${errors.password?.message}`}</p>}
             </div>
             <m.button
               initial='hidden'
