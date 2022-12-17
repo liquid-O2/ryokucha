@@ -8,7 +8,7 @@ import { GlobalContext } from './contextProvider'
 type CardProps = { img: string; price: string; title: string; attributes: Array<string>; id: string; className: string }
 
 const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
-  const { userDetails, isLoggedIn, updateUser } = useContext(GlobalContext)
+  const { userDetails, isLoggedIn, updateUser, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
 
@@ -37,7 +37,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
 
   return (
     <>
-      <div className={className} id={'card'}>
+      <div className={className} id={'card'} onClick={() => router.push(`/shop/${id}`)}>
         <figure className='p-14 bg-tertiary relative rounded-3xl flex justify-center items-center  min-h-[367px]'>
           <Image
             src={img}
