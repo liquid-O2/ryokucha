@@ -14,7 +14,6 @@ type NewsletterInput = {
 const MailChimpForm = () => {
   const url =
     'https://app.us18.list-manage.com/subscribe/post?u=3ad2e80b5f97babeaef25ccfa&amp;id=00a97f1a2e&amp;f_id=00991ee7f0'
-
   const { loading, error, success, message, handleSubmit } = useMailChimpForm(url)
   const mailchimpSubmit = handleSubmit
   const mailchimpError = error
