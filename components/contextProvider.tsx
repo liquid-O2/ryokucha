@@ -65,7 +65,7 @@ export type Teas = {
 type UserDetails = {
   uid: string | null
   likedTeas: Array<string>
-  photoUrl?: string
+  photoUrl?: string | null
 }
 
 export const GlobalContext = React.createContext<GlobalContext>(null!)
@@ -85,12 +85,12 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
         const checkIfDocExists = async () => {
           const docs = await getDoc(userRef)
           if (!docs.exists()) {
-            setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion('') }, { merge: true })
+            setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion(''), photoUrl: user.photoURL }, { merge: true })
           }
         }
         removeSnapshot = onSnapshot(userRef, { includeMetadataChanges: true }, (data) => {
           const userInfo = data.data()
-          setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid }))
+          setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid, photoUrl: user.photoURL }))
         })
         checkIfDocExists()
         setIsLoggedIn(true)
