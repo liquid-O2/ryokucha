@@ -23,6 +23,35 @@ export default function App() {
           </article>
         </Container>
       </Section>
+      <Section>
+        <Container>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
+            <div className='min-h-full row-start-2 md:row-start-1'>
+              <Image
+                src={col2}
+                alt={'a teapot and a teacup filled with green tea'}
+                className='h-full w-full object-cover rounded-3xl md:rounded-[3rem] max-h-[601px]'
+              />
+            </div>
+            <article className='flex justify-center  md:ml-10 flex-col'>
+              <h3 className='text-3xl min-[2000px]:text-4xl font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
+                The best green tea from the best farmers in Japan
+              </h3>
+              <p className='text-lg min-[2000px]:text-xl  min-[2000px]:pr-10 max-w-[50ch] pr-4'>
+                We source our tea directly from Japan. We work with the best farmers to bring you a premium product. We
+                believe in sustainable farming practices, and our tea is grown without pesticides or herbicides. We
+                produce some of the best tea in the world. To ensure the highest quality and taste of our tea, we only
+                work with the best farmers.
+              </p>
+              <aside className='flex min-[2000px]:text-lg gap-3 mt-5 min-[2000px]:mt-8 flex-wrap'>
+                <p className='px-3 py-1 rounded-full border border-primary/70'>Organic</p>
+                <p className='px-3 py-1 rounded-full border border-primary/70'>Locally-sourced</p>
+                <p className='px-3 py-1 rounded-full border border-primary/70'>Premium quality</p>
+              </aside>
+            </article>
+          </div>
+        </Container>
+      </Section>
       <Featured />
       <Section>
         <Container>
@@ -53,35 +82,7 @@ export default function App() {
           </div>
         </Container>
       </Section>
-      <Section>
-        <Container>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
-            <div className='min-h-full row-start-2 md:row-start-1'>
-              <Image
-                src={col2}
-                alt={'a teapot and a teacup filled with green tea'}
-                className='h-full w-full object-cover rounded-3xl md:rounded-[3rem] max-h-[601px]'
-              />
-            </div>
-            <article className='flex justify-center  md:ml-10 flex-col'>
-              <h3 className='text-3xl min-[2000px]:text-4xl font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
-                The best green tea from the best farmers in Japan
-              </h3>
-              <p className='text-lg min-[2000px]:text-xl  min-[2000px]:pr-10 max-w-[50ch] pr-4'>
-                We source our tea directly from Japan. We work with the best farmers to bring you a premium product. We
-                believe in sustainable farming practices, and our tea is grown without pesticides or herbicides. We
-                produce some of the best tea in the world. To ensure the highest quality and taste of our tea, we only
-                work with the best farmers.
-              </p>
-              <aside className='flex min-[2000px]:text-lg gap-3 mt-5 min-[2000px]:mt-8 flex-wrap'>
-                <p className='px-3 py-1 rounded-full border border-primary/70'>Organic</p>
-                <p className='px-3 py-1 rounded-full border border-primary/70'>Locally-sourced</p>
-                <p className='px-3 py-1 rounded-full border border-primary/70'>Premium quality</p>
-              </aside>
-            </article>
-          </div>
-        </Container>
-      </Section>
+
       <Newsletter />
     </>
   )
