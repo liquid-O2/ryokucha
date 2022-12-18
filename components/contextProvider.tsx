@@ -137,7 +137,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   }
 
   const signUpWithGoogle = () => {
-    signInWithPopup(auth, provider, browserPopupRedirectResolver).then((u) => {
+    signInWithPopup(auth, provider).then((u) => {
       if (u) {
         router.push('/')
       }
