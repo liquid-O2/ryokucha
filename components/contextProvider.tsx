@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
 } from 'firebase/auth'
 import { auth, db, provider } from '../firebase/config'
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
@@ -137,7 +138,9 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
 
   const signUpWithGoogle = () => {
     signInWithPopup(auth, provider, browserPopupRedirectResolver).then((u) => {
-      if (u) router.push('/')
+      if (u) {
+        router.push('/')
+      }
     })
   }
 
