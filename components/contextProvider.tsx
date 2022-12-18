@@ -93,7 +93,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
           const userInfo = data.data()
           setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid }))
         })
-        router.push('/')
+
         checkIfDocExists()
         setIsLoggedIn(true)
       } else {
@@ -169,8 +169,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   }
 
   const signUpWithGoogle = () => {
-    signInWithRedirect(auth, provider, browserPopupRedirectResolver)
-    setUserDetailsAfterRedirect()
+    signInWithPopup(auth, provider, browserPopupRedirectResolver)
   }
   // values to be passed to context
   const globalContext = {

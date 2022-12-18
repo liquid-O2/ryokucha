@@ -23,7 +23,7 @@ export type formProps = {
 
 export default function AuthForm() {
   const router = useRouter()
-  const { signIn, signUp, signUpWithGoogle } = useContext(GlobalContext)
+  const { signIn, signUp, signUpWithGoogle, isLoggedIn } = useContext(GlobalContext)
   const [isRegister, setIsRegister] = React.useState<boolean>(false)
 
   const {
@@ -44,6 +44,10 @@ export default function AuthForm() {
     await signInWithEmailAndPassword(auth, 'guest@guest.com', 'guest1234').then(() => {
       router.push('/')
     })
+  }
+
+  if (isLoggedIn) {
+    router.push('/')
   }
 
   return (
