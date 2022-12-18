@@ -17,7 +17,9 @@ const Featured = () => {
     <Section>
       <Container>
         <div className='flex flex-col justify-between'>
-          <p className='text-3xl md:text-4xl leading-tight font-bold mb-8'>Featured Teas</p>
+          <p className='w-full text-center text-3xl md:text-4xl leading-tight font-bold mb-12'>
+            Our recommendations for you
+          </p>
           <Carousel>
             {featuredTeas.map((teas) => {
               const { id, image, price, name, attributes } = teas

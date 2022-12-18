@@ -60,13 +60,13 @@ export default function App() {
               <h3 className='text-3xl min-[2000px]:text-4xl pr-6 md:pr-0 font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
                 Natural superfood, perfect for your body and mind
               </h3>
-              <p className='text-lg min-[2000px]:text-xl max-w-[50ch] pr-4'>
+              <p className='text-lg min-[2000px]:text-xl max-w-[50ch] pr-4 '>
                 The remarkable properties and health benefits of Japanese Green teas are the result of unique harvesting,
                 processing and blending techniques of tea leaves perfected over centuries by Japanese tea masters. This
                 gives the unique green tea high content of vitamins, minerals and especially antioxidants, which can have
                 a positive effect on concentration, mood, and metabolism.
               </p>
-              <aside className='flex min-[2000px]:text-lg gap-3 mt-5 flex-wrap min-[2000px]:mt-8'>
+              <aside className='flex min-[2000px]:text-lg gap-3 mt-5  flex-wrap min-[2000px]:mt-8'>
                 <p className='px-3 py-1 rounded-full border border-primary/70'>3-5 hours of energy</p>
                 <p className='px-3 py-1 rounded-full border border-primary/70'>No jitters</p>
                 <p className='px-3 py-1 rounded-full border border-primary/70'>Nutrient-rich</p>
@@ -82,7 +82,6 @@ export default function App() {
           </div>
         </Container>
       </Section>
-
       <Newsletter />
     </>
   )

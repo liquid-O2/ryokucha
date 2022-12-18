@@ -16,7 +16,6 @@ const fetchTeas = cache(async () => {
 
 export async function generateStaticParams() {
   const teas = await fetchTeas()
-
   return teas.map((tea) => ({
     slug: tea.id,
   }))
@@ -47,15 +46,16 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
               width={1000}
               height={1000}
               className='relative object-cover h-full w-full '
+              priority
             />
           </figure>
-          <article className='relative px-10 h-full w-full   flex flex-col justify-center md:px-16 bg-primary rounded-3xl md:rounded-[3rem] py-10 md:py-16'>
-            <p className='text-2xl text-neon font-bold'>{price}</p>
-            <p className=' text-4xl  lg:text-5xl font-bold  mt-1'>
+          <article className='relative px-10 h-full w-full flex flex-col justify-center md:px-20 bg-primary rounded-3xl md:rounded-[3rem] py-10 md:py-16'>
+            <p className='text-2xl w-full text-neon font-bold'>{price}</p>
+            <p className=' text-4xl w-full lg:text-5xl font-bold  mt-1'>
               {name}
               <span className='text-sm tracking-wider pl-2'>100g</span>
             </p>
-            <p className='text-lg max-w-[70ch] mt-4'>{description}</p>
+            <p className='text-lg max-w-[50ch] mt-4'>{description}</p>
             <AddToCart />
           </article>
         </div>
