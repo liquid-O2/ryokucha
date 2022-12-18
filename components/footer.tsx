@@ -47,11 +47,11 @@ const Footer = () => {
           <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>
             privacy policy
           </p>
+          <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>careers</p>
           <p
             className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer w-full text-right'}>
-            terms and conditions
+            t&c
           </p>
-          <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>careers</p>
         </section>
         <section className='border-t border-primary/10 col-span-2 md:col-span-4 flex justify-between py-4'>
           <p className='text-primary/70 text-base transition-all'>

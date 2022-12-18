@@ -1,25 +1,20 @@
 'use client'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
-import { auth, db } from '../firebase/config'
+import {
+  browserPopupRedirectResolver,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from 'firebase/auth'
+import { auth, db, provider } from '../firebase/config'
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import handleErrors from '../firebase/errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
 import { Inputs } from './authForm'
 import { useRouter } from 'next/navigation'
-import {
-  arrayRemove,
-  arrayUnion,
-  doc,
-  DocumentData,
-  DocumentReference,
-  getDoc,
-  onSnapshot,
-  setDoc,
-  Unsubscribe,
-  updateDoc,
-} from 'firebase/firestore'
+import { arrayRemove, arrayUnion, doc, getDoc, onSnapshot, setDoc, Unsubscribe, updateDoc } from 'firebase/firestore'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
-import { id } from '../jest.config'
 
 type GlobalContext = {
   signIn: (
@@ -27,19 +22,20 @@ type GlobalContext = {
     password: string,
     setError: UseFormSetError<Inputs>,
     resetField: UseFormResetField<Inputs>
-  ) => Promise<void>
+  ) => void
   signUp: (
     email: string,
     password: string,
     setError: UseFormSetError<Inputs>,
     resetField: UseFormResetField<Inputs>,
     setIsRegister: Dispatch<SetStateAction<boolean>>
-  ) => Promise<void>
+  ) => void
   isLoggedIn: boolean
   userDetails: UserDetails
   router: AppRouterInstance
   teas: Teas[]
   updateUser: (type: 'add' | 'delete', data: string, field: string) => void
+  signUpWithGoogle: () => void
 }
 
 export type Teas = {
@@ -64,7 +60,6 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''] })
-
   const teas = fetchedTeas
 
   // user collection related
@@ -73,7 +68,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const userRef = doc(db, 'users', `${user.uid}`)
-        const checkIfExists = async () => {
+        const checkIfDocExists = async () => {
           const docs = await getDoc(userRef)
           if (!docs.exists()) {
             setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion('') }, { merge: true })
@@ -83,7 +78,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
           const userInfo = data.data()
           setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid }))
         })
-        checkIfExists()
+        checkIfDocExists()
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
@@ -104,13 +99,13 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   }
 
   // firebase auth helpers
-  const signIn = async (
+  const signIn = (
     email: string,
     password: string,
     setError: UseFormSetError<Inputs>,
     resetField: UseFormResetField<Inputs>
   ) => {
-    await signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         router.push('/')
         resetField('email')
@@ -121,14 +116,14 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
       })
   }
 
-  const signUp = async (
+  const signUp = (
     email: string,
     password: string,
     setError: UseFormSetError<Inputs>,
     resetField: UseFormResetField<Inputs>,
     setIsRegister: Dispatch<SetStateAction<boolean>>
   ) => {
-    await createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         setIsRegister(false)
         router.push('/')
@@ -140,6 +135,13 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
       })
   }
 
+  const signUpWithGoogle = () => {
+    signInWithPopup(auth, provider, browserPopupRedirectResolver).then((u) => {
+      if (u) router.push('/')
+    })
+  }
+
+  // values to be passed to context
   const globalContext = {
     signIn,
     signUp,
@@ -148,6 +150,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
     router,
     teas,
     updateUser,
+    signUpWithGoogle,
   }
 
   return <GlobalContext.Provider value={globalContext}>{children}</GlobalContext.Provider>

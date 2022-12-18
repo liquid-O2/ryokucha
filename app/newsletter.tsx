@@ -11,9 +11,11 @@ type NewsletterInput = {
   EMAIL: string
 }
 
+// mailchimp form url
+const url =
+  'https://app.us18.list-manage.com/subscribe/post?u=3ad2e80b5f97babeaef25ccfa&amp;id=00a97f1a2e&amp;f_id=00991ee7f0'
+
 const MailChimpForm = () => {
-  const url =
-    'https://app.us18.list-manage.com/subscribe/post?u=3ad2e80b5f97babeaef25ccfa&amp;id=00a97f1a2e&amp;f_id=00991ee7f0'
   const { loading, error, success, message, handleSubmit } = useMailChimpForm(url)
   const mailchimpSubmit = handleSubmit
   const mailchimpError = error
@@ -27,6 +29,7 @@ const Newsletter = () => {
     mailchimpSubmit(data)
     resetField('EMAIL')
   }
+
   const {
     register,
     handleSubmit,
@@ -43,7 +46,6 @@ const Newsletter = () => {
             <p className='text-lg mt-3 max-w-[40ch]'>
               Get delicious recipes, discounts and monthly updates delivered straight to your inbox
             </p>
-
             <form
               onSubmit={handleSubmit(subscribeNewsletter)}
               className='w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-8'>
@@ -57,13 +59,15 @@ const Newsletter = () => {
                       id='mce-EMAIL'
                       required
                       placeholder='Enter your email'
-                      className='w-full rounded-full min-h-[56px] border-primary/30'
+                      className='w-full rounded-full min-h-[56px] border-primary/20  bg-background'
                       customAttr={{ ...register('EMAIL', { required: 'Please enter your email' }) }}
                     />
                     <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
                       <Mail
                         size={20}
-                        className={errors.EMAIL || mailchimpError ? 'stroke-rose-500' : 'stroke-primary/80'}
+                        className={
+                          errors.EMAIL || mailchimpError ? 'stroke-rose-500 stroke-2' : 'stroke-primary/80  stroke-2'
+                        }
                       />
                     </div>
                     {errors.EMAIL ||
@@ -79,8 +83,7 @@ const Newsletter = () => {
                     )}
                   </>
                 </div>
-
-                <Button variant='primary' className='w-full mb-auto' name='subscribe' id='mc-embedded-subscribe'>
+                <Button variant='primary' className='w-full mb-auto'>
                   {loading ? 'LOADING...' : 'SIGN UP'}
                 </Button>
               </>

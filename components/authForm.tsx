@@ -5,13 +5,15 @@ import React, { Dispatch, SetStateAction, useContext } from 'react'
 import Input from './input'
 import { GlobalContext } from './contextProvider'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { m, LazyMotion } from 'framer-motion'
 import { auth } from '../firebase/config'
 import { useRouter } from 'next/navigation'
+import GoogleIcon from './googleIcon'
+import Button from './button'
 
 export type Inputs = {
   email: string
   password: string
+  username: string
 }
 
 export type formProps = {
@@ -21,7 +23,7 @@ export type formProps = {
 
 export default function AuthForm() {
   const router = useRouter()
-  const { signIn, signUp } = useContext(GlobalContext)
+  const { signIn, signUp, signUpWithGoogle } = useContext(GlobalContext)
   const [isRegister, setIsRegister] = React.useState<boolean>(false)
 
   const {
@@ -44,94 +46,92 @@ export default function AuthForm() {
     })
   }
 
-  // framer motion
-  const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
-
-  const buttonCircle = {
-    visible: { scale: 1 },
-    hover: { y: 0, scale: 99, transition: { duration: 0.4 } },
-    hidden: { y: '-150%', scale: 1 },
-  }
-
   return (
-    <LazyMotion features={loadFeatures}>
-      <div className='form-wrapper flex flex-col justify-center items-start w-3/4 lg:w-auto'>
-        <p className='text-4xl font-bold mb-8 text-primary '> {isRegister ? 'Create an account' : ' Sign In'} </p>
-        <div className='flex items-center flex-col w-full lg:w-auto text-primary'>
-          <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-full lg:w-auto' autoComplete='off'>
-            <div className='form-group flex flex-col gap-y-1 mb-4'>
-              <label className='text-md' htmlFor='uname'>
-                Email
-              </label>
-              <div className='input-wrapper'>
-                <Input
-                  className={`input rounded-xl w-full lg:w-auto  ${
-                    errors.email ? 'border-rose-500' : 'border-primary border-opacity-60'
-                  }`}
-                  type='email'
-                  placeholder='Enter your email'
-                  customAttr={{
-                    ...register('email', {
-                      required: true,
-                      pattern: { value: /[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}/, message: 'Invalid email format' },
-                    }),
-                  }}
-                />
-                <div className='icon absolute left-[1rem] top-[1.15rem] pointer-events-none'>
-                  <Mail size={20} className={errors.email ? 'stroke-rose-500' : 'stroke-primary'} />
-                </div>
-              </div>
-              {errors.email && <p className='text-rose-500 text-sm'>{`${errors.email?.message}`}</p>}
-            </div>
-            <div className='form-group flex flex-col gap-y-1 mb-7'>
-              <label className='text-md' htmlFor='pwd'>
-                Password
-              </label>
-              <div className='input-wrapper'>
-                <Input
-                  className={`input rounded-xl w-full lg:w-auto ${
-                    errors.password ? 'border-rose-500' : 'border-primary border-opacity-60'
-                  }`}
-                  type='password'
-                  placeholder='Enter your password'
-                  customAttr={{
-                    ...register('password', {
-                      required: true,
-                      minLength: { value: 8, message: 'Password must be atleast 8 characters' },
-                    }),
-                  }}
-                />
-                <div className='icon absolute left-[1rem] top-[1.15rem] pointer-events-none'>
-                  <Lock size={20} className={errors.password ? 'stroke-rose-500' : 'stroke-primary'} />
-                </div>
-              </div>
-              {errors.password && <p className='text-rose-500 text-sm'>{`${errors.password?.message}`}</p>}
-            </div>
-            <m.button
-              initial='hidden'
-              whileInView='visible'
-              whileHover='hover'
-              className='bg-primary relative overflow-hidden p-4 text-lg rounded-xl transition-colors text-background shadow-lg shadow-primary/40 font-bold '
-              type='submit'>
-              <m.div
-                variants={buttonCircle}
-                className='bg-primary-dark w-2 h-2 absolute top-0 left-[50%] rounded-full z-10'></m.div>
-              <span className='relative z-20'>{isRegister ? 'Sign Up' : 'Login'}</span>
-            </m.button>
-          </form>
-        </div>
-        <div className='flex flex-col items-center justify-center  mt-7 w-full'>
-          <p className='text-primary mb-3'>{isRegister ? `Already have an account?` : `Don't have an account yet?`}</p>
-          <button
-            className='bg-transparent px-4 py-4 text-lg rounded-xl text-primary border-solid border-2 border-primary border-opacity-50 font-bold w-full'
-            onClick={() => setIsRegister(isRegister ? false : true)}>
-            {isRegister ? 'Sign In' : ' Register Now'}
-          </button>
-          <button className='underline  mt-6 mb-4 text-lg' onClick={() => handleGuestLogin()}>
-            Continue with a guest account
-          </button>
+    <div className='flex flex-col justify-center items-center w-[501px] max-w-[95%] mt-16 mb-16'>
+      <p className='text-3xl font-bold'>{isRegister ? 'Create an account' : 'Login'}</p>
+      <button
+        onClick={() => signUpWithGoogle()}
+        className='bg-white w-full   px-8 py-4 text-neutral-700 rounded-full text-base border border-black/5 mt-5 flex justify-center items-center gap-3 '>
+        <GoogleIcon size='24' /> Sign in with Google
+      </button>
+      <div className='relative w-full mt-5 h-5 flex justify-center items-center'>
+        <div className='h-[1px] w-[98%] bg-primary/10'></div>
+        <div className='absolute top-0 mx-auto'>
+          <p className='text-base bg-background h-full px-4 text-center'>or</p>
         </div>
       </div>
-    </LazyMotion>
+      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col w-full mt-5 gap-6' autoComplete='off'>
+        <div className='form-group flex flex-col gap-y-2 '>
+          <label className='text-sm leading-none' htmlFor='email'>
+            Email
+          </label>
+          <div className='input-wrapper'>
+            <Input
+              className={` rounded-xl w-full bg-primary/5 ${errors.email ? 'border-rose-500' : 'border-primary/10 '}`}
+              type='email'
+              placeholder='Enter your email'
+              name='email'
+              customAttr={{
+                ...register('email', {
+                  required: true,
+                  pattern: { value: /[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+.[a-z]{2,}/, message: 'Invalid email format' },
+                }),
+              }}
+            />
+            <div className='icon absolute left-[1rem] top-[0.95rem] pointer-events-none'>
+              <Mail size={20} className={`${errors.email && 'stroke-rose-500/70'} stroke-primary/70`} />
+            </div>
+          </div>
+          {errors.email && <p className='text-rose-500 text-sm'>{`${errors.email?.message}`}</p>}
+        </div>
+        <div className='form-group flex flex-col gap-y-2 '>
+          <label className='text-sm leading-none' htmlFor='password'>
+            Password
+          </label>
+          <div className='input-wrapper'>
+            <Input
+              className={` rounded-xl w-full bg-primary/5 ${errors.password ? 'border-rose-500' : 'border-primary/10 '}`}
+              type='password'
+              name='password'
+              placeholder='Enter your password'
+              customAttr={{
+                ...register('password', {
+                  required: true,
+                  minLength: { value: 8, message: 'Password must be atleast 8 characters' },
+                }),
+              }}
+            />
+            <div className='icon absolute left-[1rem] top-[0.95rem] pointer-events-none'>
+              <Lock size={20} className={`${errors.password && 'stroke-rose-500/70'} stroke-primary/70`} />
+            </div>
+          </div>
+          {errors.password && <p className='text-rose-500 text-sm'>{`${errors.password?.message}`}</p>}
+        </div>
+        <Button variant='secondary' type='submit' className='w-full mt-2'>
+          {isRegister ? 'Sign Up' : 'Login'}
+        </Button>
+      </form>
+      <div className='relative w-full h-5 flex justify-center items-center mt-6'>
+        <div className='h-[1px] w-[98%] bg-primary/10'></div>
+        <div className='absolute top-0 mx-auto'>
+          <p className='text-base bg-background h-full px-4 text-center'>{`Don't have an account?`}</p>
+        </div>
+      </div>
+      <Button
+        variant='tertiary'
+        className='w-full mt-6'
+        onClick={() => {
+          setIsRegister((prev) => !prev)
+          resetField('email')
+          resetField('password')
+        }}>
+        {isRegister ? 'Login' : 'Register now'}
+      </Button>
+      <button
+        className='w-full text-center underline underline-offset-2 text-base mt-8'
+        onClick={() => handleGuestLogin()}>
+        Continue with a guest account
+      </button>
+    </div>
   )
 }
