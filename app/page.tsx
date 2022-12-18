@@ -51,7 +51,7 @@ export default function App() {
           </div>
         </Container>
       </Section>
-      <Featured />
+      {/* <Featured /> */}
       <Section>
         <Container>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
