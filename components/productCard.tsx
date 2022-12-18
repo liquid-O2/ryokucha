@@ -49,7 +49,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
         <div className='relative'>
           <button
             disabled={!isLoggedIn}
-            className=' disabled:opacity-20 absolute z-20 top-4  right-8 text-primary'
+            className=' disabled:opacity-20 absolute z-20 top-4 right-[28px] md:right-8 text-primary'
             onClick={(e) => {
               e.stopPropagation()
               toggleUpdateLiked()
