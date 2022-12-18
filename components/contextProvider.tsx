@@ -77,7 +77,6 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   const teas = fetchedTeas
 
   // user collection related
-
   useEffect(() => {
     let removeSnapshot: Unsubscribe = () => {}
     onAuthStateChanged(auth, (user) => {
@@ -93,13 +92,11 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
           const userInfo = data.data()
           setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid }))
         })
-
         checkIfDocExists()
         setIsLoggedIn(true)
       } else {
         setIsLoggedIn(false)
       }
-
       return () => {
         removeSnapshot()
       }
@@ -151,26 +148,10 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
       })
   }
 
-  const setUserDetailsAfterRedirect = async () => {
-    await getRedirectResult(auth).then((result) => {
-      if (result) {
-        const user = result.user
-        const userRef = doc(db, 'users', `${user.uid}`)
-        const checkIfDocExists = async () => {
-          const docs = await getDoc(userRef)
-          if (!docs.exists()) {
-            setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion('') }, { merge: true })
-          }
-        }
-        checkIfDocExists()
-        setIsLoggedIn(true)
-      } else setIsLoggedIn(false)
-    })
-  }
-
   const signUpWithGoogle = () => {
     signInWithPopup(auth, provider, browserPopupRedirectResolver)
   }
+
   // values to be passed to context
   const globalContext = {
     signIn,
