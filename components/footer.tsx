@@ -26,7 +26,7 @@ const Footer = () => {
             </button>
           </div>
         </section>
-        <section className='flex items-end flex-col gap-3 text-lg md:text-xl leading-none mb-12 '>
+        <section className='flex md:items-end flex-col gap-3 text-lg md:text-xl leading-none mb-12 '>
           <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/'}>
             shop
           </Link>
@@ -47,7 +47,8 @@ const Footer = () => {
           <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>
             privacy policy
           </p>
-          <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>
+          <p
+            className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer w-full text-right'}>
             terms and conditions
           </p>
           <p className={'hover:opacity-50 transition-opacity duration-200 ease-in hover:cursor-pointer'}>careers</p>
