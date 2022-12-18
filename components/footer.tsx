@@ -8,7 +8,7 @@ import { signOut } from 'firebase/auth'
 import { auth } from '../firebase/config'
 
 const Footer = () => {
-  const { isLoggedIn } = useContext(GlobalContext)
+  const { isLoggedIn, cartItemNo } = useContext(GlobalContext)
   return (
     <Container>
       <section className=' border-t border-primary/10  grid grid-cols-2 md:grid-cols-4 gap-2 pt-8 '>
@@ -30,7 +30,7 @@ const Footer = () => {
           <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/'}>
             shop
           </Link>
-          <button className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (0)`}</button>
+          <button className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (${cartItemNo})`}</button>
           {isLoggedIn ? (
             <button
               className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'

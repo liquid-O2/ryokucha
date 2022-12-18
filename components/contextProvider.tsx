@@ -49,6 +49,8 @@ type GlobalContext = {
   teas: Teas[]
   updateUser: (type: 'add' | 'delete', data: string, field: string) => void
   signUpWithGoogle: () => void
+  cartItemNo: number
+  setCartItemNo: Dispatch<SetStateAction<number>>
 }
 
 export type Teas = {
@@ -74,6 +76,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''] })
+  const [cartItemNo, setCartItemNo] = useState(0)
   const teas = fetchedTeas
 
   // user collection related
@@ -162,6 +165,8 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
     teas,
     updateUser,
     signUpWithGoogle,
+    cartItemNo,
+    setCartItemNo,
   }
 
   return <GlobalContext.Provider value={globalContext}>{children}</GlobalContext.Provider>
