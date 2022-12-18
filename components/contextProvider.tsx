@@ -2,6 +2,7 @@
 import {
   browserPopupRedirectResolver,
   createUserWithEmailAndPassword,
+  getRedirectResult,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -14,7 +15,18 @@ import handleErrors from '../firebase/errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
 import { Inputs } from './authForm'
 import { useRouter } from 'next/navigation'
-import { arrayRemove, arrayUnion, doc, getDoc, onSnapshot, setDoc, Unsubscribe, updateDoc } from 'firebase/firestore'
+import {
+  arrayRemove,
+  arrayUnion,
+  doc,
+  DocumentData,
+  DocumentReference,
+  getDoc,
+  onSnapshot,
+  setDoc,
+  Unsubscribe,
+  updateDoc,
+} from 'firebase/firestore'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 
 type GlobalContext = {
@@ -53,6 +65,7 @@ export type Teas = {
 type UserDetails = {
   uid: string | null
   likedTeas: Array<string>
+  photoUrl?: string
 }
 
 export const GlobalContext = React.createContext<GlobalContext>(null!)
@@ -64,6 +77,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
   const teas = fetchedTeas
 
   // user collection related
+
   useEffect(() => {
     let removeSnapshot: Unsubscribe = () => {}
     onAuthStateChanged(auth, (user) => {
@@ -79,6 +93,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
           const userInfo = data.data()
           setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid }))
         })
+        router.push('/')
         checkIfDocExists()
         setIsLoggedIn(true)
       } else {
@@ -136,14 +151,27 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
       })
   }
 
-  const signUpWithGoogle = () => {
-    signInWithPopup(auth, provider).then((u) => {
-      if (u) {
-        router.push('/')
-      }
+  const setUserDetailsAfterRedirect = async () => {
+    await getRedirectResult(auth).then((result) => {
+      if (result) {
+        const user = result.user
+        const userRef = doc(db, 'users', `${user.uid}`)
+        const checkIfDocExists = async () => {
+          const docs = await getDoc(userRef)
+          if (!docs.exists()) {
+            setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion('') }, { merge: true })
+          }
+        }
+        checkIfDocExists()
+        setIsLoggedIn(true)
+      } else setIsLoggedIn(false)
     })
   }
 
+  const signUpWithGoogle = () => {
+    signInWithRedirect(auth, provider, browserPopupRedirectResolver)
+    setUserDetailsAfterRedirect()
+  }
   // values to be passed to context
   const globalContext = {
     signIn,
