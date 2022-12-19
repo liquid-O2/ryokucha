@@ -22,7 +22,7 @@ export const Hero = () => {
             </h1>
           </Container>
           <ScrollingText
-            wrapperClass='relative justify-self-end mb-6 pl-6 md:pl-10'
+            wrapperClass='relative justify-self-end mb-6 pl-5 md:pl-10'
             textClass='text-[7.5rem] mb-4 md:mb-0 md:text-[10rem]'
             text='RYOKUCHA 緑茶 TEAS - JAPANESE GREEN TEA - RYOKUCHA 緑茶 TEAS - '
           />
