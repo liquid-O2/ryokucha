@@ -7,11 +7,13 @@ interface ButtonProps {
   variant: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
   className?: string
-  onClick?: () => void
+  onClick?: (e?: any) => void
   type?: 'button' | 'submit' | 'reset' | undefined
+  name?: string
+  id?: string
 }
 
-const Button = ({ variant, children, className, onClick, type }: ButtonProps) => {
+const Button = ({ variant, children, className, onClick, type, name, id }: ButtonProps) => {
   const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
 
   // framer variants
@@ -31,8 +33,10 @@ const Button = ({ variant, children, className, onClick, type }: ButtonProps) =>
     return (
       <LazyMotion features={loadFeatures}>
         <m.button
+          id={id}
           onClick={onClick}
           type={type}
+          name={name}
           variants={button}
           initial='hidden'
           whileInView='visible'
@@ -53,7 +57,9 @@ const Button = ({ variant, children, className, onClick, type }: ButtonProps) =>
   return (
     <button
       onClick={onClick}
+      id={id}
       type={type}
+      name={name}
       className={`overflow-hidden relative self-center flex justify-center items-center text-center  px-8 py-4 border border-primary/20 rounded-full ${className}`}>
       <span className='relative z-20 text-base  font-bold'>{children}</span>
     </button>

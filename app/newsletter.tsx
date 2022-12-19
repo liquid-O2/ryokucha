@@ -26,7 +26,7 @@ const Newsletter = () => {
   const { mailchimpError, mailchimpSubmit, loading, success, message } = MailChimpForm()
 
   const subscribeNewsletter: SubmitHandler<NewsletterInput> = (data) => {
-    mailchimpSubmit(data)
+    if (data.EMAIL) mailchimpSubmit(data)
     resetField('EMAIL')
   }
 
@@ -59,7 +59,7 @@ const Newsletter = () => {
                       id='mce-EMAIL'
                       required
                       placeholder='Enter your email'
-                      className='w-full rounded-full min-h-[56px] border-primary/20  bg-tertiary-light bg-opacity-[0.02]'
+                      className='w-full rounded-full min-h-[56px] border-primary/10  bg-tertiary-light bg-opacity-[0.02]'
                       customAttr={{ ...register('EMAIL', { required: 'Please enter your email' }) }}
                     />
                     <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>

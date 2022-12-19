@@ -5,13 +5,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   type: string
   placeholder: string
   customAttr?: any
+  ref?: any
 }
 
-const Input = ({ className, type, placeholder, customAttr, value }: InputProps) => {
+const Input = ({ className, type, placeholder, customAttr, value, ref }: InputProps) => {
   return (
     <input
       className={`pr-4 pl-11 py-3 border text-primary  ${className}`}
       type={type}
+      ref={ref}
       placeholder={placeholder}
       {...customAttr}
       value={value}
