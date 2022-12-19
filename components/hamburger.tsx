@@ -25,7 +25,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
               hamburgerOpen ? '-rotate-[135deg] top-[50%] ' : 'top-[65%]'
             } rounded-[10px] bg-primary/80`}></span>
         </button>
-        <div className='absolute top-full right-0 mt-6 min-w-[300px] overflow-hidden'>
+        <div className='absolute z-50 mt-2 top-full right-0  min-w-[300px] overflow-hidden'>
           <AnimatePresence initial={false}>
             {hamburgerOpen && (
               <motion.div
@@ -33,7 +33,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                 initial={{ y: '-100%', opacity: 0 }}
                 exit={{ y: '-100%', opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className=' bg-background rounded-3xl flex flex-col px-6 py-4 gap-4'>
+                className=' bg-background shadow-md shadow-primary-dark/10 rounded-3xl mt-4 flex flex-col px-6 py-4 gap-4'>
                 <Link
                   onClick={() => setHamburgerOpen(false)}
                   href={'/shop'}
