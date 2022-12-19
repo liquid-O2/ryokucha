@@ -1,42 +1,9 @@
-'use client'
-import { SubmitHandler, useForm } from 'react-hook-form'
 import { Mail } from 'react-feather'
 import Button from '../components/button'
 import { Container } from '../components/container'
-import Input from '../components/input'
 import Section from '../components/section'
-import { useMailChimpForm } from 'use-mailchimp-form'
-
-type NewsletterInput = {
-  EMAIL: string
-}
-
-// mailchimp form url
-const url =
-  'https://app.us18.list-manage.com/subscribe/post?u=3ad2e80b5f97babeaef25ccfa&amp;id=00a97f1a2e&amp;f_id=00991ee7f0'
-
-const MailChimpForm = () => {
-  const { loading, error, success, message, handleSubmit } = useMailChimpForm(url)
-  const mailchimpSubmit = handleSubmit
-  const mailchimpError = error
-  return { mailchimpError, mailchimpSubmit, loading, success, message }
-}
 
 const Newsletter = () => {
-  const { mailchimpError, mailchimpSubmit, loading, success, message } = MailChimpForm()
-
-  const subscribeNewsletter: SubmitHandler<NewsletterInput> = (data) => {
-    if (data.EMAIL) mailchimpSubmit(data)
-    resetField('EMAIL')
-  }
-
-  const {
-    register,
-    handleSubmit,
-    resetField,
-    formState: { errors },
-  } = useForm<NewsletterInput>({ criteriaMode: 'all' })
-
   return (
     <Section>
       <Container>
@@ -47,45 +14,35 @@ const Newsletter = () => {
               Get delicious recipes, discounts and monthly updates delivered straight to your inbox
             </p>
             <form
-              onSubmit={handleSubmit(subscribeNewsletter)}
+              action='https://app.us18.list-manage.com/subscribe/post'
+              method='POST'
               className='w-full grid grid-cols-1 md:grid-cols-3 gap-4 mt-8'>
+              <input type='hidden' name='u' value='3ad2e80b5f97babeaef25ccfa' />
+              <input type='hidden' name='id' value='00a97f1a2e' />
               <>
-                <div className='input-wrapper w-full md:col-span-2'>
+                <div id='mergeRow-0' className='input-wrapper w-full md:col-span-2'>
                   <>
-                    <Input
+                    <input
                       type='email'
-                      defaultValue=''
-                      name='EMAIL'
-                      id='mce-EMAIL'
+                      name='MERGE0'
+                      id='MERGE0'
+                      autoCorrect='off'
+                      autoComplete='off'
+                      autoCapitalize='off'
                       required
                       placeholder='Enter your email'
-                      className='w-full rounded-full min-h-[56px] border-primary/10  bg-tertiary-light bg-opacity-[0.02]'
-                      customAttr={{ ...register('EMAIL', { required: 'Please enter your email' }) }}
+                      className='w-full rounded-full min-h-[56px] border-primary/10  bg-tertiary-light bg-opacity-[0.02] pr-4 pl-11 py-3 border text-primary'
                     />
                     <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
-                      <Mail
-                        size={20}
-                        className={
-                          errors.EMAIL || mailchimpError ? 'stroke-rose-500 stroke-2' : 'stroke-primary/80  stroke-2'
-                        }
-                      />
+                      <Mail size={20} className={'stroke-primary/80  stroke-2'} />
                     </div>
-                    {errors.EMAIL ||
-                      (mailchimpError && (
-                        <p className='text-rose-500 text-sm mt-2 pl-2 md:pl-0 mb-4 md:mb-0 text-left md:text-center'>
-                          {message}
-                        </p>
-                      ))}
-                    {success && (
-                      <p className='text-green-600 text-sm mt-2 pl-2 md:pl-0 mb-4 md:mb-0  text-left md:text-center'>
-                        Thanks for subscribing to our newsletter
-                      </p>
-                    )}
                   </>
                 </div>
                 <Button variant='secondary' className='w-full mb-auto'>
-                  {loading ? 'LOADING...' : 'SIGN UP'}
+                  {'SIGN UP'}
                 </Button>
+                <input type='hidden' name='ht' value='69825c556c7e7dfb59219f465435ea56eb03b3b1:MTY3MTQ1NjA1MC4wMjg0' />
+                <input type='hidden' name='mc_signupsource' value='hosted' />
               </>
             </form>
           </div>

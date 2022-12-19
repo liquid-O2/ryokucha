@@ -11,9 +11,10 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset' | undefined
   name?: string
   id?: string
+  disabled?: boolean
 }
 
-const Button = ({ variant, children, className, onClick, type, name, id }: ButtonProps) => {
+const Button = ({ variant, children, className, onClick, type, name, id, disabled }: ButtonProps) => {
   const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
 
   // framer variants
@@ -33,6 +34,7 @@ const Button = ({ variant, children, className, onClick, type, name, id }: Butto
     return (
       <LazyMotion features={loadFeatures}>
         <m.button
+          disabled={disabled}
           id={id}
           onClick={onClick}
           type={type}
@@ -41,7 +43,7 @@ const Button = ({ variant, children, className, onClick, type, name, id }: Butto
           initial='hidden'
           whileInView='visible'
           whileHover='hover'
-          className={`overflow-hidden relative self-center flex justify-center items-center text-center  px-8 py-4 ${
+          className={`disabled:opacity-60 overflow-hidden relative self-center flex justify-center items-center text-center  px-8 py-4 ${
             variant === 'primary' ? 'bg-primary text-background' : ' bg-neon text-primary'
           } rounded-full ${className}`}>
           <m.div

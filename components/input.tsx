@@ -1,11 +1,11 @@
-import { InputHTMLAttributes } from 'react'
+import { InputHTMLAttributes, MutableRefObject } from 'react'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string
   type: string
   placeholder: string
   customAttr?: any
-  ref?: any
+  ref?: MutableRefObject<HTMLInputElement | null>
 }
 
 const Input = ({ className, type, placeholder, customAttr, value, ref }: InputProps) => {

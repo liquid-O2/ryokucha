@@ -158,3 +158,8 @@ input[type='checkbox' i]:checked {
     transform: translateX(48px);
   }
 }
+
+* {
+  outline-offset: 4px;
+  outline-color: #c3d84d;
+}

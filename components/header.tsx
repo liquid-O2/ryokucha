@@ -20,11 +20,11 @@ const Header = () => {
   const path = usePathname()
 
   return (
-    <header className={` w-full  font-bold leading-none fixed top-0 left-0 z-50 mt-6`}>
+    <header className={` w-full  font-bold leading-none fixed top-0 left-0 z-50 mt-4 md:mt-6`}>
       <Container className='h-16 flex rounded-3xl justify-center leading-none items-center'>
         <Link
           href={'/'}
-          className='mr-auto rounded-full bg-background flex justify-center items-center px-6 py-4 text-center max-h-[56px] '>
+          className='mr-auto rounded-full bg-background  flex justify-center items-center px-6 py-4 text-center max-h-[56px] '>
           <p className=' text-xl md:text-2xl leading-none font-bold'>ryo.</p>
         </Link>
         <div className='flex gap-2 justify-center items-center py-4 px-6 rounded-full overflow-hidden bg-background  max-h-[56px]'>
@@ -33,7 +33,7 @@ const Header = () => {
               {links.map((link) => {
                 return (
                   <li key={link.href}>
-                    <Link className='relative' href={link.href}>
+                    <Link className='relative hover:opacity-50 transition-opacity duration-200 ease-in' href={link.href}>
                       <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
                         {link.href === path && <span className=' block h-[1px] w-full bg-primary' />}
                       </div>
@@ -44,7 +44,7 @@ const Header = () => {
               })}
               {!isLoggedIn && (
                 <li>
-                  <Link className='relative' href={'/login'}>
+                  <Link className='relative hover:opacity-50 transition-opacity duration-200 ease-in' href={'/login'}>
                     <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
                       {'/login' === path && <span className=' block h-[1px] w-full bg-primary' />}
                     </div>
