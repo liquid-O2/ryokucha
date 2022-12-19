@@ -2,31 +2,19 @@
 import {
   browserPopupRedirectResolver,
   createUserWithEmailAndPassword,
-  getRedirectResult,
-  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
-  signInWithRedirect,
+  signOut,
 } from 'firebase/auth'
+
 import { auth, db, provider } from '../firebase/config'
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import handleErrors from '../firebase/errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
 import { Inputs } from './authForm'
 import { useRouter } from 'next/navigation'
-import {
-  arrayRemove,
-  arrayUnion,
-  doc,
-  DocumentData,
-  DocumentReference,
-  getDoc,
-  onSnapshot,
-  setDoc,
-  Unsubscribe,
-  updateDoc,
-} from 'firebase/firestore'
+import { arrayRemove, arrayUnion, doc, getDoc, onSnapshot, setDoc, Unsubscribe, updateDoc } from 'firebase/firestore'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 
 type GlobalContext = {
@@ -51,6 +39,7 @@ type GlobalContext = {
   signUpWithGoogle: () => void
   cartItemNo: number
   setCartItemNo: Dispatch<SetStateAction<number>>
+  logout: () => void
 }
 
 export type Teas = {
@@ -68,6 +57,7 @@ type UserDetails = {
   uid: string | null
   likedTeas: Array<string>
   photoUrl?: string | null
+  email: string | null
 }
 
 export const GlobalContext = React.createContext<GlobalContext>(null!)
@@ -75,7 +65,7 @@ export const GlobalContext = React.createContext<GlobalContext>(null!)
 const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode; fetchedTeas: Teas[] }) => {
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''] })
+  const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''], email: '' })
   const [cartItemNo, setCartItemNo] = useState(0)
   const teas = fetchedTeas
 
@@ -88,12 +78,22 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
         const checkIfDocExists = async () => {
           const docs = await getDoc(userRef)
           if (!docs.exists()) {
-            setDoc(userRef, { userID: user.uid, likedTeas: arrayUnion(''), photoUrl: user.photoURL }, { merge: true })
+            setDoc(
+              userRef,
+              { userID: user.uid, likedTeas: arrayUnion(''), photoUrl: user.photoURL, email: user.email },
+              { merge: true }
+            )
           }
         }
         removeSnapshot = onSnapshot(userRef, { includeMetadataChanges: true }, (data) => {
           const userInfo = data.data()
-          setUserDetails((prevInfo) => ({ ...prevInfo, ...userInfo, uid: user.uid, photoUrl: user.photoURL }))
+          setUserDetails((prevInfo) => ({
+            ...prevInfo,
+            ...userInfo,
+            uid: user.uid,
+            photoUrl: user.photoURL,
+            email: user.email,
+          }))
         })
         checkIfDocExists()
         setIsLoggedIn(true)
@@ -151,6 +151,10 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
       })
   }
 
+  const logout = () => {
+    signOut(auth)
+  }
+
   const signUpWithGoogle = () => {
     signInWithPopup(auth, provider, browserPopupRedirectResolver)
   }
@@ -167,6 +171,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
     signUpWithGoogle,
     cartItemNo,
     setCartItemNo,
+    logout,
   }
 
   return <GlobalContext.Provider value={globalContext}>{children}</GlobalContext.Provider>

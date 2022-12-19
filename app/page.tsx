@@ -6,7 +6,6 @@ import { Hero } from './hero'
 import Section from '../components/section'
 import col from '../public/COL.png'
 import col2 from '../public/col2.png'
-import Featured from './featured'
 import Newsletter from './newsletter'
 
 export default function App() {
@@ -51,7 +50,6 @@ export default function App() {
           </div>
         </Container>
       </Section>
-      {/* <Featured /> */}
       <Section>
         <Container>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>

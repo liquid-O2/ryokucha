@@ -16,13 +16,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
-:root {
-  --container-size: 2400px;
-}
+
 @layer base {
-  :root {
-    --container-size: 2400px;
-  }
   body {
     @apply text-primary;
   }
@@ -37,53 +32,12 @@ a {
   position: relative;
 }
 
-.pen {
-  top: 1.2rem;
-}
-
-.input {
-  max-width: 80vw;
-  min-width: 20vw;
-  color: rgb(20 83 45);
-  height: 3.5rem;
-}
 input::placeholder {
   color: rgba(20 83 45);
   opacity: 0.7;
   line-height: 0%;
 }
 
-.form-wrapper {
-  min-width: min-content;
-}
-
-.max-w-8xl {
-  max-width: 1556px;
-}
-.register {
-  width: 25%;
-  min-width: 245px;
-}
-.logout {
-  min-width: 20rem;
-}
-
-todoInfo > input {
-  width: 20px;
-  height: 20px;
-}
-
-input[type='checkbox' i] {
-  background-color: rgb(38 38 38);
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  appearance: inherit;
-}
-
-input[type='checkbox' i]:checked {
-  background-color: #fff;
-}
 .checkmark:after {
   content: '';
   position: absolute;
@@ -94,72 +48,12 @@ input[type='checkbox' i]:checked {
   display: block;
 }
 
-.header {
-  backdrop-filter: blur(4px);
-}
-
-.card {
-  flex: 1 1 auto;
-  max-width: 25%;
-}
-@media screen and (max-width: 1540px) {
-  .card {
-    max-width: 33%;
-  }
-}
-
-@media screen and (max-width: 1316px) {
-  .card {
-    max-width: 25%;
-  }
-}
-
-@media screen and (max-width: 1068px) {
-  .card {
-    max-width: 33%;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .tea-card-wrapper {
-    justify-content: flex-start;
-  }
-}
-
-@media screen and (max-width: 822px) {
-  .card {
-    max-width: 50%;
-  }
-}
-
-@media screen and (max-width: 526px) {
-  .card {
-    max-width: 100%;
-  }
-  .card img {
-    width: 90%;
-    height: 90%;
-  }
-}
-
-.carousel {
-  scrollbar-width: none;
-}
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.slide-center {
-  transform: translateX(calc(max(var(--container-size), 100vw) / 2 - calc(var(--container-size) / 2)));
-}
-
-@media screen and (min-width: 2500px) {
-  .slide-center {
-    transform: translateX(48px);
-  }
-}
-
 * {
   outline-offset: 4px;
   outline-color: #c3d84d;
+}
+
+.hamburger {
+  -webkit-transition: all 0.4s cubic-bezier(0.92, 0.12, 0.43, 0.4);
+  transition: all 0.4s cubic-bezier(0.92, 0.12, 0.43, 0.4);
 }

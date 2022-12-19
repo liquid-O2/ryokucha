@@ -17,14 +17,14 @@ const ParallaxImage = ({ image, alt, className, priority }: ParallaxImageProps) 
     <LazyMotion features={loadFeatures}>
       <figure className={`${className} overflow-hidden`}>
         <m.div
-          initial={{ scale: 1.2, y: 0 }}
-          style={{ scale: 1.2, y: y }}
+          initial={{ scale: 1.1, y: 0 }}
+          style={{ scale: 1.1, y: y }}
           className={'relative w-full h-full overflow-hidden'}>
           <Image
             src={image}
             alt={alt}
             className='object-cover h-full w-full '
-            quality={75}
+            quality={90}
             priority={priority ? true : false}
           />
         </m.div>

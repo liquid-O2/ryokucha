@@ -8,6 +8,8 @@ import { usePathname } from 'next/navigation'
 import { useContext } from 'react'
 import { GlobalContext } from './contextProvider'
 import emptyProfile from '../public/Frame 61.png'
+import Profile from './profile'
+import HamburgerMenu from './hamburger'
 
 const links = [
   { href: '/shop', label: 'shop' },
@@ -15,8 +17,8 @@ const links = [
 ]
 
 const Header = () => {
-  const { isLoggedIn, cartItemNo, userDetails } = useContext(GlobalContext)
-  const { photoUrl } = userDetails
+  const { isLoggedIn, cartItemNo, userDetails, logout } = useContext(GlobalContext)
+  const { photoUrl, email } = userDetails
   const path = usePathname()
 
   return (
@@ -24,11 +26,11 @@ const Header = () => {
       <Container className='h-16 flex rounded-3xl justify-center leading-none items-center'>
         <Link
           href={'/'}
-          className='mr-auto rounded-full bg-background  flex justify-center items-center px-6 py-4 text-center max-h-[56px] '>
+          className='mr-auto rounded-full bg-background  flex justify-center shadow-md  shadow-primary-dark/10 items-center px-6 py-4 text-center max-h-[56px] '>
           <p className=' text-xl md:text-2xl leading-none font-bold'>ryo.</p>
         </Link>
-        <div className='flex gap-2 justify-center items-center py-4 px-6 rounded-full overflow-hidden bg-background  max-h-[56px]'>
-          <nav>
+        <div className='flex gap-2 justify-center items-center py-4 px-6 rounded-full shadow-md  shadow-primary-dark/10 bg-background  max-h-[56px]'>
+          <nav className='hidden md:block'>
             <ul className={`flex justify-center items-center gap-4 ${isLoggedIn ? 'mr-4' : 'mr-2'}`}>
               {links.map((link) => {
                 return (
@@ -54,17 +56,7 @@ const Header = () => {
               )}
             </ul>
           </nav>
-          {isLoggedIn && (
-            <div className='relative overflow-hidden rounded-full h-7 w-7'>
-              <Image
-                src={photoUrl ? `${photoUrl}` : emptyProfile}
-                alt={'your avatar'}
-                width={24}
-                height={24}
-                className='w-full h-full object-cover'
-              />
-            </div>
-          )}
+          {isLoggedIn && <Profile photoUrl={photoUrl} emptyProfile={emptyProfile} email={email} logout={logout} />}
           <div className='relative'>
             <button className=' w-12 h-12 flex justify-center items-center'>
               <span className='sr-only'>Cart</span>
@@ -74,6 +66,7 @@ const Header = () => {
               {cartItemNo}
             </div>
           </div>
+          <HamburgerMenu isLoggedIn={isLoggedIn} />
         </div>
       </Container>
     </header>

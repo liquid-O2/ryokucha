@@ -26,8 +26,8 @@ const Button = ({ variant, children, className, onClick, type, name, id, disable
 
   const buttonCircle = {
     visible: { scale: 1 },
-    hover: { y: 0, scale: 99, transition: { duration: 0.5 } },
-    hidden: { y: '-100%', scale: 1 },
+    hover: { y: 0, scale: 99, transition: { ease: 'easeInOut', duration: 0.5 } },
+    hidden: { y: '-100%', scale: 1, transition: { ease: 'easeInOut', duration: 0.5 } },
   }
 
   if (variant != 'tertiary')

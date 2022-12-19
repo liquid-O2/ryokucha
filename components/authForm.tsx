@@ -122,7 +122,9 @@ export default function AuthForm() {
       <div className='relative w-full h-5 flex justify-center items-center mt-6'>
         <div className='h-[1px] w-[98%] bg-primary/10'></div>
         <div className='absolute top-0 mx-auto'>
-          <p className='text-base bg-background h-full px-4 text-center'>{`Don't have an account?`}</p>
+          <p className='text-base bg-background h-full px-4 text-center'>
+            {isRegister ? 'Already have an account?' : `Don't have an account?`}
+          </p>
         </div>
       </div>
       <Button
