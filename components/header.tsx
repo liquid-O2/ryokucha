@@ -12,7 +12,6 @@ import emptyProfile from '../public/Frame 61.png'
 const links = [
   { href: '/shop', label: 'shop' },
   { href: '/search', label: 'search' },
-  { href: '/login', label: 'log in' },
 ]
 
 const Header = () => {
@@ -31,16 +30,28 @@ const Header = () => {
         <div className='flex gap-2 justify-center items-center py-4 px-6 rounded-full overflow-hidden bg-background  max-h-[56px]'>
           <nav>
             <ul className={`flex justify-center items-center gap-4 ${isLoggedIn ? 'mr-4' : 'mr-2'}`}>
-              {links.map((link) => (
-                <li key={link.href}>
-                  <Link className='relative' href={link.href}>
+              {links.map((link) => {
+                return (
+                  <li key={link.href}>
+                    <Link className='relative' href={link.href}>
+                      <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
+                        {link.href === path && <span className=' block h-[1px] w-full bg-primary' />}
+                      </div>
+                      {link.label}
+                    </Link>
+                  </li>
+                )
+              })}
+              {!isLoggedIn && (
+                <li>
+                  <Link className='relative' href={'/login'}>
                     <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
-                      {link.href === path && <span className=' block h-[1px] w-full bg-primary' />}
+                      {'/login' === path && <span className=' block h-[1px] w-full bg-primary' />}
                     </div>
-                    {link.label}
+                    login
                   </Link>
                 </li>
-              ))}
+              )}
             </ul>
           </nav>
           {isLoggedIn && (
