@@ -59,7 +59,7 @@ const Newsletter = () => {
                       id='mce-EMAIL'
                       required
                       placeholder='Enter your email'
-                      className='w-full rounded-full min-h-[56px] border-primary/20  bg-background'
+                      className='w-full rounded-full min-h-[56px] border-primary/20  bg-tertiary-light bg-opacity-[0.02]'
                       customAttr={{ ...register('EMAIL', { required: 'Please enter your email' }) }}
                     />
                     <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
@@ -83,7 +83,7 @@ const Newsletter = () => {
                     )}
                   </>
                 </div>
-                <Button variant='primary' className='w-full mb-auto'>
+                <Button variant='secondary' className='w-full mb-auto'>
                   {loading ? 'LOADING...' : 'SIGN UP'}
                 </Button>
               </>
