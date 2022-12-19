@@ -29,7 +29,10 @@ const Header = () => {
           className='mr-auto rounded-full bg-background  flex justify-center shadow-md  shadow-primary-dark/10 items-center px-6 py-4 text-center max-h-[56px] '>
           <p className=' text-xl md:text-2xl leading-none font-bold'>ryo.</p>
         </Link>
-        <div className='flex gap-2 justify-center items-center py-4 px-6 rounded-full shadow-md  shadow-primary-dark/10 bg-background  max-h-[56px]'>
+        <div
+          className={`flex gap-2 justify-center items-center py-4 ${
+            isLoggedIn ? 'px-6' : 'pl-5 pr-6'
+          } md:px-6 rounded-full shadow-md  shadow-primary-dark/10 bg-background  max-h-[56px]`}>
           <nav className='hidden md:block'>
             <ul className={`flex justify-center items-center gap-4 ${isLoggedIn ? 'mr-4' : 'mr-2'}`}>
               {links.map((link) => {

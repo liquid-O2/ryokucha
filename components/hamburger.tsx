@@ -43,14 +43,14 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                 <Link
                   href={'/search'}
                   onClick={() => setHamburgerOpen(false)}
-                  className='hover:opacity-50 transition-opacity duration-200 ease-in py-4 w-full'>
+                  className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full'>
                   search
                 </Link>
                 {!isLoggedIn && (
                   <Link
                     href={'/login'}
                     onClick={() => setHamburgerOpen(false)}
-                    className='hover:opacity-50 transition-opacity duration-200 ease-in py-4 w-full'>
+                    className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full'>
                     login
                   </Link>
                 )}
