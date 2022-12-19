@@ -14,6 +14,7 @@ module.exports = {
         'primary-dark': '#002921',
         'neon-dark': '#CBE245',
         tertiary: '#E3D9C7',
+        'tertiary-light': '#3D3D00',
       },
     },
   },

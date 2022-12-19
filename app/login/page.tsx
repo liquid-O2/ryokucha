@@ -10,7 +10,7 @@ export default function Login() {
     <>
       <Section>
         <Container>
-          <div className='flex justify-center items-center'>
+          <div className='flex justify-center items-center '>
             <AuthForm />
           </div>
         </Container>
