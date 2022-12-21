@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "jest.config.js",
-    "components/framerFeatures.ts"
+    "components/framerFeatures.ts",
+    "app/featured.tsx.bak"
   ],
   "exclude": ["node_modules"]
 }
