@@ -1,10 +1,11 @@
 'use client'
 
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, LazyMotion, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
 const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
+  const loadFeatures = () => import('../framerFeatures').then((res) => res.default)
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
   return (
     <>
@@ -26,37 +27,39 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
             } rounded-[10px] bg-primary/80`}></span>
         </button>
         <div className='absolute z-50 mt-4 top-full right-0  min-w-[300px] overflow-hidden'>
-          <AnimatePresence initial={false}>
-            {hamburgerOpen && (
-              <motion.div
-                animate={{ y: 0, opacity: 1 }}
-                initial={{ y: '-100%', opacity: 0 }}
-                exit={{ y: '-100%', opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className=' bg-background shadow-md shadow-primary-dark/10 rounded-3xl m-2 flex flex-col px-6 py-4 gap-4'>
-                <Link
-                  href={'/'}
-                  onClick={() => setHamburgerOpen(false)}
-                  className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full'>
-                  home
-                </Link>
-                <Link
-                  onClick={() => setHamburgerOpen(false)}
-                  href={'/shop'}
-                  className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full '>
-                  shop
-                </Link>
-                {!isLoggedIn && (
+          <LazyMotion features={loadFeatures}>
+            <AnimatePresence initial={false}>
+              {hamburgerOpen && (
+                <motion.div
+                  animate={{ y: 0, opacity: 1 }}
+                  initial={{ y: '-100%', opacity: 0 }}
+                  exit={{ y: '-100%', opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className=' bg-background shadow-md shadow-primary-dark/10 rounded-3xl m-2 flex flex-col px-6 py-4 gap-4'>
                   <Link
-                    href={'/login'}
+                    href={'/'}
                     onClick={() => setHamburgerOpen(false)}
                     className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full'>
-                    login
+                    home
                   </Link>
-                )}
-              </motion.div>
-            )}
-          </AnimatePresence>
+                  <Link
+                    onClick={() => setHamburgerOpen(false)}
+                    href={'/shop'}
+                    className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full '>
+                    shop
+                  </Link>
+                  {!isLoggedIn && (
+                    <Link
+                      href={'/login'}
+                      onClick={() => setHamburgerOpen(false)}
+                      className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full'>
+                      login
+                    </Link>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </LazyMotion>
         </div>
       </div>
     </>

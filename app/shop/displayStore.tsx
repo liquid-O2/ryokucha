@@ -17,7 +17,7 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
     }
     const fuse = new Fuse(teas, options)
     const result = fuse.search(value)
-    let searchedTeas = result.map((res) => {
+    const searchedTeas = result.map((res) => {
       return res.item
     })
     setSearchResult(searchedTeas)

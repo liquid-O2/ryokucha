@@ -2,7 +2,7 @@
 
 import { LazyMotion, m } from 'framer-motion'
 import Image from 'next/image'
-import { useCallback, useContext, useEffect, useRef, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import { Heart } from 'react-feather'
 import { GlobalContext } from './contextProvider'
 
@@ -14,7 +14,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   const [isLiked, setIsLiked] = useState(false)
 
   // prefetch product pages for faster routing
-  router.prefetch(`/shop/${id}`)
+  router.prefetch(`/products/${id}`)
 
   // update liked state
   const toggleUpdateLiked = () => {
@@ -61,7 +61,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
               }`}
             />
           </button>
-          <m.div className={className} id={'card'} onTap={() => router.push(`/shop/${id}`)}>
+          <m.div className={className} id={'card'} onTap={() => router.push(`/products/${id}`)}>
             <figure className=' bg-[#E3E7DC] relative overflow-hidden rounded-3xl flex justify-center items-center  '>
               <Image
                 src={img}
@@ -75,7 +75,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
             </figure>
             <div className='card-details flex flex-col justify-center items-center mt-4'>
               <p className=' text-xl min-[2000px]:text-2xl font-bold mb-2 leading-none md:leading-none'>{`$${price}`}</p>
-              <p className='text-lg lg:text-xl mb-3 leading-none'>{title}</p>
+              <p className='text-lg w-full text-center lg:text-xl mb-3 leading-none'>{title}</p>
               <div className='flex text-sm justify-between items-center gap-2 mb-4'>
                 {attributes.map((attr, index) => (
                   <p key={index} className='px-4 py-1 max-w-fit rounded-full border border-primary/30 '>

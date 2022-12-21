@@ -1,15 +1,14 @@
 'use client'
 
-import Link from 'next/link'
-import { Container } from './container'
-import { ShoppingCart } from 'react-feather'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useContext } from 'react'
-import { GlobalContext } from './contextProvider'
-import emptyProfile from '../public/Frame 61.png'
-import Profile from './profile'
+import { ShoppingCart } from 'react-feather'
+import Link from 'next/link'
+import { Container } from '../container'
+import { GlobalContext } from '../contextProvider'
 import HamburgerMenu from './hamburger'
+import Profile from './profile'
+import emptyProfile from '../../public/emptyProfile.png'
 
 const links = [
   { href: '/', label: 'home' },

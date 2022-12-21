@@ -4,12 +4,14 @@ import { Container } from '../../components/container'
 import { Teas } from '../../components/contextProvider'
 import { db } from '../../firebase/config'
 import DisplayStore from './displayStore'
+import { sortArray } from '../../components/utils/sort'
 
 const fetchTeas = cache(async () => {
   const q = query(collection(db, 'teas'))
   const data = await getDocs(q)
   const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-  return teas as Teas[]
+  const alphabeticalTeas = sortArray(teas, 'name', false)
+  return alphabeticalTeas as Teas[]
 })
 
 const Store = async () => {

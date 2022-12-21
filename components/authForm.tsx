@@ -7,7 +7,7 @@ import { GlobalContext } from './contextProvider'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase/config'
 import { useRouter } from 'next/navigation'
-import GoogleIcon from './googleIcon'
+import GoogleIcon from './icons/googleIcon'
 import Button from './button'
 
 export type Inputs = {

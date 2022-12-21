@@ -1,6 +1,6 @@
 import Head from './head'
 import localfont from '@next/font/local'
-import Header from '../components/header'
+import Header from '../components/header/header'
 import '../styles/globals.css'
 import ContextProviders, { Teas } from '../components/contextProvider'
 import Footer from '../components/footer'
