@@ -13,7 +13,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   const { likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
 
-  // prefetch product pages
+  // prefetch product pages for faster routing
   router.prefetch(`/shop/${id}`)
 
   // update liked state
@@ -55,15 +55,19 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
               toggleUpdateLiked()
             }}>
             <span className='sr-only'> like button </span>
-            <Heart className={`w-6 h-6  ${isLiked ? 'fill-rose-500 stroke-rose-500' : ''}`} />
+            <Heart
+              className={`w-6 h-6  ${isLiked ? 'fill-rose-500 stroke-rose-500' : ''} ${
+                isLoggedIn ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
           </button>
           <m.div className={className} id={'card'} onTap={() => router.push(`/shop/${id}`)}>
             <figure className=' bg-[#E3E7DC] relative overflow-hidden rounded-3xl flex justify-center items-center  '>
               <Image
                 src={img}
                 alt={`${title} loose tea leaf`}
-                width={1791}
-                height={1672}
+                width={2000}
+                height={2000}
                 quality={100}
                 priority
                 className='object-cover h-full w-full pointer-events-none'

@@ -16,7 +16,7 @@ const Store = async () => {
   const fetchedTeas = await fetchTeas()
   return (
     <Container className=' mt-56'>
-      <h1 className='text-5xl text-center font-bold w-full'>Browse Our Products</h1>
+      <h1 className='text-5xl px-8 text-center font-bold w-full'>Browse Our Products</h1>
       <DisplayStore fetchedTeas={fetchedTeas} />
     </Container>
   )
