@@ -49,30 +49,32 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
         <div className='relative'>
           <button
             disabled={!isLoggedIn}
-            className=' disabled:opacity-20 absolute z-20 top-4 right-[28px] md:right-8 text-primary'
+            className=' disabled:opacity-20 disabled:cursor-none w-12 h-12 flex justify-center items-center absolute z-20 top-[1%] right-[1%] text-primary cursor-pointer'
             onClick={(e) => {
               e.stopPropagation()
               toggleUpdateLiked()
             }}>
             <span className='sr-only'> like button </span>
-            <Heart className={isLiked ? 'fill-rose-500 stroke-rose-500' : ''} />
+            <Heart className={`w-6 h-6  ${isLiked ? 'fill-rose-500 stroke-rose-500' : ''}`} />
           </button>
           <m.div className={className} id={'card'} onTap={() => router.push(`/shop/${id}`)}>
-            <figure className='p-14 bg-tertiary relative rounded-3xl flex justify-center items-center  min-h-[367px]'>
+            <figure className=' bg-[#E3E7DC] relative overflow-hidden rounded-3xl flex justify-center items-center  '>
               <Image
                 src={img}
                 alt={`${title} loose tea leaf`}
-                width={300}
-                height={308}
+                width={1791}
+                height={1672}
+                quality={100}
+                priority
                 className='object-cover h-full w-full pointer-events-none'
               />
             </figure>
             <div className='card-details flex flex-col justify-center items-center mt-4'>
-              <p className=' text-xl md:text-2xl font-bold mb-2 leading-none md:leading-none'>{price}</p>
-              <p className='text-lg md:text-xl mb-3 leading-none'>{title}</p>
-              <div className='flex justify-between items-center gap-2 mb-4'>
+              <p className=' text-xl min-[2000px]:text-2xl font-bold mb-2 leading-none md:leading-none'>{`$${price}`}</p>
+              <p className='text-lg lg:text-xl mb-3 leading-none'>{title}</p>
+              <div className='flex text-sm justify-between items-center gap-2 mb-4'>
                 {attributes.map((attr, index) => (
-                  <p key={index} className='px-4 py-1 max-w-fit rounded-full border border-primary border-opacity-50 '>
+                  <p key={index} className='px-4 py-1 max-w-fit rounded-full border border-primary/30 '>
                     {attr}
                   </p>
                 ))}

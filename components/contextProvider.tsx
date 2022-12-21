@@ -34,7 +34,7 @@ type GlobalContext = {
   isLoggedIn: boolean
   userDetails: UserDetails
   router: AppRouterInstance
-  teas: Teas[]
+
   updateUser: (type: 'add' | 'delete', data: string, field: string) => void
   signUpWithGoogle: () => void
   cartItemNo: number
@@ -62,12 +62,11 @@ type UserDetails = {
 
 export const GlobalContext = React.createContext<GlobalContext>(null!)
 
-const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode; fetchedTeas: Teas[] }) => {
+const ContextProviders = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''], email: '' })
   const [cartItemNo, setCartItemNo] = useState(0)
-  const teas = fetchedTeas
 
   // user collection related
   useEffect(() => {
@@ -166,7 +165,7 @@ const ContextProviders = ({ children, fetchedTeas }: { children: React.ReactNode
     isLoggedIn,
     userDetails,
     router,
-    teas,
+
     updateUser,
     signUpWithGoogle,
     cartItemNo,

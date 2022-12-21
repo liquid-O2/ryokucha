@@ -55,7 +55,7 @@ export default function AuthForm() {
       <p className='text-3xl font-bold'>{isRegister ? 'Create an account' : 'Login'}</p>
       <button
         onClick={() => signUpWithGoogle()}
-        className='bg-white w-full   px-8 py-4 text-neutral-700 rounded-full text-base border border-black/5 mt-5 flex justify-center items-center gap-3 '>
+        className='bg-white w-full   px-8 py-4 text-neutral-700 rounded-full text-base border border-black/10 mt-5 flex justify-center items-center gap-3 '>
         <GoogleIcon size='24' /> {isRegister ? 'Sign up with Google' : 'Sign in with Google'}
       </button>
       <div className='relative w-full mt-5 h-5 flex justify-center items-center'>

@@ -12,8 +12,8 @@ import Profile from './profile'
 import HamburgerMenu from './hamburger'
 
 const links = [
+  { href: '/', label: 'home' },
   { href: '/shop', label: 'shop' },
-  { href: '/search', label: 'search' },
 ]
 
 const Header = () => {
@@ -40,7 +40,9 @@ const Header = () => {
                   <li key={link.href}>
                     <Link className='relative hover:opacity-50 transition-opacity duration-200 ease-in' href={link.href}>
                       <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
-                        {link.href === path && <span className=' block h-[1px] w-full bg-primary' />}
+                        {link.href === path && (
+                          <span className=' block h-[1px] w-full rounded-full pt-[2px]  bg-primary' />
+                        )}
                       </div>
                       {link.label}
                     </Link>
@@ -51,7 +53,7 @@ const Header = () => {
                 <li>
                   <Link className='relative hover:opacity-50 transition-opacity duration-200 ease-in' href={'/login'}>
                     <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
-                      {'/login' === path && <span className=' block h-[1px] w-full bg-primary' />}
+                      {'/login' === path && <span className=' block h-[1px] w-full rounded-full pt-[2px]  bg-primary' />}
                     </div>
                     login
                   </Link>

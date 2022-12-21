@@ -36,15 +36,15 @@ export default function App() {
               <h3 className='text-3xl min-[2000px]:text-4xl font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
                 The best green tea from the best farmers in Japan
               </h3>
-              <p className='text-lg min-[2000px]:text-xl  min-[2000px]:pr-10 max-w-[50ch] pr-4'>
+              <p className='text-lg min-[2000px]:text-xl  min-[2000px]:pr-10 max-w-[50ch] pr-4  opacity-90'>
                 We source our tea directly from Japan. We work with the best farmers to bring you a premium product. We
                 believe in sustainable farming practices, and our tea is grown without pesticides or herbicides. We
                 produce some of the best tea in the world.
               </p>
               <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mt-5 min-[2000px]:mt-8 flex-wrap'>
-                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/70'>Organic</p>
-                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/70'>Locally-sourced</p>
-                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/70'>Premium quality</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Organic</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Locally-sourced</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Premium quality</p>
               </aside>
             </article>
           </div>
@@ -57,14 +57,14 @@ export default function App() {
               <h3 className='text-3xl min-[2000px]:text-4xl pr-6 md:pr-0 font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6'>
                 Natural superfood, perfect for your body and mind
               </h3>
-              <p className='text-lg min-[2000px]:text-xl max-w-[50ch] pr-4 '>
+              <p className='text-lg min-[2000px]:text-xl max-w-[50ch] pr-4 opacity-90'>
                 The remarkable properties and health benefits of Japanese Green teas are the result of unique harvesting,
                 processing and blending techniques of tea leaves perfected over centuries by Japanese tea masters.
               </p>
               <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mt-5  flex-wrap min-[2000px]:mt-8'>
-                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/70'>3-5 hours of energy</p>
-                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/70'>No jitters</p>
-                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/70'>Nutrient-rich</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>3-5 hours of energy</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>No jitters</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Nutrient-rich</p>
               </aside>
             </article>
             <div className='min-h-full'>

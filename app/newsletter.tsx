@@ -10,7 +10,7 @@ const Newsletter = () => {
         <div className='flex max-w-[90%] mx-auto flex-col mb-6 md:mb-0 justify-center items-center text-center'>
           <div>
             <p className='text-3xl md:text-4xl font-bold'>Sign up to our newsletter</p>
-            <p className='text-lg mt-3 max-w-[40ch]'>
+            <p className='text-lg mt-3 max-w-[40ch]  opacity-90'>
               Get delicious recipes, discounts and monthly updates delivered straight to your inbox
             </p>
             <form
