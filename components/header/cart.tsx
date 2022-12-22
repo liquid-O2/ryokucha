@@ -41,7 +41,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: any }) =>
           {cartItemNo}
         </div>
       </div>
-      <div className='absolute z-50 mt-2 top-full w-[calc(100vw-20px)] max-h-[calc(100vh-100px)] md:max-h-[calc(100vh-212px)] -right-[92px] md:-right-5 md:w-[600px] md:min-w-[300px] overflow-hidden'>
+      <div className='absolute z-50 mt-2 top-full w-[calc(100vw-20px)] max-h-[calc(100vh-112px)] md:max-h-[calc(100vh-212px)] -right-[92px] md:-right-5 md:w-[600px] md:min-w-[300px] overflow-hidden'>
         <LazyMotion features={loadFeatures}>
           <AnimatePresence initial={false}>
             {cartOpen && (
@@ -80,7 +80,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: any }) =>
                           className='flex relative overflow-hidden justify-between items-center h-32 mb-6 max-h-32'>
                           <div className='flex flex-col justify-center  h-full w-[70%]'>
                             <span className='text-neon-dark'>{`$${price}`}</span>
-                            <p className='text-xl mb-2'>{name}</p>
+                            <p className='text-lg md:text-xl mb-2'>{name}</p>
                             <UpdateCart id={id} quantity={quantity} dispatch={dispatch} />
                           </div>
                           <div className='relative h-full w-[30%] rounded-2xl overflow-hidden flex justify-center items-center'>
