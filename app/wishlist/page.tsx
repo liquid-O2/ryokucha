@@ -1,4 +1,3 @@
-'use client'
 import { Container } from '../../components/container'
 import DisplayWishlist from './displayWishlist'
 
