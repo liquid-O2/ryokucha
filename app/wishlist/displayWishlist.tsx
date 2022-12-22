@@ -9,18 +9,17 @@ import Card from '../../components/productCard'
 import { db } from '../../firebase/config'
 
 const DisplayWishlist = () => {
-  console.log('component mount')
   const { isLoggedIn, userDetails, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [favouriteTeas, setFavouriteTeas] = useState<Teas[]>([])
 
   useEffect(() => {
-    const fetchTea = cache(async (id: string) => {
+    const fetchTea = async (id: string) => {
       const docRef = doc(db, 'teas', `${id}`)
       const data = await getDoc(docRef)
       const tea = { ...data.data(), id: id }
       return tea as Teas
-    })
+    }
 
     const getFavouriteTeas = async () => {
       const teaIds = likedTeas.filter((id) => id !== '')
@@ -32,7 +31,7 @@ const DisplayWishlist = () => {
     getFavouriteTeas().then((res) => setFavouriteTeas([...res]))
   }, [likedTeas])
 
-  if (!isLoggedIn) router.back()
+  if (!isLoggedIn) router.push('/')
 
   return (
     <Container className='flex flex-col justify-center items-center'>
