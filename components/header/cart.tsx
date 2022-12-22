@@ -1,7 +1,7 @@
 'use client'
 import { LazyMotion, AnimatePresence, m } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { ShoppingCart, X } from 'react-feather'
+import { useEffect, useMemo, useState } from 'react'
+import { Coffee, ShoppingCart, X } from 'react-feather'
 import Image from 'next/image'
 import Button from '../button'
 import UpdateCart from './updateCart'
@@ -10,13 +10,21 @@ const Cart = ({ cartItemNo, dispatch, cartDetails }: { cartItemNo: number; dispa
   const [cartOpen, setCartOpen] = useState(false)
   const [totalPrice, setTotalPrice] = useState(0)
 
-  useEffect(() => {
-    cartDetails.forEach((item: any) => {
-      if (item.price) setTotalPrice((prev) => prev + item.price)
-    })
+  const priceArray = useMemo(() => {
+    return cartDetails.map((item: any) => item.price * item.quantity)
   }, [cartDetails])
 
-  const loadFeatures = () => import('../framerFeatures').then((res) => res.default)
+  useEffect(() => {
+    priceArray.forEach((item: any) => {
+      if (item) setTotalPrice((prev) => prev + item)
+    })
+
+    return () => {
+      setTotalPrice(0)
+    }
+  }, [priceArray])
+
+  const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
   return (
     <div className='relative'>
       <div className='relative'>
@@ -44,8 +52,20 @@ const Cart = ({ cartItemNo, dispatch, cartDetails }: { cartItemNo: number; dispa
                     <X size={28} />
                   </button>
                 </div>
-                {/* content here */}
-                <div className='h-full-w-full relative mt-4'>
+                <div
+                  className={`h-full-w-full relative mt-4 ${
+                    cartDetails.length === 0 && 'justify-center items-center mt-auto'
+                  }`}>
+                  {cartDetails.length === 0 && (
+                    <div className='flex flex-col justify-center items-center w-full h-full gap-6 text-center'>
+                      <span className=''>
+                        <Coffee size={32} />
+                      </span>
+                      <p className='opacity-90 leading-snug font-normal text-lg'>
+                        Your cart is empty, add some items to your cart to see them here
+                      </p>
+                    </div>
+                  )}
                   {cartDetails.map((item: any) => {
                     const { id, price, name, image, quantity } = item
                     if (id)
@@ -71,7 +91,6 @@ const Cart = ({ cartItemNo, dispatch, cartDetails }: { cartItemNo: number; dispa
                       )
                   })}
                 </div>
-
                 <div className='flex flex-col mt-auto justify-self-end '>
                   <div className='flex justify-between items-center mb-4 px-1'>
                     <p>Subtotal:</p> <p className='text-lg font-bold'>{`$${totalPrice}`}</p>

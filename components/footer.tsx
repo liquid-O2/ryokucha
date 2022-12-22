@@ -28,9 +28,11 @@ const Footer = () => {
         </section>
         <section className='flex md:items-end flex-col gap-3 text-lg md:text-xl leading-none mb-12 '>
           <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/'}>
+            home
+          </Link>
+          <Link className={'hover:opacity-50 transition-opacity duration-200 ease-in'} href={'/shop'}>
             shop
           </Link>
-          <button className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'>{`cart (${cartItemNo})`}</button>
           {isLoggedIn ? (
             <button
               className=' w-fit hover:opacity-50 transition-opacity duration-200 ease-in'

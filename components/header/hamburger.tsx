@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
-  const loadFeatures = () => import('../framerFeatures').then((res) => res.default)
+  const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
   return (

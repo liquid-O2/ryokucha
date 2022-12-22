@@ -23,7 +23,7 @@ const SortBtns = ({ setTeas }: { setTeas: Dispatch<SetStateAction<Teas[]>> }) =>
     }
   }
 
-  const loadFeatures = () => import('../../components/framerFeatures').then((res) => res.default)
+  const loadFeatures = () => import('../../components/utils/framerFeatures').then((res) => res.default)
 
   return (
     <div className='relative w-full'>

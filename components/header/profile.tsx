@@ -16,7 +16,7 @@ type Profile = {
 
 const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
   const [modalVisible, setModalVisible] = useState(false)
-  const loadFeatures = () => import('../framerFeatures').then((res) => res.default)
+  const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
 
   return (
     <div className='relative '>

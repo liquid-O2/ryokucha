@@ -41,7 +41,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   }, [liked])
 
   // lazy load framer
-  const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
+  const loadFeatures = () => import('./utils/framerFeatures').then((res) => res.default)
 
   return (
     <>

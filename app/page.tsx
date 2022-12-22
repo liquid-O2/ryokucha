@@ -7,6 +7,7 @@ import Section from '../components/section'
 import col from '../public/COL.png'
 import col2 from '../public/col2.png'
 import Newsletter from './newsletter'
+import Link from 'next/link'
 
 export default function App() {
   return (
@@ -17,7 +18,7 @@ export default function App() {
           <article className='flex flex-col justify-center items-center px-6 leading-normal'>
             <h2 className='max-w-[73ch] text-xl md:text-2xl text-center'>{`Japanese green teas are a healthy dose of rich flavour, elegant aroma and pure umami. It's delight in every sip. It's that needed energy boost in the morning. It's a refreshing sensation of light rain during a hot summer day. It's unlocked creativity, and hours of laser focus. It's what your mind wants, and your body needs. It's nothing but good vibes, delivered straight to your door.`}</h2>
             <Button variant='secondary' className='mt-12  '>
-              BROWSE OUR COLLECTION
+              <Link href={'/shop'}>BROWSE OUR COLLECTION</Link>
             </Button>
           </article>
         </Container>

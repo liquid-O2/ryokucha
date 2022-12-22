@@ -25,7 +25,7 @@ export const reducer = (state: any, action: any) => {
 
     case 'deleteItem':
       return state.filter((tea: any) => {
-        tea.id !== action.id
+        return tea.id !== action.id
       })
 
     default:

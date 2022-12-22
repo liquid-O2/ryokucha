@@ -12,7 +12,7 @@ type ParallaxImageProps = {
 const ParallaxImage = ({ image, alt, className, priority }: ParallaxImageProps) => {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 0.6], ['0%', '35%'])
-  const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
+  const loadFeatures = () => import('./utils/framerFeatures').then((res) => res.default)
   return (
     <LazyMotion features={loadFeatures}>
       <figure className={`${className} overflow-hidden`}>

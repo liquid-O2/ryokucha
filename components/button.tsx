@@ -15,7 +15,7 @@ interface ButtonProps {
 }
 
 const Button = ({ variant, children, className, onClick, type, name, id, disabled }: ButtonProps) => {
-  const loadFeatures = () => import('./framerFeatures').then((res) => res.default)
+  const loadFeatures = () => import('./utils/framerFeatures').then((res) => res.default)
 
   // framer variants
   const button = {
