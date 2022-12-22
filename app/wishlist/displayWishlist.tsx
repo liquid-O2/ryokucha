@@ -9,7 +9,7 @@ import Card from '../../components/productCard'
 import { db } from '../../firebase/config'
 
 const DisplayWishlist = () => {
-  const { isLoggedIn, userDetails, router } = useContext(GlobalContext)
+  const { userDetails } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [favouriteTeas, setFavouriteTeas] = useState<Teas[]>([])
 
@@ -30,8 +30,6 @@ const DisplayWishlist = () => {
     }
     getFavouriteTeas().then((res) => setFavouriteTeas([...res]))
   }, [likedTeas])
-
-  if (!isLoggedIn) router.push('/')
 
   return (
     <Container className='flex flex-col justify-center items-center'>
