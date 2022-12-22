@@ -8,7 +8,7 @@ import { signOut } from 'firebase/auth'
 import { auth } from '../firebase/config'
 
 const Footer = () => {
-  const { isLoggedIn, cartItemNo } = useContext(GlobalContext)
+  const { isLoggedIn } = useContext(GlobalContext)
   return (
     <Container>
       <section className=' border-t border-primary/10  grid grid-cols-2 md:grid-cols-4 gap-2 pt-8 '>

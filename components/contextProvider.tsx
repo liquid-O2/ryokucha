@@ -1,4 +1,5 @@
 'use client'
+
 import {
   browserPopupRedirectResolver,
   createUserWithEmailAndPassword,
@@ -9,7 +10,7 @@ import {
 } from 'firebase/auth'
 
 import { auth, db, provider } from '../firebase/config'
-import React, { Dispatch, Reducer, SetStateAction, useEffect, useReducer, useState } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useReducer, useState } from 'react'
 import handleErrors from '../firebase/errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
 import { Inputs } from './authForm'
@@ -37,8 +38,6 @@ type GlobalContext = {
   router: AppRouterInstance
   updateUser: (type: 'add' | 'delete', data: string, field: string) => void
   signUpWithGoogle: () => void
-  cartItemNo: number
-  setCartItemNo: Dispatch<SetStateAction<number>>
   logout: () => void
   cartDetails: any
   dispatch: any
@@ -79,11 +78,6 @@ const ContextProviders = ({ children }: { children: React.ReactNode }) => {
   const [cartDetails, dispatch] = useReducer(reducer, initialiseCartDetails)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''], email: '' })
-  const [cartItemNo, setCartItemNo] = useState(cartDetails.length)
-
-  useEffect(() => {
-    setCartItemNo(cartDetails.length)
-  }, [cartDetails.length])
 
   // user collection related
   useEffect(() => {
@@ -186,8 +180,6 @@ const ContextProviders = ({ children }: { children: React.ReactNode }) => {
     dispatch,
     updateUser,
     signUpWithGoogle,
-    cartItemNo,
-    setCartItemNo,
     logout,
   }
 

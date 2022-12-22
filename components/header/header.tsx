@@ -16,7 +16,7 @@ const links = [
 ]
 
 const Header = () => {
-  const { isLoggedIn, cartItemNo, userDetails, dispatch, cartDetails, logout } = useContext(GlobalContext)
+  const { isLoggedIn, userDetails, dispatch, cartDetails, logout } = useContext(GlobalContext)
   const { photoUrl, email } = userDetails
   const path = usePathname()
 
@@ -63,7 +63,7 @@ const Header = () => {
             </ul>
           </nav>
           {isLoggedIn && <Profile photoUrl={photoUrl} emptyProfile={emptyProfile} email={email} logout={logout} />}
-          <Cart cartItemNo={cartItemNo} dispatch={dispatch} cartDetails={cartDetails} />
+          <Cart dispatch={dispatch} cartDetails={cartDetails} />
           <HamburgerMenu isLoggedIn={isLoggedIn} />
         </div>
       </Container>
