@@ -29,7 +29,7 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
           className='w-full h-full object-cover'
         />
       </button>
-      <div className='absolute  z-50 top-full mt-4 -right-24 md:right-0  overflow-hidden rounded-2xl'>
+      <div className='absolute  z-50 top-full mt-2 -right-24 md:right-0  overflow-hidden rounded-2xl'>
         <LazyMotion features={loadFeatures}>
           <AnimatePresence initial={false}>
             {modalVisible && (

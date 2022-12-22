@@ -27,7 +27,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
               hamburgerOpen ? '-rotate-[135deg] top-[50%] ' : 'top-[65%]'
             } rounded-[10px] bg-primary/80`}></span>
         </button>
-        <div className='absolute z-50 mt-4 top-full right-0  min-w-[300px] overflow-hidden'>
+        <div className='absolute z-50 mt-2 top-full right-0  min-w-[300px] overflow-hidden'>
           <LazyMotion features={loadFeatures}>
             <AnimatePresence initial={false}>
               {hamburgerOpen && (
