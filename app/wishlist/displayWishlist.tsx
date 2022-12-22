@@ -1,7 +1,7 @@
 'use client'
 
 import { doc, getDoc } from 'firebase/firestore'
-import { cache, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Coffee } from 'react-feather'
 import { Container } from '../../components/container'
 import { GlobalContext, Teas } from '../../components/contextProvider'
@@ -35,7 +35,7 @@ const DisplayWishlist = () => {
 
   return (
     <Container className='flex flex-col justify-center items-center'>
-      {favouriteTeas.length === 0 && (
+      {!favouriteTeas && (
         <div className='flex flex-col justify-center h-[367px] items-center w-full gap-6 text-center p-10 my-10 rounded-3xl md:rounded-[3rem] bg-tertiary-light bg-opacity-[0.02]'>
           <span className=''>
             <Coffee size={24} />
