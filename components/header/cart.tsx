@@ -66,7 +66,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: any }) =>
                       <span className=''>
                         <Coffee size={32} />
                       </span>
-                      <p className='opacity-90 leading-snug font-normal text-lg'>
+                      <p className='opacity-90 leading-snug font-normal text-lg px-6'>
                         Your cart is empty, add some items to your cart to see them here
                       </p>
                     </div>
