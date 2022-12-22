@@ -12,11 +12,10 @@ const DisplayWishlist = () => {
   console.log('component mount')
   const { isLoggedIn, userDetails, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
-  const [favouriteTeas, setFavouriteTeas] = useState<any | undefined[]>([])
+  const [favouriteTeas, setFavouriteTeas] = useState<Teas[]>([])
 
   useEffect(() => {
     const fetchTea = cache(async (id: string) => {
-      if (id === '') return
       const docRef = doc(db, 'teas', `${id}`)
       const data = await getDoc(docRef)
       const tea = { ...data.data(), id: id }
@@ -24,7 +23,8 @@ const DisplayWishlist = () => {
     })
 
     const getFavouriteTeas = async () => {
-      const res = likedTeas.map((id) => fetchTea(id))
+      const teaIds = likedTeas.filter((id) => id !== '')
+      const res = teaIds.map((id) => fetchTea(id))
       const data = Promise.all(res)
       const teas = await data
       return teas
