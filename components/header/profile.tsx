@@ -17,6 +17,7 @@ type Profile = {
 const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
   const [modalVisible, setModalVisible] = useState(false)
   const loadFeatures = () => import('../framerFeatures').then((res) => res.default)
+
   return (
     <div className='relative '>
       <button onClick={() => setModalVisible((prev) => !prev)} className='overflow-hidden rounded-full h-7 w-7'>
