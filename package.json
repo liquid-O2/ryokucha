@@ -26,8 +26,7 @@
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
     "react-hook-form": "^7.39.5",
-    "typescript": "4.9.3",
-    "use-mailchimp-form": "^3.0.6"
+    "typescript": "4.9.3"
   },
   "devDependencies": {
     "@jest/globals": "^29.3.1",
