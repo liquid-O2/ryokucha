@@ -62,7 +62,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: any }) =>
                     cartDetails.length === 0 && 'justify-center items-center mt-auto'
                   }`}>
                   {cartDetails.length === 0 && (
-                    <div className='flex flex-col justify-center items-center w-full h-full gap-6 text-center'>
+                    <div className='flex flex-col justify-center items-center w-full h-full gap-6 text-center my-10'>
                       <span className=''>
                         <Coffee size={32} />
                       </span>
