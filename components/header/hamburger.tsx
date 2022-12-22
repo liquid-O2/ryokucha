@@ -1,12 +1,13 @@
 'use client'
 
-import { AnimatePresence, LazyMotion, motion } from 'framer-motion'
+import { AnimatePresence, LazyMotion, m } from 'framer-motion'
 import Link from 'next/link'
 import { useState } from 'react'
 
 const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
   const loadFeatures = () => import('../framerFeatures').then((res) => res.default)
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
+
   return (
     <>
       <div className={`relative block md:hidden`}>
@@ -30,7 +31,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
           <LazyMotion features={loadFeatures}>
             <AnimatePresence initial={false}>
               {hamburgerOpen && (
-                <motion.div
+                <m.div
                   animate={{ y: 0, opacity: 1 }}
                   initial={{ y: '-100%', opacity: 0 }}
                   exit={{ y: '-100%', opacity: 0 }}
@@ -56,7 +57,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                       login
                     </Link>
                   )}
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </LazyMotion>

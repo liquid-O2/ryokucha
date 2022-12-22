@@ -57,7 +57,7 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
               <span className='text-sm tracking-wider pl-2'>100g</span>
             </p>
             <p className='text-base md:text-lg max-w-[50ch] mt-4 opacity-90 leading-normal'>{description}</p>
-            <AddToCart />
+            <AddToCart name={name} image={image} price={price} id={slug} />
           </article>
         </div>
       </Container>

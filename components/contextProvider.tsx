@@ -9,13 +9,14 @@ import {
 } from 'firebase/auth'
 
 import { auth, db, provider } from '../firebase/config'
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import React, { Dispatch, Reducer, SetStateAction, useEffect, useReducer, useState } from 'react'
 import handleErrors from '../firebase/errorHandler'
 import { UseFormResetField, UseFormSetError } from 'react-hook-form'
 import { Inputs } from './authForm'
 import { useRouter } from 'next/navigation'
 import { arrayRemove, arrayUnion, doc, getDoc, onSnapshot, setDoc, Unsubscribe, updateDoc } from 'firebase/firestore'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
+import { reducer } from './utils/reducer'
 
 type GlobalContext = {
   signIn: (
@@ -34,12 +35,13 @@ type GlobalContext = {
   isLoggedIn: boolean
   userDetails: UserDetails
   router: AppRouterInstance
-
   updateUser: (type: 'add' | 'delete', data: string, field: string) => void
   signUpWithGoogle: () => void
   cartItemNo: number
   setCartItemNo: Dispatch<SetStateAction<number>>
   logout: () => void
+  cartDetails: any
+  dispatch: any
 }
 
 export type Teas = {
@@ -47,7 +49,7 @@ export type Teas = {
   id: string
   attributes: Array<string>
   image: string
-  price: string
+  price: number
   featured?: boolean
   fullImage?: string
   description?: string
@@ -60,13 +62,28 @@ type UserDetails = {
   email: string | null
 }
 
+export type CartDetails = {
+  id: string | undefined
+  name: string | undefined
+  price: number | undefined
+  image: string | undefined
+  quantity: number | undefined
+}
+
 export const GlobalContext = React.createContext<GlobalContext>(null!)
+
+const initialiseCartDetails: CartDetails[] = []
 
 const ContextProviders = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
+  const [cartDetails, dispatch] = useReducer(reducer, initialiseCartDetails)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''], email: '' })
-  const [cartItemNo, setCartItemNo] = useState(0)
+  const [cartItemNo, setCartItemNo] = useState(cartDetails.length)
+
+  useEffect(() => {
+    setCartItemNo(cartDetails.length)
+  }, [cartDetails.length])
 
   // user collection related
   useEffect(() => {
@@ -165,7 +182,8 @@ const ContextProviders = ({ children }: { children: React.ReactNode }) => {
     isLoggedIn,
     userDetails,
     router,
-
+    cartDetails,
+    dispatch,
     updateUser,
     signUpWithGoogle,
     cartItemNo,

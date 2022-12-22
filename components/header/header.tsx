@@ -2,13 +2,13 @@
 
 import { usePathname } from 'next/navigation'
 import { useContext } from 'react'
-import { ShoppingCart } from 'react-feather'
 import Link from 'next/link'
 import { Container } from '../container'
 import { GlobalContext } from '../contextProvider'
 import HamburgerMenu from './hamburger'
 import Profile from './profile'
 import emptyProfile from '../../public/emptyProfile.png'
+import Cart from './cart'
 
 const links = [
   { href: '/', label: 'home' },
@@ -16,7 +16,7 @@ const links = [
 ]
 
 const Header = () => {
-  const { isLoggedIn, cartItemNo, userDetails, logout } = useContext(GlobalContext)
+  const { isLoggedIn, cartItemNo, userDetails, dispatch, cartDetails, logout } = useContext(GlobalContext)
   const { photoUrl, email } = userDetails
   const path = usePathname()
 
@@ -63,15 +63,7 @@ const Header = () => {
             </ul>
           </nav>
           {isLoggedIn && <Profile photoUrl={photoUrl} emptyProfile={emptyProfile} email={email} logout={logout} />}
-          <div className='relative'>
-            <button className=' w-12 h-12 flex justify-center items-center'>
-              <span className='sr-only'>Cart</span>
-              <ShoppingCart size={20} />
-            </button>
-            <div className='flex justify-center items-center absolute top-[3px] right-0 rounded-full bg-primary m-auto text-center p-1 px-[5.5px] leading-none  text-[8px] text-neon'>
-              {cartItemNo}
-            </div>
-          </div>
+          <Cart cartItemNo={cartItemNo} dispatch={dispatch} cartDetails={cartDetails} />
           <HamburgerMenu isLoggedIn={isLoggedIn} />
         </div>
       </Container>
