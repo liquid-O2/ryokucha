@@ -1,10 +1,5 @@
-import { query, collection, getDocs } from 'firebase/firestore'
-import { cache } from 'react'
+'use client'
 import { Container } from '../../components/container'
-import { Teas } from '../../components/contextProvider'
-import { sortArray } from '../../components/utils/sort'
-import { db } from '../../firebase/config'
-import DisplayStore from '../shop/displayStore'
 import DisplayWishlist from './displayWishlist'
 
 const Store = async () => {
