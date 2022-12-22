@@ -25,12 +25,12 @@ interface ParamProps extends Teas {
   slug: string
 }
 
-const fetchSingleTea = cache(async (slug: string) => {
+const fetchSingleTea = async (slug: string) => {
   const docRef = doc(db, 'teas', `${slug}`)
   const data = await getDoc(docRef)
   const tea = data.data()
   return tea as Teas
-})
+}
 
 export default async function IndividualTea({ params }: { params: ParamProps }) {
   const { slug } = params
@@ -41,7 +41,7 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
         <div className='w-full overflow-hidden h-full flex flex-col lg:flex-row md:h-[80vh]  text-background bg-[#E3E7DC] rounded-3xl md:rounded-[3rem] '>
           <figure className='w-full relative md:rounded-[3rem] overflow-hidden '>
             <Image
-              src={image!}
+              src={image}
               alt={name}
               width={1792}
               height={1671}

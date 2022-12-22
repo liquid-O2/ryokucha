@@ -77,7 +77,7 @@ const ContextProviders = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()
   const [cartDetails, dispatch] = useReducer(reducer, initialiseCartDetails)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [''], email: '' })
+  const [userDetails, setUserDetails] = useState<UserDetails>({ uid: null, likedTeas: [], email: '' })
 
   // user collection related
   useEffect(() => {
