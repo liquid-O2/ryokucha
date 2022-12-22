@@ -14,22 +14,21 @@ const DisplayWishlist = () => {
   const { likedTeas } = userDetails
   const [favouriteTeas, setFavouriteTeas] = useState<any | undefined[]>([])
 
-  const fetchTea = async (id: string) => {
-    if (id === '') return
-    const docRef = doc(db, 'teas', `${id}`)
-    const data = await getDoc(docRef)
-    const tea = { ...data.data(), id: id }
-    return tea as Teas
-  }
-
   useEffect(() => {
+    const fetchTea = cache(async (id: string) => {
+      if (id === '') return
+      const docRef = doc(db, 'teas', `${id}`)
+      const data = await getDoc(docRef)
+      const tea = { ...data.data(), id: id }
+      return tea as Teas
+    })
+
     const getFavouriteTeas = async () => {
       const res = likedTeas.map((id) => fetchTea(id))
       const data = Promise.all(res)
       const teas = await data
       return teas
     }
-
     getFavouriteTeas().then((res) => setFavouriteTeas([...res]))
   }, [likedTeas])
 
