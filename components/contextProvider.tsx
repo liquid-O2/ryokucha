@@ -62,11 +62,11 @@ type UserDetails = {
 }
 
 export type CartDetails = {
-  id: string | undefined
-  name: string | undefined
-  price: number | undefined
-  image: string | undefined
-  quantity: number | undefined
+  id?: string
+  name?: string
+  price?: number
+  image?: string
+  quantity?: number
 }
 
 export const GlobalContext = React.createContext<GlobalContext>(null!)

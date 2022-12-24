@@ -1,10 +1,27 @@
-import { CartDetails, Teas } from '../contextProvider'
+import { CartDetails } from '../contextProvider'
 
-type ReducerAction = {
-  type: string
+type AddItemAction = {
+  type: 'addItem'
+  name: string
+  price: number
+  id: string
+  image: string
+  quantity: number
 }
 
-export const reducer = (state: any, action: any) => {
+type DeleteItemAction = {
+  type: 'deleteItem'
+  id: string
+}
+
+type UpdateQuantityAction = {
+  type: 'updateQuantity'
+  quantity: number
+  id: string
+  updateCart: boolean
+}
+
+export const reducer = (state: CartDetails[], action: AddItemAction | DeleteItemAction | UpdateQuantityAction) => {
   switch (action.type) {
     case 'addItem':
       return [
@@ -13,11 +30,11 @@ export const reducer = (state: any, action: any) => {
       ]
 
     case 'updateQuantity':
-      return state.map((tea: any) => {
+      return state.map((tea: CartDetails) => {
         if (action.id === tea.id) {
           return {
             ...tea,
-            quantity: action.updateCart ? action.quantity : tea.quantity + action.quantity,
+            quantity: action.updateCart ? action.quantity : tea.quantity! + action.quantity,
           }
         }
         return tea
