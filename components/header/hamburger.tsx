@@ -14,6 +14,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
         <button
           onClick={() => setHamburgerOpen(!hamburgerOpen)}
           className={`hamburger relative w-12 h-12 flex flex-col justify-center items-center`}>
+          <span className='sr-only'>hamburger menu button</span>
           <span
             className={`absolute w-[24px] h-[2px] origin-center mb-1 rounded-[10px] bg-primary/80 transition-all 1s ease-in ${
               hamburgerOpen ? ' rotate-[135deg] top-[50%] ' : 'top-[35%]'
