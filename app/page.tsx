@@ -36,6 +36,7 @@ export default function App() {
               <div className='min-h-full row-start-2 md:row-start-1'>
                 <Image
                   src={col2}
+                  placeholder='blur'
                   alt={'a teapot and a teacup filled with green tea'}
                   className='h-full w-full object-cover rounded-3xl md:rounded-[3rem] max-h-[601px]'
                 />
@@ -92,6 +93,7 @@ export default function App() {
               <div className='min-h-full'>
                 <Image
                   src={col}
+                  placeholder='blur'
                   alt={'a teapot and a teacup filled with green tea'}
                   className='h-full w-full object-cover rounded-3xl md:rounded-[3rem] max-h-[601px]'
                 />
