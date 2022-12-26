@@ -1,12 +1,12 @@
 'use client'
 
-import { AnimatePresence, LazyMotion, m, domMax } from 'framer-motion'
+import { AnimatePresence, LazyMotion, m } from 'framer-motion'
 import { ReactNode } from 'react'
 
 export const PageWrapper = ({ children }: { children: ReactNode }) => {
   const loadFeatures = () => import('../components/utils/framerFeaturesMax').then((res) => res.default)
   return (
-    <LazyMotion features={domMax}>
+    <LazyMotion features={loadFeatures}>
       <AnimatePresence>
         <m.div
           initial={{ opacity: 0, y: 10 }}
