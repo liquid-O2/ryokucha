@@ -70,7 +70,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
                 blurDataURL={`data:image/png;base64,${base64BlurImage[id]}`}
                 fill
                 placeholder='blur'
-                quality={90}
+                quality={100}
                 className={`object-cover h-full w-full pointer-events-none `}
                 sizes='
               (max-width: 1200px) 33vw,
