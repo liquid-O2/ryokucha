@@ -8,10 +8,10 @@ export const SlideUp = ({ children, delayAnimation }: { children: ReactNode; del
     <LazyMotion features={loadFeatures}>
       <div className='overflow-hidden '>
         <m.div
-          initial={{ y: '100%', opacity: 0 }}
+          initial={{ y: '50%', opacity: 0 }}
           whileInView={{ y: '0%', opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, delay: delayAnimation ? delayAnimation : 0, ease: 'easeOut' }}>
+          transition={{ duration: 0.8, delay: delayAnimation ? delayAnimation : 0, ease: 'easeOut' }}>
           {children}
         </m.div>
       </div>

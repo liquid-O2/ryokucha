@@ -54,8 +54,8 @@ export default function App() {
                     produce some of the best tea in the world.
                   </p>
                 </SlideUp>
-                <SlideUp delayAnimation={0.6}>
-                  <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mt-5 min-[2000px]:mt-8 flex-wrap'>
+                <SlideUp delayAnimation={0.4}>
+                  <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mb-2  mt-5 min-[2000px]:mt-8 flex-wrap'>
                     <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Organic</p>
                     <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Locally-sourced</p>
                     <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Premium quality</p>
@@ -81,8 +81,8 @@ export default function App() {
                     masters.
                   </p>
                 </SlideUp>
-                <SlideUp delayAnimation={0.6}>
-                  <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mt-5  flex-wrap min-[2000px]:mt-8'>
+                <SlideUp delayAnimation={0.4}>
+                  <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mt-5 mb-2  flex-wrap min-[2000px]:mt-8'>
                     <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>3-5 hours of energy</p>
                     <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>No jitters</p>
                     <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Nutrient-rich</p>
