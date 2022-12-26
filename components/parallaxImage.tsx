@@ -24,6 +24,7 @@ const ParallaxImage = ({ image, alt, className, priority }: ParallaxImageProps) 
             src={image}
             placeholder='blur'
             alt={alt}
+            fill
             className='object-cover h-full w-full '
             quality={90}
             priority={priority ? true : false}
