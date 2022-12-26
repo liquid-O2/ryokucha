@@ -1,4 +1,4 @@
-export const base64BlurImage: { [key: string]: string } = {
+export const base64BlurredImages: { [key: string]: string } = {
   qIFkwLy82zUUoK79Qy6p:
     'iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADESURBVHgBlZG/CsIwEMa/pMmiVvtHqYJuzp19HN/UUQcRdBYX0YId+gBtEi+IpW2G6pHcwfH9+C454M9gNt2zq/lFvFqsmWg2jDHYHfa45TmC0RibNMVyGregFqC1xulyxvHxBOcc8yRxAN51AB3OGBX9mbcTDqDpKqUQ0kge5/2AddCUsvwF69PvoBXKsoRknOQuILqNydDHbODD0AcI476itYeqqlAUBVUFKSXCMIDnebW43gNRW1ulEIijqBY0xd94A6wIS26XN5wBAAAAAElFTkSuQmCC',
   tKpjFKawQjsTXzMYilXa:

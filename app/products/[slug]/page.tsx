@@ -5,7 +5,7 @@ import { Container } from '../../../components/container'
 import { Teas } from '../../../components/contextProvider'
 import PageWrapper from '../../../components/pageWrapper'
 import Section from '../../../components/section'
-import { base64BlurImage } from '../../../components/utils/base64BlurredImages'
+import { base64BlurredImages } from '../../../components/utils/base64BlurredImages'
 import { db } from '../../../firebase/config'
 import AddToCart from './addToCart'
 
@@ -48,7 +48,7 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
                 alt={name}
                 fill
                 placeholder='blur'
-                blurDataURL={`data:image/png;base64,${base64BlurImage[slug]}`}
+                blurDataURL={`data:image/png;base64,${base64BlurredImages[slug]}`}
                 className=' object-cover h-full w-full'
                 quality={100}
                 priority

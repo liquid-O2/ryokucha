@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Heart } from 'react-feather'
 import { GlobalContext } from './contextProvider'
-import { base64BlurImage } from './utils/base64BlurredImages'
+import { base64BlurredImages } from './utils/base64BlurredImages'
 
 type CardProps = { img: string; price: number; title: string; attributes: Array<string>; id: string; className: string }
 
@@ -67,7 +67,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
               <Image
                 src={img}
                 alt={`${title} loose tea leaf`}
-                blurDataURL={`data:image/png;base64,${base64BlurImage[id]}`}
+                blurDataURL={`data:image/png;base64,${base64BlurredImages[id]}`}
                 fill
                 placeholder='blur'
                 quality={100}

@@ -6,8 +6,11 @@ import { Coffee, ShoppingCart, X } from 'react-feather'
 import Image from 'next/image'
 import Button from '../button'
 import UpdateCart from './updateCart'
+import getStripe from '../utils/getStripe'
+import { CartDetails } from '../contextProvider'
+import { NextApiResponse } from 'next'
 
-const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: any }) => {
+const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetails[] }) => {
   const [cartItemNo, setCartItemNo] = useState(cartDetails.length)
   const [cartOpen, setCartOpen] = useState(false)
   const [totalPrice, setTotalPrice] = useState(0)
@@ -29,7 +32,21 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: any }) =>
     }
   }, [priceArray])
 
+  //handle stripe checkout
+  const handleCheckout = async () => {
+    const stripe = await getStripe()
+    const response: any = await fetch('/api/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cartDetails),
+    })
+    if (response.statusCode === 500) return
+    const data = await response.json()
+    stripe.redirectToCheckout({ sessionId: data.id })
+  }
+
   const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
+
   return (
     <div className='relative'>
       <div className='relative'>
@@ -100,7 +117,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: any }) =>
                   <div className='flex justify-between items-center mb-4 px-1'>
                     <p>Subtotal:</p> <p className='text-lg font-bold'>{`$${totalPrice.toFixed(2)}`}</p>
                   </div>
-                  <Button variant='secondary' className='w-full'>
+                  <Button variant='secondary' className='w-full' onClick={() => handleCheckout()}>
                     CHECKOUT
                   </Button>
                 </div>
