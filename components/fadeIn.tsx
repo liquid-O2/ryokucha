@@ -7,11 +7,9 @@ export const FadeIn = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <LazyMotion features={loadFeatures}>
-        <div className='overflow-hidden h-max w-max'>
-          <m.div initial={{ y: '20%', opacity: 0 }} animate={{ y: '0%', opacity: 1 }} transition={{ duration: 1 }}>
-            {children}
-          </m.div>
-        </div>
+        <m.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1.2 }}>
+          {children}
+        </m.div>
       </LazyMotion>
     </>
   )

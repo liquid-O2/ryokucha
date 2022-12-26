@@ -2,6 +2,7 @@ import { Mail } from 'react-feather'
 import Button from '../components/button'
 import { Container } from '../components/container'
 import Section from '../components/section'
+import SlideUp from '../components/slideUp'
 
 const Newsletter = () => {
   return (
