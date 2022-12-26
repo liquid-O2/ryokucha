@@ -43,7 +43,7 @@ const DisplayWishlist = () => {
           </p>
         </div>
       )}
-      <div className='grid pb-32 max-[517px]:grid-cols-1  max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 pt-8 gap-x-4 lg:gap-x-6 gap-y-14  grid-cols-4'>
+      <div className='grid w-full pb-32 max-[517px]:grid-cols-1  max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 pt-8 gap-x-4 lg:gap-x-6 gap-y-14  grid-cols-4'>
         {favouriteTeas.map((tea: Teas) => {
           const { name, image, price, attributes, id } = tea
           return (
