@@ -69,6 +69,11 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
                 fill
                 quality={90}
                 className={`object-cover h-full w-full pointer-events-none `}
+                sizes='
+              (max-width: 1200px) 33vw,
+              (max-width: 910px) 50vw,
+              (min-width:1201px) 25vw
+              100vw'
               />
             </figure>
             <div className='card-details flex flex-col justify-center items-center mt-4'>
