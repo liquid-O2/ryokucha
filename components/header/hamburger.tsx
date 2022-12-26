@@ -35,7 +35,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                   animate={{ y: 0, opacity: 1 }}
                   initial={{ y: '-100%', opacity: 0 }}
                   exit={{ y: '-100%', opacity: 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.4 }}
                   className=' bg-background shadow-md border border-primary/10 shadow-primary-dark/10 rounded-3xl m-2 flex flex-col px-6 py-4 gap-4'>
                   <Link
                     href={'/'}

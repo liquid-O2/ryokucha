@@ -37,7 +37,7 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
                 animate={{ y: 0, opacity: 1 }}
                 initial={{ y: '-100%', opacity: 0 }}
                 exit={{ y: '-100%', opacity: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.4 }}
                 className=' gap-1 z-50  rounded-3xl w-[296px] shadow-md m-2 shadow-primary-dark/10  border border-primary/10 bg-background flex flex-col justify-start items-start px-6 py-4'>
                 <p className='py-3 w-full'> {email}</p>
                 <Link
