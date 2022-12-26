@@ -3,6 +3,7 @@ import Section from '../components/section'
 import { ScrollingText } from '../components/scrollingText'
 import ParallaxImage from '../components/parallaxImage'
 import { Container } from '../components/container'
+import FadeIn from '../components/fadeIn'
 
 export const Hero = () => {
   return (
