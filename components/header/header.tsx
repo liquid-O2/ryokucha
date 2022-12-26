@@ -38,11 +38,7 @@ const Header = () => {
                 return (
                   <li key={link.href}>
                     <Link className='relative hover:opacity-50 transition-opacity duration-200 ease-in' href={link.href}>
-                      <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
-                        {link.href === path && (
-                          <span className=' block h-[2px] w-full rounded-full pt-[2px]  bg-primary' />
-                        )}
-                      </div>
+                      <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'></div>
                       {link.label}
                     </Link>
                   </li>
@@ -51,11 +47,7 @@ const Header = () => {
               {!isLoggedIn && (
                 <li>
                   <Link className='relative hover:opacity-50 transition-opacity duration-200 ease-in' href={'/login'}>
-                    <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'>
-                      {'/login' === path && (
-                        <span className=' block h-[2px] w-full mx-auto rounded-full pt-[2px]  bg-primary' />
-                      )}
-                    </div>
+                    <div className='absolute left-0 top-full overflow-hidden block h-[1px] w-full'></div>
                     login
                   </Link>
                 </li>
