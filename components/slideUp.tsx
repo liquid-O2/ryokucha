@@ -6,7 +6,7 @@ export const SlideUp = ({ children, delay }: { children: ReactNode; delay?: numb
   const loadFeatures = () => import('./utils/framerFeatures').then((res) => res.default)
   return (
     <LazyMotion features={loadFeatures}>
-      <div className='overflow-hidden h-max w-max'>
+      <div className='overflow-hidden '>
         <m.div
           initial={{ y: '100%', opacity: 0 }}
           whileInView={{ y: '0%', opacity: 1 }}
