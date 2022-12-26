@@ -46,7 +46,7 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
   return (
     <>
       <LazyMotion features={loadFeatures}>
-        <div className='relative'>
+        <div className='relative w-full'>
           <button
             disabled={!isLoggedIn}
             className=' disabled:opacity-20 disabled:cursor-none w-12 h-12 flex justify-center items-center absolute z-20 top-[1%] right-[1%] text-primary cursor-pointer'
@@ -62,15 +62,13 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
             />
           </button>
           <m.div className={className} id={'card'} onTap={() => router.push(`/products/${id}`)}>
-            <figure className=' bg-[#E3E7DC] relative overflow-hidden rounded-3xl flex justify-center items-center  '>
+            <figure className=' w-full aspect-w-1 aspect-h-1 bg-[#E3E7DC] relative overflow-hidden rounded-3xl flex justify-center items-center  '>
               <Image
                 src={img}
                 alt={`${title} loose tea leaf`}
-                width={2000}
-                height={2000}
-                quality={100}
-                priority
-                className='object-cover h-full w-full pointer-events-none'
+                fill
+                quality={90}
+                className={`object-cover h-full w-full pointer-events-none `}
               />
             </figure>
             <div className='card-details flex flex-col justify-center items-center mt-4'>

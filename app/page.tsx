@@ -28,12 +28,13 @@ export default function App() {
         <Section>
           <Container>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
-              <div className='min-h-full row-start-2 md:row-start-1'>
+              <div className='w-full row-start-2 md:row-start-1  overflow-hidden aspect-w-1 md:aspect-w-2 md:aspect-h-1 aspect-h-1 rounded-3xl md:rounded-[3rem]  md:h-[38rem]'>
                 <Image
                   src={col2}
                   placeholder='blur'
+                  fill
                   alt={'a teapot and a teacup filled with green tea'}
-                  className='h-full w-full object-cover rounded-3xl md:rounded-[3rem] max-h-[601px]'
+                  className=' object-cover'
                 />
               </div>
               <article className='flex justify-center  md:ml-10 flex-col'>
@@ -72,12 +73,13 @@ export default function App() {
                   <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>Nutrient-rich</p>
                 </aside>
               </article>
-              <div className='min-h-full'>
+              <div className='w-full relative overflow-hidden aspect-w-1 aspect-h-1  md:aspect-w-2 md:aspect-h-1 rounded-3xl md:rounded-[3rem] md:h-[38rem]'>
                 <Image
                   src={col}
+                  fill
                   placeholder='blur'
                   alt={'a teapot and a teacup filled with green tea'}
-                  className='h-full w-full object-cover rounded-3xl md:rounded-[3rem] max-h-[601px]'
+                  className='object-cover '
                 />
               </div>
             </div>

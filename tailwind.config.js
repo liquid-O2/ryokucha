@@ -7,6 +7,9 @@ module.exports = {
         sans: ['var(--font-Mori)'],
         serif: ['var(--font-Mori)'],
       },
+      corePlugins: {
+        aspectRatio: false,
+      },
       colors: {
         background: '#FFFFFC',
         'background-dark': '#FBFBFA',
@@ -19,5 +22,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }
