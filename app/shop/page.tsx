@@ -5,6 +5,7 @@ import { Teas } from '../../components/contextProvider'
 import { db } from '../../firebase/config'
 import DisplayStore from './displayStore'
 import { sortArray } from '../../components/utils/sort'
+import PageWrapper from '../../components/pageWrapper'
 
 const fetchTeas = cache(async () => {
   const q = query(collection(db, 'teas'))
@@ -17,10 +18,12 @@ const fetchTeas = cache(async () => {
 const Store = async () => {
   const fetchedTeas = await fetchTeas()
   return (
-    <Container className=' mt-56'>
-      <h1 className='text-5xl px-8 text-center font-bold w-full'>Browse Our Products</h1>
-      <DisplayStore fetchedTeas={fetchedTeas} />
-    </Container>
+    <PageWrapper>
+      <Container className=' mt-56'>
+        <h1 className='text-5xl px-8 text-center font-bold w-full'>Browse Our Products</h1>
+        <DisplayStore fetchedTeas={fetchedTeas} />
+      </Container>
+    </PageWrapper>
   )
 }
 
