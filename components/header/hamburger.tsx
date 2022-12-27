@@ -10,7 +10,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
 
   const { scrollYProgress } = useScroll()
   const path = usePathname()
-  const color = useTransform(scrollYProgress, [0, 0.5], [path === '/' ? '#FCFFFD' : '#003D32', '#003D32'])
+  const color = useTransform(scrollYProgress, [0, 0.3], [path === '/' ? '#FCFFFD' : '#003D32', '#003D32'])
   const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
 
   return (

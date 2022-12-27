@@ -20,7 +20,7 @@ const Header = () => {
   const { photoUrl, email } = userDetails
   const path = usePathname()
   const { scrollYProgress } = useScroll()
-  const color = useTransform(scrollYProgress, [0, 0.5], [path === '/' ? '#FCFFFD' : '#003D32', '#003D32'])
+  const color = useTransform(scrollYProgress, [0, 0.3], [path === '/' ? '#FCFFFD' : '#003D32', '#003D32'])
   const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
 
   return (
@@ -29,13 +29,10 @@ const Header = () => {
         style={{ color, borderColor: color }}
         className={` w-full  font-bold leading-none fixed top-0 left-0 z-50 mt-4 md:mt-6`}>
         <Container className='h-16 flex rounded-3xl justify-center leading-none items-center'>
-          <Link href={'/'} className='mr-auto  flex justify-center  items-center px-6 py-4 text-center max-h-[56px] '>
+          <Link href={'/'} className='mr-auto  flex justify-center  items-center px-1 py-4 text-center max-h-[56px] '>
             <p className=' text-xl md:text-2xl leading-none font-bold'>ryo.</p>
           </Link>
-          <div
-            className={`flex gap-2 justify-center items-center py-4 ${
-              isLoggedIn ? 'px-6' : 'pl-5 pr-6'
-            } md:px-6    max-h-[56px]`}>
+          <div className={`flex gap-2 justify-center items-center py-4  max-h-[56px]`}>
             <nav className='hidden md:block'>
               <ul className={`flex justify-center items-center gap-4 ${isLoggedIn ? 'mr-4' : 'mr-2'}`}>
                 {links.map((link) => {
