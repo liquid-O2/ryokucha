@@ -8,11 +8,11 @@ import Button from '../button'
 import UpdateCart from './updateCart'
 import getStripe from '../utils/getStripe'
 import { CartDetails } from '../contextProvider'
-import { NextApiResponse } from 'next'
 
 const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetails[] }) => {
   const [cartItemNo, setCartItemNo] = useState(cartDetails.length)
   const [cartOpen, setCartOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [totalPrice, setTotalPrice] = useState(0)
 
   const priceArray = useMemo(() => {
@@ -43,6 +43,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetai
     if (response.statusCode === 500) return
     const data = await response.json()
     stripe.redirectToCheckout({ sessionId: data.id })
+    setIsLoading(false)
   }
 
   const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
@@ -117,8 +118,14 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetai
                   <div className='flex justify-between items-center mb-4 px-1'>
                     <p>Subtotal:</p> <p className='text-lg font-bold'>{`$${totalPrice.toFixed(2)}`}</p>
                   </div>
-                  <Button variant='secondary' className='w-full' onClick={() => handleCheckout()}>
-                    CHECKOUT
+                  <Button
+                    variant='secondary'
+                    className='w-full'
+                    onClick={() => {
+                      handleCheckout()
+                      setIsLoading(true)
+                    }}>
+                    {isLoading ? 'LOADING...' : 'CHECKOUT'}
                   </Button>
                 </div>
               </m.div>
