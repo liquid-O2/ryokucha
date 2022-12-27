@@ -49,7 +49,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetai
   const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
 
   return (
-    <div className='relative'>
+    <div className='relative '>
       <div className='relative'>
         <button className=' w-12 h-12 flex justify-center items-center' onClick={() => setCartOpen(!cartOpen)}>
           <span className='sr-only'>Cart</span>
@@ -59,7 +59,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetai
           {cartItemNo}
         </div>
       </div>
-      <div className='absolute z-50 mt-2 top-full w-[calc(100vw-20px)] max-h-[calc(100vh-112px)] md:max-h-[calc(100vh-212px)] -right-[92px] md:-right-5 md:w-[600px] md:min-w-[300px] overflow-hidden'>
+      <div className='absolute text-primary z-50 mt-2 top-full w-[calc(100vw-20px)] max-h-[calc(100vh-112px)] md:max-h-[calc(100vh-212px)] -right-[92px] md:-right-5 md:w-[600px] md:min-w-[300px] overflow-hidden'>
         <LazyMotion features={loadFeatures}>
           <AnimatePresence initial={false}>
             {cartOpen && (

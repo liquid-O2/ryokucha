@@ -19,7 +19,7 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
   const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
 
   return (
-    <div className='relative '>
+    <div className='relative text-primary '>
       <button onClick={() => setModalVisible((prev) => !prev)} className='overflow-hidden rounded-full h-7 w-7'>
         <Image
           src={photoUrl ? `${photoUrl}` : emptyProfile}
