@@ -70,7 +70,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetai
                 transition={{ duration: 0.4 }}
                 className=' bg-background border border-primary/10 shadow-md h-full  shadow-primary-dark/10 rounded-3xl m-2 flex flex-col px-6 py-6 gap-4'>
                 <div className='flex justify-between items-center '>
-                  <p className='text-2xl'>{`Cart(${cartItemNo})`}</p>
+                  <p className='text-2xl'>{`Cart (${cartItemNo})`}</p>
                   <button className='w-12 h-12 flex justify-center items-center' onClick={() => setCartOpen(false)}>
                     <X size={28} />
                   </button>

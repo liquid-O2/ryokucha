@@ -1,4 +1,4 @@
-import { query, collection, getDocs, getDoc, where, documentId, doc } from 'firebase/firestore'
+import { query, collection, getDocs, getDoc, doc } from 'firebase/firestore'
 import Image from 'next/image'
 import { cache } from 'react'
 import { Container } from '../../../components/container'
