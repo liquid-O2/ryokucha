@@ -11,7 +11,7 @@ module.exports = {
         aspectRatio: false,
       },
       colors: {
-        background: '#FFFFFC',
+        background: '#FCFFFD',
         'background-dark': '#FBFBFA',
         primary: '#003D32',
         neon: '#E3FB54',

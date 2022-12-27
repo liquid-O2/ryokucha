@@ -4,8 +4,8 @@ import Button from '../components/button'
 import { Container } from '../components/container'
 import { Hero } from './hero'
 import Section from '../components/section'
-import col from '../public/COL.png'
-import col2 from '../public/col2.png'
+import col from '../public/landing-page-1.png'
+import col2 from '../public/landing-page-2.png'
 import Newsletter from './newsletter'
 import Link from 'next/link'
 import PageWrapper from '../components/pageWrapper'
@@ -32,9 +32,10 @@ export default function App() {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
               <div className='w-full row-start-2 md:row-start-1  overflow-hidden aspect-w-1 md:aspect-w-2 md:aspect-h-1 aspect-h-1 rounded-3xl md:rounded-[3rem]  md:h-[38rem]'>
                 <Image
-                  src={col2}
+                  src={col}
                   placeholder='blur'
                   fill
+                  sizes='(min-width:768px) 50vw 100vw'
                   alt={'a teapot and a teacup filled with green tea'}
                   className=' object-cover'
                 />
@@ -77,9 +78,10 @@ export default function App() {
               </article>
               <div className='w-full relative overflow-hidden aspect-w-1 aspect-h-1  md:aspect-w-2 md:aspect-h-1 rounded-3xl md:rounded-[3rem] md:h-[38rem]'>
                 <Image
-                  src={col}
+                  src={col2}
                   fill
                   placeholder='blur'
+                  sizes='(min-width:768px) 50vw 100vw'
                   alt={'a teapot and a teacup filled with green tea'}
                   className='object-cover '
                 />

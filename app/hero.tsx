@@ -1,4 +1,4 @@
-import hero from '/public/Hero-2.png'
+import hero from '/public/hero.png'
 import Section from '../components/section'
 import { ScrollingText } from '../components/scrollingText'
 import ParallaxImage from '../components/parallaxImage'
