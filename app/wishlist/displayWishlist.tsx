@@ -50,7 +50,7 @@ const DisplayWishlist = () => {
             <Card
               key={name}
               img={image}
-              title={name}
+              name={name}
               price={price}
               id={id}
               attributes={attributes}

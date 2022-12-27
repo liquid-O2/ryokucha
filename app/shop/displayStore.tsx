@@ -39,7 +39,7 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
 
       <div className='relative w-full'>
         <SortBtns setTeas={setTeas} />
-        <div className='grid pb-32 max-[517px]:grid-cols-1  max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 pt-8 gap-x-4 lg:gap-x-6 gap-y-14  grid-cols-4'>
+        <div className='grid pb-32 max-[612px]:grid-cols-1  max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 pt-8 gap-x-4 lg:gap-x-6 gap-y-14  grid-cols-4'>
           {(!searchResult || searchResult.length === 0) &&
             teas.map((tea: Teas) => {
               const { name, image, price, attributes, id } = tea
@@ -47,7 +47,7 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
                 <Card
                   key={name}
                   img={image}
-                  title={name}
+                  name={name}
                   price={price}
                   id={id}
                   attributes={attributes}
@@ -62,7 +62,7 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
                 <Card
                   key={name}
                   img={image}
-                  title={name}
+                  name={name}
                   price={price}
                   id={id}
                   attributes={attributes}

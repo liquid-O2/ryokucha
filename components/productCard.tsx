@@ -1,15 +1,14 @@
 'use client'
 
-import { LazyMotion, m } from 'framer-motion'
 import Image from 'next/image'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Heart } from 'react-feather'
 import { GlobalContext } from './contextProvider'
 import { base64BlurredImages } from './utils/base64BlurredImages'
 
-type CardProps = { img: string; price: number; title: string; attributes: Array<string>; id: string; className: string }
+type CardProps = { img: string; price: number; name: string; attributes: Array<string>; id: string; className: string }
 
-const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
+const Card = ({ img, price, name, attributes, id, className }: CardProps) => {
   const { userDetails, isLoggedIn, updateUser, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
@@ -41,59 +40,53 @@ const Card = ({ img, price, title, attributes, id, className }: CardProps) => {
     setIsLiked(liked)
   }, [liked])
 
-  // lazy load framer
-  const loadFeatures = () => import('./utils/framerFeatures').then((res) => res.default)
-
   return (
-    <>
-      <LazyMotion features={loadFeatures}>
-        <div className='relative w-full'>
-          <button
-            disabled={!isLoggedIn}
-            className=' disabled:opacity-20 disabled:cursor-none w-12 h-12 flex justify-center items-center absolute z-20 top-[1%] right-[1%] text-primary cursor-pointer'
-            onClick={(e) => {
-              e.stopPropagation()
-              toggleUpdateLiked()
-            }}>
-            <span className='sr-only'> like button </span>
-            <Heart
-              className={`w-6 h-6  ${isLiked ? 'fill-rose-500 stroke-rose-500' : ''} ${
-                isLoggedIn ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-          </button>
-          <m.div className={className} id={'card'} onTap={() => router.push(`/products/${id}`)}>
-            <figure className=' w-full aspect-w-1 aspect-h-1 bg-[#E3E7DC] relative overflow-hidden rounded-3xl flex justify-center items-center  '>
-              <Image
-                src={img}
-                alt={`${title} loose tea leaf`}
-                blurDataURL={`data:image/png;base64,${base64BlurredImages[id]}`}
-                fill
-                placeholder='blur'
-                quality={100}
-                className={`object-cover h-full w-full pointer-events-none `}
-                sizes='
+    <div className='flex flex-col gap-4 p-4 rounded-3xl border border-primary border-opacity-[15%]'>
+      <figure
+        onClick={() => router.push(`/products/${id}`)}
+        className='w-full aspect-w-1 aspect-h-1 relative overflow-hidden rounded-2xl flex justify-center items-center'>
+        <Image
+          src={img}
+          alt={`${name} loose tea leaf`}
+          blurDataURL={`data:image/png;base64,${base64BlurredImages[id]}`}
+          fill
+          placeholder='blur'
+          quality={100}
+          className={`object-cover h-full w-full  cursor-pointer hover:opacity-90 hover:scale-110 transition-all ease-in duration-150 `}
+          sizes='
               (max-width: 1200px) 33vw,
               (max-width: 910px) 50vw,
               (min-width:1201px) 25vw
               100vw'
-              />
-            </figure>
-            <div className='card-details flex flex-col justify-center items-center mt-4'>
-              <p className=' text-xl min-[2000px]:text-2xl font-bold mb-2 leading-none md:leading-none'>{`$${price}`}</p>
-              <p className='text-lg w-full text-center lg:text-xl mb-3 leading-none'>{title}</p>
-              <div className='flex text-sm justify-between items-center gap-2 mb-4'>
-                {attributes.map((attr, index) => (
-                  <p key={index} className='px-4 py-1 max-w-fit rounded-full border border-primary/30 '>
-                    {attr}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </m.div>
+        />
+      </figure>
+      <div className='text'>
+        <div className='flex justify-between items-center relative'>
+          <p className='text-xl leading-tight'>{name}</p>
+          <button
+            disabled={!isLoggedIn}
+            onClick={() => {
+              toggleUpdateLiked()
+            }}
+            className=' transition-all  ease-in duration-100 disabled:opacity-20 relative -mr-1 w-12 h-12 flex justify-center items-center'>
+            <Heart
+              size={22}
+              className={` transition-all  ease-in duration-100 ${
+                isLiked ? 'fill-rose-500 stroke-rose-500' : 'stroke-primary/70'
+              } `}
+            />
+          </button>
         </div>
-      </LazyMotion>
-    </>
+        <p className='font-bold leading-none text-xl text-[#A0B137] '>{`$${price}`}</p>
+      </div>
+      <div className='flex text-sm items-center gap-2 mb-1 mt-1'>
+        {attributes.map((attr, index) => (
+          <p key={index} className='px-3 py-1 max-w-fit rounded-full border border-primary/20 '>
+            {attr}
+          </p>
+        ))}
+      </div>
+    </div>
   )
 }
 
