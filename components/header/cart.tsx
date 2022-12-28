@@ -42,7 +42,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetai
     })
     if (response.statusCode === 500) return
     const data = await response.json()
-    stripe.redirectToCheckout({ sessionId: data.id })
+    stripe!.redirectToCheckout({ sessionId: data.id })
     setIsLoading(false)
   }
 

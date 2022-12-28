@@ -34,7 +34,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         cancel_url: `${req.headers.origin}/?canceled=true`,
       }
 
-      // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params)
       res.status(200).json(session)
     } catch (err: any) {

@@ -4,6 +4,7 @@ import Header from '../components/header/header'
 import '../styles/globals.css'
 import ContextProviders from '../components/contextProvider'
 import Footer from '../components/footer'
+import Modal from '../components/modal'
 
 const Mori = localfont({
   src: [
@@ -25,10 +26,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={'en'} className={Mori.variable}>
       <Head />
-      <body className='bg-background font-sans'>
+      <body className='bg-background relative font-sans'>
         <ContextProviders>
           <Header />
-          <main className=''>{children}</main>
+          <main className='relative'>{children}</main>
           <Footer />
         </ContextProviders>
       </body>

@@ -10,6 +10,7 @@ import Newsletter from './newsletter'
 import Link from 'next/link'
 import PageWrapper from '../components/pageWrapper'
 import SlideUp from '../components/slideUp'
+import Modal from '../components/modal'
 
 export default function App() {
   return (
@@ -96,6 +97,7 @@ export default function App() {
         </Section>
         <Newsletter />
       </PageWrapper>
+      <Modal />
     </>
   )
 }
