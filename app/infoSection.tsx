@@ -31,25 +31,25 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
               />
             </div>
             <article className={`flex justify-center ${imagePosition === 'left' ? ' md:ml-10' : ''} flex-col`}>
-              <SlideUp>
-                <h3
-                  className={`text-3xl min-[2000px]:text-4xl ${
-                    imagePosition === 'right' ? 'pr-6 md:pr-0' : ''
-                  } font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6`}>
-                  {heading}
-                </h3>
-                <p
-                  className={`text-lg min-[2000px]:text-xl  ${
-                    imagePosition === 'right' ? 'min-[2000px]:pr-10' : ''
-                  }  max-w-[50ch] pr-4  opacity-90`}>
-                  {paragraph}
-                </p>
-                <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mb-2  mt-5 min-[2000px]:mt-8 flex-wrap'>
-                  <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>{pillText.first}</p>
-                  <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>{pillText.second}</p>
-                  <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>{pillText.third}</p>
-                </aside>
-              </SlideUp>
+              {/* <SlideUp> */}
+              <h3
+                className={`text-3xl min-[2000px]:text-4xl ${
+                  imagePosition === 'right' ? 'pr-6 md:pr-0' : ''
+                } font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6`}>
+                {heading}
+              </h3>
+              <p
+                className={`text-lg min-[2000px]:text-xl  ${
+                  imagePosition === 'right' ? 'min-[2000px]:pr-10' : ''
+                }  max-w-[50ch] pr-4  opacity-90`}>
+                {paragraph}
+              </p>
+              <aside className='flex text-sm md:text-base min-[2000px]:text-lg gap-2 md:gap-3 mb-2  mt-5 min-[2000px]:mt-8 flex-wrap'>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>{pillText.first}</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>{pillText.second}</p>
+                <p className='px-2 md:px-3 py-1 rounded-full border border-primary/30'>{pillText.third}</p>
+              </aside>
+              {/* </SlideUp> */}
             </article>
           </div>
         </Container>
