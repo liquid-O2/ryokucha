@@ -15,9 +15,9 @@ const DisplayWishlist = () => {
   const { likedTeas } = userDetails
   const [favouriteTeas, setFavouriteTeas] = useState<Teas[]>([])
 
-  if (!isLoggedIn) router.push('/')
-
   useEffect(() => {
+    if (!isLoggedIn) router.push('/')
+
     const fetchTea = async (id: string) => {
       const docRef = doc(db, 'teas', `${id}`)
       const data = await getDoc(docRef)
