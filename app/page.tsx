@@ -37,7 +37,7 @@ export default function App() {
                   src={col}
                   placeholder='blur'
                   fill
-                  sizes='(min-width:768px) 50vw, 100vw'
+                  sizes='(min-width:768px) 40vw 100vw'
                   alt={'a teapot and a teacup filled with green tea'}
                   className=' object-cover'
                 />
@@ -87,7 +87,7 @@ export default function App() {
                   src={col2}
                   fill
                   placeholder='blur'
-                  sizes='(min-width:768px) 50vw, 100vw'
+                  sizes='(min-width:768px) 40vw 100vw'
                   alt={'a teapot and a teacup filled with green tea'}
                   className='object-cover '
                 />
