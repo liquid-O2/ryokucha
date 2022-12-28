@@ -9,10 +9,10 @@ import Card from '../../components/productCard'
 import { db } from '../../firebase/config'
 
 const DisplayWishlist = () => {
-  const { userDetails } = useContext(GlobalContext)
+  const { userDetails, isLoggedIn, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [favouriteTeas, setFavouriteTeas] = useState<Teas[]>([])
-
+  if (!isLoggedIn) router.push('/')
   useEffect(() => {
     const fetchTea = async (id: string) => {
       const docRef = doc(db, 'teas', `${id}`)
