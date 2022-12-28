@@ -7,17 +7,16 @@ import SlideUp from '../components/slideUp'
 export const Hero = () => {
   return (
     <Section full className='h-[99vh] md:h-[99vh] text-background'>
-      <section className=' w-full h-full '>
-        <figure className='relative z-[1]'>
-          <Image
-            src={hero}
-            sizes='(min-width: 100px) 100vw'
-            alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
-            quality={75}
-            className='object-cover relative h-full w-full'
-            priority={true}
-          />
-        </figure>
+      <section className='relative w-full h-full '>
+        <Image
+          src={hero}
+          fill
+          sizes='(min-width: 100px) 100vw'
+          alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
+          quality={90}
+          className='object-cover relative h-full w-full'
+          priority={true}
+        />
 
         <section className='relative z-30 w-full h-full  flex flex-col '>
           <Container className='self-end flex flex-col justify-end mt-auto h-full'>
