@@ -37,7 +37,7 @@ export const Modal = () => {
       unlockScroll()
       setIsVisible(false)
     }
-  }, [path])
+  }, [path, canceled, success])
 
   return (
     <>
