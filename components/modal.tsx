@@ -66,7 +66,7 @@ export const Modal = () => {
                     Your order has been confirmed
                   </span>
                 ) : (
-                  <span>Your order couldn't be processed</span>
+                  <span>{`Your order couldn't be processed`}</span>
                 )}
               </span>
               <Link href={'/'}>
