@@ -11,7 +11,7 @@ export const Hero = () => {
         <Image
           src={hero}
           fill
-          sizes='(min-width: 100px) 100vw'
+          sizes='(min-width: 100px) 90vw'
           alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
           quality={90}
           className='object-cover relative h-full w-full'
