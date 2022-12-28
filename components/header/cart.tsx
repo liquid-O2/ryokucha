@@ -6,7 +6,6 @@ import { Coffee, ShoppingCart, X } from 'react-feather'
 import Image from 'next/image'
 import Button from '../button'
 import UpdateCart from './updateCart'
-import getStripe from '../utils/getStripe'
 import { CartDetails } from '../contextProvider'
 
 const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetails[] }) => {
@@ -34,6 +33,7 @@ const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetai
 
   //handle stripe checkout
   const handleCheckout = async () => {
+    const getStripe = (await import('../utils/getStripe')).default
     const stripe = await getStripe()
     const response: any = await fetch('/api/', {
       method: 'POST',
