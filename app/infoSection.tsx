@@ -31,7 +31,7 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
               />
             </div>
             <article className={`flex justify-center ${imagePosition === 'left' ? ' md:ml-10' : ''} flex-col`}>
-              <SlideUp>
+              <SlideUp delay={0.2}>
                 <h3
                   className={`text-3xl min-[2000px]:text-4xl ${
                     imagePosition === 'right' ? 'pr-6 md:pr-0' : ''
