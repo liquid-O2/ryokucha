@@ -12,9 +12,9 @@ export const Hero = () => {
           src={hero}
           fill
           placeholder='blur'
-          sizes='100vw'
+          sizes='(min-width: 100px) 100vw'
           alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
-          quality={75}
+          quality={90}
           className='object-cover h-full w-full'
           priority={true}
         />
