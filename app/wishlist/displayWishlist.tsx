@@ -1,6 +1,7 @@
 'use client'
 
 import { doc, getDoc } from 'firebase/firestore'
+import { useRouter } from 'next/navigation'
 import { useContext, useEffect, useState } from 'react'
 import { Coffee } from 'react-feather'
 import { Container } from '../../components/container'
@@ -9,10 +10,13 @@ import Card from '../../components/productCard'
 import { db } from '../../firebase/config'
 
 const DisplayWishlist = () => {
-  const { userDetails, isLoggedIn, router } = useContext(GlobalContext)
+  const { userDetails, isLoggedIn } = useContext(GlobalContext)
+  const router = useRouter()
   const { likedTeas } = userDetails
   const [favouriteTeas, setFavouriteTeas] = useState<Teas[]>([])
+
   if (!isLoggedIn) router.push('/')
+
   useEffect(() => {
     const fetchTea = async (id: string) => {
       const docRef = doc(db, 'teas', `${id}`)
