@@ -43,7 +43,7 @@ export const Modal = () => {
     <>
       {isVisible && (
         <div className='absolute top-0 left-0 h-screen w-screen z-[9999] bg-[#000E0B78] flex justify-center items-center'>
-          <div className='flex flex-col justify-center items-center bg-background rounded-3xl p-8'>
+          <div className='flex flex-col justify-center items-center bg-background rounded-3xl md:w-[520px] p-8'>
             <div className='relative -mt-6 -mr-8 w-full flex justify-end'>
               <Link href={'/'}>
                 <button className='w-12 h-12 flex justify-center items-center'>
