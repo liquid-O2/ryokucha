@@ -15,7 +15,7 @@ export const Hero = () => {
           sizes='100vw'
           alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
           priority
-          quality={100}
+          quality={90}
           className='object-cover h-full w-full'
         />
         <section className='relative z-20 w-full h-full  flex flex-col '>
