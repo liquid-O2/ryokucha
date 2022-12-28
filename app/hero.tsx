@@ -14,7 +14,7 @@ export const Hero = () => {
           placeholder={'blur'}
           sizes='(min-width: 100px) 70vw'
           alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
-          quality={90}
+          quality={75}
           className='object-cover relative h-full w-full'
           priority={true}
         />
