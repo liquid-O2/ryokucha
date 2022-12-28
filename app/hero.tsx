@@ -14,9 +14,9 @@ export const Hero = () => {
           placeholder='blur'
           sizes='100vw'
           alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
-          priority
-          quality={75}
+          quality={95}
           className='object-cover h-full w-full'
+          priority={true}
         />
         <section className='relative z-20 w-full h-full  flex flex-col '>
           <Container className='self-end flex flex-col justify-end mt-auto h-full'>
