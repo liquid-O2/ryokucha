@@ -1,6 +1,6 @@
 import { CartDetails } from '../contextProvider'
 
-type AddItemAction = {
+export type AddItemAction = {
   type: 'addItem'
   name: string
   price: number
@@ -9,12 +9,12 @@ type AddItemAction = {
   quantity: number
 }
 
-type DeleteItemAction = {
+export type DeleteItemAction = {
   type: 'deleteItem'
   id: string
 }
 
-type UpdateQuantityAction = {
+export type UpdateQuantityAction = {
   type: 'updateQuantity'
   quantity: number
   id: string

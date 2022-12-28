@@ -1,14 +1,20 @@
 'use client'
 
 import { LazyMotion, AnimatePresence, m } from 'framer-motion'
-import { useEffect, useMemo, useState } from 'react'
+import { Dispatch, useEffect, useMemo, useState } from 'react'
 import { Coffee, ShoppingCart, X } from 'react-feather'
 import Image from 'next/image'
 import Button from '../button'
 import UpdateCart from './updateCart'
 import { CartDetails } from '../contextProvider'
+import { AddItemAction, DeleteItemAction, UpdateQuantityAction } from '../utils/reducer'
 
-const Cart = ({ dispatch, cartDetails }: { dispatch: any; cartDetails: CartDetails[] }) => {
+type Cart = {
+  dispatch: Dispatch<AddItemAction | DeleteItemAction | UpdateQuantityAction>
+  cartDetails: CartDetails[]
+}
+
+const Cart = ({ dispatch, cartDetails }: Cart) => {
   const [cartItemNo, setCartItemNo] = useState(cartDetails.length)
   const [cartOpen, setCartOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
