@@ -47,6 +47,7 @@ export const Modal = () => {
             <div className='relative -mt-6 -mr-8 w-full flex justify-end'>
               <Link href={'/'}>
                 <button className='w-12 h-12 flex justify-center items-center'>
+                  <span className='sr-only'>close modal</span>
                   <X size={24} />
                 </button>
               </Link>
