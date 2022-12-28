@@ -29,9 +29,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className='bg-background relative font-sans'>
         <ContextProviders>
           <Header />
-          <main className='relative'>{children}</main>
+          <main>{children}</main>
           <Footer />
         </ContextProviders>
+        <Modal />
       </body>
     </html>
   )
