@@ -71,7 +71,7 @@ export const Modal = () => {
                 )}
               </span>
               <Link href={'/'}>
-                <Button variant='secondary'>GO BACK TO HOMESCREEN</Button>
+                <Button variant='secondary'>CLOSE</Button>
               </Link>
             </div>
           </div>
