@@ -55,8 +55,8 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
               />
             </figure>
             <article className='relative px-8 h-full w-full flex flex-col justify-center md:px-20 bg-primary rounded-3xl md:rounded-[3rem] py-10 md:py-16'>
-              <p className='text-2xl w-full text-neon font-bold'>{`$${price}`}</p>
-              <p className=' text-4xl w-full lg:text-5xl font-bold  mt-1'>
+              <p className='text-2xl w-full text-neon font-semibold'>{`$${price}`}</p>
+              <p className=' text-4xl w-full lg:text-5xl font-semibold  mt-1'>
                 {name}
                 <span className='text-sm tracking-wider pl-2'>100g</span>
               </p>

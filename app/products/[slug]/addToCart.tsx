@@ -34,7 +34,7 @@ const AddToCart = ({ image, name, price, id }: { image: string; name: string; pr
           onClick={() => setNoOfItems((prev) => prev - 1)}>
           <Minus size={20} />
         </button>
-        <p className='w-full px-6 text-center text-lg font-bold leading-none'>{noOfItems}</p>
+        <p className='w-full px-6 text-center text-lg font-semibold leading-none'>{noOfItems}</p>
         <button
           className=' min-h-[48px] min-w-[48px] flex justify-center items-center'
           onClick={() => setNoOfItems((prev) => prev + 1)}>

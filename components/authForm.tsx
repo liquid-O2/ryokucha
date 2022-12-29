@@ -52,7 +52,7 @@ export default function AuthForm() {
 
   return (
     <div className='flex flex-col justify-center items-center w-[501px] max-w-[95%] mt-16 mb-16'>
-      <p className='text-3xl font-bold'>{isRegister ? 'Create an account' : 'Login'}</p>
+      <p className='text-3xl font-semibold'>{isRegister ? 'Create an account' : 'Login'}</p>
       <button
         onClick={() => signUpWithGoogle()}
         className='bg-white w-full   px-8 py-4 text-neutral-700 rounded-full text-base border border-black/10 mt-5 flex justify-center items-center gap-3 '>

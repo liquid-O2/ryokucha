@@ -32,7 +32,7 @@ const UpdateCart = ({ quantity, id, dispatch }: { quantity: number; id: string; 
           onClick={() => handleUpdateCart('substract')}>
           <Minus size={16} />
         </button>
-        <p className='w-full md:px-6 text-center text-sm font-bold leading-none'>{noOfItems}</p>
+        <p className='w-full md:px-6 text-center text-sm font-semibold leading-none'>{noOfItems}</p>
         <button
           className=' min-h-[48px] min-w-[48px] flex justify-center items-center'
           onClick={() => handleUpdateCart('add')}>

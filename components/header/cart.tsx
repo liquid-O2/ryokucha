@@ -122,7 +122,7 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                 </div>
                 <div className='flex flex-col mt-auto justify-self-end '>
                   <div className='flex justify-between items-center mb-4 px-1'>
-                    <p>Subtotal:</p> <p className='text-lg font-bold'>{`$${totalPrice.toFixed(2)}`}</p>
+                    <p>Subtotal:</p> <p className='text-lg font-semibold'>{`$${totalPrice.toFixed(2)}`}</p>
                   </div>
                   <Button
                     variant='secondary'

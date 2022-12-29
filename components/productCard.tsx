@@ -77,7 +77,7 @@ const Card = ({ img, price, name, attributes, id, className }: CardProps) => {
             />
           </button>
         </div>
-        <p className='font-bold leading-none text-xl text-[#A0B137] '>{`$${price}`}</p>
+        <p className='font-semibold leading-none text-xl text-[#A0B137] '>{`$${price}`}</p>
       </div>
       <div className='flex text-sm items-center gap-2 mb-1 mt-1'>
         {attributes.map((attr, index) => (

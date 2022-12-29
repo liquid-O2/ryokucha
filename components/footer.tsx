@@ -16,7 +16,7 @@ const Footer = () => {
           <div className='flex md:flex-col items-center md:items-start justify-between'>
             <div className='text flex flex-col justify-end '>
               <p className='text-xl md:text-2xl'>緑茶</p>
-              <p className='font-bold tracking-tighter leading-none text-2xl md:text-3xl mt-1'>Ryokucha</p>
+              <p className='font-semibold tracking-tighter leading-none text-2xl md:text-3xl mt-1'>Ryokucha</p>
             </div>
             <button
               onClick={() => window.scrollTo(0, 0)}

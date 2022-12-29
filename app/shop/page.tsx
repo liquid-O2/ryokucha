@@ -20,7 +20,7 @@ const Store = async () => {
   return (
     <PageWrapper>
       <Container className=' mt-56'>
-        <h1 className='text-5xl px-8 text-center font-bold w-full'>Browse Our Products</h1>
+        <h1 className='text-5xl px-8 text-center font-semibold w-full'>Browse Our Products</h1>
         <DisplayStore fetchedTeas={fetchedTeas} />
       </Container>
     </PageWrapper>

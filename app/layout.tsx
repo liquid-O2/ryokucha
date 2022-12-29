@@ -10,17 +10,17 @@ const Mori = localfont({
   src: [
     {
       path: '../fonts/PPMori-Book.woff',
-      weight: '400',
+      weight: '300',
       style: 'normal',
     },
     {
       path: '../fonts/PPMori-BookItalic.woff',
-      weight: '400',
+      weight: '300',
       style: 'italic',
     },
     {
       path: '../fonts/PPMori-SemiBold.woff',
-      weight: '700',
+      weight: '600',
       style: 'normal',
     },
   ],
@@ -31,10 +31,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={'en'} className={Mori.variable}>
       <Head />
-      <body className='bg-background relative font-sans '>
+      <body className='bg-background relative font-sans font-light '>
         <ContextProviders>
           <Header />
-          <main className='relative '>{children}</main>
+          <main className='relative font-light '>{children}</main>
           <Footer />
         </ContextProviders>
       </body>

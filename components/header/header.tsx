@@ -27,10 +27,10 @@ const Header = () => {
     <LazyMotion features={loadFeatures}>
       <m.header
         style={{ color, borderColor: color }}
-        className={` w-full  font-bold leading-none fixed top-0 left-0 z-50 mt-3 md:mt-5`}>
+        className={` w-full  font-semibold leading-none fixed top-0 left-0 z-50 mt-3 md:mt-5`}>
         <Container className='h-16 flex rounded-3xl justify-center leading-none items-center'>
           <Link href={'/'} className='mr-auto  flex justify-center  items-center px-1 py-4 text-center max-h-[56px] '>
-            <p className=' text-xl md:text-2xl leading-none font-bold'>ryo.</p>
+            <p className=' text-xl md:text-2xl leading-none font-semibold'>ryo.</p>
           </Link>
           <div className={`flex gap-2 justify-center items-center py-4  max-h-[56px]`}>
             <nav className='hidden md:block'>

@@ -51,7 +51,7 @@ const Button = ({ variant, children, className, onClick, type, name, id, disable
             className={`${
               variant === 'primary' ? 'bg-primary-dark' : ' bg-neon-dark'
             } w-2 h-2 absolute top-0 left-[50%] rounded-full z-10`}></m.div>
-          <span className='relative z-20 text-base  font-bold'>{children}</span>
+          <span className='relative z-20 text-base  font-semibold'>{children}</span>
         </m.button>
       </LazyMotion>
     )
@@ -63,7 +63,7 @@ const Button = ({ variant, children, className, onClick, type, name, id, disable
       type={type}
       name={name}
       className={`overflow-hidden relative self-center flex justify-center items-center text-center  px-8 py-4 border border-primary/20 rounded-full ${className}`}>
-      <span className='relative z-20 text-base  font-bold'>{children}</span>
+      <span className='relative z-20 text-base  font-semibold'>{children}</span>
     </button>
   )
 }

@@ -35,7 +35,7 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
                 <h3
                   className={`text-3xl min-[2000px]:text-4xl ${
                     imagePosition === 'right' ? 'pr-6 md:pr-0' : ''
-                  } font-bold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6`}>
+                  } font-semibold max-w-[20ch] leading-tight mb-4 min-[2000px]:mb-6`}>
                   {heading}
                 </h3>
                 <p

@@ -60,7 +60,7 @@ export const Modal = () => {
                   <AlertCircle size={48} className='stroke-rose-600' />
                 )}
               </span>
-              <span className='text-lg mt-6 mb-6 text-center font-bold leading-tight'>
+              <span className='text-lg mt-6 mb-6 text-center font-semibold leading-tight'>
                 {variant === 'success' ? (
                   <span>
                     Congrats! <br />
