@@ -38,8 +38,8 @@ const DisplayWishlist = () => {
   return (
     <Container className='flex flex-col justify-center items-center'>
       {favouriteTeas.length === 0 && (
-        <div className='flex flex-col justify-center h-[367px] items-center w-full gap-6 text-center p-10 my-10 rounded-3xl md:rounded-[3rem] bg-tertiary-light bg-opacity-[0.01]'>
-          <span className=''>
+        <div className='flex flex-col justify-center h-[367px] items-center w-full gap-4 text-center p-10 my-10 rounded-3xl md:rounded-[3rem] bg-tertiary-light bg-opacity-[0.01]'>
+          <span className='opacity-60'>
             <Coffee size={24} />
           </span>
           <p className='opacity-90 leading-snug font-normal text-lg px-6'>
