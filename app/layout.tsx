@@ -9,9 +9,14 @@ import Modal from '../components/modal'
 const Mori = localfont({
   src: [
     {
-      path: '../fonts/PPMori-Regular.woff',
+      path: '../fonts/PPMori-Book.woff',
       weight: '400',
       style: 'normal',
+    },
+    {
+      path: '../fonts/PPMori-BookItalic.woff',
+      weight: '400',
+      style: 'italic',
     },
     {
       path: '../fonts/PPMori-SemiBold.woff',
@@ -26,10 +31,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={'en'} className={Mori.variable}>
       <Head />
-      <body className='bg-background relative font-sans'>
+      <body className='bg-background relative font-sans '>
         <ContextProviders>
           <Header />
-          <main className='relative'>{children}</main>
+          <main className='relative '>{children}</main>
           <Footer />
         </ContextProviders>
       </body>

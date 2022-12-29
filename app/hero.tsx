@@ -28,7 +28,9 @@ export const Hero = () => {
                   <p className='px-2 md:px-3 py-1 rounded-full border border-background/60'>Organic</p>
                 </aside>
                 <h1 className=' md:pr-1 text-4xl md:text-5xl lg:text-7xl  leading-[1.1] max-w-[21ch] '>
-                  Enjoy the Finest Japanese Green Teas and cherish the extraordinary flavour
+                  Enjoy the <span className='italic'>finest</span> Japanese green teas and cherish the
+                  <span className='italic'> extraordinary </span>
+                  flavour
                 </h1>
               </div>
             </SlideUp>

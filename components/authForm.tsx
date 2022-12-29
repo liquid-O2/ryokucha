@@ -71,7 +71,7 @@ export default function AuthForm() {
           </label>
           <div className='input-wrapper'>
             <Input
-              className={` rounded-xl w-full bg-tertiary-light bg-opacity-[0.02] ${
+              className={` rounded-xl w-full bg-tertiary-light bg-opacity-[0.01] ${
                 errors.email ? 'border-rose-500' : 'border-primary/10 '
               }`}
               type='email'
@@ -96,7 +96,7 @@ export default function AuthForm() {
           </label>
           <div className='input-wrapper'>
             <Input
-              className={` rounded-xl w-full bg-tertiary-light bg-opacity-[0.02] ${
+              className={` rounded-xl w-full bg-tertiary-light bg-opacity-[0.01] ${
                 errors.password ? 'border-rose-500' : 'border-primary/10 '
               }`}
               type='password'

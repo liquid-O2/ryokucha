@@ -33,7 +33,7 @@ const Newsletter = () => {
                         autoCapitalize='off'
                         required
                         placeholder='Enter your email'
-                        className='w-full rounded-full min-h-[56px] border-primary/10  bg-tertiary-light bg-opacity-[0.02] pr-4 pl-11 py-3 border text-primary'
+                        className='w-full rounded-full min-h-[56px] border-primary/10  bg-tertiary-light bg-opacity-[0.01] pr-4 pl-11 py-3 border text-primary'
                       />
                       <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
                         <Mail size={20} className={'stroke-primary/80  stroke-2'} />

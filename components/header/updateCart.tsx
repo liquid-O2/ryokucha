@@ -25,7 +25,7 @@ const UpdateCart = ({ quantity, id, dispatch }: { quantity: number; id: string; 
 
   return (
     <div className='flex gap-3 flex-wrap   w-full  '>
-      <div className='text-primary bg-tertiary-light bg-opacity-[0.02] flex justify-between  md:w-fit max-w-full  items-center px-0 py-0 border border-primary/10 rounded-full'>
+      <div className='text-primary bg-tertiary-light bg-opacity-[0.01] flex justify-between  md:w-fit max-w-full  items-center px-0 py-0 border border-primary/10 rounded-full'>
         <button
           disabled={noOfItems === 1}
           className=' disabled:opacity-30 min-h-[48px] min-w-[48px] flex justify-center items-center'
@@ -40,7 +40,7 @@ const UpdateCart = ({ quantity, id, dispatch }: { quantity: number; id: string; 
         </button>
       </div>
       <button
-        className='w-12 h-12 bg-tertiary-light bg-opacity-[0.02] rounded-lg border border-primary-40 flex justify-center items-center'
+        className='w-12 h-12 bg-tertiary-light bg-opacity-[0.01] rounded-lg border border-primary-40 flex justify-center items-center'
         onClick={() => handleUpdateCart('delete')}>
         <Trash size={16} />
       </button>
