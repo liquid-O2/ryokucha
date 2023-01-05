@@ -62,3 +62,15 @@ input::placeholder {
   overflow: hidden;
   max-height: 100vh;
 }
+
+.loading {
+  animation: loading 1s ease-in infinite alternate;
+}
+@keyframes loading {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 120%;
+  }
+}
