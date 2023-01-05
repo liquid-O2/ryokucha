@@ -45,12 +45,10 @@ type GlobalContext = {
 
 export type Teas = {
   name: string
-  id: string
+  slug: { current: string }
   attributes: Array<string>
-  image: string
+  image: { asset: { url: string; metadata: { lqip: string } } }
   price: number
-  featured?: boolean
-  fullImage?: string
   description?: string
 }
 
@@ -62,7 +60,7 @@ type UserDetails = {
 }
 
 export type CartDetails = {
-  id?: string
+  slug?: string
   name?: string
   price?: number
   image?: string
