@@ -6,35 +6,43 @@ import { Heart } from 'react-feather'
 import { GlobalContext } from './contextProvider'
 import { base64BlurredImages } from './utils/base64BlurredImages'
 
-type CardProps = { img: string; price: number; name: string; attributes: Array<string>; id: string; className: string }
+type CardProps = {
+  image: { asset: { url: string; metadata: { lqip: string } } }
+  price: number
+  name: string
+  attributes: Array<string>
+  slug: string
+  className: string
+}
 
-const Card = ({ img, price, name, attributes, id, className }: CardProps) => {
+const Card = ({ image, price, name, attributes, slug, className }: CardProps) => {
   const { userDetails, isLoggedIn, updateUser, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
 
+  console.log(image)
   // prefetch product pages for faster routing
-  router.prefetch(`/products/${id}`)
+  router.prefetch(`/products/${slug}`)
 
   // update liked state
   const toggleUpdateLiked = () => {
     setIsLiked((prevState) => !prevState)
     if (isLiked) {
-      updateUser('delete', id, 'likedTeas')
-    } else updateUser('add', id, 'likedTeas')
+      updateUser('delete', slug, 'likedTeas')
+    } else updateUser('add', slug, 'likedTeas')
   }
 
   // checks if the card is previously liked by the user
   const liked = useCallback(() => {
     let isLiked = false
     likedTeas.forEach((tea) => {
-      if (tea === id) {
+      if (tea === slug) {
         isLiked = true
       }
     })
     if (!isLoggedIn) isLiked = false
     return isLiked
-  }, [likedTeas, id, isLoggedIn])
+  }, [likedTeas, slug, isLoggedIn])
 
   useEffect(() => {
     setIsLiked(liked)
@@ -43,12 +51,12 @@ const Card = ({ img, price, name, attributes, id, className }: CardProps) => {
   return (
     <div className='flex flex-col gap-4 p-4 rounded-3xl border border-primary border-opacity-[15%]'>
       <figure
-        onClick={() => router.push(`/products/${id}`)}
+        onClick={() => router.push(`/products/${slug}`)}
         className='w-full aspect-w-1 aspect-h-1 relative overflow-hidden rounded-2xl flex justify-center items-center'>
         <Image
-          src={img}
+          src={image.asset.url}
           alt={`${name} loose tea leaf`}
-          blurDataURL={`data:image/png;base64,${base64BlurredImages[id]}`}
+          blurDataURL={image.asset.metadata.lqip}
           fill
           placeholder='blur'
           quality={100}

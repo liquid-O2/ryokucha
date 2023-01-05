@@ -42,14 +42,14 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
         <div className='grid pb-32 max-[612px]:grid-cols-1  max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 pt-8 gap-x-4 lg:gap-x-6 gap-y-14  grid-cols-4'>
           {(!searchResult || searchResult.length === 0) &&
             teas.map((tea: Teas) => {
-              const { name, image, price, attributes, id } = tea
+              const { name, image, price, attributes, slug } = tea
               return (
                 <Card
                   key={name}
-                  img={image}
+                  image={image}
                   name={name}
                   price={price}
-                  id={id}
+                  slug={slug.current}
                   attributes={attributes}
                   className={'rounded-2xl overflow-hidden cursor-pointer'}
                 />
@@ -57,14 +57,14 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
             })}
           {searchResult &&
             searchResult.map((tea: Teas) => {
-              const { name, image, price, attributes, id } = tea
+              const { name, image, price, attributes, slug } = tea
               return (
                 <Card
                   key={name}
-                  img={image}
+                  image={image}
                   name={name}
                   price={price}
-                  id={id}
+                  slug={slug.current}
                   attributes={attributes}
                   className={'rounded-2xl overflow-hidden cursor-pointer'}
                 />

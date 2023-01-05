@@ -1,13 +1,12 @@
 'use client'
 
-import { doc, getDoc } from 'firebase/firestore'
 import { useRouter } from 'next/navigation'
 import { useContext, useEffect, useState } from 'react'
 import { Coffee } from 'react-feather'
 import { Container } from '../../components/container'
 import { GlobalContext, Teas } from '../../components/contextProvider'
 import Card from '../../components/productCard'
-import { db } from '../../firebase/config'
+import { client } from '../../components/utils/sanity'
 
 const DisplayWishlist = () => {
   const { userDetails, isLoggedIn } = useContext(GlobalContext)
@@ -18,16 +17,22 @@ const DisplayWishlist = () => {
   useEffect(() => {
     if (!isLoggedIn) router.push('/')
 
-    const fetchTea = async (id: string) => {
-      const docRef = doc(db, 'teas', `${id}`)
-      const data = await getDoc(docRef)
-      const tea = { ...data.data(), id: id }
+    const fetchTea = async (slug: string) => {
+      const query = `*[_type == 'teas' && slug.current == '${slug}']{name,attributes,slug,price,description,image{
+        asset->{
+          ...,
+          metadata
+        }
+      }}`
+      const teas = await client.fetch(query)
+      const tea = { ...teas[0] }
+
       return tea as Teas
     }
 
     const getFavouriteTeas = async () => {
-      const teaIds = likedTeas.filter((id) => id !== '')
-      const res = teaIds.map((id) => fetchTea(id))
+      const teaIds = likedTeas.filter((slug) => slug !== '')
+      const res = teaIds.map((slug) => fetchTea(slug))
       const data = Promise.all(res)
       const teas = await data
       return teas
@@ -49,14 +54,14 @@ const DisplayWishlist = () => {
       )}
       <div className='grid w-full pb-32 max-[517px]:grid-cols-1  max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 pt-8 gap-x-4 lg:gap-x-6 gap-y-14  grid-cols-4'>
         {favouriteTeas.map((tea: Teas) => {
-          const { name, image, price, attributes, id } = tea
+          const { name, image, price, attributes, slug } = tea
           return (
             <Card
               key={name}
-              img={image}
+              image={image}
               name={name}
               price={price}
-              id={id}
+              slug={slug.current}
               attributes={attributes}
               className={'rounded-2xl overflow-hidden cursor-pointer'}
             />

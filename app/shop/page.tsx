@@ -6,11 +6,16 @@ import { db } from '../../firebase/config'
 import DisplayStore from './displayStore'
 import { sortArray } from '../../components/utils/sort'
 import PageWrapper from '../../components/pageWrapper'
+import { client } from '../../components/utils/sanity'
 
 const fetchTeas = cache(async () => {
-  const q = query(collection(db, 'teas'))
-  const data = await getDocs(q)
-  const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+  const query = `*[_type == 'teas' ]{name,attributes,slug,price,description,image{
+  asset->{
+    ...,
+    metadata
+  }
+}}`
+  const teas = await client.fetch(query)
   const alphabeticalTeas = sortArray(teas, 'name', false)
   return alphabeticalTeas as Teas[]
 })

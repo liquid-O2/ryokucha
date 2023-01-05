@@ -6,37 +6,48 @@ import { Teas } from '../../../components/contextProvider'
 import PageWrapper from '../../../components/pageWrapper'
 import Section from '../../../components/section'
 import { base64BlurredImages } from '../../../components/utils/base64BlurredImages'
+import { client } from '../../../components/utils/sanity'
 import { db } from '../../../firebase/config'
 import AddToCart from './addToCart'
 
 const fetchTeas = cache(async () => {
-  const q = query(collection(db, 'teas'))
-  const data = await getDocs(q)
-  const teas = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+  const query = `*[_type == 'teas' ]{name,attributes,slug,price,description,image{
+    asset->{
+      ...,
+      metadata
+    }
+  }}`
+  const teas = await client.fetch(query)
   return teas as Teas[]
 })
 
 export async function generateStaticParams() {
   const teas = await fetchTeas()
   return teas.map((tea) => ({
-    slug: tea.id,
+    slug: tea.slug.current,
   }))
 }
 
-interface ParamProps extends Teas {
+interface ParamProps {
   slug: string
 }
 
 const fetchSingleTea = async (slug: string) => {
-  const docRef = doc(db, 'teas', `${slug}`)
-  const data = await getDoc(docRef)
-  const tea = data.data()
-  return tea as Teas
+  const query = `*[_type == 'teas' && slug.current == '${slug}' ]{name,attributes,slug,price,description,image{
+    asset->{
+      ...,
+      metadata
+    }
+  }}`
+  const tea = await client.fetch(query)
+
+  return { ...tea[0] } as Teas
 }
 
 export default async function IndividualTea({ params }: { params: ParamProps }) {
   const { slug } = params
-  const { image, name, price, description } = await fetchSingleTea(slug)
+  const tea = await fetchSingleTea(slug)
+
   return (
     <PageWrapper>
       <Section>
@@ -44,24 +55,24 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
           <div className='w-full overflow-hidden h-full flex flex-col lg:flex-row md:h-[80vh]  text-background bg-[#E3E7DC] rounded-3xl md:rounded-[3rem] '>
             <figure className='w-full max-[490px]:aspect-1  max-[766px]:aspect-w-1  max-[766px]:aspect-h-1 max-h-80 md:max-h-full h-full relative md:rounded-[3rem] overflow-hidden '>
               <Image
-                src={image}
-                alt={name}
+                src={tea.image.asset.url}
+                alt={tea.name}
                 fill
                 placeholder='blur'
-                blurDataURL={`data:image/png;base64,${base64BlurredImages[slug]}`}
+                blurDataURL={tea.image.asset.metadata.lqip}
                 className=' object-cover h-full w-full'
                 quality={100}
                 priority
               />
             </figure>
             <article className='relative px-8 h-full w-full flex flex-col justify-center md:px-20 bg-primary rounded-3xl md:rounded-[3rem] py-10 md:py-16'>
-              <p className='text-2xl w-full text-neon font-semibold'>{`$${price}`}</p>
+              <p className='text-2xl w-full text-neon font-semibold'>{`$${tea.price}`}</p>
               <p className=' text-4xl w-full lg:text-5xl font-semibold  mt-1'>
-                {name}
+                {tea.name}
                 <span className='text-sm tracking-wider pl-2'>100g</span>
               </p>
-              <p className='text-base md:text-lg md:max-w-[50ch] mt-4 opacity-90 leading-normal'>{description}</p>
-              <AddToCart name={name} image={image} price={price} id={slug} />
+              <p className='text-base md:text-lg md:max-w-[50ch] mt-4 opacity-90 leading-normal'>{tea.description}</p>
+              <AddToCart name={tea.name} image={tea.image} price={tea.price} slug={tea.slug.current} />
             </article>
           </div>
         </Container>

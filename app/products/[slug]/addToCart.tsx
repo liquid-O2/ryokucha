@@ -5,23 +5,33 @@ import { Minus, Plus } from 'react-feather'
 import Button from '../../../components/button'
 import { GlobalContext, Teas } from '../../../components/contextProvider'
 
-const AddToCart = ({ image, name, price, id }: { image: string; name: string; price: number; id: string }) => {
+const AddToCart = ({
+  image,
+  name,
+  price,
+  slug,
+}: {
+  image: { asset: { url: string; metadata: { lqip: string } } }
+  name: string
+  price: number
+  slug: string
+}) => {
   const [noOfItems, setNoOfItems] = useState(1)
   const { dispatch, cartDetails } = useContext(GlobalContext)
 
   const handleAddToCart = () => {
     let alreadyExist = false
     cartDetails.forEach((item: Teas) => {
-      if (item.id === id) {
+      if (item.slug.current === slug) {
         alreadyExist = true
       }
     })
     if (!alreadyExist) {
       console.log('add')
-      return dispatch({ type: 'addItem', name, price, id, image, quantity: noOfItems })
+      return dispatch({ type: 'addItem', name, price, slug, image: image.asset.url, quantity: noOfItems })
     } else {
       console.log('update')
-      return dispatch({ type: 'updateQuantity', id, quantity: noOfItems })
+      return dispatch({ type: 'updateQuantity', slug, quantity: noOfItems })
     }
   }
 

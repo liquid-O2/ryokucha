@@ -96,28 +96,22 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                     </div>
                   )}
                   {cartDetails.map((item: any) => {
-                    const { id, price, name, image, quantity } = item
-                    if (id)
-                      return (
-                        <div
-                          key={id}
-                          className='flex relative overflow-hidden justify-between items-center h-32 mb-6 max-h-32'>
-                          <div className='flex flex-col justify-center  h-full w-[70%]'>
-                            <span className='text-neon-dark'>{`$${price}`}</span>
-                            <p className='text-lg md:text-xl mb-2'>{name}</p>
-                            <UpdateCart id={id} quantity={quantity} dispatch={dispatch} />
-                          </div>
-                          <div className='relative h-full w-[30%] rounded-2xl overflow-hidden flex justify-center items-center'>
-                            <Image
-                              src={image}
-                              alt={name}
-                              width={300}
-                              height={128}
-                              className='object-cover h-full w-full'
-                            />
-                          </div>
+                    const { slug, price, name, image, quantity } = item
+
+                    return (
+                      <div
+                        key={slug}
+                        className='flex relative overflow-hidden justify-between items-center h-32 mb-6 max-h-32'>
+                        <div className='flex flex-col justify-center  h-full w-[70%]'>
+                          <span className='text-neon-dark'>{`$${price}`}</span>
+                          <p className='text-lg md:text-xl mb-2'>{name}</p>
+                          <UpdateCart slug={slug} quantity={quantity} dispatch={dispatch} />
                         </div>
-                      )
+                        <div className='relative h-full w-[30%] rounded-2xl overflow-hidden flex justify-center items-center'>
+                          <Image src={image} alt={name} width={300} height={128} className='object-cover h-full w-full' />
+                        </div>
+                      </div>
+                    )
                   })}
                 </div>
                 <div className='flex flex-col mt-auto justify-self-end '>

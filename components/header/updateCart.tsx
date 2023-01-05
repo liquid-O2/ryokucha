@@ -3,22 +3,22 @@
 import { useState } from 'react'
 import { Minus, Plus, Trash } from 'react-feather'
 
-const UpdateCart = ({ quantity, id, dispatch }: { quantity: number; id: string; dispatch: any }) => {
+const UpdateCart = ({ quantity, slug, dispatch }: { quantity: number; slug: string; dispatch: any }) => {
   const [noOfItems, setNoOfItems] = useState(quantity)
 
   const handleUpdateCart = (type: string) => {
     switch (type) {
       case 'add':
         setNoOfItems((prev) => prev + 1)
-        dispatch({ type: 'updateQuantity', id, quantity: noOfItems + 1, updateCart: true })
+        dispatch({ type: 'updateQuantity', slug, quantity: noOfItems + 1, updateCart: true })
         return
       case 'substract':
         setNoOfItems((prev) => prev - 1)
-        dispatch({ type: 'updateQuantity', id, quantity: noOfItems - 1, updateCart: true })
+        dispatch({ type: 'updateQuantity', slug, quantity: noOfItems - 1, updateCart: true })
         return
       default:
         setNoOfItems(0)
-        dispatch({ type: 'deleteItem', id })
+        dispatch({ type: 'deleteItem', slug })
         return
     }
   }

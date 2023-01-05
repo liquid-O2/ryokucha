@@ -21,6 +21,10 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'lh3.googleusercontent.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
     ],
   },
 }
