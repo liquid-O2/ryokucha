@@ -1,43 +1,47 @@
-import Head from './head'
-import localfont from '@next/font/local'
-import Header from '../components/header/header'
-import '../styles/globals.css'
-import ContextProviders from '../components/contextProvider'
-import Footer from '../components/footer'
-import Modal from '../components/modal'
+import Head from "./head";
+import localfont from "@next/font/local";
+import Header from "../components/header/header";
+import "../styles/globals.css";
+import ContextProviders from "../components/contextProvider";
+import Footer from "../components/footer";
+import Modal from "../components/modal";
 
 const Mori = localfont({
   src: [
     {
-      path: '../fonts/PPMori-Book.woff',
-      weight: '300',
-      style: 'normal',
+      path: "../fonts/PPMori-Book.woff",
+      weight: "300",
+      style: "normal",
     },
     {
-      path: '../fonts/PPMori-BookItalic.woff',
-      weight: '300',
-      style: 'italic',
+      path: "../fonts/PPMori-BookItalic.woff",
+      weight: "300",
+      style: "italic",
     },
     {
-      path: '../fonts/PPMori-SemiBold.woff',
-      weight: '600',
-      style: 'normal',
+      path: "../fonts/PPMori-SemiBold.woff",
+      weight: "600",
+      style: "normal",
     },
   ],
-  variable: '--font-Mori',
-})
+  variable: "--font-Mori",
+});
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang={'en'} className={Mori.variable}>
+    <html lang={"en"} className={Mori.variable}>
       <Head />
-      <body className='bg-background relative font-sans font-light '>
+      <body className="relative bg-background font-sans font-light ">
         <ContextProviders>
           <Header />
-          <main className='relative font-light '>{children}</main>
+          <main className="relative font-light ">{children}</main>
           <Footer />
         </ContextProviders>
       </body>
     </html>
-  )
+  );
 }

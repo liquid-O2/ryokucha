@@ -1,101 +1,114 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useCallback, useContext, useEffect, useState } from 'react'
-import { Heart } from 'react-feather'
-import { GlobalContext } from './contextProvider'
-import { base64BlurredImages } from './utils/base64BlurredImages'
+import Image from "next/image";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { Heart } from "react-feather";
+import { GlobalContext } from "./contextProvider";
+import { base64BlurredImages } from "./utils/base64BlurredImages";
 
 type CardProps = {
-  image: { asset: { url: string; metadata: { lqip: string } } }
-  price: number
-  name: string
-  attributes: Array<string>
-  slug: string
-  className: string
-}
+  image: { asset: { url: string; metadata: { lqip: string } } };
+  price: number;
+  name: string;
+  attributes: Array<string>;
+  slug: string;
+  className: string;
+};
 
-const Card = ({ image, price, name, attributes, slug, className }: CardProps) => {
-  const { userDetails, isLoggedIn, updateUser, router } = useContext(GlobalContext)
-  const { likedTeas } = userDetails
-  const [isLiked, setIsLiked] = useState(false)
+const Card = ({
+  image,
+  price,
+  name,
+  attributes,
+  slug,
+  className,
+}: CardProps) => {
+  const { userDetails, isLoggedIn, updateUser, router } =
+    useContext(GlobalContext);
+  const { likedTeas } = userDetails;
+  const [isLiked, setIsLiked] = useState(false);
 
-  console.log(image)
+  console.log(image);
   // prefetch product pages for faster routing
-  router.prefetch(`/products/${slug}`)
+  router.prefetch(`/products/${slug}`);
 
   // update liked state
   const toggleUpdateLiked = () => {
-    setIsLiked((prevState) => !prevState)
+    setIsLiked((prevState) => !prevState);
     if (isLiked) {
-      updateUser('delete', slug, 'likedTeas')
-    } else updateUser('add', slug, 'likedTeas')
-  }
+      updateUser("delete", slug, "likedTeas");
+    } else updateUser("add", slug, "likedTeas");
+  };
 
   // checks if the card is previously liked by the user
   const liked = useCallback(() => {
-    let isLiked = false
+    let isLiked = false;
     likedTeas.forEach((tea) => {
       if (tea === slug) {
-        isLiked = true
+        isLiked = true;
       }
-    })
-    if (!isLoggedIn) isLiked = false
-    return isLiked
-  }, [likedTeas, slug, isLoggedIn])
+    });
+    if (!isLoggedIn) isLiked = false;
+    return isLiked;
+  }, [likedTeas, slug, isLoggedIn]);
 
   useEffect(() => {
-    setIsLiked(liked)
-  }, [liked])
+    setIsLiked(liked);
+  }, [liked]);
 
   return (
-    <div className='flex flex-col gap-4 p-4 rounded-3xl border border-primary border-opacity-[15%]'>
+    <div className="flex flex-col gap-4 rounded-3xl border border-primary border-opacity-[15%] p-4">
       <figure
         onClick={() => router.push(`/products/${slug}`)}
-        className='w-full aspect-w-1 aspect-h-1 relative overflow-hidden rounded-2xl flex justify-center items-center'>
+        className="aspect-w-1 aspect-h-1 relative flex w-full items-center justify-center overflow-hidden rounded-2xl"
+      >
         <Image
           src={image.asset.url}
           alt={`${name} loose tea leaf`}
           blurDataURL={image.asset.metadata.lqip}
           fill
-          placeholder='blur'
+          placeholder="blur"
           quality={100}
-          className={`object-cover h-full w-full  cursor-pointer hover:opacity-90 hover:scale-110 transition-all ease-in duration-150 `}
-          sizes='
+          className={`h-full w-full cursor-pointer  object-cover transition-all duration-150 ease-in hover:scale-110 hover:opacity-90 `}
+          sizes="
               (max-width: 1200px) 33vw,
               (max-width: 910px) 50vw,
               (min-width:1201px) 25vw
-              100vw'
+              100vw"
         />
       </figure>
-      <div className='text'>
-        <div className='flex justify-between items-center relative'>
-          <p className='text-xl leading-tight'>{name}</p>
+      <div className="text">
+        <div className="relative flex items-center justify-between">
+          <p className="text-xl leading-tight">{name}</p>
           <button
             disabled={!isLoggedIn}
             onClick={() => {
-              toggleUpdateLiked()
+              toggleUpdateLiked();
             }}
-            className=' transition-all  ease-in duration-100 disabled:opacity-20 relative -mr-1 w-12 h-12 flex justify-center items-center'>
+            className=" relative  -mr-1 flex h-12 w-12 items-center justify-center transition-all duration-100 ease-in disabled:opacity-20"
+          >
             <Heart
               size={22}
-              className={` transition-all  ease-in duration-100 ${
-                isLiked ? 'fill-rose-500 stroke-rose-500' : 'stroke-primary/70'
+              className={` transition-all  duration-100 ease-in ${
+                isLiked ? "fill-rose-500 stroke-rose-500" : "stroke-primary/70"
               } `}
             />
           </button>
         </div>
-        <p className='font-semibold leading-none text-xl text-[#A0B137] '>{`$${price}`}</p>
+        <p className="text-xl font-semibold leading-none text-[#A0B137] ">{`$${price}`}</p>
       </div>
-      <div className='flex text-sm items-center gap-2 mb-1 mt-1'>
+      <div className="mb-1 mt-1 flex items-center gap-2 text-sm">
         {attributes.map((attr, index) => (
-          <p key={index} className='px-3 py-1 max-w-fit rounded-full border border-primary/20 '>
+          <p
+            key={index}
+            className="max-w-fit rounded-full border border-primary/20 px-3 py-1 "
+          >
             {attr}
           </p>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

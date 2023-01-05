@@ -1,67 +1,87 @@
-'use client'
+"use client";
 
-import { AnimatePresence, LazyMotion, m, MotionValue, useScroll, useTransform } from 'framer-motion'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import {
+  AnimatePresence,
+  LazyMotion,
+  m,
+  MotionValue,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
-  const [hamburgerOpen, setHamburgerOpen] = useState(false)
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  const { scrollYProgress } = useScroll()
-  const path = usePathname()
-  const color = useTransform(scrollYProgress, [0, 0.3], [path === '/' ? '#FCFFFD' : '#003D32', '#003D32'])
-  const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
+  const { scrollYProgress } = useScroll();
+  const path = usePathname();
+  const color = useTransform(
+    scrollYProgress,
+    [0, 0.3],
+    [path === "/" ? "#FCFFFD" : "#003D32", "#003D32"]
+  );
+  const loadFeatures = () =>
+    import("../utils/framerFeatures").then((res) => res.default);
 
   return (
     <LazyMotion features={loadFeatures}>
-      <div className={`relative z-20 block md:hidden text-inherit `}>
+      <div className={`relative z-20 block text-inherit md:hidden `}>
         <button
           onClick={() => setHamburgerOpen(!hamburgerOpen)}
-          className={` text-inherit hamburger relative w-12 h-12 flex flex-col justify-center items-center`}>
-          <span className='sr-only'>hamburger menu button</span>
+          className={` hamburger relative flex h-12 w-12 flex-col items-center justify-center text-inherit`}
+        >
+          <span className="sr-only">hamburger menu button</span>
           <m.span
             style={{ color, borderColor: color }}
-            className={`absolute w-[24px] h-[2px] origin-center mb-1 rounded-[10px]   transition-transform  ease-in ${
-              hamburgerOpen ? ' rotate-[135deg] top-[50%] ' : 'top-[35%]'
-            } border `}></m.span>
+            className={`absolute mb-1 h-[2px] w-[24px] origin-center rounded-[10px]   transition-transform  ease-in ${
+              hamburgerOpen ? " top-[50%] rotate-[135deg] " : "top-[35%]"
+            } border `}
+          ></m.span>
           <m.span
             style={{ color, borderColor: color }}
             className={` ${
-              hamburgerOpen && 'opacity-0'
-            } transition-transform  ease-in w-[24px] h-[2px] absolute origin-center top-[50%] mb-1 rounded-[10px]  border `}></m.span>
+              hamburgerOpen && "opacity-0"
+            } absolute  top-[50%] mb-1 h-[2px] w-[24px] origin-center rounded-[10px] border transition-transform  ease-in `}
+          ></m.span>
           <m.span
             style={{ color, borderColor: color }}
-            className={`absolute  w-[24px] h-[2px] origin-center transition-transform  ease-in ${
-              hamburgerOpen ? '-rotate-[135deg] top-[50%] ' : 'top-[65%]'
-            } rounded-[10px] border    `}></m.span>
+            className={`absolute  h-[2px] w-[24px] origin-center transition-transform  ease-in ${
+              hamburgerOpen ? "top-[50%] -rotate-[135deg] " : "top-[65%]"
+            } rounded-[10px] border    `}
+          ></m.span>
         </button>
-        <div className=' text-primary absolute z-50 mt-2 top-full right-0  min-w-[300px] overflow-hidden'>
+        <div className=" absolute top-full right-0 z-50 mt-2 min-w-[300px]  overflow-hidden text-primary">
           <AnimatePresence initial={false}>
             {hamburgerOpen && (
               <m.div
                 animate={{ y: 0, opacity: 1 }}
-                initial={{ y: '-100%', opacity: 0 }}
-                exit={{ y: '-100%', opacity: 0 }}
+                initial={{ y: "-100%", opacity: 0 }}
+                exit={{ y: "-100%", opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className=' bg-background shadow-md border border-primary/10 shadow-primary-dark/10 rounded-3xl m-2 flex flex-col px-6 py-4 gap-4'>
+                className=" m-2 flex flex-col gap-4 rounded-3xl border border-primary/10 bg-background px-6 py-4 shadow-md shadow-primary-dark/10"
+              >
                 <Link
-                  href={'/'}
+                  href={"/"}
                   onClick={() => setHamburgerOpen(false)}
-                  className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full'>
+                  className="w-full py-3 transition-opacity duration-200 ease-in hover:opacity-50"
+                >
                   home
                 </Link>
                 <Link
                   onClick={() => setHamburgerOpen(false)}
-                  href={'/shop'}
-                  className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full '>
+                  href={"/shop"}
+                  className="w-full py-3 transition-opacity duration-200 ease-in hover:opacity-50 "
+                >
                   shop
                 </Link>
                 {!isLoggedIn && (
                   <Link
-                    href={'/login'}
+                    href={"/login"}
                     onClick={() => setHamburgerOpen(false)}
-                    className='hover:opacity-50 transition-opacity duration-200 ease-in py-3 w-full'>
+                    className="w-full py-3 transition-opacity duration-200 ease-in hover:opacity-50"
+                  >
                     login
                   </Link>
                 )}
@@ -71,7 +91,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
         </div>
       </div>
     </LazyMotion>
-  )
-}
+  );
+};
 
-export default HamburgerMenu
+export default HamburgerMenu;

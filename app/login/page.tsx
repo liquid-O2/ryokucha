@@ -1,8 +1,8 @@
-import '/styles/globals.css'
-import AuthForm from '../../components/authForm'
-import Section from '../../components/section'
-import { Container } from '../../components/container'
-import PageWrapper from '../../components/pageWrapper'
+import "/styles/globals.css";
+import AuthForm from "../../components/authForm";
+import Section from "../../components/section";
+import { Container } from "../../components/container";
+import PageWrapper from "../../components/pageWrapper";
 
 export default function Login() {
   return (
@@ -10,12 +10,12 @@ export default function Login() {
       <PageWrapper>
         <Section>
           <Container>
-            <div className='flex justify-center items-center '>
+            <div className="flex items-center justify-center ">
               <AuthForm />
             </div>
           </Container>
         </Section>
       </PageWrapper>
     </>
-  )
+  );
 }
