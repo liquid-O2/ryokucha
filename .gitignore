@@ -27,7 +27,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env*
+.env
 
 # vercel
 .vercel
@@ -38,7 +38,6 @@ next-env.d.ts
 ui-debug.log
 firebase-debug.log
 
-#sanity
-/sanity_ryokucha/node_modules
+
 
 
