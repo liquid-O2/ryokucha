@@ -28,7 +28,8 @@
     ".next/types/**/*.ts",
     "jest.config.js",
     "components/utils/framerFeatures.ts",
-    "app/featured.tsx.bak"
+    "app/featured.tsx.bak",
+    "custom.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "public"]
 }

@@ -1,32 +1,29 @@
-import { CartDetails } from "../contextProvider";
+import { CartDetails } from '../contextProvider'
 
 export type AddItemAction = {
-  type: "addItem";
-  name: string;
-  price: number;
-  slug: string;
-  image: string;
-  quantity: number;
-};
+  type: 'addItem'
+  name: string
+  price: number
+  slug: string
+  image: string
+  quantity: number
+}
 
 export type DeleteItemAction = {
-  type: "deleteItem";
-  slug: string;
-};
+  type: 'deleteItem'
+  slug: string
+}
 
 export type UpdateQuantityAction = {
-  type: "updateQuantity";
-  quantity: number;
-  slug: string;
-  updateCart: boolean;
-};
+  type: 'updateQuantity'
+  quantity: number
+  slug: string
+  updateCart: boolean
+}
 
-export const reducer = (
-  state: CartDetails[],
-  action: AddItemAction | DeleteItemAction | UpdateQuantityAction
-) => {
+export const reducer = (state: CartDetails[], action: AddItemAction | DeleteItemAction | UpdateQuantityAction) => {
   switch (action.type) {
-    case "addItem":
+    case 'addItem':
       return [
         ...state,
         {
@@ -36,27 +33,25 @@ export const reducer = (
           image: action.image,
           quantity: action.quantity,
         },
-      ];
+      ]
 
-    case "updateQuantity":
+    case 'updateQuantity':
       return state.map((tea: CartDetails) => {
         if (action.slug === tea.slug) {
           return {
             ...tea,
-            quantity: action.updateCart
-              ? action.quantity
-              : tea.quantity! + action.quantity,
-          };
+            quantity: action.updateCart ? action.quantity : tea.quantity! + action.quantity,
+          }
         }
-        return tea;
-      });
+        return tea
+      })
 
-    case "deleteItem":
+    case 'deleteItem':
       return state.filter((tea: any) => {
-        return tea.slug !== action.slug;
-      });
+        return tea.slug !== action.slug
+      })
 
     default:
-      return state;
+      return state
   }
-};
+}

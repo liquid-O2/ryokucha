@@ -44,13 +44,15 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
         <button
           disabled={noOfItems === 1}
           className=' flex min-h-[48px] min-w-[48px] items-center justify-center disabled:opacity-30'
-          onClick={() => setNoOfItems((prev) => prev - 1)}>
+          onClick={() => setNoOfItems((prev) => prev - 1)}
+        >
           <Minus size={20} />
         </button>
         <p className='w-full px-6 text-center text-lg font-semibold leading-none'>{noOfItems}</p>
         <button
           className=' flex min-h-[48px] min-w-[48px] items-center justify-center'
-          onClick={() => setNoOfItems((prev) => prev + 1)}>
+          onClick={() => setNoOfItems((prev) => prev + 1)}
+        >
           <Plus size={20} />
         </button>
       </div>
