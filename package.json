@@ -12,6 +12,7 @@
   "dependencies": {
     "@next/font": "^13.0.4",
     "@sanity/client": "^4.0.0",
+    "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.46.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
