@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/sanity_ryokucha/node_modules
+
 
 /.pnp
 .pnp.js
