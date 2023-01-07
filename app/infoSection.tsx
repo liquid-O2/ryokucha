@@ -35,8 +35,8 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
               <SlideUp delay={0.2}>
                 <h3
                   className={`text-3xl min-[2000px]:text-4xl ${
-                    imagePosition === 'right' ? ' md:pr-0' : ''
-                  } mb-4 max-w-[20ch] pr-6 font-semibold leading-tight min-[2000px]:mb-6`}
+                    imagePosition === 'right' ? 'pr-6  md:pr-0' : 'pr-8'
+                  } mb-4 max-w-[20ch] font-semibold leading-tight min-[2000px]:mb-6`}
                 >
                   {heading}
                 </h3>
