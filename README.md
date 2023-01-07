@@ -10,6 +10,7 @@ This app was built using React, Next.js 13 (with its new features such as the `a
 > `with-firestore` branch
 
 <br>
+
 ## Features
 
 - Browse a wide selection of Japanese green teas
