@@ -20,6 +20,8 @@ This app was built using React, Next.js 13 (with its new features such as the `a
 - Sign in with your Google account using Firebase Auth
 - Add products to your wishlist and view them
 
+<br>
+
 ## Getting Started
 
 To get started with Ideaboard, either visit the [Live website](https://ryokucha.vercel.app/) 
@@ -38,12 +40,15 @@ npm run dev
 
 Your Ideaboard app will be available at `http://localhost:3000`
 
+<br>
+
 ## Testing
 To run the test suite, simply run:
 ```bash
 npm run test
 ```
 
+<br>
 
 ## Built With
 
@@ -58,6 +63,9 @@ npm run test
 - [Jest](https://jestjs.io/) - A JavaScript testing framework
 - [Tailwind](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) - A testing library for React components
+
+<br>
+
 ## Contributing
 If you'd like to contribute to Ideaboard, please fork the repository and make your changes as a separate branch. Once you've made your changes, open a pull request and we'll review your submission.
 
