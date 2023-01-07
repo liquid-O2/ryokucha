@@ -5,6 +5,7 @@
 Ryokucha is an e-commerce app that allows you to buy Japanese green tea directly from Japan. Whether you're a fan of hojicha, sencha, or any other variety of green tea, Ryokucha has something for everyone.
 
 This app was built using React, Next.js 13 (with its new features such as the `app` directory), Framer Motion, TypeScript, Sanity (a headless CMS), Firebase Auth, React-Hook-Forms, Stripe, Jest, Tailwind, and React Testing Library.
+
 <br>
 
 > I also have a version using Firebase's Firestore database, although the code is not up-to-date you can still check it out by switching to the
