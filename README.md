@@ -42,12 +42,8 @@ To use Ryokucha, follow these steps:
 
 ## Contributing
 
-If you want to contribute to Ryokucha, please follow the guidelines in the `CONTRIBUTING.md` file.
-
-<br>
+`CONTRIBUTIONS.md` hasn't been set yet, so just add your suggestions as issues
 
 ## License
 
 Ryokucha is licensed under the MIT License. See the `LICENSE` file for more details.
-
-<br>
