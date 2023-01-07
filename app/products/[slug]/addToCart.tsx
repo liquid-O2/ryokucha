@@ -23,7 +23,6 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
       }
     })
     if (!alreadyExist) {
-      console.log('add')
       return dispatch({
         type: 'addItem',
         name,
@@ -33,7 +32,6 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
         quantity: noOfItems,
       })
     } else {
-      console.log('update')
       return dispatch({ type: 'updateQuantity', slug, quantity: noOfItems })
     }
   }

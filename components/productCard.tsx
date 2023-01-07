@@ -20,7 +20,6 @@ const Card = ({ image, price, name, attributes, slug, className }: CardProps) =>
   const { likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
 
-  console.log(image)
   // prefetch product pages for faster routing
   router.prefetch(`/products/${slug}`)
 

@@ -40,7 +40,7 @@ const DisplayWishlist = () => {
       return teas
     }
     getFavouriteTeas().then((res) => setFavouriteTeas([...res]))
-  }, [likedTeas])
+  }, [likedTeas, isLoggedIn, router])
 
   return (
     <Container className='flex flex-col items-center justify-center'>
