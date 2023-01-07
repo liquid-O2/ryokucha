@@ -2,7 +2,7 @@
 
 # Ryokucha
 
-Ryokucha is an e-commerce app that allows you to buy Japanese green tea directly from Japan. Whether you're a fan of matcha, sencha, or any other variety of green tea, Ryokucha has something for everyone.
+Ryokucha is an e-commerce app that allows you to buy Japanese green tea directly from Japan. Whether you're a fan of hojicha, sencha, or any other variety of green tea, Ryokucha has something for everyone.
 
 This app was built using React, Next.js 13 (with its new features such as the `app` directory), Framer Motion, TypeScript, Sanity (a headless CMS), Firebase Auth, React-Hook-Forms, Stripe, Jest, Tailwind, and React Testing Library.
 <br>
@@ -15,7 +15,7 @@ This app was built using React, Next.js 13 (with its new features such as the `a
 - Browse a wide selection of Japanese green teas
 - Add items to your cart and check out with Stripe
 - Sign in with your Google account using Firebase Auth
-- View your order history and track your shipments
+- Add products to your wishlist and view them
 
 ## Getting Started
 
