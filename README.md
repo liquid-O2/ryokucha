@@ -38,7 +38,7 @@ Then, start the development server:
 npm run dev
 ```
 
-Your Ideaboard app will be available at `http://localhost:3000`
+Your Ryokucha app will be available at `http://localhost:3000`
 
 <br>
 
