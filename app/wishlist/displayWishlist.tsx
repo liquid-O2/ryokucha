@@ -57,17 +57,7 @@ const DisplayWishlist = () => {
       <div className='grid w-full grid-cols-4 gap-x-4  gap-y-14 pb-32 pt-8 max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 max-[517px]:grid-cols-1  lg:gap-x-6'>
         {favouriteTeas.map((tea: Teas) => {
           const { name, image, price, attributes, slug } = tea
-          return (
-            <Card
-              key={name}
-              image={image}
-              name={name}
-              price={price}
-              slug={slug.current}
-              attributes={attributes}
-              className={'cursor-pointer overflow-hidden rounded-2xl'}
-            />
-          )
+          return <Card key={name} image={image} name={name} price={price} slug={slug.current} attributes={attributes} />
         })}
       </div>
     </Container>

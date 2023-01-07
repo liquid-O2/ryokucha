@@ -12,10 +12,9 @@ type CardProps = {
   name: string
   attributes: Array<string>
   slug: string
-  className: string
 }
 
-const Card = ({ image, price, name, attributes, slug, className }: CardProps) => {
+const Card = ({ image, price, name, attributes, slug }: CardProps) => {
   const { userDetails, isLoggedIn, updateUser, router } = useContext(GlobalContext)
   const { likedTeas } = userDetails
   const [isLiked, setIsLiked] = useState(false)
