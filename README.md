@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Ryokucha, an e-commerce app's mockup image](https://cdn.sanity.io/images/lo6epx6n/production/4000c8d2ae0902b368988efb7f33d4935b2f00cd-6000x4500.jpg)
+# Ryokucha
+
+ *An e-commerce app selling Japanese green teas*
+
+###### Built using -
+---
+1. Next.js 13 (with the new app directory)
+2. Typescript
+3.  Sanity (Headless CMS)
+4. Firebase Auth
+5. Stripe
+6. Framer Motion and 
+7. React-Hook-Forms.
+
+> I also have a version using Firebase's Firestore database, although the code is not up-to-date you can still check it out by switching to the 
+> `with-firestore` branch
+
+---
+
 
 ## Getting Started
 
-First, run the development server:
+To get started with Ryokucha, either visit the [Live website](https://ryokucha.vercel.app/) or,
+follow these steps to build it on your local machine:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Clone the repository
+2. Install dependencies using `yarn` or `npm install`
+3. Run the development server using `yarn dev` or `npm run dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To use Ryokucha, follow these steps:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. Sign up for an account or,
+2. Click on the `Continue with a guest account` button to proceed with a guest account
+3. Browse the product catalog
+4. Add items to your cart
+5. Check out and make a payment using Stripe
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+If you want to contribute to Ryokucha, please follow the guidelines in the `CONTRIBUTING.md` file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ryokucha is licensed under the MIT License. See the `LICENSE` file for more details.
