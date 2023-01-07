@@ -6,8 +6,6 @@ _An e-commerce app selling Japanese green teas_
 
 ###### Built using -
 
----
-
 1. Next.js 13 (with the new app directory)
 2. Typescript
 3. Firestore Database
@@ -18,8 +16,6 @@ _An e-commerce app selling Japanese green teas_
 
 > I also have a version using Sanity Headless CMS, the code is most up-to-date in that branch, check it out by switching to the
 > `main` branch
-
----
 
 ## Getting Started
 
