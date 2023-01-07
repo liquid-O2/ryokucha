@@ -24,7 +24,7 @@ This app was built using React, Next.js 13 (with its new features such as the `a
 
 ## Getting Started
 
-To get started with Ideaboard, either visit the [Live website](https://ryokucha.vercel.app/) 
+To get started with Ryokucha, either visit the [Live website](https://ryokucha.vercel.app/) 
 or simply clone the repository and install the dependencies:
 
 ```bash
