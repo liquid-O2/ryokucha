@@ -5,16 +5,15 @@
 _An e-commerce app selling Japanese green teas_
 
 ###### Built using -
-
 1. Next.js 13 (with the new app directory)
 2. Typescript
-3. Sanity (Headless CMS)
+3.  Sanity (Headless CMS)
 4. Firebase Auth
 5. Stripe
-6. Framer Motion and
+6. Framer Motion and 
 7. React-Hook-Forms.
 
-> I also have a version using Firebase's Firestore database, although the code is not up-to-date you can still check it out by switching to the
+> I also have a version using Firebase's Firestore database, although the code is not up-to-date you can still check it out by switching to the 
 > `with-firestore` branch
 
 ## Getting Started
