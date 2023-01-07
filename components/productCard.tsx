@@ -50,7 +50,7 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
     <div className='flex flex-col gap-4 overflow-hidden rounded-3xl border border-primary border-opacity-[15%] p-4'>
       <figure
         onClick={() => router.push(`/products/${slug}`)}
-        className='aspect-w-1 aspect-h-1 relative flex w-full items-center justify-center overflow-hidden rounded-2xl'
+        className='aspect-w-1 aspect-h-1 relative flex w-full items-center justify-center overflow-hidden rounded-2xl md:overflow-hidden'
       >
         <Image
           src={image.asset.url}
@@ -59,7 +59,7 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
           fill
           placeholder='blur'
           quality={100}
-          className={`h-full w-full cursor-pointer rounded-2xl object-cover transition-all duration-150 ease-in hover:scale-110 hover:opacity-90 `}
+          className={`h-full w-full cursor-pointer object-cover transition-all duration-150 ease-in hover:scale-110 hover:opacity-90 `}
           sizes='
               (max-width: 1200px) 33vw,
               (max-width: 910px) 50vw,
