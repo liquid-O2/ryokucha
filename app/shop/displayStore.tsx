@@ -44,30 +44,14 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
             teas.map((tea: Teas) => {
               const { name, image, price, attributes, slug } = tea
               return (
-                <Card
-                  key={name}
-                  image={image}
-                  name={name}
-                  price={price}
-                  slug={slug.current}
-                  attributes={attributes}
-                  className={'cursor-pointer overflow-hidden rounded-2xl'}
-                />
+                <Card key={name} image={image} name={name} price={price} slug={slug.current} attributes={attributes} />
               )
             })}
           {searchResult &&
             searchResult.map((tea: Teas) => {
               const { name, image, price, attributes, slug } = tea
               return (
-                <Card
-                  key={name}
-                  image={image}
-                  name={name}
-                  price={price}
-                  slug={slug.current}
-                  attributes={attributes}
-                  className={'cursor-pointer overflow-hidden rounded-2xl'}
-                />
+                <Card key={name} image={image} name={name} price={price} slug={slug.current} attributes={attributes} />
               )
             })}
         </div>
