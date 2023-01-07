@@ -52,7 +52,7 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
   return (
     <PageWrapper>
       <Section>
-        <Container>
+        <Container className='pt-9'>
           <div className='flex h-full w-full flex-col overflow-hidden rounded-3xl bg-[#E3E7DC]  text-background md:h-[80vh] md:rounded-[3rem] lg:flex-row '>
             <figure className='relative h-full  max-h-80  w-full overflow-hidden max-[766px]:aspect-w-1 max-[766px]:aspect-h-1 max-[490px]:aspect-1 md:max-h-full md:rounded-[3rem] '>
               <Image
