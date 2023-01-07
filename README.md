@@ -2,48 +2,72 @@
 
 # Ryokucha
 
-_An e-commerce app selling Japanese green teas, built using-_
+Ryokucha is an e-commerce app that allows you to buy Japanese green tea directly from Japan. Whether you're a fan of hojicha, sencha, or any other variety of green tea, Ryokucha has something for everyone.
 
-1. Next.js 13 (with the new app directory)
-2. Typescript
-3. Firestore Database
-4. Firebase Auth
-5. Stripe
-6. Framer Motion and
-7. React-Hook-Forms.
+This app was built using React, Next.js 13 (with its new features such as the `app` directory), Framer Motion, TypeScript, Sanity (a headless CMS), Firebase Auth, React-Hook-Forms, Stripe, Jest, Tailwind, and React Testing Library.
 
-> I also have a version using Sanity Headless CMS, the code is most up-to-date in that branch, check it out by switching to the
+<br>
+
+> The main branch uses Sanity, a headless CMS for managing the data, to view the most up-to-date code switch to the
 > `main` branch
+
+<br>
+
+## Features
+
+- Browse a wide selection of Japanese green teas
+- Add items to your cart and check out with Stripe
+- Sign in with your Google account using Firebase Auth
+- Add products to your wishlist and view them
 
 <br>
 
 ## Getting Started
 
-To get started with Ryokucha, either visit the [Live website](https://ryokucha-g0pzkyul0-liquid-o2.vercel.app/) or,
-follow these steps to build it on your local machine:
+To get started with Ryokucha, either visit the [Live website](https://ryokucha.vercel.app/) 
+or simply clone the repository and install the dependencies:
 
-1. Clone the repository
-2. Install dependencies using `yarn` or `npm install`
-3. Run the development server using `yarn dev` or `npm run dev`
+```bash
+git clone https://github.com/liquid-O2/ryokucha.git
+cd ryokucha
+npm install
+```
+
+Then, start the development server:
+```bash
+npm run dev
+```
+
+Your Ryokucha app will be available at `http://localhost:3000`
 
 <br>
 
-## Usage
+## Testing
+To run the test suite, simply run:
+```bash
+npm run test
+```
 
-To use Ryokucha, follow these steps:
+<br>
 
-1. Sign up for an account or,
-2. Click on the `Continue with a guest account` button to proceed with a guest account
-3. Browse the product catalog
-4. Add items to your cart
-5. Check out and make a payment using Stripe
+## Built With
+
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [Next.js](https://nextjs.org/) - A framework for building server-rendered React applications
+- [Framer Motion](https://www.framer.com/motion/) - A library for animating React components
+- [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript that compiles to plain JavaScript
+- [Cloud Firestore](https://firebase.google.com/products/firestore) - A scalable database from Firebase and Google Cloud
+- [Firebase Auth](https://firebase.google.com/docs/auth) - A service for authenticating users with Google accounts
+- [React-Hook-Forms](https://react-hook-form.com/) - A library for building forms with React Hooks
+- [Stripe](https://stripe.com/) - A platform for building e-commerce applications
+- [Jest](https://jestjs.io/) - A JavaScript testing framework
+- [Tailwind](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) - A testing library for React components
 
 <br>
 
 ## Contributing
-
-`CONTRIBUTING.md` hasn't been set yet, so just add your suggestions as issues
+If you'd like to contribute to Ideaboard, please fork the repository and make your changes as a separate branch. Once you've made your changes, open a pull request and we'll review your submission.
 
 ## License
-
-Ryokucha is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License - see the [LICENSE]() file for details.
