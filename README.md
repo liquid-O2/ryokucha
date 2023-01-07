@@ -42,7 +42,7 @@ To use Ryokucha, follow these steps:
 
 ## Contributing
 
-`CONTRIBUTIONS.md` hasn't been set yet, so just add your suggestions as issues
+`CONTRIBUTING.md` hasn't been set yet, so just add your suggestions as issues
 
 ## License
 
