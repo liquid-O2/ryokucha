@@ -32,7 +32,7 @@ export default function App() {
         <InfoSection
           image={col}
           imagePosition='left'
-          heading='Finest Japanese green tea from skilled farmers.'
+          heading='Finest Japanese green tea from skilled tea farmers.'
           paragraph='We source our tea directly from Japan. We work with the best farmers to bring you a premium product. We believe in sustainable farming practices, and our tea is grown without pesticides or herbicides. We produce some of the best tea in the world.'
           pillText={{
             first: 'Organic',
