@@ -4,7 +4,6 @@ import Header from '../components/header/header'
 import '../styles/globals.css'
 import ContextProviders from '../components/contextProvider'
 import Footer from '../components/footer'
-import Modal from '../components/modal'
 
 const Mori = localfont({
   src: [
