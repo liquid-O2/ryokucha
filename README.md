@@ -2,9 +2,7 @@
 
 # Ryokucha
 
-_An e-commerce app selling Japanese green teas_
-
-###### Built using -
+_An e-commerce app selling Japanese green teas. Built using-_
 
 1. Next.js 13 (with the new app directory)
 2. Typescript
@@ -17,6 +15,8 @@ _An e-commerce app selling Japanese green teas_
 > I also have a version using Sanity Headless CMS, the code is most up-to-date in that branch, check it out by switching to the
 > `main` branch
 
+<br>
+
 ## Getting Started
 
 To get started with Ryokucha, either visit the [Live website](https://ryokucha-g0pzkyul0-liquid-o2.vercel.app/) or,
@@ -25,6 +25,8 @@ follow these steps to build it on your local machine:
 1. Clone the repository
 2. Install dependencies using `yarn` or `npm install`
 3. Run the development server using `yarn dev` or `npm run dev`
+
+<br>
 
 ## Usage
 
@@ -36,9 +38,11 @@ To use Ryokucha, follow these steps:
 4. Add items to your cart
 5. Check out and make a payment using Stripe
 
+<br>
+
 ## Contributing
 
-If you want to contribute to Ryokucha, please follow the guidelines in the `CONTRIBUTING.md` file.
+`CONTRIBUTING.md` hasn't been set yet, so just add your suggestions as issues
 
 ## License
 
