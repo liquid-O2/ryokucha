@@ -1,4 +1,4 @@
-![Ryokucha, an e-commerce app's mockup image](https://cdn.sanity.io/images/lo6epx6n/production/4000c8d2ae0902b368988efb7f33d4935b2f00cd-6000x4500.jpg)
+![Ryokucha, an e-commerce app's mockup image](https://cdn.sanity.io/images/lo6epx6n/production/8d3bb3414e12ba007586ffe959a1a66cc947cd4b-6000x4500.jpg)
 
 # Ryokucha
 
