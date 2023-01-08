@@ -27,7 +27,7 @@ export const Hero = () => {
                   <p className='rounded-full border border-background/60 px-2 py-1 md:px-3'>3-5 hours of energy</p>
                   <p className='rounded-full border border-background/60 px-2 py-1 md:px-3'>Organic</p>
                 </aside>
-                <h1 className=' max-w-[21ch] text-4xl font-light leading-[1.1] md:pr-1  md:text-5xl lg:text-7xl '>
+                <h1 className=' max-w-[21ch] text-4xl font-light leading-[1.1] opacity-90  md:pr-1 md:text-5xl lg:text-7xl '>
                   Enjoy the <span className='font-light italic'>finest</span> Japanese green teas and cherish the
                   <span className='font-light italic '> extraordinary </span>
                   flavour

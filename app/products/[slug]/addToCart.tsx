@@ -3,7 +3,9 @@
 import { useState, useContext } from 'react'
 import { Minus, Plus } from 'react-feather'
 import Button from '../../../components/button'
-import { GlobalContext, Teas } from '../../../components/contextProvider'
+import { CartDetails, GlobalContext } from '../../../components/contextProvider'
+import { AnimatePresence, LazyMotion } from 'framer-motion'
+import Toast from './toast'
 
 type AddToCartProps = {
   image: { asset: { url: string; metadata: { lqip: string } } }
@@ -14,14 +16,14 @@ type AddToCartProps = {
 const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
   const [noOfItems, setNoOfItems] = useState(1)
   const { dispatch, cartDetails } = useContext(GlobalContext)
+  const [isToastVisible, setIsToastVisible] = useState(false)
+  const loadFeatures = () => import('../../../components/utils/framerFeatures').then((res) => res.default)
 
   const handleAddToCart = () => {
-    let alreadyExist = false
-    cartDetails.forEach((item: Teas) => {
-      if (item.slug.current === slug) {
-        alreadyExist = true
-      }
-    })
+    setIsToastVisible(true)
+
+    let alreadyExist = cartDetails.find((item: CartDetails) => item.slug === slug)
+
     if (!alreadyExist) {
       return dispatch({
         type: 'addItem',
@@ -57,6 +59,9 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
       <Button variant='secondary' className='w-full md:w-auto' onClick={() => handleAddToCart()}>
         ADD TO CART
       </Button>
+      <LazyMotion features={loadFeatures}>
+        <AnimatePresence>{isToastVisible && <Toast setIsToastVisible={setIsToastVisible} />}</AnimatePresence>
+      </LazyMotion>
     </div>
   )
 }

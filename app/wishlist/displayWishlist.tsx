@@ -1,8 +1,10 @@
 'use client'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useContext, useEffect, useState } from 'react'
-import { Coffee } from 'react-feather'
+import { Coffee, UserX } from 'react-feather'
+import Button from '../../components/button'
 import { Container } from '../../components/container'
 import { GlobalContext, Teas } from '../../components/contextProvider'
 import Card from '../../components/productCard'
@@ -15,8 +17,6 @@ const DisplayWishlist = () => {
   const [favouriteTeas, setFavouriteTeas] = useState<Teas[]>([])
 
   useEffect(() => {
-    if (!isLoggedIn) router.push('/')
-
     const fetchTea = async (slug: string) => {
       const query = `*[_type == 'teas' && slug.current == '${slug}']
       {name,attributes,slug,price,description,
@@ -41,6 +41,21 @@ const DisplayWishlist = () => {
     }
     getFavouriteTeas().then((res) => setFavouriteTeas([...res]))
   }, [likedTeas, isLoggedIn, router])
+
+  if (!isLoggedIn)
+    return (
+      <Container className='flex flex-col items-center justify-center'>
+        <section className='my-32 flex w-full flex-col items-center justify-center rounded-2xl bg-tertiary-light bg-opacity-[0.02] p-14'>
+          <UserX size={48} className='mb-6 opacity-80' />
+          <p className='mb-6 max-w-[24ch] text-center text-xl'>To view your wishlisted Items you need to login</p>
+          <Link href={'/login'} className='w-1/2 md:w-1/4'>
+            <Button variant='secondary' className='w-full'>
+              Login
+            </Button>
+          </Link>
+        </section>
+      </Container>
+    )
 
   return (
     <Container className='flex flex-col items-center justify-center'>
