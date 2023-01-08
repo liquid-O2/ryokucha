@@ -11,6 +11,7 @@ import PageWrapper from '../components/pageWrapper'
 import SlideUp from '../components/slideUp'
 import Modal from '../components/modal'
 import InfoSection from './infoSection'
+import Balancer from 'react-wrap-balancer'
 
 export default function App() {
   return (
@@ -21,7 +22,9 @@ export default function App() {
           <Container>
             <SlideUp>
               <article className='flex flex-col items-center justify-center px-6 leading-normal'>
-                <h2 className='max-w-[73ch] text-center text-xl md:text-2xl'>{`Japanese green teas are a healthy dose of rich flavour, elegant aroma and pure umami. It's delight in every sip. It's that needed energy boost in the morning. It's a refreshing sensation of light rain during a hot summer day. It's unlocked creativity, and hours of laser focus. It's what your mind wants, and your body needs. It's nothing but good vibes, delivered straight to your door.`}</h2>
+                <Balancer ratio={0.9}>
+                  <h2 className='max-w-[73ch] text-center text-xl md:text-2xl'>{`Japanese green teas are a healthy dose of rich flavour, elegant aroma and pure umami. It's delight in every sip. It's that needed energy boost in the morning. It's a refreshing sensation of light rain during a hot summer day. It's unlocked creativity, and hours of laser focus. It's what your mind wants, and your body needs. It's nothing but good vibes, delivered straight to your door.`}</h2>
+                </Balancer>
                 <Link href={'/shop'} className='mt-12  '>
                   <Button variant='secondary'>BROWSE OUR COLLECTION</Button>
                 </Link>
