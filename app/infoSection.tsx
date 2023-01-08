@@ -43,7 +43,7 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
                 <p
                   className={`text-lg min-[2000px]:text-xl  ${
                     imagePosition === 'right' ? 'min-[2000px]:pr-10' : ''
-                  }  max-w-[50ch] pr-4  opacity-90`}
+                  }  max-w-[50ch] pr-4  `}
                 >
                   {paragraph}
                 </p>

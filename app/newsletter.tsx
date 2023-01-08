@@ -12,7 +12,7 @@ const Newsletter = () => {
           <SlideUp>
             <div>
               <p className='text-3xl font-semibold md:text-4xl'>Sign up to our newsletter</p>
-              <p className='mt-3 max-w-[40ch] text-lg  opacity-90'>
+              <p className='mt-3 max-w-[40ch] text-lg  '>
                 Get delicious recipes, discounts and monthly updates delivered straight to your inbox
               </p>
               <form

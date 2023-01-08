@@ -58,13 +58,13 @@ const Footer = () => {
           </p>
         </section>
         <section className='col-span-2  flex justify-between border-t border-primary/10 py-4 text-sm md:col-span-4'>
-          <p className='text-primary/70 transition-all'>
+          <p className='text-primary transition-all'>
             © Designed & Developed By
             <span className='transition-all hover:cursor-pointer hover:underline hover:underline-offset-4'>
               {` Arunava`}
             </span>
           </p>
-          <p className='text-primary/70'>№</p>
+          <p className='text-primary'>№</p>
         </section>
       </section>
     </Container>

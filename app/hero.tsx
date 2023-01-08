@@ -6,14 +6,14 @@ import SlideUp from '../components/slideUp'
 
 export const Hero = () => {
   return (
-    <Section full className='h-[99vh] text-background md:h-[99vh]'>
+    <Section full className='h-[97vh] text-background md:h-[97vh]'>
       <section className='relative h-full w-full '>
         <Image
           src={hero}
           fill
           placeholder={'blur'}
           sizes='(min-width: 100px) 70vw'
-          alt={' a chawan(tea bowl) on top of a a wooden table with a hand holding a chasen(bamboo whisk) over it'}
+          alt={'A hand holding a kyusu(tea pot)'}
           quality={100}
           className='relative h-full w-full object-cover'
           priority={true}
