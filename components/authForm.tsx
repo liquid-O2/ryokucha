@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 import GoogleIcon from './icons/googleIcon'
 import Button from './button'
 
-export type Inputs = {
+export interface Inputs {
   email: string
   password: string
   username: string

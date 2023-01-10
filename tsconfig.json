@@ -12,8 +12,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
+    "rootDir": "",
     "plugins": [
       {
         "name": "next"
@@ -30,6 +31,6 @@
     "components/utils/framerFeatures.ts",
     "app/featured.tsx.bak",
     "custom.d.ts"
-  ],
+, "__tests__/authForm.test.tsx"  ],
   "exclude": ["node_modules", "public"]
 }

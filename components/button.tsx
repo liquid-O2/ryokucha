@@ -1,7 +1,6 @@
 'use client'
 
 import { m, LazyMotion } from 'framer-motion'
-import { ButtonHTMLAttributes } from 'react'
 
 interface ButtonProps {
   variant: 'primary' | 'secondary' | 'tertiary'
