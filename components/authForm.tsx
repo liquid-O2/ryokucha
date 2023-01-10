@@ -135,6 +135,8 @@ export default function AuthForm() {
         </div>
       </div>
       <Button
+       role={'button'}
+       name={'login'}
         variant='tertiary'
         className='mt-6 w-full'
         onClick={() => {
@@ -146,6 +148,7 @@ export default function AuthForm() {
         {isRegister ? 'Login' : 'Register now'}
       </Button>
       <button
+     
         className='mt-8 w-full text-center text-base underline underline-offset-2'
         onClick={() => handleGuestLogin()}
       >

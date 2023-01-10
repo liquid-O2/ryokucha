@@ -1,7 +1,6 @@
 'use client'
-
+import React from 'react'
 import { m, LazyMotion } from 'framer-motion'
-import { ButtonHTMLAttributes } from 'react'
 
 interface ButtonProps {
   variant: 'primary' | 'secondary' | 'tertiary'
@@ -12,9 +11,10 @@ interface ButtonProps {
   name?: string
   id?: string
   disabled?: boolean
+  role?: any
 }
 
-const Button = ({ variant, children, className, onClick, type, name, id, disabled }: ButtonProps) => {
+const Button = ({ variant, children, className, onClick, type, name, id, disabled, role }: ButtonProps) => {
   const loadFeatures = () => import('./utils/framerFeatures').then((res) => res.default)
 
   // framer variants
@@ -46,6 +46,7 @@ const Button = ({ variant, children, className, onClick, type, name, id, disable
           id={id}
           onClick={onClick}
           type={type}
+          role={role}
           name={name}
           variants={button}
           initial='hidden'

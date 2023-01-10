@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, LazyMotion, m } from 'framer-motion'
-import { ReactNode, useEffect } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 
 export const PageWrapper = ({ children }: { children: ReactNode }) => {
   const loadFeatures = () => import('../components/utils/framerFeatures').then((res) => res.default)
@@ -12,12 +12,7 @@ export const PageWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <LazyMotion features={loadFeatures}>
       <AnimatePresence>
-        <m.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.4 }}
-        >
+        <m.div initial={{ y: 10 }} animate={{ y: 0 }} exit={{ y: 10 }} transition={{ duration: 0.4 }}>
           {children}
         </m.div>
       </AnimatePresence>

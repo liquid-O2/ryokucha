@@ -19,7 +19,7 @@ import { arrayRemove, arrayUnion, doc, getDoc, onSnapshot, setDoc, Unsubscribe, 
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context'
 import { reducer } from './utils/reducer'
 
-type GlobalContext = {
+export type TGlobalContext = {
   signIn: (
     email: string,
     password: string,
@@ -35,7 +35,7 @@ type GlobalContext = {
   ) => void
   isLoggedIn: boolean
   userDetails: UserDetails
-  router: AppRouterInstance
+  router?: AppRouterInstance
   updateUser: (type: 'add' | 'delete', data: string, field: string) => void
   signUpWithGoogle: () => void
   logout: () => void
@@ -67,7 +67,7 @@ export type CartDetails = {
   quantity?: number
 }
 
-export const GlobalContext = React.createContext<GlobalContext>(null!)
+export const GlobalContext = React.createContext<TGlobalContext>(null!)
 
 const initialiseCartDetails: CartDetails[] = []
 
