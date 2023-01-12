@@ -26,10 +26,6 @@ a {
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-synthesis: none;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .input-wrapper {
@@ -77,4 +73,13 @@ input::placeholder {
   100% {
     width: 120%;
   }
+}
+
+*,
+html,
+body {
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
