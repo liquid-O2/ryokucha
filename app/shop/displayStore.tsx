@@ -24,7 +24,7 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
   }
 
   return (
-    <Container className='flex flex-col items-center justify-center'>
+    <section className='flex flex-col items-center justify-center'>
       <div className='input-wrapper mt-8 mb-16  w-[70%] max-[1100px]:w-[99%]'>
         <input
           onChange={(e) => handleSearch(e.target.value)}
@@ -39,7 +39,7 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
 
       <div className='relative w-full'>
         <SortBtns setTeas={setTeas} />
-        <div className='grid grid-cols-4 gap-x-4  gap-y-14 pb-32 pt-8 max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 max-[612px]:grid-cols-1  lg:gap-x-6'>
+        <div className='grid grid-cols-4 gap-x-4  gap-y-12 pb-32 pt-8 max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 max-[612px]:grid-cols-1  lg:gap-x-6'>
           {(!searchResult || searchResult.length === 0) &&
             teas.map((tea: Teas) => {
               const { name, image, price, attributes, slug } = tea
@@ -56,7 +56,7 @@ const DisplayStore = ({ fetchedTeas }: { fetchedTeas: Teas[] }) => {
             })}
         </div>
       </div>
-    </Container>
+    </section>
   )
 }
 
