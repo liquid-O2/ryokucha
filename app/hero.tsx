@@ -6,7 +6,7 @@ import SlideUp from '../components/slideUp'
 
 export const Hero = () => {
   return (
-    <Section full className='h-[100dvh] text-background '>
+    <Section full className='h-[100svh] text-background md:h-[100dvh] '>
       <section className='relative h-full w-full '>
         <Image
           src={hero}
