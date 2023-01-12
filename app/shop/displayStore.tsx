@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
 import { Search } from 'react-feather'
-import { Container } from '../../components/container'
 import { Teas } from '../../components/contextProvider'
 import Card from '../../components/productCard'
 import SortBtns from './sortingBtns'
