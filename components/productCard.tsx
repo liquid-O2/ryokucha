@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useCallback, useContext, useEffect, useState } from 'react'
 import { Heart } from 'react-feather'
 import { GlobalContext } from './contextProvider'
-import { base64BlurredImages } from './utils/base64BlurredImages'
 
 type CardProps = {
   image: { asset: { url: string; metadata: { lqip: string } } }
@@ -20,7 +19,7 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
   const [isLiked, setIsLiked] = useState(false)
 
   // prefetch product pages for faster routing
-  router.prefetch(`/products/${slug}`)
+  router?.prefetch(`/products/${slug}`)
 
   // update liked state
   const toggleUpdateLiked = () => {
@@ -49,7 +48,7 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
   return (
     <div className='flex flex-col gap-4 overflow-hidden rounded-3xl border border-primary border-opacity-[15%] p-4'>
       <figure
-        onClick={() => router.push(`/products/${slug}`)}
+        onClick={() => router?.push(`/products/${slug}`)}
         className='aspect-w-1 aspect-h-1 relative flex w-full items-center justify-center overflow-hidden rounded-2xl md:overflow-hidden'
       >
         <Image
