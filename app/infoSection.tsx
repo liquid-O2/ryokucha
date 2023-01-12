@@ -31,7 +31,9 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
                 className=' object-cover'
               />
             </div>
-            <article className={`flex justify-center ${imagePosition === 'left' ? ' md:ml-10' : ''} flex-col`}>
+            <article
+              className={`flex justify-center overflow-hidden ${imagePosition === 'left' ? ' md:ml-10' : ''} flex-col`}
+            >
               <SlideUp delay={0.2}>
                 <h3
                   className={`text-3xl min-[2000px]:text-4xl ${

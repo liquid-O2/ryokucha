@@ -8,7 +8,7 @@ const Newsletter = () => {
   return (
     <Section>
       <Container>
-        <div className='mx-auto mb-6 flex max-w-[90%] flex-col items-center justify-center text-center md:mb-0'>
+        <div className='mx-auto mb-2 flex max-w-[90%] flex-col items-center justify-center overflow-hidden pb-4 text-center md:mb-0'>
           <SlideUp>
             <div>
               <p className='text-3xl font-semibold md:text-4xl'>Sign up to our newsletter</p>

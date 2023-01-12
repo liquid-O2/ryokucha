@@ -5,7 +5,7 @@ export type AddItemAction = {
   name: string
   price: number
   slug: string
-  image: string
+  image: { asset: { url: string; metadata: { lqip: string } } }
   quantity: number
 }
 

@@ -111,7 +111,15 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                           <UpdateCart slug={slug} quantity={quantity} dispatch={dispatch} />
                         </div>
                         <div className='relative flex h-full w-[30%] items-center justify-center overflow-hidden rounded-2xl'>
-                          <Image src={image} alt={name} width={300} height={128} className='h-full w-full object-cover' />
+                          <Image
+                            src={image.asset.url}
+                            placeholder='blur'
+                            blurDataURL={image.asset.metadata.lqip}
+                            alt={name}
+                            width={300}
+                            height={128}
+                            className='h-full w-full object-cover'
+                          />
                         </div>
                       </div>
                     )

@@ -30,7 +30,7 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
         name,
         price,
         slug,
-        image: image.asset.url,
+        image,
         quantity: noOfItems,
       })
     } else {

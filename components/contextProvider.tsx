@@ -63,7 +63,7 @@ export type CartDetails = {
   slug?: string
   name?: string
   price?: number
-  image?: string
+  image?: { asset: { url: string; metadata: { lqip: string } } }
   quantity?: number
 }
 
