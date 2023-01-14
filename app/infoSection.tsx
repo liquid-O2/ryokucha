@@ -16,8 +16,8 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
     <>
       <Section>
         <Container>
-          <div className='grid grid-cols-1 gap-14 md:grid-cols-2'>
-            <div
+          <article className='grid grid-cols-1 gap-14 md:grid-cols-2'>
+            <picture
               className={`${
                 imagePosition === 'right' ? 'md:col-start-2 md:col-end-3' : 'md:col-start-1 md:col-end-2'
               }w-full aspect-w-1 aspect-h-1  row-start-2 overflow-hidden rounded-3xl md:aspect-w-2 md:aspect-h-1 md:row-start-1 md:h-[38rem]  md:rounded-[3rem]`}
@@ -30,7 +30,7 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
                 alt={'a teapot and a teacup filled with green tea'}
                 className=' object-cover'
               />
-            </div>
+            </picture>
             <article
               className={`flex justify-center overflow-hidden ${imagePosition === 'left' ? ' md:ml-10' : ''} flex-col`}
             >
@@ -56,7 +56,7 @@ export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText
                 </aside>
               </SlideUp>
             </article>
-          </div>
+          </article>
         </Container>
       </Section>
     </>

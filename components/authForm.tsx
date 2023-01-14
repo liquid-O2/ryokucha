@@ -51,7 +51,7 @@ export default function AuthForm() {
   }
 
   return (
-    <div className='mt-16 mb-16 flex w-[501px] max-w-[95%] flex-col items-center justify-center'>
+    <section className='mt-16 mb-16 flex w-[501px] max-w-[95%] flex-col items-center justify-center'>
       <p className='text-3xl font-semibold'>{isRegister ? 'Create an account' : 'Login'}</p>
       <button
         onClick={() => signUpWithGoogle()}
@@ -59,18 +59,16 @@ export default function AuthForm() {
       >
         <GoogleIcon size='24' /> {isRegister ? 'Sign up with Google' : 'Sign in with Google'}
       </button>
-      <div className='relative mt-5 flex h-5 w-full items-center justify-center'>
+      <aside className='relative mt-5 flex h-5 w-full items-center justify-center'>
         <div className='h-[1px] w-[98%] bg-primary/10'></div>
-        <div className='absolute top-0 mx-auto'>
-          <p className='h-full bg-background px-4 text-center text-base'>or</p>
-        </div>
-      </div>
+        <p className='absolute top-0 mx-auto h-full bg-background px-4 text-center text-base'>or</p>
+      </aside>
       <form onSubmit={handleSubmit(onSubmit)} className='mt-5 flex w-full flex-col gap-6' autoComplete='off'>
-        <div className='form-group flex flex-col gap-y-2 '>
+        <section className='form-group flex flex-col gap-y-2 '>
           <label className='text-sm leading-none' htmlFor='email'>
             Email
           </label>
-          <div className='input-wrapper'>
+          <figure className='input-wrapper'>
             <Input
               className={` w-full rounded-xl bg-tertiary-light bg-opacity-[0.01] ${
                 errors.email ? 'border-rose-500' : 'border-primary/10 '
@@ -88,17 +86,17 @@ export default function AuthForm() {
                 }),
               }}
             />
-            <div className='icon pointer-events-none absolute left-[1rem] top-[0.95rem]'>
+            <picture className='icon pointer-events-none absolute left-[1rem] top-[0.95rem]'>
               <Mail size={20} className={`${errors.email && 'stroke-rose-500/70'} stroke-primary/70`} />
-            </div>
-          </div>
+            </picture>
+          </figure>
           {errors.email && <p className='text-sm text-rose-500'>{`${errors.email?.message}`}</p>}
-        </div>
-        <div className='form-group flex flex-col gap-y-2 '>
+        </section>
+        <section className='form-group flex flex-col gap-y-2 '>
           <label className='text-sm leading-none' htmlFor='password'>
             Password
           </label>
-          <div className='input-wrapper'>
+          <figure className='input-wrapper'>
             <Input
               className={` w-full rounded-xl bg-tertiary-light bg-opacity-[0.01] ${
                 errors.password ? 'border-rose-500' : 'border-primary/10 '
@@ -116,27 +114,25 @@ export default function AuthForm() {
                 }),
               }}
             />
-            <div className='icon pointer-events-none absolute left-[1rem] top-[0.95rem]'>
+            <picture className='icon pointer-events-none absolute left-[1rem] top-[0.95rem]'>
               <Lock size={20} className={`${errors.password && 'stroke-rose-500/70'} stroke-primary/70`} />
-            </div>
-          </div>
+            </picture>
+          </figure>
           {errors.password && <p className='text-sm text-rose-500'>{`${errors.password?.message}`}</p>}
-        </div>
+        </section>
         <Button variant='secondary' type='submit' className='mt-2 w-full'>
           {isRegister ? 'Sign Up' : 'Login'}
         </Button>
       </form>
-      <div className='relative mt-6 flex h-5 w-full items-center justify-center'>
+      <aside className='relative mt-6 flex h-5 w-full items-center justify-center'>
         <div className='h-[1px] w-[98%] bg-primary/10'></div>
-        <div className='absolute top-0 mx-auto'>
-          <p className='h-full bg-background px-4 text-center text-base'>
-            {isRegister ? 'Already have an account?' : `Don't have an account?`}
-          </p>
-        </div>
-      </div>
+        <p className='mx-autoh-full absolute top-0 bg-background px-4 text-center text-base'>
+          {isRegister ? 'Already have an account?' : `Don't have an account?`}
+        </p>
+      </aside>
       <Button
-       role={'button'}
-       name={'login'}
+        role={'button'}
+        name={'login'}
         variant='tertiary'
         className='mt-6 w-full'
         onClick={() => {
@@ -148,12 +144,11 @@ export default function AuthForm() {
         {isRegister ? 'Login' : 'Register now'}
       </Button>
       <button
-     
         className='mt-8 w-full text-center text-base underline underline-offset-2'
         onClick={() => handleGuestLogin()}
       >
         Continue with a guest account
       </button>
-    </div>
+    </section>
   )
 }

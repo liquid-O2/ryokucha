@@ -39,8 +39,8 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
   }
 
   return (
-    <div className='mt-8 flex w-full flex-wrap gap-5 '>
-      <div className='flex w-full max-w-full items-center justify-between rounded-full  border border-background/50 px-4 py-1 text-background md:w-fit'>
+    <menu className='mt-8 flex w-full flex-wrap gap-5 '>
+      <menu className='flex w-full max-w-full items-center justify-between rounded-full  border border-background/50 px-4 py-1 text-background md:w-fit'>
         <button
           disabled={noOfItems === 1}
           className=' flex min-h-[48px] min-w-[48px] items-center justify-center disabled:opacity-30'
@@ -55,14 +55,14 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
         >
           <Plus size={20} />
         </button>
-      </div>
+      </menu>
       <Button variant='secondary' className='w-full md:w-auto' onClick={() => handleAddToCart()}>
         ADD TO CART
       </Button>
       <LazyMotion features={loadFeatures}>
         <AnimatePresence>{isToastVisible && <Toast setIsToastVisible={setIsToastVisible} />}</AnimatePresence>
       </LazyMotion>
-    </div>
+    </menu>
   )
 }
 

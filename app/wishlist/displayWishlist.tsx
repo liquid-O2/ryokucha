@@ -45,7 +45,7 @@ const DisplayWishlist = () => {
   if (!isLoggedIn)
     return (
       <Container className='flex flex-col items-center justify-center'>
-        <section className='my-32 flex w-full flex-col items-center justify-center rounded-2xl bg-tertiary-light bg-opacity-[0.02] p-14'>
+        <article className='my-32 flex w-full flex-col items-center justify-center rounded-2xl bg-tertiary-light bg-opacity-[0.02] p-14'>
           <UserX size={48} className='mb-6 opacity-80' />
           <p className='mb-6 max-w-[24ch] text-center text-xl'>To view your wishlisted Items you need to login</p>
           <Link href={'/login'} className='w-1/2 md:w-1/4'>
@@ -53,28 +53,28 @@ const DisplayWishlist = () => {
               Login
             </Button>
           </Link>
-        </section>
+        </article>
       </Container>
     )
 
   return (
     <Container className='flex flex-col items-center justify-center'>
       {favouriteTeas.length === 0 && (
-        <div className='my-10 flex h-[367px] w-full flex-col items-center justify-center gap-4 rounded-3xl bg-tertiary-light bg-opacity-[0.01] p-10 text-center md:rounded-[3rem]'>
+        <article className='my-10 flex h-[367px] w-full flex-col items-center justify-center gap-4 rounded-3xl bg-tertiary-light bg-opacity-[0.01] p-10 text-center md:rounded-[3rem]'>
           <span className='opacity-60'>
             <Coffee size={24} />
           </span>
           <p className='px-6 text-lg font-normal leading-snug opacity-90'>
             You have no items saved to your Wishlist, add some from the shop to see them here
           </p>
-        </div>
+        </article>
       )}
-      <div className='grid w-full grid-cols-4 gap-x-4  gap-y-14 pb-32 pt-8 max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 max-[517px]:grid-cols-1  lg:gap-x-6'>
+      <article className='grid w-full grid-cols-4 gap-x-4  gap-y-14 pb-32 pt-8 max-[1200px]:grid-cols-3 max-[910px]:grid-cols-2 max-[517px]:grid-cols-1  lg:gap-x-6'>
         {favouriteTeas.map((tea: Teas) => {
           const { name, image, price, attributes, slug } = tea
           return <Card key={name} image={image} name={name} price={price} slug={slug.current} attributes={attributes} />
         })}
-      </div>
+      </article>
     </Container>
   )
 }

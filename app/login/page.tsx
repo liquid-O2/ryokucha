@@ -10,9 +10,9 @@ export default function Login() {
       <PageWrapper>
         <Section>
           <Container>
-            <div className='flex items-center justify-center '>
+            <main className='flex items-center justify-center '>
               <AuthForm />
-            </div>
+            </main>
           </Container>
         </Section>
       </PageWrapper>

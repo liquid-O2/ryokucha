@@ -8,9 +8,9 @@ const Newsletter = () => {
   return (
     <Section>
       <Container>
-        <div className='mx-auto mb-2 flex max-w-[90%] flex-col items-center justify-center overflow-hidden pb-4 text-center md:mb-0'>
+        <section className='mx-auto mb-2 flex max-w-[90%] flex-col items-center justify-center overflow-hidden pb-4 text-center md:mb-0'>
           <SlideUp>
-            <div>
+            <article>
               <p className='text-3xl font-semibold md:text-4xl'>Sign up to our newsletter</p>
               <p className='mt-3 max-w-[40ch] text-lg  '>
                 Get delicious recipes, discounts and monthly updates delivered straight to your inbox
@@ -36,9 +36,9 @@ const Newsletter = () => {
                         placeholder='Enter your email'
                         className='min-h-[56px] w-full rounded-full border  border-primary/10 bg-tertiary-light bg-opacity-[0.01] py-3 pr-4 pl-11 text-primary'
                       />
-                      <div className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
+                      <figure className='icon absolute top-[1.1rem] left-[1rem] mb-1'>
                         <Mail size={20} className={'stroke-primary/80  stroke-2'} />
-                      </div>
+                      </figure>
                     </>
                   </div>
                   <Button variant='secondary' className='mb-auto w-full'>
@@ -48,9 +48,9 @@ const Newsletter = () => {
                   <input type='hidden' name='mc_signupsource' value='hosted' />
                 </>
               </form>
-            </div>
+            </article>
           </SlideUp>
-        </div>
+        </section>
       </Container>
     </Section>
   )
