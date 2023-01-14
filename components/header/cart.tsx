@@ -130,6 +130,7 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                     <span>Subtotal:</span> <span className='text-lg font-semibold'>{`$${totalPrice.toFixed(2)}`}</span>
                   </aside>
                   <Button
+                    disabled={cartDetails.length === 0}
                     variant='secondary'
                     className='w-full'
                     onClick={() => {
