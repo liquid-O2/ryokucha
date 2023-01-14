@@ -99,7 +99,6 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                   )}
                   {cartDetails.map((item: any) => {
                     const { slug, price, name, image, quantity } = item
-
                     return (
                       <article
                         key={slug}
