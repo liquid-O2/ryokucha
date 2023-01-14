@@ -6,6 +6,7 @@ import PageWrapper from '../../../components/pageWrapper'
 import Section from '../../../components/section'
 import { client } from '../../../components/utils/sanity'
 import AddToCart from './addToCart'
+import Head from './head'
 
 const fetchTeas = cache(async () => {
   const query = `*[_type == 'teas']
@@ -51,6 +52,7 @@ export default async function IndividualTea({ params }: { params: ParamProps }) 
 
   return (
     <PageWrapper>
+      <Head slug={tea.name} />
       <Section>
         <Container className='pt-9'>
           <article className='flex h-full w-full flex-col overflow-hidden rounded-3xl bg-[#E3E7DC]  text-background md:h-[80vh] md:rounded-[3rem] lg:flex-row '>
