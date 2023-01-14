@@ -46,8 +46,8 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
   }, [liked])
 
   return (
-    <div className='flex flex-col gap-4 overflow-hidden rounded-3xl border border-primary border-opacity-[15%] p-4'>
-      <figure
+    <article className='flex flex-col gap-4 overflow-hidden rounded-3xl border border-primary border-opacity-[15%] p-4'>
+      <picture
         onClick={() => router?.push(`/products/${slug}`)}
         className='aspect-w-1 aspect-h-1 relative flex w-full items-center justify-center overflow-hidden rounded-2xl md:overflow-hidden'
       >
@@ -65,9 +65,9 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
               (min-width:1201px) 25vw
               100vw'
         />
-      </figure>
-      <div className='text'>
-        <div className='relative flex items-center justify-between'>
+      </picture>
+      <article className='text'>
+        <menu className='relative flex items-center justify-between'>
           <p className='text-xl leading-tight'>{name}</p>
           <button
             disabled={!isLoggedIn}
@@ -83,17 +83,17 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
               } `}
             />
           </button>
-        </div>
+        </menu>
         <p className='text-xl font-semibold leading-none text-[#A0B137] '>{`$${price}`}</p>
-      </div>
-      <div className='mb-1 mt-1 flex items-center gap-2 text-sm'>
+      </article>
+      <aside className='mb-1 mt-1 flex items-center gap-2 text-sm'>
         {attributes.map((attr, index) => (
           <p key={index} className='max-w-fit rounded-full border border-primary/20 px-3 py-1 '>
             {attr}
           </p>
         ))}
-      </div>
-    </div>
+      </aside>
+    </article>
   )
 }
 

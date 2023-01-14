@@ -15,7 +15,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <div className={`relative z-20 block text-inherit md:hidden `}>
+      <menu className={`relative z-20 block text-inherit md:hidden `}>
         <button
           onClick={() => setHamburgerOpen(!hamburgerOpen)}
           className={` hamburger relative flex h-12 w-12 flex-col items-center justify-center text-inherit`}
@@ -43,7 +43,7 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
         <div className=' absolute top-full right-0 z-50 mt-2 min-w-[300px]  overflow-hidden text-primary'>
           <AnimatePresence initial={false}>
             {hamburgerOpen && (
-              <m.div
+              <m.menu
                 animate={{ y: 0, opacity: 1 }}
                 initial={{ y: '-100%', opacity: 0 }}
                 exit={{ y: '-100%', opacity: 0 }}
@@ -73,11 +73,11 @@ const HamburgerMenu = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                     login
                   </Link>
                 )}
-              </m.div>
+              </m.menu>
             )}
           </AnimatePresence>
         </div>
-      </div>
+      </menu>
     </LazyMotion>
   )
 }

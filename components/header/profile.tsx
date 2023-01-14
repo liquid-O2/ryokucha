@@ -19,7 +19,7 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
   const loadFeatures = () => import('../utils/framerFeatures').then((res) => res.default)
 
   return (
-    <div className='relative text-primary '>
+    <menu className='relative text-primary '>
       <button onClick={() => setModalVisible((prev) => !prev)} className='h-7 w-7 overflow-hidden rounded-full'>
         <Image
           src={photoUrl ? `${photoUrl}` : emptyProfile}
@@ -33,7 +33,7 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
         <LazyMotion features={loadFeatures}>
           <AnimatePresence initial={false}>
             {modalVisible && (
-              <motion.div
+              <motion.menu
                 animate={{ y: 0, opacity: 1 }}
                 initial={{ y: '-100%', opacity: 0 }}
                 exit={{ y: '-100%', opacity: 0 }}
@@ -59,12 +59,12 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
                   <LogOut size={20} />
                   Logout
                 </button>
-              </motion.div>
+              </motion.menu>
             )}
           </AnimatePresence>
         </LazyMotion>
       </div>
-    </div>
+    </menu>
   )
 }
 

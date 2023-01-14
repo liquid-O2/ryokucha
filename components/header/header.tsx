@@ -33,7 +33,7 @@ const Header = () => {
           <Link href={'/'} className='mr-auto  flex max-h-[56px]  items-center justify-center px-1 py-4 text-center '>
             <p className=' text-xl font-semibold leading-none md:text-2xl'>ryo.</p>
           </Link>
-          <div className={`flex max-h-[56px] items-center justify-center gap-2  py-4`}>
+          <section className={`flex max-h-[56px] items-center justify-center gap-2  py-4`}>
             <nav className='hidden md:block'>
               <ul className={`flex items-center justify-center gap-4 ${isLoggedIn ? 'mr-4' : 'mr-2'}`}>
                 {links.map((link) => {
@@ -62,7 +62,7 @@ const Header = () => {
             {isLoggedIn && <Profile photoUrl={photoUrl} emptyProfile={emptyProfile} email={email} logout={logout} />}
             <Cart dispatch={dispatch} cartDetails={cartDetails} />
             <HamburgerMenu isLoggedIn={isLoggedIn} />
-          </div>
+          </section>
         </Container>
       </m.header>
     </LazyMotion>

@@ -56,12 +56,12 @@ const Button = ({ variant, children, className, onClick, type, name, id, disable
             variant === 'primary' ? 'bg-primary text-background' : ' bg-neon text-primary'
           } rounded-full ${className}`}
         >
-          <m.div
+          <m.span
             variants={buttonCircle}
             className={`${
               variant === 'primary' ? 'bg-primary-dark' : ' bg-neon-dark'
             } absolute top-0 left-[50%] z-10 h-2 w-2 rounded-full`}
-          ></m.div>
+          ></m.span>
           <span className='relative z-20 text-base  font-semibold'>{children}</span>
         </m.button>
       </LazyMotion>

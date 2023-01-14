@@ -42,25 +42,25 @@ export const Modal = () => {
   return (
     <>
       {isVisible && (
-        <div className='fixed top-0 left-0 z-[9999] flex h-screen w-screen items-center justify-center bg-[#000E0B78]'>
-          <div className='flex flex-col items-center justify-center rounded-3xl bg-background p-8 md:w-[520px]'>
-            <div className='relative -mt-6 -mr-8 flex w-full justify-end'>
+        <dialog className='fixed top-0 left-0 z-[9999] flex h-screen w-screen items-center justify-center bg-[#000E0B78]'>
+          <section className='flex flex-col items-center justify-center rounded-3xl bg-background p-8 md:w-[520px]'>
+            <menu className='relative -mt-6 -mr-8 flex w-full justify-end'>
               <Link href={'/'}>
                 <button className='flex h-12 w-12 items-center justify-center'>
                   <span className='sr-only'>close modal</span>
                   <X size={24} />
                 </button>
               </Link>
-            </div>
-            <div className='flex flex-col items-center'>
-              <span>
+            </menu>
+            <article className='flex flex-col items-center'>
+              <figure>
                 {variant === 'success' ? (
                   <CheckCircle size={48} className=' stroke-green-700' />
                 ) : (
                   <AlertCircle size={48} className='stroke-rose-600' />
                 )}
-              </span>
-              <span className='mt-6 mb-6 text-center text-lg font-semibold leading-tight'>
+              </figure>
+              <p className='mt-6 mb-6 text-center text-lg font-semibold leading-tight'>
                 {variant === 'success' ? (
                   <span>
                     Congrats! <br />
@@ -69,13 +69,13 @@ export const Modal = () => {
                 ) : (
                   <span>{`Your order couldn't be processed`}</span>
                 )}
-              </span>
+              </p>
               <Link href={'/'}>
                 <Button variant='secondary'>CLOSE</Button>
               </Link>
-            </div>
-          </div>
-        </div>
+            </article>
+          </section>
+        </dialog>
       )}
     </>
   )
