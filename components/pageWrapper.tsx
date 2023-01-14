@@ -16,8 +16,7 @@ export const PageWrapper = ({ children }: { children: ReactNode }) => {
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 10, opacity: 0 }}
-          transition={{ ease: [0.25, 0.46, 0.45, 0.94], duration: 0.4 }}
-        >
+          transition={{ ease: [0.25, 0.46, 0.45, 0.94], duration: 0.4 }}>
           {children}
         </m.section>
       </AnimatePresence>

@@ -18,8 +18,7 @@ const Newsletter = () => {
               <form
                 action='https://app.us18.list-manage.com/subscribe/post'
                 method='POST'
-                className='mt-8 grid w-full grid-cols-1 gap-4 md:grid-cols-3'
-              >
+                className='mt-8 grid w-full grid-cols-1 gap-4 md:grid-cols-3'>
                 <input type='hidden' name='u' value='3ad2e80b5f97babeaef25ccfa' />
                 <input type='hidden' name='id' value='00a97f1a2e' />
                 <>

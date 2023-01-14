@@ -17,8 +17,7 @@ const Footer = () => {
             <p className='mt-1 text-2xl font-semibold leading-none tracking-tighter md:text-3xl'>ryo.</p>
             <button
               onClick={() => window.scrollTo(0, 0)}
-              className='flex w-10 items-center justify-center rounded-full bg-primary p-2 text-background shadow-lg shadow-primary/40 md:mt-9'
-            >
+              className='flex w-10 items-center justify-center rounded-full bg-primary p-2 text-background shadow-lg shadow-primary/40 md:mt-9'>
               <span className='sr-only'>scroll to the top of the page</span>
               <ChevronUp />
             </button>
@@ -34,8 +33,7 @@ const Footer = () => {
           {isLoggedIn ? (
             <button
               className=' w-fit transition-opacity duration-200 ease-in hover:opacity-50'
-              onClick={() => signOut(auth)}
-            >
+              onClick={() => signOut(auth)}>
               logout
             </button>
           ) : (
@@ -50,8 +48,7 @@ const Footer = () => {
           </p>
           <p className={'transition-opacity duration-200 ease-in hover:cursor-pointer hover:opacity-50'}>careers</p>
           <p
-            className={'w-full text-right transition-opacity duration-200 ease-in hover:cursor-pointer hover:opacity-50'}
-          >
+            className={'w-full text-right transition-opacity duration-200 ease-in hover:cursor-pointer hover:opacity-50'}>
             t&c
           </p>
         </nav>

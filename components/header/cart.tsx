@@ -74,8 +74,7 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                 initial={{ y: '-100%', opacity: 0 }}
                 exit={{ y: '-100%', opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className=' m-2 flex h-full flex-col gap-4  rounded-3xl border border-primary/10 bg-background px-6 py-6 shadow-md shadow-primary-dark/10'
-              >
+                className=' m-2 flex h-full flex-col gap-4  rounded-3xl border border-primary/10 bg-background px-6 py-6 shadow-md shadow-primary-dark/10'>
                 <menu className='flex items-center justify-between '>
                   <p className='text-2xl'>{`Cart (${cartItemNo})`}</p>
                   <button className='flex h-12 w-12 items-center justify-center' onClick={() => setCartOpen(false)}>
@@ -85,8 +84,7 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                 <article
                   className={`relative mt-4 max-h-[calc(100vh-350px)]  w-full overflow-y-auto md:max-h-[calc(100vh-500px)] ${
                     cartDetails.length === 0 && 'mt-auto items-center justify-center'
-                  }`}
-                >
+                  }`}>
                   {cartDetails.length === 0 && (
                     <article className='my-10 flex h-full w-full flex-col items-center justify-center gap-4 text-center'>
                       <span className='opacity-60'>
@@ -102,8 +100,7 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                     return (
                       <article
                         key={slug}
-                        className='relative mb-6 flex h-32 max-h-32 items-center justify-between  text-primary'
-                      >
+                        className='relative mb-6 flex h-32 max-h-32 items-center justify-between  text-primary'>
                         <article className=' flex  w-[70%] flex-col justify-between  text-primary '>
                           <span className=' text-neon-dark'>{`$${price}`}</span>
                           <p className=' mb-2 text-lg text-primary md:text-xl'>{name}</p>
@@ -135,8 +132,7 @@ const Cart = ({ dispatch, cartDetails }: Cart) => {
                     onClick={() => {
                       handleCheckout()
                       setIsLoading(true)
-                    }}
-                  >
+                    }}>
                     {isLoading ? 'LOADING...' : 'CHECKOUT'}
                   </Button>
                 </menu>

@@ -39,22 +39,19 @@ const UpdateCart = ({ quantity, slug, dispatch }: { quantity: number; slug: stri
         <button
           disabled={noOfItems === 1}
           className=' flex min-h-[48px] min-w-[48px] items-center justify-center disabled:opacity-30'
-          onClick={() => handleUpdateCart('substract')}
-        >
+          onClick={() => handleUpdateCart('substract')}>
           <Minus size={16} />
         </button>
         <p className='w-full text-center text-sm font-semibold leading-none md:px-6'>{noOfItems}</p>
         <button
           className=' flex min-h-[48px] min-w-[48px] items-center justify-center'
-          onClick={() => handleUpdateCart('add')}
-        >
+          onClick={() => handleUpdateCart('add')}>
           <Plus size={16} />
         </button>
       </menu>
       <button
         className='border-primary-40 flex h-12 w-12 items-center justify-center rounded-lg border bg-tertiary-light bg-opacity-[0.01]'
-        onClick={() => handleUpdateCart('delete')}
-      >
+        onClick={() => handleUpdateCart('delete')}>
         <Trash size={16} />
       </button>
     </menu>

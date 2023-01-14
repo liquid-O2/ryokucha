@@ -55,8 +55,7 @@ export default function AuthForm() {
       <p className='text-3xl font-semibold'>{isRegister ? 'Create an account' : 'Login'}</p>
       <button
         onClick={() => signUpWithGoogle()}
-        className='mt-5 flex w-full items-center justify-center gap-3 rounded-full border border-black/10 bg-white px-8 py-4 text-base text-neutral-700'
-      >
+        className='mt-5 flex w-full items-center justify-center gap-3 rounded-full border border-black/10 bg-white px-8 py-4 text-base text-neutral-700'>
         <GoogleIcon size='24' /> {isRegister ? 'Sign up with Google' : 'Sign in with Google'}
       </button>
       <aside className='relative mt-5 flex h-5 w-full items-center justify-center'>
@@ -139,14 +138,12 @@ export default function AuthForm() {
           setIsRegister((prev) => !prev)
           resetField('email')
           resetField('password')
-        }}
-      >
+        }}>
         {isRegister ? 'Login' : 'Register now'}
       </Button>
       <button
         className='mt-8 w-full text-center text-base underline underline-offset-2'
-        onClick={() => handleGuestLogin()}
-      >
+        onClick={() => handleGuestLogin()}>
         Continue with a guest account
       </button>
     </section>

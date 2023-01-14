@@ -54,14 +54,12 @@ const Button = ({ variant, children, className, onClick, type, name, id, disable
           whileHover='hover'
           className={`relative flex items-center justify-center self-center overflow-hidden px-8 py-4  text-center disabled:opacity-60 ${
             variant === 'primary' ? 'bg-primary text-background' : ' bg-neon text-primary'
-          } rounded-full ${className}`}
-        >
+          } rounded-full ${className}`}>
           <m.span
             variants={buttonCircle}
             className={`${
               variant === 'primary' ? 'bg-primary-dark' : ' bg-neon-dark'
-            } absolute top-0 left-[50%] z-10 h-2 w-2 rounded-full`}
-          ></m.span>
+            } absolute top-0 left-[50%] z-10 h-2 w-2 rounded-full`}></m.span>
           <span className='relative z-20 text-base  font-semibold'>{children}</span>
         </m.button>
       </LazyMotion>
@@ -73,8 +71,7 @@ const Button = ({ variant, children, className, onClick, type, name, id, disable
       id={id}
       type={type}
       name={name}
-      className={`relative flex items-center justify-center self-center overflow-hidden rounded-full  border border-primary/20 px-8 py-4 text-center ${className}`}
-    >
+      className={`relative flex items-center justify-center self-center overflow-hidden rounded-full  border border-primary/20 px-8 py-4 text-center ${className}`}>
       <span className='relative z-20 text-base  font-semibold'>{children}</span>
     </button>
   )

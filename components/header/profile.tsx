@@ -38,14 +38,12 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
                 initial={{ y: '-100%', opacity: 0 }}
                 exit={{ y: '-100%', opacity: 0 }}
                 transition={{ duration: 0.4 }}
-                className=' z-50 m-2  flex w-[296px] flex-col items-start justify-start  gap-1 rounded-3xl border border-primary/10 bg-background px-6 py-4 shadow-md shadow-primary-dark/10'
-              >
+                className=' z-50 m-2  flex w-[296px] flex-col items-start justify-start  gap-1 rounded-3xl border border-primary/10 bg-background px-6 py-4 shadow-md shadow-primary-dark/10'>
                 <p className='w-full py-3'> {email}</p>
                 <Link
                   onClick={() => setModalVisible(false)}
                   className='flex w-full items-center gap-4 py-3 transition-opacity duration-200 ease-in hover:opacity-50'
-                  href={'/wishlist'}
-                >
+                  href={'/wishlist'}>
                   <Heart size={20} />
                   Wishlist
                 </Link>
@@ -54,8 +52,7 @@ const Profile = ({ photoUrl, emptyProfile, email, logout }: Profile) => {
                     logout()
                     setModalVisible(false)
                   }}
-                  className='flex w-full items-center gap-4 py-3 transition-opacity  duration-200 ease-in hover:opacity-50'
-                >
+                  className='flex w-full items-center gap-4 py-3 transition-opacity  duration-200 ease-in hover:opacity-50'>
                   <LogOut size={20} />
                   Logout
                 </button>
