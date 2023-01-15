@@ -46,12 +46,14 @@ const AddToCart = ({ image, name, price, slug }: AddToCartProps) => {
           className=' flex min-h-[48px] min-w-[48px] items-center justify-center disabled:opacity-30'
           onClick={() => setNoOfItems((prev) => prev - 1)}>
           <Minus size={20} />
+          <span className='sr-only'>decrement</span>
         </button>
         <p className='w-full px-6 text-center text-lg font-semibold leading-none'>{noOfItems}</p>
         <button
           className=' flex min-h-[48px] min-w-[48px] items-center justify-center'
           onClick={() => setNoOfItems((prev) => prev + 1)}>
           <Plus size={20} />
+          <span className='sr-only'>increment</span>
         </button>
       </menu>
       <Button variant='secondary' className='w-full md:w-auto' onClick={() => handleAddToCart()}>

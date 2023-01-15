@@ -2,9 +2,10 @@ import { render, screen } from './testUtils'
 import { describe, it, test, vi, expect } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
-import AuthForm from '../components/authForm'
+import AuthForm, { Inputs } from '../components/authForm'
 import React from 'react'
 import { GlobalContext } from '../components/contextProvider'
+import { UseFormSetError } from 'react-hook-form'
 
 const IntersectionObserverMock = vi.fn(() => ({
   disconnect: vi.fn(),
@@ -19,17 +20,14 @@ vi.mock('next/navigation', () => ({
   useRouter: vi.fn().mockImplementation(() => ({ push: vi.fn() })),
 }))
 
-const signIn = vi.fn()
-const signUp = vi.fn()
-const signUpWithGoogle = vi.fn()
-
 describe('Sign In Process', () => {
   const user = userEvent.setup()
+  const signIn = vi.fn()
   it('signIn function to be called', async () => {
     render(
       <GlobalContext.Provider
         value={{
-          signIn: signIn(),
+          signIn,
           signUp: () => undefined,
           logout: () => undefined,
           isLoggedIn: true,
@@ -38,27 +36,30 @@ describe('Sign In Process', () => {
           signUpWithGoogle: () => undefined,
           dispatch: () => undefined,
           userDetails: { uid: '', likedTeas: [], photoUrl: '', email: '' },
-        }}
-      >
+        }}>
         <AuthForm />
       </GlobalContext.Provider>
     )
+
     const emailField = screen.getByPlaceholderText('Enter your email')
     const passField = screen.getByPlaceholderText('Enter your password')
     const submitBtn = screen.getByRole('button', { name: 'Login' })
 
+    function setError() {}
+    function resetField() {}
     await user.type(emailField, 'test@teast.com')
     await user.type(passField, 'test12a34')
-    user.click(submitBtn)
-
-    await expect(signIn).toHaveBeenCalled()
+    await user.click(submitBtn)
+    expect(signIn).toHaveBeenCalled()
+    // expect(signIn).toHaveBeenCalledWith('test@teast.com', 'test12a34', setError, resetField)
   }),
     it('signUp function to be called', async () => {
+      const signUp = vi.fn()
       render(
         <GlobalContext.Provider
           value={{
             signIn: () => undefined,
-            signUp: signUp(),
+            signUp,
             logout: () => undefined,
             isLoggedIn: true,
             updateUser: () => undefined,
@@ -66,8 +67,7 @@ describe('Sign In Process', () => {
             signUpWithGoogle: () => undefined,
             dispatch: () => undefined,
             userDetails: { uid: '', likedTeas: [], photoUrl: '', email: '' },
-          }}
-        >
+          }}>
           <AuthForm />
         </GlobalContext.Provider>
       )
@@ -75,15 +75,16 @@ describe('Sign In Process', () => {
       const passField = screen.getByPlaceholderText('Enter your password')
       const registerBtn = screen.getByText('Register now')
 
-      user.click(registerBtn)
+      await user.click(registerBtn)
       await user.type(emailField, 'test@teast.com')
       await user.type(passField, 'test12a34')
       const submitBtn = screen.getByRole('button', { name: 'Sign Up' })
-      user.click(submitBtn)
+      await user.click(submitBtn)
 
-      await expect(signUp).toHaveBeenCalled()
+      expect(signUp).toHaveBeenCalled()
     }),
     it('signUpWithGoogle function to be called', async () => {
+      const signUpWithGoogle = vi.fn()
       render(
         <GlobalContext.Provider
           value={{
@@ -93,19 +94,17 @@ describe('Sign In Process', () => {
             isLoggedIn: true,
             updateUser: () => undefined,
             cartDetails: [{}],
-            signUpWithGoogle: signUpWithGoogle(),
+            signUpWithGoogle,
             dispatch: () => undefined,
             userDetails: { uid: '', likedTeas: [], photoUrl: '', email: '' },
-          }}
-        >
+          }}>
           <AuthForm />
         </GlobalContext.Provider>
       )
       const googleBtn = screen.getByText('Sign in with Google')
 
-      user.click(googleBtn)
-     
+      await user.click(googleBtn)
 
-      await expect(signUpWithGoogle).toHaveBeenCalled()
+      expect(signUpWithGoogle).toHaveBeenCalled()
     })
 })
