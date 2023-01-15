@@ -1,11 +1,10 @@
 import { render, screen } from './testUtils'
-import { describe, it, test, vi, expect } from 'vitest'
+import { describe, it, vi, expect } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
-import AuthForm, { Inputs } from '../components/authForm'
+import AuthForm from '../components/authForm'
 import React from 'react'
 import { GlobalContext } from '../components/contextProvider'
-import { UseFormSetError } from 'react-hook-form'
 
 const IntersectionObserverMock = vi.fn(() => ({
   disconnect: vi.fn(),
