@@ -77,13 +77,13 @@ const SortBtns = ({ setTeas }: { setTeas: Dispatch<SetStateAction<Teas[]>> }) =>
                   initial={{ y: '-100%', opacity: 0 }}
                   exit={{ y: '-100%', opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className=' z-50 m-2  flex w-[296px] flex-col items-start justify-start  gap-3 rounded-3xl bg-background px-6 py-4 shadow-md shadow-primary-dark/10'>
+                  className=' z-50 m-2  flex w-[296px] flex-col items-start justify-start  gap-2 rounded-2xl bg-background px-3 py-3 shadow-md shadow-primary-dark/10'>
                   <button
                     onClick={() => {
                       setSelectIsOpen(false)
                       handleFilter('alphabetical', 'first')
                     }}
-                    className={` w-full rounded-full border border-primary/30 px-6  py-3 ${
+                    className={` w-full rounded-xl border border-primary/30 px-6  py-3 ${
                       btnState.first && 'bg-primary text-background'
                     }`}>
                     Alphabetical
@@ -93,7 +93,7 @@ const SortBtns = ({ setTeas }: { setTeas: Dispatch<SetStateAction<Teas[]>> }) =>
                       setSelectIsOpen(false)
                       handleFilter('price', 'second')
                     }}
-                    className={` w-full rounded-full border border-primary/30 px-6 py-3 ${
+                    className={` w-full rounded-xl border border-primary/30 px-6 py-3 ${
                       btnState.second && 'bg-primary text-background'
                     }`}>
                     Price - High to Low
@@ -103,7 +103,7 @@ const SortBtns = ({ setTeas }: { setTeas: Dispatch<SetStateAction<Teas[]>> }) =>
                       setSelectIsOpen(false)
                       handleFilter('price', 'third')
                     }}
-                    className={` w-full rounded-full border border-primary/30 px-6 py-3 ${
+                    className={` w-full rounded-xl border border-primary/30 px-6 py-3 ${
                       btnState.third && 'bg-primary text-background'
                     }`}>
                     Price - Low to High
