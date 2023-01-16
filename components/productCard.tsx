@@ -49,7 +49,7 @@ const Card = ({ image, price, name, attributes, slug }: CardProps) => {
     <article className='flex flex-col gap-4 overflow-hidden rounded-3xl border border-primary border-opacity-[15%] p-4'>
       <picture
         onClick={() => router?.push(`/products/${slug}`)}
-        className='aspect-w-1 aspect-h-1 relative flex w-full items-center justify-center overflow-hidden rounded-2xl md:overflow-hidden'>
+        className='aspect-w-1 aspect-h-1 relative flex w-full items-center justify-center overflow-hidden rounded-xl md:overflow-hidden'>
         <Image
           src={image.asset.url}
           alt={`${name} loose tea leaf`}
