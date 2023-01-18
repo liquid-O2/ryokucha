@@ -23,7 +23,7 @@ const Footer = () => {
             </button>
           </aside>
         </section>
-        <nav className='mb-12 flex flex-col gap-3 text-base leading-none md:items-end  '>
+        <nav className='mb-12 flex flex-col gap-3 text-lg leading-none md:items-end  '>
           <Link className={'transition-opacity duration-200 ease-in hover:opacity-50'} href={'/'}>
             home
           </Link>
@@ -42,7 +42,7 @@ const Footer = () => {
             </Link>
           )}
         </nav>
-        <nav className='flex flex-col items-end gap-3 text-base leading-none '>
+        <nav className='flex flex-col items-end gap-3 text-lg leading-none '>
           <p className={'transition-opacity duration-200 ease-in hover:cursor-pointer hover:opacity-50'}>
             privacy policy
           </p>
