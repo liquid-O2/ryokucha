@@ -8,7 +8,7 @@ export const Hero = () => {
   return (
     <Section full className='h-[100svh] text-background md:h-[100dvh] '>
       <div className='absolute z-[15] bg-primary-dark/30 w-screen h-screen'></div>
-      <video autoPlay loop muted className='absolute z-10'>
+      <video autoPlay loop muted className='absolute z-10 h-screen w-full object-cover'>
         <source src={'/Hero.mp4'} type='video/mp4' />
       </video>
       <section className='pointer-events-none relative h-full w-full'>
