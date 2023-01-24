@@ -1,6 +1,5 @@
-import hero from '/public/hero.png'
 import Section from '../components/section'
-import Image from 'next/image'
+
 import { Container } from '../components/container'
 import SlideUp from '../components/slideUp'
 import Balancer from 'react-wrap-balancer'
@@ -8,18 +7,11 @@ import Balancer from 'react-wrap-balancer'
 export const Hero = () => {
   return (
     <Section full className='h-[100svh] text-background md:h-[100dvh] '>
-      <section className='relative h-full w-full '>
-        <Image
-          src={hero}
-          fill
-          placeholder={'blur'}
-          sizes='(min-width: 100px) 70vw'
-          alt={'A hand holding a kyusu(tea pot)'}
-          quality={100}
-          className='relative h-full w-full object-cover'
-          priority={true}
-        />
-
+      <div className='absolute z-[15] bg-primary-dark/30 w-screen h-screen'></div>
+      <video autoPlay loop muted className='absolute z-10'>
+        <source src={'/hero.mp4'} type='video/mp4' />
+      </video>
+      <section className='pointer-events-none relative h-full w-full'>
         <section className='relative z-30 flex h-full  w-full flex-col '>
           <Container className='mt-auto flex h-full flex-col justify-end self-end font-light'>
             <SlideUp delay={0.4}>

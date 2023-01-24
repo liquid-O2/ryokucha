@@ -14,7 +14,7 @@ type InfoSection = {
 export const InfoSection = ({ image, imagePosition, heading, paragraph, pillText }: InfoSection) => {
   return (
     <>
-      <Section>
+      <Section className='relative z-30 bg-background'>
         <Container>
           <article className='grid grid-cols-1 gap-14 md:grid-cols-2'>
             <picture

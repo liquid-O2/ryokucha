@@ -18,7 +18,7 @@ export default function App() {
     <>
       <PageWrapper>
         <Hero />
-        <Section className='relative z-30 mt-[-2.5rem]'>
+        <Section className='relative bg-background z-30 mt-[-2.5rem]'>
           <Container>
             <SlideUp>
               <article className='flex flex-col items-center justify-center  px-6 leading-normal'>
