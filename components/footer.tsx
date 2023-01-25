@@ -53,12 +53,16 @@ const Footer = () => {
           </p>
         </nav>
         <aside className='col-span-2  flex justify-between border-t border-primary/10 py-4 text-sm md:col-span-4'>
-          <p className='text-primary transition-all'>
-            © Designed & Developed By
-            <span className='transition-all hover:cursor-pointer hover:underline hover:underline-offset-4'>
-              {` Arunava`}
-            </span>
-          </p>
+          <a
+            href='https://www.arunava.dev'
+            target='_blank'
+            rel='noreferrer'
+            className='cursor-pointer underline-offset-2 hover:underline'>
+            <p className='text-primary transition-all'>
+              © Designed & Developed By
+              <span className=''>{` Arunava`}</span>
+            </p>
+          </a>
           <p className='text-primary'>№</p>
         </aside>
       </footer>
