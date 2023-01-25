@@ -28,7 +28,6 @@ const DisplayWishlist = () => {
       }}`
       const teas = await client.fetch(query)
       const tea = { ...teas[0] }
-
       return tea as Teas
     }
 

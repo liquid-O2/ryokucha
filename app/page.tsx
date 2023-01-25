@@ -35,7 +35,7 @@ export default function App() {
         <InfoSection
           image={col}
           imagePosition='left'
-          heading='Finest Japanese green tea from skilled tea farmers.'
+          heading='Finest Japanese Green Tea From Skilled Tea Farmers.'
           paragraph='We source our tea directly from Japan. We work with the best farmers to bring you a premium product. We believe in sustainable farming practices, and our tea is grown without pesticides or herbicides. We produce some of the best tea in the world.'
           pillText={{
             first: 'Organic',
@@ -46,7 +46,7 @@ export default function App() {
         <InfoSection
           image={col2}
           imagePosition='right'
-          heading='Natural superfood, perfect for your body and mind'
+          heading='Natural Superfood, Perfect For Your Body, Mind And Soul'
           paragraph='The remarkable properties and health benefits of Japanese Green teas are the result of unique
           harvesting, processing and blending techniques of tea leaves perfected over centuries by Japanese tea
           masters.'
