@@ -43,7 +43,7 @@ const DisplayWishlist = () => {
 
   if (!isLoggedIn)
     return (
-      <Container className='flex flex-col items-center justify-center'>
+      <Container className='flex flex-col items-center justify-center !px-0'>
         <article className='my-32 flex w-full flex-col items-center justify-center rounded-2xl bg-tertiary-light bg-opacity-[0.02] p-14'>
           <UserX size={48} className='mb-6 opacity-80' />
           <p className='mb-6 max-w-[24ch] text-center text-xl'>To view your wishlisted Items you need to login</p>
@@ -57,7 +57,7 @@ const DisplayWishlist = () => {
     )
 
   return (
-    <Container className='flex flex-col items-center justify-center'>
+    <Container className='flex flex-col items-center justify-center !px-0'>
       {favouriteTeas.length === 0 && (
         <article className='my-10 flex h-[367px] w-full flex-col items-center justify-center gap-4 rounded-3xl bg-tertiary-light bg-opacity-[0.01] p-10 text-center md:rounded-[3rem]'>
           <span className='opacity-60'>
