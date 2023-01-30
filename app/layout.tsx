@@ -23,6 +23,7 @@ const Mori = localfont({
       style: 'normal',
     },
   ],
+  display: 'swap',
   variable: '--font-Mori',
 })
 
