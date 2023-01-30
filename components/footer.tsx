@@ -60,10 +60,10 @@ const Footer = () => {
             className='cursor-pointer underline-offset-2 hover:underline'>
             <p className='text-primary transition-all'>
               © Designed & Developed By
-              <span className=''>{` Arunava`}</span>
+              <span className=''>{` 𖧐Arunava`}</span>
             </p>
           </a>
-          <p className='text-primary'>№</p>
+          <p className='text-primary'>𖧐</p>
         </aside>
       </footer>
     </Container>
